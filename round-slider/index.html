@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>湾曲したスライダー</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background-color: #757575;
+      color: white;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .title-container {
+      background-color: white;
+      color: #000000;
+      border-radius: 30px;
+      text-align: center;
+      padding: 10px 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      position: relative;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    
+    .subtitle {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    
+    .carousel-container {
+      position: relative;
+      height: 500px;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+    
+    .carousel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .carousel-item {
+      position: absolute;
+      width: 280px;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.5s ease;
+    }
+    
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .carousel-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.6);
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    
+    .carousel-item.active::after {
+      opacity: 0;
+    }
+    
+    .navigation-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #000000;
+      font-weight: bold;
+      font-size: 20px;
+      z-index: 10;
+    }
+    
+    .navigation-button.prev {
+      left: 10px;
+    }
+    
+    .navigation-button.next {
+      right: 10px;
+    }
+    
+    .profile-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .profile-name {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .profile-details {
+      font-size: 1.2rem;
+    }
+    
+    .navigation-bar {
+      display: flex;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .top-nav-button {
+      background-color: white;
+      color: #e60012;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navigation-bar">
+      <div class="top-nav-button" id="prev-employee">
+        <span>◀</span>
+        <span>前へ</span>
+      </div>
+      <div class="top-nav-button" id="next-employee">
+        <span>次へ</span>
+        <span>▶</span>
+      </div>
+    </div>
+    
+    <div class="title-container">
+      タイトル
+    </div>
+    
+    <div class="subtitle">
+      ダミーテキスト
+    </div>
+    
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <!-- カルーセルアイテムはJavaScriptで生成 -->
+      </div>
+      <div class="navigation-button prev" id="prev">◀</div>
+      <div class="navigation-button next" id="next">▶</div>
+    </div>
+    
+    <div class="profile-info">
+      <div class="profile-name">Aさん</div>
+      <div class="profile-details">営業部 / 2XXX年新卒入社</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('carousel');
+      const prevButton = document.getElementById('prev');
+      const nextButton = document.getElementById('next');
+      const prevEmployeeButton = document.getElementById('prev-employee');
+      const nextEmployeeButton = document.getElementById('next-employee');
+      
+      // スライドのデータ
+      const slides = [
+        { image: '/api/placeholder/280/400', alt: '社員1' },
+        { image: '/api/placeholder/280/400', alt: '社員2' },
+        { image: '/api/placeholder/280/400', alt: '社員3' },
+        { image: '/api/placeholder/280/400', alt: '社員4' },
+        { image: '/api/placeholder/280/400', alt: '社員5' }
+      ];
+      
+      let currentIndex = 2; // 真ん中のスライドからスタート
+      
+      // スライドを生成
+      slides.forEach((slide, index) => {
+        const item = document.createElement('div');
+        item.className = 'carousel-item';
+        if (index === currentIndex) item.classList.add('active');
+        
+        const img = document.createElement('img');
+        img.src = slide.image;
+        img.alt = slide.alt;
+        
+        item.appendChild(img);
+        carousel.appendChild(item);
+      });
+      
+      // スライドの位置を更新する関数
+      function updateCarousel() {
+        const items = document.querySelectorAll('.carousel-item');
+        const maxOffset = 150; // 中央と端の高さの差（ピクセル）
+        const slideWidth = 280; // スライドの幅
+        const slideSpacing = 20; // スライド間のスペース
+        
+        items.forEach((item, index) => {
+          // アクティブ状態の更新
+          if (index === currentIndex) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+          
+          // 位置インデックス（中央が0）
+          const positionIndex = index - currentIndex;
+          
+          // 左右の位置（X軸）計算
+          const translateX = positionIndex * (slideWidth + slideSpacing);
+          
+          // 垂直位置（Y軸）計算 - 放物線の形状に沿って
+          // y = ax² の二次関数で計算（a = maxOffset / 最大インデックスの二乗）
+          const a = maxOffset / Math.pow(items.length - 1, 2);
+          const translateY = a * Math.pow(positionIndex * 2, 2);
+          
+          // スケール計算 - 中央から離れるほど小さく
+          const scale = 1 - Math.abs(positionIndex) * 0.05;
+          
+          // Z-indexの計算 - 中央が最前面
+          const zIndex = 100 - Math.abs(positionIndex) * 10;
+          
+          // スタイル適用
+          item.style.transform = `translateX(${translateX}px) translateY(${translateY}px) scale(${scale})`;
+          item.style.zIndex = zIndex;
+        });
+        
+        // ナビゲーションボタンの有効/無効状態
+        prevButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextButton.style.opacity = currentIndex === slides.length - 1 ? '0.5' : '1';
+        prevEmployeeButton.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextEmployeeButton.style.opacity = currentIndex === slides.length - 1 ? '0.5' : '1';
+      }
+      
+      // 初期表示
+      updateCarousel();
+      
+      // スライド切り替え関数
+      function goToPrevSlide() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      }
+      
+      function goToNextSlide() {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+          updateCarousel();
+        }
+      }
+      
+      // イベントリスナー
+      prevButton.addEventListener('click', goToPrevSlide);
+      nextButton.addEventListener('click', goToNextSlide);
+      prevEmployeeButton.addEventListener('click', goToPrevSlide);
+      nextEmployeeButton.addEventListener('click', goToNextSlide);
+      
+      // ウィンドウサイズが変わった時にカルーセルを更新
+      window.addEventListener('resize', updateCarousel);
+    });
+  </script>
+</body>
+</html>
