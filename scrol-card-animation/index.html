@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スクロールカードアニメーション</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .cards-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .cards-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .cards-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+        
+        .card {
+            position: absolute;
+            width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            overflow: hidden;
+            transform-origin: center bottom;
+        }
+        
+        .card-image {
+            height: 160px;
+            width: 100%;
+            background-color: #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .spacer {
+            height: 500vh; /* スクロール範囲を広げる */
+        }
+        
+        .scroll-guide {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #666;
+            animation: bounce 2s infinite;
+            z-index: 20;
+        }
+        
+        .scroll-icon {
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>スクロールカードアニメーション</h1>
+        <p>下にスクロールすると、カードが順番に落ちていきます</p>
+    </div>
+    
+    <div class="cards-wrapper">
+        <div class="cards-section" id="cardsSection">
+            <div class="cards-container" id="cardsContainer">
+                <div class="card" id="card1">
+                    <div class="card-image">
+                        <img src="/api/placeholder/300/160" alt="富士山">
+                    </div>
+                    <h2>富士山</h2>
+                    <p>日本の象徴である美しい山。四季折々の表情を見せる自然の芸術品です。</p>
+                </div>
+                
+                <div class="card" id="card2">
+                    <div class="card-image">
+                        <img src="/api/placeholder/300/160" alt="桜">
+                    </div>
+                    <h2>桜</h2>
+                    <p>春を告げる日本の花。短い咲き誇る期間が儚さと美しさを表現しています。</p>
+                </div>
+                
+                <div class="card" id="card3">
+                    <div class="card-image">
+                        <img src="/api/placeholder/300/160" alt="紅葉">
+                    </div>
+                    <h2>紅葉</h2>
+                    <p>秋の訪れを感じさせる風景。色とりどりの葉が山を彩ります。</p>
+                </div>
+                
+                <div class="card" id="card4">
+                    <div class="card-image">
+                        <img src="/api/placeholder/300/160" alt="雪景色">
+                    </div>
+                    <h2>雪景色</h2>
+                    <p>冬の静けさと美しさ。白銀の世界が広がる幻想的な光景です。</p>
+                </div>
+                
+                <div class="card" id="card5">
+                    <div class="card-image">
+                        <img src="/api/placeholder/300/160" alt="初日の出">
+                    </div>
+                    <h2>初日の出</h2>
+                    <p>新年を祝う伝統的な風景。希望と共に新しい年の始まりを告げます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <div class="scroll-guide" id="scrollGuide">
+        <p>下にスクロール</p>
+        <div class="scroll-icon">↓</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // GSAPとScrollTriggerの初期化
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // カードの初期配置を設定
+            const cards = document.querySelectorAll('.card');
+            const totalCards = cards.length;
+            const offset = 20; // カード間の上下オフセット（ピクセル）
+            
+            // カードを上に重ねて配置（初期状態）
+            cards.forEach((card, index) => {
+                // 逆順にすることで、最初のカードが一番上に表示される
+                const zIndex = 100 - index;
+                const yPos = -index * offset; // 上に少しずつずらす
+                
+                gsap.set(card, {
+                    y: yPos,
+                    zIndex: zIndex
+                });
+                
+                // カードごとに色を少し変える
+                const hue = 200 + (index * 15);
+                card.style.backgroundColor = `hsl(${hue}, 70%, 95%)`;
+            });
+            
+            // スクロールトリガーのbatch設定
+            ScrollTrigger.batch(cards, {
+                onEnter: batch => {
+                    // バッチ処理なし、個別処理で対応
+                }
+            });
+            
+            // カードごとにスクロールアニメーションを設定
+            cards.forEach((card, index) => {
+                // カードが落ちるアニメーション
+                gsap.to(card, {
+                    y: 500, // 下に移動する距離
+                    rotation: index % 2 === 0 ? 10 : -10, // 交互に回転方向を変える
+                    opacity: 0,
+                    ease: "power2.in",
+                    scrollTrigger: {
+                        trigger: ".spacer",
+                        start: `top+=${100 * (index + 1)} top`,
+                        end: `top+=${300 * (index + 1)} top`,
+                        scrub: true,
+                        // markers: true, // デバッグ用、必要に応じてコメント解除
+                    }
+                });
+                
+                // 次のカードが主役になるときのアニメーション（該当する場合）
+                if (index < totalCards - 1) {
+                    const nextCard = cards[index + 1];
+                    gsap.to(nextCard, {
+                        y: 0, // 中央に配置
+                        ease: "power1.out",
+                        scrollTrigger: {
+                            trigger: ".spacer",
+                            start: `top+=${100 * (index + 1)} top`,
+                            end: `top+=${300 * (index + 1)} top`,
+                            scrub: true,
+                        }
+                    });
+                }
+            });
+            
+            // スクロールガイドのアニメーション（少しスクロールしたら消える）
+            ScrollTrigger.create({
+                trigger: ".spacer",
+                start: "top top+=100",
+                onEnter: () => {
+                    gsap.to("#scrollGuide", { opacity: 0, duration: 0.5 });
+                },
+                onLeaveBack: () => {
+                    gsap.to("#scrollGuide", { opacity: 1, duration: 0.5 });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
