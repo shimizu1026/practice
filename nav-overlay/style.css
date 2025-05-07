@@ -1,0 +1,39 @@
+/* オーバーレイの基本スタイル */
+.blur-overlay {
+	/* 画面全体に固定表示するための設定 */
+	position: fixed;
+	/* 画面の上端から配置 */
+	top: 0;
+	/* 画面の左端から配置 */
+	left: 0;
+	/* 画面の幅いっぱいに広げる */
+	width: 100%;
+	/* 画面の高さいっぱいに広げる */
+	height: 100%;
+	/* 白色の半透明背景色を設定（透明度0.7） */
+	background-color: rgba(255, 255, 255, 0.7);
+	/* コンテンツにブラー効果を適用（5pxの強さ） */
+	backdrop-filter: blur(5px);
+	/* Safari用のブラー効果設定 */
+	-webkit-backdrop-filter: blur(5px);
+	/* 重なり順序の設定（ヘッダーより下、コンテンツより上） */
+	z-index: 1;
+	/* 初期状態では透明（見えない） */
+	opacity: 0;
+	/* 初期状態では非表示 */
+	visibility: hidden;
+	/* 表示/非表示の切り替え時のアニメーション設定 */
+	transition: opacity 0.3s, visibility 0s 0.3s;
+	/* マウスイベントを無視し、下の要素にクリックを通す */
+	pointer-events: none;
+  }
+  
+  /* オーバーレイがアクティブ（表示）状態の時のスタイル */
+  .blur-overlay.active {
+	/* 完全に不透明にして表示 */
+	opacity: 1;
+	/* 要素を可視状態にする */
+	visibility: visible;
+	/* 表示時のアニメーション設定（非表示→表示への遷移） */
+	transition: opacity 0.3s;
+  }
