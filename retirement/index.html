@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早退・休暇届システム</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>早退・休暇届システム</h1>
+        </div>
+        <div class="main-content">
+            <div class="form-section">
+                <h2 class="section-title">新規申請</h2>
+                <form id="leaveForm">
+                    <div class="form-group">
+                        <label for="employeeName">氏名 *</label>
+                        <input type="text" id="employeeName" required placeholder="山田太郎">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leaveDate">休暇・早退日 *</label>
+                        <input type="date" id="leaveDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leaveType">種別 *</label>
+                        <select id="leaveType" required>
+                            <option value="">選択してください</option>
+                            <option value="early_leave">早退</option>
+                            <option value="half_day">半日休暇</option>
+                            <option value="full_day">全日休暇</option>
+                            <option value="hours">時間休暇</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="durationGroup" style="display: none;">
+                        <label>休暇時間</label>
+                        <div class="duration-group">
+                            <input type="time" id="startTime" placeholder="開始時刻">
+                            <span style="text-align: center; padding: 10px;">〜</span>
+                            <input type="time" id="endTime" placeholder="終了時刻">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">理由</label>
+                        <textarea id="reason" rows="3" placeholder="休暇・早退の理由を記入してください"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">申請を提出</button>
+                </form>
+            </div>
+
+            <div class="list-section">
+                <h2 class="section-title">申請一覧</h2>
+                <div id="requestList">
+                    <div class="empty-state">
+                        <div>📋</div>
+                        <p>申請はまだありません</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+ 
+</body>
+</html>
