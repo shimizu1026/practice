@@ -4,47 +4,99 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="../destyle.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<table class="practice_table">
-		<thead>
-			<tr>
-				<th></th>
-				<th>のりもの単体チケット</th>
-				<th>のりもの＋パレード セットチケット</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>大人</th>
-				<th>小人</th>
-				<th>大人</th>
-				<th>小人</th>
-			</tr>
-			<tr>
-				<th>のりもの1回</th>
-				<td>1,000円</td>
-				<td>500円</td>
-				<td>2,000円</td>
-				<td>1,000円</td>
-			</tr>
-			<tr>
-				<th>のりもの3回</th>
-				<td>2,500円</td>
-				<td>1,250円</td>
-				<td>5,000円</td>
-				<td>2,500円</td>
-			</tr>
-			<tr>
-				<th>のりもの5回</th>
-				<td>4,000円</td>
-				<td>2,000円</td>
-				<td>8,000円</td>
-				<td>4,000円</td>
-			</tr>
-		</tbody>
-		<caption>一部130cm以下のお子様が対象外の乗り物があります。</caption>
-	</table>
-	<!-- /.practice_table -->
+	<section class="price_table_section">
+		<div class="price_table_inner">
+			<table class="price_table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>のりもの単体チケット</th>
+						<th>のりもの＋パレード セットチケット</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="price_table_header">
+						<th>大人</th>
+						<th>小人<span class="small_note">※</span></th>
+						<th>大人</th>
+						<th>小人<span class="small_note">※</span></th>
+					</tr>
+					<tr>
+						<th class="price_table_header">のりもの1回</th>
+						<td>1,000円</td>
+						<td>500円</td>
+						<td>2,000円</td>
+						<td>1,000円</td>
+					</tr>
+					<tr>
+						<th class="price_table_header">のりもの3回</th>
+						<td>2,500円</td>
+						<td>1,250円</td>
+						<td>5,000円</td>
+						<td>2,500円</td>
+					</tr>
+					<tr>
+						<th class="price_table_header">のりもの5回</th>
+						<td>4,000円</td>
+						<td>2,000円</td>
+						<td>8,000円</td>
+						<td>4,000円</td>
+					</tr>
+				</tbody>
+				<caption><span>※</span>一部130cm以下のお子様が対象外の乗り物があります。</caption>
+			</table>
+			<!-- /.price_table -->
+		</div>
+		<!-- /.price_table_inner -->
+	</section>
+	<!-- /.price_table_section -->
+
+	<section class="table_section">
+		<div class="table_container">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>曜日/時間</th>
+						<th>月</th>
+						<th>火</th>
+						<th>水</th>
+						<th>木</th>
+						<th>金</th>
+						<th>土</th>
+						<th>日・祝</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>9:00 - 12:00</th>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/sankaku_icon.png" alt="" width="16" height="16" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/sankaku_icon.png" alt="" width="16" height="16" decoding="async" loading="lazy"></td>
+					</tr>
+					<tr>
+						<th>14:00 - 18:00 </th>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/sankaku_icon.png" alt="" width="16" height="16" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/circle_icon.png" alt="" width="15" height="15" decoding="async" loading="lazy"></td>
+						<td><img src="img/sankaku_icon.png" alt="" width="16" height="16" decoding="async" loading="lazy"></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- /.table -->
+		</div>
+		<!-- /.table_container -->
+	</section>
+	<!-- /.table_section -->
 </body>
 </html>

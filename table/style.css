@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --base-color:#E0E0E0;
+    --accent-color:#26BEC6;
+    --light-green-color:#EDFAF9;
+	--font-color: #000000;
+	--white-color: #FFFFFF;
+	--border-color: #E0E0E0;
+	--base-font-size: 16;
+	--rem-ratio: calc(1rem / var(--base-font-size));
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	gap: 50px;
+	font-family: "Noto Sans JP", sans-serif;
+}
+
+.price_table {
+	width: 100%;
+	margin-inline: auto;
+	border-collapse: collapse;
+	color: var(--font-color);
+	font-size: calc(20 * var(--rem-ratio));
+}
+
+.price_table_inner {
+	max-width: 960px;
+	margin-inline: auto;
+}
+.price_table tbody tr {
+	background-color: var(--white-color);
+}
+
+.price_table thead tr {
+	background-color: var(--accent-color);
+	color: var(--white-color);
+}
+
+.price_table .price_table_header {
+	background-color: var(--light-green-color);
+	color: var(--accent-color);
+}
+
+.price_table th,
+.price_table td {
+	border: 1px solid var(--border-color);
+}
+
+.small_note {
+	font-size: calc(12 * var(--rem-ratio));
+}
+
+.price_table caption {
+	font-size: calc(17 * var(--rem-ratio));
+}
+
+
+/* Table */
+.table_container {
+	max-width: 596px;
+	margin-inline: auto;
+}
+.table {
+	width: 100%;
+	max-width: 596px;
+	border-collapse: collapse;
+	font-size: calc(16 * var(--rem-ratio));
+	color: var(--font-color);
+}
+.table th, 
+.table td {
+	border: 2px solid var(--border-color);
+	text-align: center;
+} 
+.table thead tr th,
+.table tbody tr th {
+	padding: 13px 0;
+}
+.table tr td {
+	padding: 10px 0;
+}
+.table thead tr {
+	background-color: var(--accent-color);
+	color: var(--white-color);
+	font-size: calc(15 * var(--rem-ratio));
+
+}
+.table tbody th {
+	background-color: var(--light-green-color);
+}
+.table tbody tr {
+	background-color: var(--white-color);
+}
+
