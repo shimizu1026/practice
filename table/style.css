@@ -51,7 +51,15 @@ body {
 
 .price_table th,
 .price_table td {
-	border: 1px solid var(--border-color);
+	border: 2px solid var(--border-color);
+	line-height: 1.2;
+	padding: 16px 24px;
+}
+.price_table th {
+	font-weight: 700;
+}
+.price_table td {
+	font-weight: 500;
 }
 
 .small_note {
@@ -60,6 +68,10 @@ body {
 
 .price_table caption {
 	font-size: calc(17 * var(--rem-ratio));
+	caption-side: bottom;
+	line-height: 1.6;
+	text-align: left;
+	margin-top: 16px;
 }
 
 
@@ -74,6 +86,7 @@ body {
 	border-collapse: collapse;
 	font-size: calc(16 * var(--rem-ratio));
 	color: var(--font-color);
+	text-align: left;
 }
 .table th, 
 .table td {
@@ -82,10 +95,15 @@ body {
 } 
 .table thead tr th,
 .table tbody tr th {
+	font-weight: 700;
+	line-height: 1.2;
 	padding: 13px 0;
 }
+.table tr th {
+	font-family: "Roboto", sans-serif;
+}
 .table tr td {
-	padding: 10px 0;
+	padding: 12px 18px;
 }
 .table thead tr {
 	background-color: var(--accent-color);
