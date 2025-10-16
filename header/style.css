@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --base-color:rgba(255, 255, 255, 1);
+    --accent-color:rgba(254, 48, 175, 1);
+    --light-green-color:#EDFAF9;
+	--font-color: rgba(0, 0, 0, 1);
+	--line-color: rgba(3, 193, 0, 1);
+	--base-font-size: 16;
+	--rem-ratio: calc(1rem / var(--base-font-size));
+}
+
+body {
+	color: var(--font-color);
+	font-size: calc(16 * var(--rem-ratio));
+}
+
+.section {
+	background-color: aliceblue;
+	padding: 100px 0;
+}
+
+.ml8 {
+	margin-left: 8px;
+}
+
+.header {
+	background-color: var(--base-color);
+	padding: 16px 40px;
+		.header_inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.logo {
+				width: 120px;
+				height: auto;
+			}
+
+			.nav {
+				display: flex;
+				.nav_list {
+					display: flex;
+					align-items: center;
+					.nav_item {
+					.nav_link {
+						font-size: calc(18 * var(--rem-ratio));
+						font-weight: 700;
+						line-height: 1.4;
+						letter-spacing: 0.05em;
+						padding: 8px 12px;
+					}					
+					}
+
+				}
+
+				.button {
+					display: flex;
+    				align-items: center;
+					gap: 10px;
+					border-radius: 100vmax;
+					color: var(--base-color);
+					font-weight: 600;
+					padding: 20px 40px;
+
+				}
+
+				.contact_button {
+					background-color: var(--accent-color);
+					text-align: center;
+
+					&::before {
+						content: "";
+						background-image: url(assets/images/grin-stars.svg);
+						background-repeat: no-repeat;
+						width: 20px;
+						height: 20px;
+					}
+				}
+
+				.contact {
+					display: grid;
+					gap: 6px;
+
+					.tel {
+						display: flex;
+						align-items: center;
+						gap: 4px;
+					font-size: calc(32 * var(--rem-ratio));
+					font-weight: 700;
+					line-height: 1;
+
+						&::before {
+							content: "";
+							width: 24px;
+							height: 24px;
+							background-image: url(assets/images/icon_tel.svg);
+							background-repeat: no-repeat;
+						}
+
+					}
+						p {
+							font-size: calc(14 * var(--rem-ratio));
+							text-align: center;
+							letter-spacing: 0.05em;
+						}
+				}
+			}
+		}
+}
+
+.header_b {
+
+	.line_button {
+		background-color: var(--line-color);
+					&::before {
+						content: "";
+						background-image: url(assets/images/icon_line.svg);
+						background-repeat: no-repeat;
+						width: 20px;
+						height: 20px;
+					}
+
+		.g_menu {
+			background-color: var(--accent-color);
+			.g_list {
+				.g_item {
+					.g_link {
+						color: var(--base-color);
+					}
+				}
+			}
+		}
+	}
+
+
+}
