@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New&display=swap');
 
 
 :root {
@@ -7,6 +7,8 @@
     --light-green-color:#EDFAF9;
 	--font-color: rgba(0, 0, 0, 1);
 	--line-color: rgba(3, 193, 0, 1);
+	--font-zenkaku: "Zen Kaku Gothic New", sans-serif;
+	--font-roboto: "Roboto", sans-serif;
 	--base-font-size: 16;
 	--rem-ratio: calc(1rem / var(--base-font-size));
 }
@@ -14,6 +16,18 @@
 body {
 	color: var(--font-color);
 	font-size: calc(16 * var(--rem-ratio));
+	font-family: var(--font-zenkaku);
+	font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
 }
 
 .section {
@@ -25,7 +39,11 @@ body {
 	margin-left: 8px;
 }
 
-.header {
+.fz18 {
+	font-size: calc(18 * var(--rem-ratio));
+}
+
+.header_a {
 	background-color: var(--base-color);
 	padding: 16px 40px;
 		.header_inner {
@@ -62,6 +80,7 @@ body {
 					border-radius: 100vmax;
 					color: var(--base-color);
 					font-weight: 600;
+					line-height: 1.2;
 					padding: 20px 40px;
 
 				}
@@ -89,6 +108,7 @@ body {
 						gap: 4px;
 					font-size: calc(32 * var(--rem-ratio));
 					font-weight: 700;
+					font-family: var(--font-roboto);
 					line-height: 1;
 
 						&::before {
@@ -111,28 +131,136 @@ body {
 }
 
 .header_b {
+	background-color: var(--base-color);
 
-	.line_button {
-		background-color: var(--line-color);
+	.header_inner {
+		display: flex;
+		flex-direction: column;
+
+		.top {
+			width: 100%;
+			padding: 8px 40px;
+
+			small {
+				font-weight: 500;
+				line-height: 1;
+				letter-spacing: 0.05em;
+			}
+		}
+
+		.main {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 22px 40px;
+
+				.contact {
+					display: flex;
+					gap: 24px;
+					align-items: center;
+
+				.button_box {
+					display: grid;
+					grid-template-columns: repeat(2,1fr);
+					gap: 8px;
+				
+				.button {
+					display: flex;
+    				align-items: center;
+					gap: 10px;
+					border-radius: 100vmax;
+					color: var(--base-color);
+					font-weight: 600;
+					line-height: 1.2;
+					padding: 20px 40px;
+
+				}
+
+				.contact_button {
+					background-color: var(--accent-color);
+					text-align: center;
+
 					&::before {
 						content: "";
-						background-image: url(assets/images/icon_line.svg);
+						background-image: url(assets/images/grin-stars.svg);
 						background-repeat: no-repeat;
 						width: 20px;
 						height: 20px;
 					}
+				}
+
+		.line_button {
+			background-color: var(--line-color);
+			line-height: 1.2;
+			font-weight: 700;
+			letter-spacing: 0.05em;
+
+				&::before {
+					content: "";
+					background-image: url(assets/images/icon_line.svg);
+					background-repeat: no-repeat;
+					width: 20px;
+					height: 20px;
+				}
+		}
+				}
+
+				.contact_tel {
+					display: grid;
+					gap: 7px;
+					.tel {
+						display: flex;
+						align-items: center;
+						gap: 4px;
+					font-size: calc(32 * var(--rem-ratio));
+					font-weight: 700;
+					font-family: var(--font-roboto);
+					line-height: 1;
+
+						&::before {
+							content: "";
+							width: 24px;
+							height: 24px;
+							background-image: url(assets/images/icon_tel.svg);
+							background-repeat: no-repeat;
+						}
+
+					}
+				}
+
+						p {
+							font-size: calc(14 * var(--rem-ratio));
+							text-align: center;
+							letter-spacing: 0.05em;
+						}
+				}
+
+		}
 
 		.g_menu {
+			width: 100%;
 			background-color: var(--accent-color);
 			.g_list {
+				display: flex;
+				justify-content: space-between;
+				max-width: 1200px;
+				margin-inline: auto;
+				padding: 20px 0;
 				.g_item {
 					.g_link {
+						display: block;
 						color: var(--base-color);
+						font-size: calc(18 * var(--rem-ratio));
+                        font-weight: 700;
+                        line-height: 1.4;
+                        letter-spacing: 0.1em;
+                        padding: 12px 0;
 					}
 				}
 			}
 		}
 	}
+
 
 
 }
