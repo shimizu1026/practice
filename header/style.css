@@ -89,13 +89,13 @@ ul {
 					background-color: var(--accent-color);
 					text-align: center;
 
-					&::before {
+					/* &::before {
 						content: "";
 						background-image: url(assets/images/grin-stars.svg);
 						background-repeat: no-repeat;
 						width: 20px;
 						height: 20px;
-					}
+					} */
 				}
 
 				.contact {
@@ -111,13 +111,13 @@ ul {
 					font-family: var(--font-roboto);
 					line-height: 1;
 
-						&::before {
+						/* &::before {
 							content: "";
 							width: 24px;
 							height: 24px;
 							background-image: url(assets/images/icon_tel.svg);
 							background-repeat: no-repeat;
-						}
+						} */
 
 					}
 						p {
@@ -180,13 +180,13 @@ ul {
 					background-color: var(--accent-color);
 					text-align: center;
 
-					&::before {
+					/* &::before {
 						content: "";
 						background-image: url(assets/images/grin-stars.svg);
 						background-repeat: no-repeat;
 						width: 20px;
 						height: 20px;
-					}
+					} */
 				}
 
 		.line_button {
@@ -195,13 +195,13 @@ ul {
 			font-weight: 700;
 			letter-spacing: 0.05em;
 
-				&::before {
+				/* &::before {
 					content: "";
 					background-image: url(assets/images/icon_line.svg);
 					background-repeat: no-repeat;
 					width: 20px;
 					height: 20px;
-				}
+				} */
 		}
 				}
 
@@ -217,13 +217,13 @@ ul {
 					font-family: var(--font-roboto);
 					line-height: 1;
 
-						&::before {
+						/* &::before {
 							content: "";
 							width: 24px;
 							height: 24px;
 							background-image: url(assets/images/icon_tel.svg);
 							background-repeat: no-repeat;
-						}
+						} */
 
 					}
 				}
