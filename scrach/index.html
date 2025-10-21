@@ -31,113 +31,87 @@
     <div id="background-container"></div>
     <canvas id="scratch-canvas"></canvas>
 
-    <script>
-        // ページが読み込まれたら処理を開始
-        window.onload = function() {
+<script>
+    // ページが読み込まれたら処理を開始
+    window.addEventListener('load', function() {
+        console.log("1. ページが読み込まれました (window.load)");
+
+        // --- 1. 要素の取得 ---
+        const canvas = document.getElementById('scratch-canvas');
+        const ctx = canvas.getContext('2d');
+        console.log("2. キャンバスとコンテキストを取得しました。");
+
+
+        // --- 3. キャンバスの初期設定 ---
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        console.log("3. キャンバスを黒で塗りつぶしました。");
+
+        // --- 4. ジグザグアニメーションの準備 ---
+        const brushSize = 100; // 削る幅（線の太さ）
+        const speed = 25; 
+        let currentX = 0;
+        let currentY = brushSize; 
+        let direction = 1;
+        
+        let lastX = 0;
+        let lastY = brushSize;
+
+        // --- 5. ★変更点: 「線」で削る処理 ---
+        function drawSmoothLine() {
+            // 「削る」モードに設定
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.lineWidth = brushSize; // 線の太さ
+            ctx.lineCap = 'round'; // 線の端を丸くする
             
-            // --- 1. 要素の取得とキャンバスの初期設定 (前回と同じ) ---
-            const canvas = document.getElementById('scratch-canvas');
-            const ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY); // 前回の位置
+            ctx.lineTo(currentX, currentY); // 現在の位置
+            ctx.stroke(); // 線を引く（削る）
+
+            // 現在位置を「前回の位置」として保存
+            lastX = currentX;
+            lastY = currentY; 
+        }
+
+        // --- 6. ジグザグアニメーションの実行 ---
+        function autoZigzagScratch() {
             
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            // 1. ★変更点: 「線」で削る関数を呼び出す
+            drawSmoothLine();
 
-            ctx.fillStyle = 'black';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // 2. X座標を更新
+            currentX += (speed * direction);
 
-            // --- 2. 削る処理の準備 ---
-
-            // 「削る」円の太さ（コテの半径）
-            // この値が「コテの幅」と「次の行に進む距離」の両方になります
-            const brushSize = 50; 
-
-            // 削る処理（描画処理）(前回と同じ)
-            function draw(x, y) {
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.beginPath(); 
-                ctx.arc(x, y, brushSize, 0, Math.PI * 2); 
-                ctx.fill(); 
+            // 3. 端に来たかの判定
+            if (currentX >= canvas.width - (brushSize / 2) && direction === 1) {
+                direction = -1; 
+                currentY += brushSize; 
+                lastY = currentY; // Y座標も更新
+            }
+            else if (currentX <= 0 + (brushSize / 2) && direction === -1) {
+                direction = 1; 
+                currentY += brushSize; 
+                lastY = currentY; // Y座標も更新
             }
 
-            // --- 3. ★変更点: ジグザグに削るアニメーション処理 ---
-
-            // 削る速度（1フレームでX軸方向にどれだけ進むか）
-            const speed = 25; // この数字を大きくすると速くなる
-
-            // 現在のコテの位置
-            let currentX = 0;
-            // Y座標は、コテの半径ぶん（brushSize）からスタート
-            let currentY = brushSize; 
-
-            // 進む方向 (1: 右へ, -1: 左へ)
-            let direction = 1;
-
-            function autoZigzagScratch() {
-                
-                // 1. 現在位置を削る
-                // draw(currentX, currentY); 
-                // ↓線で削ると隙間がなくなるのでこちらを推奨
-                drawSmoothLine();
-
-
-                // 2. X座標を更新
-                currentX += (speed * direction);
-
-                // 3. 端に来たかの判定
-                
-                // 右端に来た場合
-                if (currentX >= canvas.width - brushSize && direction === 1) {
-                    direction = -1; // 左向きに
-                    currentY += brushSize; // Y座標をコテの幅だけ下げる
-                }
-                // 左端に来た場合
-                else if (currentX <= 0 + brushSize && direction === -1) {
-                    direction = 1; // 右向きに
-                    currentY += brushSize; // Y座標をコテの幅だけ下げる
-                }
-
-                // 4. 終了判定 (Y座標が画面下を超えたら)
-                if (currentY > canvas.height) {
-                    // (お好みで) 最後に全部削る場合
-                    // ctx.globalCompositeOperation = 'destination-out';
-                    // ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    return; // アニメーション停止
-                }
-                
-                // 5. 次のフレームを呼ぶ
-                requestAnimationFrame(autoZigzagScratch);
+            // 4. 終了判定
+            if (currentY > canvas.height + brushSize) {
+                console.log("7. アニメーションが完了しました。");
+                return; // アニメーション停止
             }
+            
+            // 5. 次のフレームを呼ぶ
+            requestAnimationFrame(autoZigzagScratch);
+        }
 
-            // ★(おまけ) 点ではなく「線」で削る処理
-            // 点(arc)で削ると、speedが速い場合に点が飛んで隙間ができてしまいます。
-            // そこで、前回位置から現在位置まで「線」で削るように改良します。
-            let lastX = 0;
-            let lastY = brushSize;
-
-            function drawSmoothLine() {
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.lineWidth = brushSize * 2; // 円の直径ぶんの太さ
-                ctx.lineCap = 'round'; // 線の端を丸くする
-                
-                ctx.beginPath();
-                ctx.moveTo(lastX, lastY); // 前回の位置
-                ctx.lineTo(currentX, currentY); // 現在の位置
-                ctx.stroke(); // 線を引く（削る）
-
-                // 現在位置を「前回の位置」として保存
-                lastX = currentX;
-                lastY = currentY; // Yは端に来た時しか変わらないが、念のため更新
-                if (currentX >= canvas.width - brushSize && direction === 1) {
-                    lastY = currentY + brushSize;
-                } else if (currentX <= 0 + brushSize && direction === -1) {
-                    lastY = currentY + brushSize;
-                }
-            }
-
-
-            // --- 4. アニメーションを開始 ---
-            autoZigzagScratch();
-        };
-    </script>
+        // アニメーションを開始
+        console.log("6. アニメーションを開始します。");
+        autoZigzagScratch();
+        
+    }, false); 
+</script>
     </body>
 </html>
