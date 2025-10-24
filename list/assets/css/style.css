@@ -36,14 +36,10 @@ ul {
 	.essay_list {
 		width: 100%;
 
-		.essay_list_inner {
-
-
-
-
+		.essay_item {
 			.content {
-							display: flex;
-			gap: 52px;
+					display: flex;
+					gap: 52px;
 
 			img, .right {
 				flex: 1;
