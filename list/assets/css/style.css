@@ -48,22 +48,44 @@ ul {
 				font-size: calc(28 * var(--rem-ratio));
 
 				.heading {
-					justify-content: space-around;
-    				align-items: center;
-					.title_underline {
-					color: var(--base-color);
-					font-size: calc(28 * var(--rem-ratio));
-					line-height: 1.6;
+					width: 100%;
+    				position: relative;
 
-					&:before {
+					&::after {
+					.deco {
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: -1;
+						color: var(--accent-color);
+						font-size: calc(113 * var(--rem-ratio));
+						font-family: var(--font-libre);
+						font-style: italic;
+					}
+					}
+
+					.title_underline {
+						display: grid;
+    					gap: 14px;
+						color: var(--base-color);
+						font-size: calc(28 * var(--rem-ratio));
+						line-height: 1.6;
+
+					&::after {
+						display: block;
 						content: "";
-						width: 300px;
+						width: 100%;
 						height: 1px;
 						background-color: var(--base-color);
+						
 					}
 					}
 
 					.deco {
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: -1;
 						color: var(--accent-color);
 						font-size: calc(113 * var(--rem-ratio));
 						font-family: var(--font-libre);
