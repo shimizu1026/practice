@@ -1,0 +1,97 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
+
+
+:root {
+    --base-color:#8C738E;
+    --accent-color:#EEE6F0;
+	--font-color: #614E65;
+	--text-color: #3B3B3B;
+	--small-text-color: #5C4E62;
+	--font-zenkaku: "Zen Kaku Gothic New", sans-serif;
+	--font-libre: "Libre Baskerville", sans-serif;
+	--base-font-size: 16;
+	--rem-ratio: calc(1rem / var(--base-font-size));
+}
+
+body {
+	color: var(--font-color);
+	font-size: calc(16 * var(--rem-ratio));
+	font-family: var(--font-zenkaku);
+	font-weight: 400;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+.section {
+    max-width: 1020px;
+	width: 100%;
+	margin-inline: auto;
+    padding: 100px 0;
+
+	.essay_list {
+		width: 100%;
+
+		.essay_list_inner {
+
+
+
+
+			.content {
+							display: flex;
+			gap: 52px;
+
+			img, .right {
+				flex: 1;
+			}
+			.right {
+				font-size: calc(28 * var(--rem-ratio));
+
+				.heading {
+					justify-content: space-around;
+    				align-items: center;
+					.title_underline {
+					color: var(--base-color);
+					font-size: calc(28 * var(--rem-ratio));
+					line-height: 1.6;
+
+					&:before {
+						content: "";
+						width: 300px;
+						height: 1px;
+						background-color: var(--base-color);
+					}
+					}
+
+					.deco {
+						color: var(--accent-color);
+						font-size: calc(113 * var(--rem-ratio));
+						font-family: var(--font-libre);
+						font-style: italic;
+					}
+				}
+
+				.main_text {
+					font-size: calc(20 * var(--rem-ratio));
+					line-height: 1.6;
+					color: var(--text-color);
+				}
+
+				.sub_text {
+					font-size: calc(15 * var(--rem-ratio));
+					line-height: 1.6;
+					color: var(--small-text-color);
+				}
+			}
+			}
+
+
+		}
+	}
+
+
+}
