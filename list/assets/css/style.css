@@ -14,6 +14,8 @@
 	--rem-ratio: calc(1rem / var(--base-font-size));
 }
 
+
+
 body {
 	color: var(--font-color);
 	font-size: calc(16 * var(--rem-ratio));
@@ -27,19 +29,58 @@ ul {
     }
 }
 
+img {
+	width: 100%;
+
+}
+
 .section {
+	display: grid;
+	gap: 80px;
     max-width: 1020px;
 	width: 100%;
 	margin-inline: auto;
     padding: 100px 0;
-
+		@media (max-width:600px) {
+			flex-direction: column-reverse;
+			padding: 100px 20px;
+		}
 	.essay_list {
 		width: 100%;
 
 		.essay_item {
+			.spring {
+				img {
+					aspect-ratio: 484 / 284;
+				}
+			}
+
+			.summer {
+				img {
+					aspect-ratio: 484 / 340;
+				}
+			}
+			.autumn {
+				img {
+					aspect-ratio: 484 / 452;
+				}
+			}
+			.winter {
+				img {
+					aspect-ratio: 1 / 1;
+				}
+			}
 			.content {
 					display: flex;
 					gap: 52px;
+
+				@media (max-width:600px) {
+					flex-direction: column-reverse;
+				}
+
+				img {
+					object-fit: cover;
+				}
 
 			img, .right {
 				flex: 1;
@@ -50,6 +91,7 @@ ul {
 				.heading {
 					width: 100%;
     				position: relative;
+					padding-top: 30px;
 
 					&::after {
 					.deco {
@@ -70,6 +112,9 @@ ul {
 						color: var(--base-color);
 						font-size: calc(28 * var(--rem-ratio));
 						line-height: 1.6;
+						font-weight: bold;
+						letter-spacing: -0.02em;
+						padding-bottom: 40px;
 
 					&::after {
 						display: block;
@@ -83,15 +128,21 @@ ul {
 
 					.deco {
 						position: absolute;
-						top: 0;
+						top: -34px;
 						right: 0;
 						z-index: -1;
 						color: var(--accent-color);
 						font-size: calc(113 * var(--rem-ratio));
 						font-family: var(--font-libre);
 						font-style: italic;
+						line-height: 1.6;
+
 					}
 				}
+
+				.text_container {
+					display: grid;
+					gap: 16px;
 
 				.main_text {
 					font-size: calc(20 * var(--rem-ratio));
@@ -104,9 +155,14 @@ ul {
 					line-height: 1.6;
 					color: var(--small-text-color);
 				}
+				}
+
 			}
+			.content:nth-child(even) {
+				flex-direction: row-reverse;
 			}
 
+			}
 
 		}
 	}
