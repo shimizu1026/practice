@@ -93,7 +93,7 @@ img {
     				position: relative;
 					padding-top: 30px;
 
-					&::after {
+					/* &::after {
 					.deco {
 						position: absolute;
 						top: 0;
@@ -104,7 +104,7 @@ img {
 						font-family: var(--font-libre);
 						font-style: italic;
 					}
-					}
+					} */
 
 					.title_underline {
 						display: grid;
@@ -128,7 +128,7 @@ img {
 
 					.deco {
 						position: absolute;
-						top: -34px;
+						top: -32px;
 						right: 0;
 						z-index: -1;
 						color: var(--accent-color);
