@@ -156,16 +156,13 @@ img {
 					color: var(--small-text-color);
 				}
 				}
-
 			}
-			.content:nth-child(even) {
-				flex-direction: row-reverse;
-			}
-
 			}
 
 		}
 	}
-
+	.essay_list:nth-child(even) .content {
+    flex-direction: row-reverse;
+}
 
 }
