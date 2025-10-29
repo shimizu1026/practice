@@ -1,0 +1,15 @@
+
+.img_box {
+	overflow: hidden;
+
+	.prlximg_viewport {
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		/* .prlximg__target {
+
+		} */
+	}
+}
