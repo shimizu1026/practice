@@ -1,27 +1,4 @@
-/* style.css */
-
-/* ---------------------------------------------------- */
-/* 背景コンテナの設定 */
-/* ---------------------------------------------------- */
-.accordion-bg-container {
-    position: fixed; /* 画面に固定 */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1; /* アコーディオン本体の背面に配置 */
-}
-
-.accordion-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 画像が切れないようにコンテナを覆う */
-    opacity: 0; /* 初期状態ではすべて非表示 */
-    transition: opacity 0.5s ease; /* フェードアニメーション用 */
-}
+/* style.css (コンテンツ内画像の調整とアコーディオンの基本設定) */
 
 /* ---------------------------------------------------- */
 /* アコーディオン本体の設定 */
@@ -30,15 +7,17 @@
     width: 80%;
     max-width: 600px;
     margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.9); /* 背景画像を透かしつつ文字を見やすく */
+    /* background-color: #fff; 
+    border: 1px solid #ccc; */
     border-radius: 8px;
     overflow: hidden;
 }
 
 .accordion-header {
     padding: 15px 20px;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     cursor: pointer;
+    /* background-color: #f7f7f7; */
 }
 
 .accordion-content {
@@ -46,10 +25,22 @@
     height: 0;
     overflow: hidden;
     padding: 0 20px; 
-    transition: height 0.4s ease, padding 0.4s ease; /* 開閉アニメーション用 */
 }
 
-/* 開いている項目用のクラス */
-.accordion-item.open .accordion-content {
-    /* JSで高さを計算して設定するため、ここでは設定しません */
+.accordion-item {
+	background-image: url(assets/images/spring.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center center;
+}
+
+/* ---------------------------------------------------- */
+/* コンテンツ内画像の調整 */
+/* ---------------------------------------------------- */
+.accordion-content .content-img {
+    max-width: 100%; /* コンテンツの幅に合わせて縮小 */
+    height: auto;
+    display: block; /* ブロック要素にしてレイアウトを崩さないように */
+    margin-bottom: 15px; /* 画像の下に余白 */
+    border-radius: 4px;
 }
