@@ -1,15 +1,27 @@
-
+/* style.css (修正後) */
 .img_box {
-	overflow: hidden;
+    /* overflow: hidden; は残します */
+    overflow: hidden; 
+    
+    /* img_box (トリガー) の高さを維持 */
+    height: 50vh; 
+    width: 100%;
+}
 
-	.prlximg_viewport {
-		height: 100%;
-		overflow: hidden;
-		position: relative;
-		width: 100%;
+.prlximg_viewport {
+    /* 変更なし */
+    height: 100%;
+    position: relative; 
+    width: 100%;
+}
 
-		/* .prlximg__target {
+.prlximg__target {
+    /* ★修正点 1: heightを100%にして、親要素とサイズを合わせる */
+    height: 100%; 
+    width: 100%;
+    object-fit: cover; 
 
-		} */
-	}
+    /* ★修正点 2: absoluteを削除して、通常の配置に戻す */
+    position: relative; /* absoluteを削除し、必要であればrelativeに */
+    top: auto; 
 }
