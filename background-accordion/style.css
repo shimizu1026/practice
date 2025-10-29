@@ -1,0 +1,55 @@
+/* style.css */
+
+/* ---------------------------------------------------- */
+/* 背景コンテナの設定 */
+/* ---------------------------------------------------- */
+.accordion-bg-container {
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* アコーディオン本体の背面に配置 */
+}
+
+.accordion-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像が切れないようにコンテナを覆う */
+    opacity: 0; /* 初期状態ではすべて非表示 */
+    transition: opacity 0.5s ease; /* フェードアニメーション用 */
+}
+
+/* ---------------------------------------------------- */
+/* アコーディオン本体の設定 */
+/* ---------------------------------------------------- */
+.accordion-wrapper {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* 背景画像を透かしつつ文字を見やすく */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.accordion-content {
+    /* 初期状態で非表示にし、高さを0にする */
+    height: 0;
+    overflow: hidden;
+    padding: 0 20px; 
+    transition: height 0.4s ease, padding 0.4s ease; /* 開閉アニメーション用 */
+}
+
+/* 開いている項目用のクラス */
+.accordion-item.open .accordion-content {
+    /* JSで高さを計算して設定するため、ここでは設定しません */
+}

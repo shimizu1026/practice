@@ -1,32 +1,97 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-	<script src="assets/js/script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パララックススクロール</title>
+<style>
+body {
+  margin: 0;
+  padding-top: 1000px;
+  padding-bottom: 1000px;
+  background: #f0f0f0;
+}
+
+.img_box {
+  width: 484px;
+  margin: 100px auto;
+  /* background: #fff; */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.prlximg_viewport {
+  width: 484px;
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+
+.prlximg__target {
+  width: 484px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+  position: relative;
+  top: -30px;
+}
+</style>
 </head>
+<body>
 
-<body style="padding-top: 1000px;">
+<div class="img_box">
+  <div class="prlximg_viewport">
+    <img src="assets/images/summer.jpg" 
+         alt="Summer landscape" 
+         class="prlximg__target" 
+         width="484" 
+         height="340" 
+         decoding="async"
+         loading="lazy">
+  </div>
+</div>
 
-	<div class="img_box">
-		<div class="prlximg_viewport">
-			<img src="assets/images/summer.jpg" alt="" class="prlximg__target" width="484" height="340" decoding="async"
-				loading="lazy">
-		</div>
-		<!-- /.prlximg_viewport -->
-	</div>
-	<div class="img_box">
-		<div class="prlximg_viewport">
-			<img src="assets/images/summer.jpg" alt="" class="prlximg__target" width="484" height="340" decoding="async"
-				loading="lazy">
-		</div>
-		<!-- /.prlximg_viewport -->
-	</div>
+<div class="img_box">
+  <div class="prlximg_viewport">
+    <img src="assets/images/summer.jpg" 
+         alt="Summer beach" 
+         class="prlximg__target" 
+         width="484" 
+         height="340" 
+         decoding="async"
+         loading="lazy">
+  </div>
+</div>
+
+<script>
+function parallaxScroll() {
+  const viewports = document.querySelectorAll('.prlximg_viewport');
+  
+  viewports.forEach(viewport => {
+    const img = viewport.querySelector('.prlximg__target');
+    const rect = viewport.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    
+    // ビューポート内に要素が入っているかチェック
+    if (rect.top < viewportHeight && rect.bottom > 0) {
+      // 画面中央を基準にした相対位置（-1 から 1）
+      const scrollProgress = (viewportHeight / 2 - rect.top - rect.height / 2) / (viewportHeight / 2);
+      
+      // パララックス効果の移動量（-30px から +30px）
+      const translateY = scrollProgress * 60;
+      
+      img.style.transform = `translateY(${translateY}px)`;
+    }
+  });
+}
+
+// スクロールイベントにリスナーを追加
+window.addEventListener('scroll', parallaxScroll);
+
+// 初期表示時にも実行
+parallaxScroll();
+</script>
+
 </body>
-
 </html>

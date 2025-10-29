@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="spacer">↓ 下にスクロールしてください ↓</div>
+	
+	<div class="img_section">
+		<div class="img_wrapper">
+			<img src="assets/images/spring.jpg" 
+			     alt="春の風景" 
+			     width="484" 
+			     height="284" 
+			     decoding="async" 
+			     loading="lazy" 
+			     class="slide_img">
+		</div>
+	</div>
+	<div class="img_section">
+		<div class="img_wrapper">
+			<img src="assets/images/spring.jpg" 
+			     alt="春の風景" 
+			     width="484" 
+			     height="284" 
+			     decoding="async" 
+			     loading="lazy" 
+			     class="slide_img">
+		</div>
+	</div>
+
+	<div class="spacer">スクロールアニメーション完了</div>
+
+	<script>
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+				}
+			});
+		}, {
+			threshold: 0.5
+		});
+
+		document.querySelectorAll('.img_wrapper').forEach(wrapper => {
+			observer.observe(wrapper);
+		});
+	</script>
+</body>
+</html>

@@ -20,9 +20,9 @@ gsap.utils.toArray(".img_box").forEach((container) => {
             scrollTrigger: {
                 trigger: container, 
                 start: "top bottom", 
-                end: "bottom top",    
-                scrub: true,          
-                markers: true,    
+                end: "bottom top",
+                scrub: true, 
+                markers: true, 
             }
         }
     );

@@ -17,7 +17,7 @@
 
 .prlximg__target {
     /* ★修正点 1: heightを100%にして、親要素とサイズを合わせる */
-    height: 100%; 
+    height: 140%; 
     width: 100%;
     object-fit: cover; 
 

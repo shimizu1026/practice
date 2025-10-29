@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像付きアコーディオン</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+<div class="accordion-bg-container">
+    <img src="assets/images/bg_summer.jpg" data-img="summer" class="accordion-bg" alt="背景画像1">
+    <img src="assets/images/bg_winter.jpg" data-img="winter" class="accordion-bg" alt="背景画像2">
+    <img src="assets/images/bg_autumn.jpg" data-img="autumn" class="accordion-bg" alt="背景画像3">
+</div>
+
+<div class="accordion-wrapper">
+    
+    <div class="accordion-item" data-img-target="summer">
+        <div class="accordion-header">
+            <h3>サマープラン</h3>
+        </div>
+        <div class="accordion-content">
+            <p>夏限定の特別なプランです。</p>
+        </div>
+    </div>
+
+    <div class="accordion-item" data-img-target="winter">
+        <div class="accordion-header">
+            <h3>ウィンタープラン</h3>
+        </div>
+        <div class="accordion-content">
+            <p>雪景色を楽しむためのプランです。</p>
+        </div>
+    </div>
+    
+    <div class="accordion-item" data-img-target="autumn">
+        <div class="accordion-header">
+            <h3>オータムプラン</h3>
+        </div>
+        <div class="accordion-content">
+            <p>紅葉と味覚狩りを体験できるプランです。</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
