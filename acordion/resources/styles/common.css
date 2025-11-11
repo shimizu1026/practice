@@ -1,0 +1,604 @@
+:root {
+    --main-color:#FFC000;
+    --color-point:#FFC617;
+    --base-color-white:#FFFFFF;
+    --font-color:#3F4B4D;
+    --base-color:#3F4B4D;
+    --font-family-Akshar: "Akshar", sans-serif;
+    --font-family-NotoSans:"Noto Sans JP", sans-serif;
+    --font-family-kakugo:"hiragino-kaku-gothic-pron", "ヒラギノ角ゴ ProN", sans-serif;
+    --font-familiy-NotoSelif: "Noto Serif JP", serif;
+	--text-letter-spacing: 0.05em;
+	--ttl-letter-spacing: 0.08em;
+	--text-line-hight: 1.8;
+	--ttl-line-hight: 1.5;
+}
+
+/* 共通設定 */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+.Header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(250, 250, 250, .9);
+    padding: 10px 3%;
+}
+
+h1 {
+    aspect-ratio: 296/64;
+}
+
+.Header.change-color {
+    background-color: rgba(250, 250, 250, .9);
+    /* box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1); */
+  }
+
+
+/* ドロップダウンメニュー */
+.DropdownMenu {
+    color: var(--base-color);
+    font-family: var(--font-family-NotoSans);
+}
+
+@media screen and (max-width: 786px) {
+    .DropdownMenu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 20;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background-color: var(--base-color-white);
+        transform: translateY(-100%);
+        transition: all 0.6s;
+        padding-right: 0;
+        text-align: center;
+    }
+}
+
+.Menu-List {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 786px) {
+    .Menu-List {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 32px; */
+    }
+    }
+
+.Menu-Item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+@media screen and (max-width: 786px) {
+.Menu-Item {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    }
+}
+
+.Menu-Item:first-child:before {
+    height: 18px;
+    content: "";
+    display: block;
+    border-left: 1px solid var(--base-color);
+}
+
+.Menu-Item::after {
+    height: 18px;
+    content: "";
+    display: block;
+    border-left: 1px solid var(--base-color);
+}
+
+@media screen and (max-width: 786px) {
+    .Menu-Item:first-child:before,
+    .Menu-Item::after {
+        border: 0;
+        }
+    }
+
+.Menu-Item:hover {
+    color: var(--main-color);
+    /* color: var(--base-color-white);
+    background-color: var(--base-color); */
+  }
+
+@media (any-hover: hover) {
+    .Menu-Item:hover {
+        color: var(--main-color);
+      }
+}
+
+.MenuIsOpen {
+    transform: translateX(0);
+}
+
+/* .Menu-Item:first-child {
+    border-left: 1px solid var(--base-color);
+}
+
+.Menu-Item:nth-child(2) {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid var(--base-color);
+} */
+
+/* @media screen and (max-width: 786px) {
+    .Menu-Item:first-child,
+    .Menu-Item:last-child {
+        border: none;
+      }
+    } */
+
+.Menu-Item-Label {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* @media screen and (max-width: 786px) {
+    .Menu-Item-Label::after {
+        width: 2px;
+        height: 5px;
+        background-color: var(--base-color);
+    }
+    } */
+
+.Menu-Item-Link {
+    display: block;
+    padding: 10px 40px;
+    /* border-right: 1px solid var(--base-color); */
+}
+
+@media screen and (max-width: 786px) {
+    .Menu-Item-Link {
+        border-right: none;
+    }
+    }
+
+.Padding {
+    display: block;
+    padding: 20px 40px;
+}
+
+@media screen and (max-width: 786px) {
+    .Padding {
+        padding: 0;
+    }
+    }
+
+.arrow_u {
+    position: relative;
+    display: inline-block;
+    padding-right: 50px;
+}
+
+@media screen and (max-width: 786px) {
+    .arrow_u {
+        padding-right: 0;
+    }
+    }
+
+.arrow_u::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-bottom: solid 2px var(--font-color);
+    border-right: solid 2px var(--font-color);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    right: 35px;
+    bottom: 0;
+    margin: auto;
+}
+
+@media screen and (max-width: 786px) {
+    .arrow_u::after {
+        right: -17px;
+    }
+}
+
+.SubMenu {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 100%;
+    color: var(--font-color);
+    /* background-color: rgba(255, 192, 0, .6); */
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 10;
+}
+
+
+.Menu-Item:hover .SubMenu {
+    visibility: visible;
+    transition: all 0.3s;
+    transform: translateY(10px); 
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+  }
+
+.SubMenu-Item {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: var(--font-color); */
+    color: var(--base-color-white);
+  }
+
+.SubMenu-Item a:hover {
+    color: var(--main-color);
+  }
+
+  .Menu-ItemIsOpen {
+    height: auto;
+  }
+
+.MenuIsClose {
+    transform: rotate(-45deg);
+}
+
+/* ハンバーガーメニュー */
+.Button {
+    display: none;
+}
+
+.Overlay {
+    display: none;
+}
+
+@media screen and (max-width: 786px) {
+    .Button {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 0;
+        z-index: 30;
+        height: 60px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 14px;
+    }
+    /* .ButtonIsOpen.Button {
+        transition: all 0.2s;
+        transform: rotate(360deg);
+    } */
+    .Button-LineTop,
+    .Button-LineMedium,
+    .Button-LineBottom{
+        display: block;
+    }
+    .Button-LineTop {
+        position: absolute;
+        top: 15px;
+        width: 40px;
+        height: 3px;
+        background-color: var(--base-color);
+        border-radius: 3px;
+        transition: all 0.2s;
+    }
+    .ButtonIsOpen .Button-LineTop {
+        transform: translateY(13.5px) rotate(-45deg);
+      }
+    .Button-LineMedium {
+        width: 40px;
+        height: 3px;
+        background-color: var(--base-color);
+        border-radius: 3px;
+        transition: all 0.2s;
+    }
+
+    .ButtonIsOpen .Button-LineMedium {
+        transform: translateY(0) rotate(45deg);
+      }
+    .Button-LineBottom {
+        position: absolute;
+        bottom: 15px;
+        width: 40px;
+        height: 3px;
+        background-color: var(--base-color);
+        border-radius: 3px;
+        transition: all 0.2s;
+    }
+    .ButtonIsOpen .Button-LineBottom {
+        opacity: 0;
+      }
+    .Overlay {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    .OverlayIsOpen {
+        visibility: visible;
+        opacity: 1;
+    }
+    .IsScrollAllowed {
+        overflow: hidden
+      }
+
+    .Button-Menu {
+        position: absolute;
+        bottom: 8px;
+        left: -1px;
+        height: 3px;
+        width: 100%;
+        font-size: 15px;
+        font-family: var(--font-family-Akshar);
+        letter-spacing: 0.08em;
+    }
+    .Button-Menu.Active {
+        display: none;
+    }
+    .Button-Close {
+    display: none;
+    }
+    .Button-Close.Active {
+    position: absolute;
+    bottom: -7px;
+    left: 11px;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-family: var(--font-family-Akshar);
+    letter-spacing: 0.08em;
+    }
+}
+
+/* animation */
+.FadeUp {
+    transition:.3s all;
+}
+
+.FadeUp:hover {
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+	transform: translateY(-1.5em);
+    transition-property: all;
+    transition-duration: .3s;
+    transition:.3s all;
+}
+
+/* footer */
+.Footer {
+    display: block;
+    background-color: var(--main-color);
+    padding: 30px 20px 0;
+}
+
+@media screen and (max-width: 786px) {
+    .Footer {
+        display: none;
+    }
+}
+
+.Footer-Inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    column-gap: 64px;
+}
+
+.Footer-Logo {
+    color: var(--base-color-white);
+    font-size: 18px;
+    font-family: var(--font-family-kakugo);
+    background-color: #ffce38;
+    border: 1px solid #fff;
+    width: 170px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Footer-Left {
+    flex: 0.5;
+}
+
+.Footer-Left p {
+    color: var(--font-color);
+    font-family: var(--font-family-kakugo);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 22px;
+}
+
+.Footer-Right {
+    flex: 2;
+    color: var(--font-color);
+}
+
+.Company-Name {
+    font-family: var(--font-family-kakugo);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+}
+
+
+.Top-Btn {
+    position: fixed;
+    bottom: 40px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    color: var(--base-color);
+    font-family: var(--font-family-Akshar);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    z-index: 90;
+}
+
+.Top-Btn::before {
+    position: absolute;
+    top: 0;
+    right: 47%;
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--base-color);
+    border-left: 0;
+    border-bottom: 0;
+    transform: translateY(25%) rotate(-45deg);
+}
+
+
+/* .Top-Btn:hover {
+    color: var(--base-color-white);
+    background-color: var(--base-color);
+} */
+
+/* .Top-Btn:hover::before {
+    border: 2px solid var(--base-color-white);
+    border-left: 0;
+    border-bottom: 0;
+} */
+
+.Footer-Nav {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 36px;
+    padding-bottom: 30px;
+}
+
+
+.Txt-Inner {
+    /* flex: 1.5; */
+    font-size: 14px;
+    line-height: 1.7;
+    min-width: 120px;
+    padding-bottom: 30px;
+    & a {
+        margin-left: 35px;
+        padding: 8px;
+    }
+    & img {
+        min-width: 25px;
+        min-height: 22px;
+    }
+    & img:hover {
+        transition: all 0.2s;
+        opacity: .5;
+        /* transform: scale(1.2); */
+    }
+  }
+
+@media screen and (max-width: 980px) {
+    .Txt-Inner {
+        flex: 1;
+        padding-bottom: 20px;
+        & a {
+            width: 42px;
+            margin-left: 0;
+        }
+      }
+}
+
+.Footer-Address {
+    display: flex;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 980px) {
+    .Footer-Address {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+.Mt36 {
+    margin-top: 28px;
+}
+
+.Nav-Inner {
+    flex: 1;
+    line-height: 1.7;
+    min-width: 178px;
+}
+
+@media screen and (max-width: 786px) {
+    .Nav-Inner {
+        flex: 1;
+        line-height: 1.7;
+    }
+}
+
+.Footer-Nav-Item {
+    font-size: 16px;
+    font-family: var(--font-family-kakugo);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.Nav-Sub-Item {
+    list-style: disc;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-left: 20px;
+}
+
+.Footer-Nav-Item:hover,
+.Nav-Sub-Item:hover {
+    color: var(--base-color-white);
+}
+
+@media (any-hover: hover) {
+    .Footer-Nav-Item:hover,
+    .Nav-Sub-Item:hover {
+        color: var(--base-color-white);
+    }
+}
+
+.Copyright {
+    display: block;
+    width: 100%;
+    background-color: var(--base-color);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--base-color-white);
+    font-family: var(--font-family-kakugo);
+    text-align: center;
+    letter-spacing: 0.02em;
+    padding: 15px 0;
+}

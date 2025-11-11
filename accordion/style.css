@@ -1,0 +1,175 @@
+/* --- アコーディオンの基本設定 --- */
+.accordion {
+  /* アニメーションの時間（300ミリ秒）をCSS変数として定義 */
+  --_duration: 300ms;
+  
+  background-color: #fff;
+
+/* --- 開閉するコンテンツ部分（最新のCSS機能） --- */
+/* * ::details-content は <details> の中身（<summary>以外）を指します。
+ * これを使ってアニメーションを実現しています。
+ */
+  &::details-content {
+  content-visibility: unset;
+  /* * display: grid; とほぼ同じ意味です。
+   * これと grid-template-rows を組み合わせて高さをアニメーションさせます。
+   */
+  display: block grid; 
+  
+  /* アニメーションの設定：grid-template-rows が 300ms かけて変化する */
+  @media (prefers-reduced-motion: no-preference) {
+    transition-duration: var(--_duration);
+    transition-property: grid-template-rows;
+  }
+}
+/* --- 閉じている時のコンテンツ --- */
+/* :not([open]) で「open属性がない時（閉じている時）」を指定 */
+&:not([open])::details-content {
+  /* グリッドの行の高さを 0 にする（中身が見えなくなる）*/
+  grid-template-rows: 0fr;
+}
+/* --- 閉じている時のコンテンツ --- */
+/* :not([open]) で「open属性がない時（閉じている時）」を指定 */
+&[open] { 
+    /* ::details-content は details.accordion[open] の中身を参照 */
+    &::details-content { 
+      grid-template-rows: 0fr;
+    }
+/* --- 開いている時のコンテンツ --- */
+&::details-content {
+  /* グリッドの行の高さを 1fr（中身の高さ分）にする */
+  grid-template-rows: 1fr;
+}
+  }
+}
+
+/* --- アニメーションのためのラッパー --- */
+.content_wrapper {
+  /* アニメーション中に中身がはみ出さないように隠す */
+  overflow: hidden;
+}
+
+/* --- 見出し（クリックする部分） --- */
+.summary {
+  /* --- 色の変数を定義 --- */
+  --_foreground-default: #f7f7f7; /* 通常時の文字色 */
+  --_background-default: #c41e3a; /* 通常時の背景色 (赤系) */
+
+  /* * oklch() は最新の色指定方法です。
+   *「--_background-default の色を基準(from)に、輝度(l)を 0.1 下げる（暗くする）」
+   * という複雑な指定ができます。
+   */
+  --_background-interactive: oklch(
+    from var(--_background-default) calc(l - 0.1) c h
+  );
+  --_background-opened: oklch(
+    from var(--_background-default) calc(l - 0.2) c h
+  );
+
+  /* --- レイアウト --- */
+  display: block grid; /* display: grid; とほぼ同じ */
+  /*「見出し本体 .」「アイコン icon」の2カラム構成 */
+  grid-template: ". icon" / 1fr max-content; 
+  column-gap: 1em;
+  align-items: center;
+  padding-block: 1lh; /* 上下の余白（1行分の高さ） */
+  padding-inline: 3cap; /* 左右の余白 */
+  
+  /* --- デザイン --- */
+  background-color: var(--_background-default);
+  color: var(--_foreground-default);
+  letter-spacing: 0.1em;
+  cursor: pointer; /* カーソルを手の形に */
+  
+  /* 色が変わる時のアニメーション設定 */
+  transition-duration: var(--_duration);
+  transition-property: background-color, color;
+
+  /* --- 見出しの「＋」アイコン（横棒） --- */
+&::before {
+  content: "";
+  grid-area: icon; /* グリッドの "icon" の位置に配置 */
+  inline-size: 1em; /* 幅 */
+  border-block-end: 1px solid; /* 下線（実際には横棒） */
+  writing-mode: initial;
+}
+/* --- 見出しの「＋」アイコン（縦棒） --- */
+&::after {
+  content: "";
+  grid-area: icon; /* グリッドの "icon" の位置に配置 */
+  inline-size: 1em; /* 幅 */
+  border-block-end: 1px solid; /* 下線（横棒）を作り… */
+  rotate: 90deg; /* …それを90度回転させて縦棒にする */
+}
+&:focus-visible {
+  background-color: var(--_background-interactive); /* 少し暗い背景色に */
+  color: var(--_foreground-interactive);
+}
+/* --- マウスが乗った時（PCのみ） --- */
+@media (any-hover: hover) {
+  &:hover {
+    background-color: var(--_background-interactive); /* 少し暗い背景色に */
+    color: var(--_foreground-interactive);
+  }
+}
+}
+
+/* --- アコーディオンが開いている時の見出し --- */
+details[open] > summary.summary {
+  background-color: var(--_background-opened); /* さらに暗い背景色に */
+  color: var(--_foreground-opened);
+}
+
+/* --- アコーディオンが開いている時の「＋」アイコン（縦棒を消す）--- */
+/* * :is([open] > &) は、元のコードではネストされていましたが、
+ * 「開いている details の中の summary」を指します。
+ */
+details[open] > summary.summary::after {
+  /* 縦棒を透明にする（「＋」が「ー」になる） */
+  opacity: 0;
+}
+
+/* --- 実際の中身のスタイル --- */
+.content {
+  padding: 1.5em; /* 内側の余白 */
+}
+
+
+/* --- ページ全体の背景とフォント設定 --- */
+:root {
+  --_background: #fcfcfc;
+  --_grid-color: #efefef;
+
+  /* * linear-gradient を複数重ねて、方眼紙のような
+   * グリッド背景を描画しています。
+   */
+  background-image: linear-gradient(var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(90deg, var(--_grid-color) 2px, transparent 2px),
+    linear-gradient(var(--_grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--_grid-color) 1px, var(--_background) 1px);
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.618;
+}
+
+body {
+  display: block grid; /* display: grid; とほぼ同じ */
+  gap: 40px; /* アイテム間の隙間 */
+  align-content: center; /* 中央寄せ */
+  padding: 20px;
+  
+  /* * clamp() でフォントサイズを可変にしています。
+   * - 最小: 0.75rem
+   * - 基本: 0.705rem + 0.23svi (画面幅に応じて変化)
+   * - 最大: 0.875rem
+   */
+  font-size: clamp(0.75rem, 0.705rem + 0.23svi, 0.875rem);
+}
+
+/* body 直下の要素のスタイル */
+body > * {
+  inline-size: min(600px, 100%); /* 幅を最大600px、画面幅がそれ以下なら100%に */
+  justify-self: center; /* グリッド内で中央に配置 */
+}
