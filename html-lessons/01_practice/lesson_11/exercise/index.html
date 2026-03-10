@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Recruit | Dummy Creations</title>
+  </head>
+  <body>
+    <h1>Recruit</h1>
+
+    <h2>エントリーフォーム</h2>
+    <form action="receive.php" method="post">
+      <p>
+        お名前（必須項目）
+        <input type="text" name="name" placeholder="架空 太郎" autocomplete="name" required>
+      </p>
+      <p>
+        フリガナ（必須項目）
+        <input type="text" name="furigana" placeholder="カクウ タロウ" required>
+      </p>
+      <p>
+        メールアドレス（必須項目）
+        <input type="email" name="email" placeholder="taro@example.com" autocomplete="email" inputmode="email" required>
+      </p>
+      <p>
+        電話番号（必須項目）
+        <input type="tel" name="tel" placeholder="03-1234-5678" pattern="^(\+?\d{1,4})?-?\d{1,4}-?\d{3,4}-?\d{3,4}$" title="電話番号は「03-1234-5678」や「0312345678」または、国際番号をつけた「+81-3-1234-5678」や「+81312345678」の形式で入力して下さい" autocomplete="tel" inputmode="tel" required>
+      </p>
+      <p>
+        ポートフォリオサイトのURL
+        <input type="url" name="portfolio" placeholder="https://example.com" autocomplete="url" inputmode="url">
+      </p>
+
+      <p>希望職種（複数選択可能）</p>
+      <ul>
+        <li>
+          <input type="checkbox" name="jobs[]" value="Webディレクター"> Webディレクター
+        </li>
+        <li>
+          <input type="checkbox" name="jobs[]" value="Webデザイナー"> Webデザイナー
+        </li>
+        <li>
+          <input type="checkbox" name="jobs[]" value="フロントエンドエンジニア"> フロントエンドエンジニア
+        </li>
+      </ul>
+
+      <p><button>応募する</button></p>
+    </form>
+  </body>
+</html>

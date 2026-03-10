@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>新規登録 | Dummy Cafe</title>
+  </head>
+  <body>
+    <form action="receive.php" method="post">
+      <p>
+        パスワードを8文字以上24文字以下の半角英数字で入力して下さい。<br>
+        <input type="password" name="password" minlength="8" maxlength="24" pattern="^[0-9A-Za-z]+$" title="8文字以上24文字以下の半角英数字で入力" autocomplete="new-password" required>
+      </p>
+      <p><input type="submit" value="登録"></p>
+    </form>
+  </body>
+</html>

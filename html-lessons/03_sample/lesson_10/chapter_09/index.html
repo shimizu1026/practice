@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>アンケート | Dummy Cafe</title>
+  </head>
+  <body>
+    <form action="receive.php" method="post">
+      <p>お名前(必須項目): <input type="text" name="name" placeholder="架空 太郎" autocomplete="name" required></p>
+      <p>
+        Dummy Cafe は如何ですか？:
+        <input type="radio" name="review" value="最高"> 最高
+        <input type="radio" name="review" value="普通"> 普通
+        <input type="radio" name="review" value="最低"> 最低
+      </p>
+      <p><button>送信する</button></p>
+    </form>
+  </body>
+</html>

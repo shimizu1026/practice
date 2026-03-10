@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Recruit | Dummy Creations</title>
+  </head>
+  <body>
+    <h1>Recruit</h1>
+
+    <h2>エントリーフォーム</h2>
+    <form action="receive.php" method="post">
+      <p>
+        <label>
+          お名前（必須項目）
+          <input type="text" name="name" placeholder="架空 太郎" autocomplete="name" required>
+        </label>
+      </p>
+      <p>
+        <label>
+          フリガナ（必須項目）
+          <input type="text" name="furigana" placeholder="カクウ タロウ" required>
+        </label>
+      </p>
+      <p>
+        <label>
+          メールアドレス（必須項目）
+          <input type="email" name="email" placeholder="taro@example.com" autocomplete="email" inputmode="email" required>
+        </label>
+      </p>
+      <p>
+        <label>
+          電話番号（必須項目）
+          <input type="tel" name="tel" placeholder="03-1234-5678" pattern="^(\+?\d{1,4})?-?\d{1,4}-?\d{3,4}-?\d{3,4}$" title="電話番号は「03-1234-5678」や「0312345678」または、国際番号をつけた「+81-3-1234-5678」や「+81312345678」の形式で入力して下さい" autocomplete="tel" inputmode="tel" required>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          お住まいの都道府県（必須項目）
+          <select name="prefs" required autocomplete="address-level1">
+            <option value="" selected disabled>選択してください</option>
+            <hr>
+            <optgroup label="北海道エリア">
+              <option>北海道</option>
+            </optgroup>
+            <optgroup label="東北エリア">
+              <option>青森県</option>
+              <option>岩手県</option>
+              <option>宮城県</option>
+              <option>秋田県</option>
+              <option>山形県</option>
+              <option>福島県</option>
+            </optgroup>
+            <optgroup label="関東エリア">
+              <option>茨城県</option>
+              <option>栃木県</option>
+              <option>群馬県</option>
+              <option>埼玉県</option>
+              <option>千葉県</option>
+              <option>東京都</option>
+              <option>神奈川県</option>
+            </optgroup>
+            <optgroup label="中部エリア">
+              <option>新潟県</option>
+              <option>富山県</option>
+              <option>石川県</option>
+              <option>福井県</option>
+              <option>山梨県</option>
+              <option>長野県</option>
+              <option>岐阜県</option>
+              <option>静岡県</option>
+              <option>愛知県</option>
+            </optgroup>
+            <optgroup label="近畿エリア">
+              <option>三重県</option>
+              <option>滋賀県</option>
+              <option>京都府</option>
+              <option>大阪府</option>
+              <option>兵庫県</option>
+              <option>奈良県</option>
+              <option>和歌山県</option>
+            </optgroup>
+            <optgroup label="中国エリア">
+              <option>鳥取県</option>
+              <option>島根県</option>
+              <option>岡山県</option>
+              <option>広島県</option>
+              <option>山口県</option>
+            </optgroup>
+            <optgroup label="四国エリア">
+              <option>徳島県</option>
+              <option>香川県</option>
+              <option>愛媛県</option>
+              <option>高知県</option>
+            </optgroup>
+            <optgroup label="九州エリア">
+              <option>福岡県</option>
+              <option>佐賀県</option>
+              <option>長崎県</option>
+              <option>熊本県</option>
+              <option>大分県</option>
+              <option>宮崎県</option>
+              <option>鹿児島県</option>
+              <option>沖縄県</option>
+            </optgroup>
+          </select>
+        </label>
+
+      </p>
+
+      <p>
+        <label>
+          ポートフォリオサイトのURL
+          <input type="url" name="portfolio" placeholder="https://example.com" autocomplete="url" inputmode="url">
+        </label>
+      </p>
+
+      <fieldset>
+        <legend>希望職種（複数選択可能）</legend>
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox" name="jobs[]" value="Webディレクター"> Webディレクター
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="jobs[]" value="Webデザイナー"> Webデザイナー
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="jobs[]" value="フロントエンドエンジニア"> フロントエンドエンジニア
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <p>
+        <label>
+          志望動機（必須項目）
+          <textarea name="motivation" cols="30" rows="10" placeholder="御社の架空の理念に共感しました" required></textarea>
+        </label>
+      </p>
+
+      <p><button>応募する</button></p>
+    </form>
+  </body>
+</html>
