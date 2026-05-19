@@ -5,14 +5,23 @@
     <title>よくある質問 | Dummy Kitchen</title>
   </head>
   <body>
-    <p>
-      当サイトは、コンテンツや広告のパーソナライズ、およびトラフィックの分析のためにクッキーを使用します。また、お客様の利用に関する情報を広告および分析パートナーと共有します。パートナーは、お客様が提供した他の情報、またはパートナーのサービスの利用から収集した他の情報と組み合わせることがあります。
-    </p>
+    <dialog open aria-label="クッキーの許諾">
+      <div autofocus>
+        <p>
+          当サイトは、コンテンツや広告のパーソナライズ、およびトラフィックの分析のためにクッキーを使用します。また、お客様の利用に関する情報を広告および分析パートナーと共有します。パートナーは、お客様が提供した他の情報、またはパートナーのサービスの利用から収集した他の情報と組み合わせることがあります。
+        </p>
+      </div>
+      <form method="dialog">
+        <button value="agree">同意する</button>
+        <button value="disagree">拒否する</button>
+      </form>
+    </dialog>
 
     <p><a href="./">Dummy Kitchen</a></p>
     <p>架空の絶品料理レシピサイト</p>
 
-    <div id="globalNav">
+    <p><button type="button" popovertarget="globalNav">メニュー</button></p>
+    <div id="globalNav" popover>
       <ul>
         <li><a href="#">レシピを探す</a></li>
         <li><a href="#">料理を学ぶ</a></li>
