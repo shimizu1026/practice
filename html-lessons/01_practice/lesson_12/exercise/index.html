@@ -5,18 +5,31 @@
     <title>よくある質問 | Dummy Creations</title>
   </head>
   <body>
+    <dialog open aria-label="利用規約への同意">
+      <p>
+        当サイトを利用するには、当サイトの利用規約に同意して頂く必要があります。
+      </p>
+      <form method="dialog">
+        <button value="agree">同意する</button>
+        <button value="disagree">拒否する</button>
+      </form>
+    </dialog>
+
     <p>
       <a href="./">
         Dummy Creations
       </a>
     </p>
+    <p><button popovertarget="globalNav">メニュー</button></p>
 
-    <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Service</a></li>
-      <li><a href="#">Works</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div id="globalNav" popover>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
 
     <h1>よくある質問</h1>
     <details>
