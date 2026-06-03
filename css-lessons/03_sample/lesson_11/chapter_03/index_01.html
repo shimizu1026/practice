@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表示方法</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      .box {
+        margin-block: 1rem;
+        padding: 1rem;
+        background-image: repeating-linear-gradient(to right, #e2dfc7 0, #e2dfc7 10px, #d1cba3 10px, #d1cba3 20px);
+      }
+
+      .box img {
+        --opacity: 0.5;
+
+        opacity: var(--opacity);
+      }
+
+      .controller {
+        margin-block-start: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <figure>
+        <img src="logo-dummy-cafe.svg" alt="Dummy Cafe" width="200" height="160">
+      </figure>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>img</code>の<code>opacity</code>
+            <input type="number" value="0.5" min="0" max="1" step="0.1" data-change="img">
+          </label>
+        </p>
+
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        box: document.querySelectorAll('.box'),
+        p: document.querySelectorAll('.box p'),
+        em: document.querySelectorAll('.box em'),
+        img: document.querySelectorAll('.box img'),
+      }
+
+      const controllers = {
+        box: document.querySelector('[data-change="box"]'),
+        p: document.querySelector('[data-change="p"]'),
+        em: document.querySelector('[data-change="em"]'),
+        img: document.querySelector('[data-change="img"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems[target]?.forEach(elem => {
+          elem?.style.setProperty("--opacity", value);
+        })
+
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+          console.log(e.currentTarget.value);
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+/* Header */
+.header {
+  display: block flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: clamp(24 * var(--torem), 0.9718rem + 2.2535vw, 48 * var(--torem));
+  padding-inline: var(--offset-sm);
+}
+
+.header-group {
+  display: block flex;
+  align-items: center;
+  column-gap: calc(32 * var(--torem));
+}
+
+.header-title {
+  font-size: unset;
+}
+
+@media not screen and (width >= 80rem) {
+  .header-subtitle {
+    display: none;
+  }
+}

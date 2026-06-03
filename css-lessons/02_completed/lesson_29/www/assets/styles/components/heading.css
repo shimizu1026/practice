@@ -1,0 +1,12 @@
+/*
+  Heading
+---------------------------------------------- */
+.heading {
+  font-size: var(--font-size-3xl);
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+}
+
+.heading-vertical {
+  writing-mode: vertical-rl;
+}

@@ -1,0 +1,29 @@
+/* Custom Properties */
+:root {
+  /* Tool */
+  --torem: calc(1rem / 16);
+
+  /* Color */
+  --color-main: #f8861d;
+  --color-dark: #101010;
+  --color-light-gray: #dfdfdf;
+
+  /* Font */
+  --font-sans-serif-ja: "Noto Sans JP", sans-serif;
+  --font-sans-serif-en: "Jost", sans-serif;
+
+  /* Offset */
+  --offset-sm: 5vi;
+  --offset-md: 10vi;
+  --offset-lg: 15vi;
+
+  /* Container size */
+  --container-size-sm: 480px;
+  --container-size-md: 768px;
+  --container-size-lg: 960px;
+  --container-size-xl: 1400px;
+
+  /* Transition & Animation */
+  --duration-fast: 0.3s;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}

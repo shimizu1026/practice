@@ -1,0 +1,49 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+em {
+  font-style: normal;
+}
+
+.site-name {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  line-height: 1.25;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 2.5rem;
+  font-weight: 200;
+  font-feature-settings: "palt";
+  letter-spacing: 0.1em;
+}
+
+.heading {
+  font: 400 1.25rem "Inter", sans-serif;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.post-description {
+  font-size: 0.875rem;
+}
+
+.role {
+  font-size: 0.75rem;
+}
+
+.copyright {
+  text-align: end;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+}

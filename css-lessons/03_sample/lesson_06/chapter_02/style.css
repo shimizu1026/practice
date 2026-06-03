@@ -1,0 +1,40 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.cyan {
+  color: #207aa7;
+}
+
+.gray {
+  color: #666;
+}
+
+.teal {
+  color: #207f7fb1;
+}
+
+.slate {
+  color: rgb(119 136 153);
+}
+
+.indigo {
+  color: rgb(75 0 130 / 0.8);
+}
+
+.tomato {
+  color: rgb(100%, 39%, 28%);
+}
+
+.blue {
+  color: oklab(0.48 -0.04 -0.31);
+}
+
+.green {
+  color: color-mix(in srgb, #207f7f 50%, black);
+}
+
+.red {
+  color: light-dark(#973131, #d96767);
+}

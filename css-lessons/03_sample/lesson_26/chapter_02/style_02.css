@@ -1,0 +1,11 @@
+@layer theme {
+  .text {
+    color: blue !important;
+  }
+}
+
+@layer base {
+  p {
+    color: red !important;
+  }
+}

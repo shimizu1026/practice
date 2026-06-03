@@ -1,0 +1,7 @@
+/* Page */
+.page-title {
+  font-size: clamp(var(--font-xl), 1.4718rem + 2.2535vw, var(--font-2xl));
+  font-weight: 700;
+  font-family: var(--font-sans-serif-en);
+  letter-spacing: var(--tracking-wider);
+}

@@ -1,0 +1,36 @@
+/* 未訪問リンク */
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 訪問済みリンク */
+a:visited {
+  color: #808080;
+}
+
+/* マウスホバー */
+a[href]:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* リンクをクリック時 */
+a:any-link:active {
+  font-size: 0.875rem;
+}
+
+/* フォーカス */
+input[type="search"]:focus {
+  background-color: #f0f48f;
+}
+
+/* フォーカス時でかつブラウザがフォーカスを明示すると判断した時 */
+button:focus-visible {
+  background-color: #f0f48f;
+}
+
+/* URLフラグメントに一致した要素 */
+:target {
+  background-color: #f0f48f;
+}

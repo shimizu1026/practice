@@ -1,0 +1,19 @@
+/* 筆記体 */
+h1 {
+  font-family: cursive;
+}
+
+/* 欧文セリフ書体 */
+.font-1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* 欧文サンセリフ書体と和文サンセリフ書体 */
+.font-2 {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", sans-serif;
+}
+
+/* 装飾フォントとセリフ */
+.font-3 {
+  font-family: fantasy, serif;
+}

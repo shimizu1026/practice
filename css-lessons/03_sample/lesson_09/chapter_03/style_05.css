@@ -1,0 +1,24 @@
+/*  h1, h2, h3, h4, h5, h6 のいずれか */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: inherit;
+}
+
+/*  ul, ol のいずれか */
+:is(ul, ol) {
+  font-size: 1.25rem;
+}
+
+/* href属性を持たないa要素 */
+a:not([href]) {
+  color: #808080;
+}
+
+/* ホバー状態のa要素が子孫にあるbody要素 */
+body:has(a:hover) {
+  background-color: #78c4d7;
+}
+
+/* href属性を持たないa要素が子孫にあるul要素 */
+ul:has(a:not([href])) {
+  background-color: #e0ded2;
+}

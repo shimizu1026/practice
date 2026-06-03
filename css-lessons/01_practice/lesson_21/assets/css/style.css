@@ -1,0 +1,260 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  overflow-x: clip;
+}
+
+:where(ul, ol) {
+  list-style-type: ""; /* リストのマーカーを削除 */
+}
+
+:where(:any-link) {
+  color: unset;
+}
+
+:where(img, svg) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Container */
+.container {
+  max-inline-size: 1400px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}
+
+/* Header */
+.header {
+  display: block flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 3rem;
+  padding-inline: 5vi;
+}
+
+.header-group {
+  display: block flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.header-title {
+  font-size: unset;
+}
+
+/* Footer */
+
+.footer {
+  margin-block-start: 6rem;
+  padding-inline: 5vi;
+  padding-block: 4rem;
+  background-color: #101010;
+  color: #dfdfdf;
+}
+
+.footer-list {
+  display: block flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Nav */
+.nav-list {
+  display: block flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.nav-list a:not(.button) {
+  position: relative;
+  padding-inline: 0.5rem;
+  text-decoration: none;
+}
+
+/* Button */
+.button {
+  display: block flow;
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+  border-radius: 2.5em;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 0 4px rgb(0 0 0 / 0.16);
+}
+
+.login {
+  background-color: #101010;
+}
+
+.register {
+  border-color: #f8861d;
+  background-color: #f8861d;
+}
+
+/* Hero */
+.hero-title {
+  position: relative;
+  z-index: 1;
+  color: #f8861d;
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Jost", sans-serif;
+  margin-block-end: -3.5rem;
+}
+
+/* Spacer */
+.spacer {
+  margin-block-start: 5rem;
+}
+
+/* Heading */
+.heading {
+  color: #f8861d;
+  font-size: 2rem;
+  margin-block-end: 2rem;
+}
+
+/* Copyright */
+.copyright {
+  margin-block-start: 2rem;
+}
+
+/* Pick Up */
+
+.pickup {
+  inline-size: 80%;
+  margin-inline: auto;
+}
+
+.pickup-link {
+  display: block grid;
+  grid-template-areas: "cover";
+  border-radius: 2rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.pickup-body {
+  grid-area: cover;
+  z-index: 1;
+  display: block flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-self: end;
+  padding-inline: 5%;
+  padding-block: 2rem;
+  color: #fff;
+  background-image: linear-gradient(rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0.5));
+}
+
+.pickup-cover {
+  grid-area: cover;
+}
+
+.pickup-cover img {
+  inline-size: 100%;
+}
+
+.pickup-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.pickup-date {
+  margin-block-start: 0.5rem;
+  font-family: "Jost", sans-serif;
+  font-size: 0.75rem;
+}
+.pickup-text {
+  margin-block-start: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* Posts */
+.posts {
+  display: block grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Post */
+.post {
+  display: block grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1rem 0;
+}
+
+.post-cover {
+  order: -1;
+}
+
+.post-cover img {
+  border-radius: 1rem;
+  inline-size: 100%;
+}
+
+.post-footer {
+  display: block flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-author {
+  display: block flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.post-author img {
+  border-radius: 50%;
+}
+
+.post-date {
+  font-size: 0.75rem;
+  font-family: "Jost", sans-serif;
+}
+
+/*  Article */
+.article {
+  display: block grid;
+  grid-template:
+    [col-start] "author body meta" 1fr [col-end]
+    / minmax(180px, 15%) 1fr minmax(180px, 15%);
+  column-gap: 2.5rem;
+}
+
+.article-body {
+  grid-area: body;
+}
+.article-footer {
+  grid-area: author;
+}
+.article-meta {
+  grid-area: meta;
+}

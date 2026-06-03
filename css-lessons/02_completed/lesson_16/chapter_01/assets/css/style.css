@@ -1,0 +1,152 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+}
+
+:where(ul, ol) {
+  list-style-type: ""; /* リストのマーカーを削除 */
+}
+
+:where(:any-link) {
+  color: unset;
+}
+
+:where(img, svg) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Container */
+.container {
+  max-inline-size: 1400px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}
+
+/* Header */
+.header {
+  display: block flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 3rem;
+  padding-inline: 5vi;
+}
+
+.header-group {
+  display: block flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.header-title {
+  font-size: unset;
+}
+
+/* Footer */
+
+.footer {
+  margin-block-start: 6rem;
+  padding-inline: 5vi;
+  padding-block: 4rem;
+  background-color: #101010;
+  color: #dfdfdf;
+}
+
+.footer-list {
+  display: block flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Nav */
+.nav-list {
+  display: block flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 2rem;
+}
+
+/* Hero */
+.hero-title {
+  color: #f8861d;
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Jost", sans-serif;
+}
+
+/* Spacer */
+.spacer {
+  margin-block-start: 2.5rem;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: #f8861d;
+  letter-spacing: 0.1em;
+}
+
+/* Multi Column */
+.multi-column {
+  columns: 24em;
+  column-gap: 2.5rem;
+  column-rule: 1px dashed #ddd;
+  /* column-fill: auto; */
+  /* max-block-size: 840px; */
+}
+
+.multi-column h2 {
+  column-span: all;
+  font-size: 2rem;
+  word-break: keep-all;
+  text-wrap: balance;
+  margin-block-end: 1em;
+}
+
+.multi-column p {
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.05em;
+  margin-block-end: 1.5em;
+  text-align: justify;
+}
+
+/* Cover */
+.cover {
+  float: inline-start;
+  margin-inline-end: 1em;
+}
+
+/* clear */
+
+/* Posts */
+.posts {
+  margin-block-start: 2rem;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+.post + .post {
+  margin-block-start: 1rem;
+}

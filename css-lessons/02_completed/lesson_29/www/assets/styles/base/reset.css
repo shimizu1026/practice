@@ -1,0 +1,100 @@
+/*
+  Reset
+---------------------------------------------- */
+
+/* Global */
+*,
+::before,
+::after,
+::backdrop {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Document & Sections */
+:where(html) {
+  font-family: var(--base-font-family);
+  font-weight: var(--base-font-weight);
+  line-break: strict;
+  overflow-wrap: anywhere;
+  line-height: var(--base-line-height, 1.5);
+  color: var(--base-color);
+  background-color: var(--base-background);
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  overflow-x: clip;
+}
+
+/* Grouping content */
+:where(section) {
+  scroll-margin-block-start: var(--base-srcoll-margin);
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+/* Text-level semantics */
+:where(em, address) {
+  font-style: normal;
+}
+
+:where(strong) {
+  font-weight: 700;
+  color: var(--base-strong-color);
+}
+
+:where(:any-link) {
+  color: unset;
+}
+
+/* Embedded content */
+:where(img, svg, iframe) {
+  display: block flow;
+}
+
+:where(img, picture, svg) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Tabular data */
+:where(table) {
+  border-collapse: collapse;
+}
+
+/* Forms */
+:where(input, button, textarea, select, optgroup) {
+  color: unset;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font: unset;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+}
+
+:where(textarea) {
+  resize: vertical;
+  resize: block;
+}
+
+:where(button, label, select, summary) {
+  cursor: pointer;
+}

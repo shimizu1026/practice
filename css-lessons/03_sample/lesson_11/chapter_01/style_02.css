@@ -1,0 +1,24 @@
+.container {
+  display: block flow-root;
+  background-color: #d6d3c3;
+}
+
+.button {
+  display: block flow;
+  text-decoration: none;
+  /* 背景や文字色を変えたり、幅や余白をつけたり・・・ */
+  max-inline-size: 320px;
+  border-radius: 0.5em;
+  margin-inline: auto;
+  padding-inline: 0.5em;
+  padding-block: 1em;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  font-weight: 900;
+}
+
+.button:hover {
+  color: #333;
+  background-color: #a49d7c;
+}

@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+:where(body) {
+  min-block-size: 100vb;
+}
+:where(p) {
+  margin-block-end: 1em;
+}
+
+.container {
+  padding-inline: 5vi;
+  padding-block: 5rem;
+}
+
+.column {
+  columns: 20em 3;
+  column-gap: 3rem;
+  column-rule: 1px dotted;
+}
+
+.column p {
+  line-height: 2;
+  letter-spacing: 0.05em;
+  text-align: justify;
+}
+
+.page-title {
+  margin-block-end: 1em;
+  word-break: keep-all;
+}

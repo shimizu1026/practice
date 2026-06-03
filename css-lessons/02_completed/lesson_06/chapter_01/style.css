@@ -1,0 +1,46 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+em {
+  font-style: normal;
+}
+
+.site-description {
+  letter-spacing: 0.1em;
+}
+
+.heading {
+  font-family: "Jost", sans-serif;
+  font-size: 5rem;
+  line-height: 1.25;
+  text-align: center;
+  color: orange;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.post-text {
+  letter-spacing: 0.1em;
+}
+
+.post-date {
+  font-size: 0.875rem;
+}
+
+.post-author {
+  font-size: 0.75rem;
+  text-align: end;
+  letter-spacing: 0.1em;
+}

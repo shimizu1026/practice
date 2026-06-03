@@ -1,0 +1,32 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+em {
+  font-style: normal;
+}
+
+.normal {
+  overflow-wrap: normal;
+}
+
+.break-word {
+  overflow-wrap: break-word;
+}
+
+.anywhere {
+  overflow-wrap: anywhere;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.keep-all {
+  word-break: keep-all;
+}
+
+.auto-phrase {
+  word-break: auto-phrase;
+}

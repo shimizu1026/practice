@@ -1,0 +1,101 @@
+/* Reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(:root) {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #202020;
+}
+
+:where(body) {
+  block-size: 100svb;
+  background-color: #101010;
+  background-image: radial-gradient(#202020, #101010);
+  color: #fff;
+}
+
+body:has(input:checked) .dice {
+  animation: rotate linear 20s infinite;
+}
+
+.center {
+  text-align: center;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 1 1 1 0deg;
+  }
+
+  to {
+    rotate: 1 1 1 360deg;
+  }
+}
+
+.container {
+  display: block grid;
+  place-content: center;
+  row-gap: 8rem;
+  block-size: 100%;
+  perspective: 1000px;
+}
+
+/* Dice */
+.dice {
+  display: block grid;
+  inline-size: 200px;
+  aspect-ratio: 1;
+  transform-style: preserve-3d;
+  rotate: 1 2 1 45deg;
+}
+
+.face {
+  grid-area: 1 / 1;
+  display: block grid;
+  place-content: center;
+  inline-size: 100%;
+  aspect-ratio: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fff;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background-color: rgb(0 0 0 / 0.9);
+}
+
+.face:nth-child(1) {
+  translate: 0 0 100px;
+}
+
+.face:nth-child(2) {
+  translate: 0 100px 0;
+  rotate: x -90deg;
+}
+
+.face:nth-child(3) {
+  translate: -100px 0 0;
+  rotate: y -90deg;
+}
+
+.face:nth-child(4) {
+  rotate: y 90deg;
+  translate: 100px 0 0;
+}
+
+.face:nth-child(5) {
+  translate: 0 -100px 0;
+  rotate: x 90deg;
+}
+
+.face:nth-child(6) {
+  translate: 0 0 -100px;
+  rotate: y 180deg;
+}

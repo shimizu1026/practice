@@ -1,0 +1,18 @@
+/* Loop Text */
+.loop-text {
+  margin-block-start: var(--space-2xl);
+  display: block flex;
+  overflow: hidden;
+
+  p {
+    padding-inline-end: 1em;
+    font-size: var(--font-3xl);
+    font-family: var(--font-sans-serif-en);
+    font-weight: 700;
+    color: var(--color-dark);
+    letter-spacing: var(--tracking-wider);
+    white-space: nowrap;
+    text-transform: uppercase;
+    animation: loop 30s linear infinite both;
+  }
+}

@@ -1,0 +1,120 @@
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  background-color: #f0f0f0;
+}
+
+:where(ul, ol) {
+  list-style-type: ""; /* リストのマーカーを削除 */
+}
+
+:where(:any-link) {
+  color: unset;
+}
+
+:where(img, svg) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Container */
+.container {
+  max-inline-size: 1280px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  display: block flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 1rem;
+  padding-inline: 5vi;
+  background-color: #101010;
+}
+
+.header-title {
+  font-size: unset;
+}
+
+/* Nav */
+.nav-button {
+  background-color: #f8861d;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding-inline: 0.75em;
+  padding-block: 0.5em;
+  border-radius: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.local-nav {
+  margin-block-start: 4rem;
+}
+
+/* Footer */
+.footer {
+  margin-block-start: 6rem;
+  padding-inline: 5vi;
+  padding-block: 2rem;
+  background-color: #101010;
+  color: #dfdfdf;
+}
+
+/* Main */
+.main {
+  padding-block: 4rem;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+}
+
+/* Filter */
+.filter-list {
+  list-style-type: square;
+  padding-inline-start: 1.25em;
+}
+
+.filter-list li::marker {
+  color: #f8861d;
+}
+
+/* Table */
+.table {
+  margin-block-start: 2rem;
+}
+
+caption {
+  font-size: 0.875rem;
+  text-align: start;
+}
+
+/* From */
+.form {
+  margin-block-start: 4rem;
+}

@@ -1,0 +1,12 @@
+/* Header */
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  display: block flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--offset-md);
+  padding-block: clamp(var(--space-sm), 0.8239rem + 0.7512vw, var(--space-md));
+  mix-blend-mode: exclusion;
+}

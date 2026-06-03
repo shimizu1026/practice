@@ -1,0 +1,50 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  letter-spacing: 0.05em;
+  min-height: 100vh; /* 最低のボックスの高さを指定するプロパティ */
+}
+
+em {
+  font-style: normal;
+}
+
+.site-name {
+  font-family: "Inter", sans-serif;
+  line-height: 1.25;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.copy {
+  font-size: 4rem;
+  font-weight: 700;
+  font-feature-settings: "palt";
+  letter-spacing: 0.1em;
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+.heading {
+  font: 400 1.25rem "Inter", sans-serif;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.footer {
+  color: #999;
+}
+
+.copyright {
+  text-align: end;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+}

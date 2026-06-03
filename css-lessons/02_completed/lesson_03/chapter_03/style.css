@@ -1,0 +1,24 @@
+body {
+  font: 700 1rem/1.5 "Noto Sans JP", sans-serif;
+}
+
+em {
+  font-style: normal;
+}
+
+.heading {
+  font: 700 5vw/1.25 "Jost", sans-serif;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.post-date {
+  font-size: 0.875rem;
+}
+
+.post-author {
+  font-size: 0.75rem;
+}

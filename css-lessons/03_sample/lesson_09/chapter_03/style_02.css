@@ -1,0 +1,14 @@
+/* 兄弟要素の中で最初の要素 */
+p:first-child {
+  color: #a32525;
+}
+
+/* 兄弟要素の中で先頭から偶数個目の要素（2nと同じ） */
+p:nth-child(even) {
+  background-color: #cbd5d9;
+}
+
+/* 兄弟要素の中で最後の要素 */
+p:last-child {
+  color: #1856cb;
+}

@@ -1,0 +1,17 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.tagline {
+  font-size: 6rem;
+  font-weight: 700;
+  font-feature-settings: "palt";
+  background-image: linear-gradient(115deg, rgb(216, 26, 153), rgb(253, 245, 26));
+  background-color: #333;
+  background-clip: text;
+  color: transparent;
+}

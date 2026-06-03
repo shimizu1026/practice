@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+      :root {
+        --color-padding-area: #e557ef80;
+        --aria-gradient: linear-gradient(-45deg, var(--color-padding-area) 10%, #0000 0, #0000 50%, var(--color-padding-area) 0, var(--color-padding-area) 60%, #0000 0, #0000);
+
+        --color-teal-1: #0EB981;
+        --color-teal-2: #0a825a;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      .flex-container {
+        display: var(--display, block flex);
+        background-image: var(--aria-gradient);
+        background-size: 6px 6px;
+        ;
+      }
+
+      .flex-item {
+        display: block grid;
+        place-content: center;
+        inline-size: 100px;
+        aspect-ratio: 1 / 1;
+
+        background-color: var(--color-teal-1);
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid var(--color-teal-2);
+      }
+
+      .controller {
+        margin-block-start: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">Flex Item</div>
+      <div class="flex-item">Flex Item</div>
+      <div class="flex-item">Flex Item</div>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>.flex-container</code>の<code>display</code>
+            <select data-change="container">
+
+              <option value="block flex">block flex（flex）</option>
+
+              <option value="inline flex">inline flex（inline-flex）</option>
+
+
+            </select>
+          </label>
+        </p>
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('.flex-container'),
+      }
+
+      const controllers = {
+        container: document.querySelector('[data-change="container"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems[target]?.forEach(elem => {
+          elem?.style.setProperty("--display", value);
+        })
+
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+          console.log(e.currentTarget.value);
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+
+    </script>
+  </body>
+</html>

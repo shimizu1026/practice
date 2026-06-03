@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レシピの投稿 | 管理画面 | Dummy Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+    <header class="header">
+      <p class="header-title">
+        <a href="./" class="logo">
+          <img src="./assets/img/logo-dummy-kitchen.svg" width="216" height="43" alt="Dummy Ketchen">
+        </a>
+      </p>
+
+      <nav class="global-nav" aria-label="メインメニュー">
+        <p><a href="./edit.html" class="nav-button">新規レシピ投稿</a></p>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <h1 class="page-title">レシピの投稿</h1>
+
+        <form action="receive.php" method="post" enctype="multipart/form-data" class="form">
+          <p>
+            <label>
+              タイトル（必須項目）<br>
+              <input type="text" name="title" placeholder="タイトルを入力" required>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              サムネイル画像<br>
+              <input type="file" name="thumbnail">
+            </label>
+          </p>
+
+          <fieldset>
+            <legend>キーワード（複数選択可）</legend>
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" name="keywords[]" value="簡単"> 簡単
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="keywords[]" value="お弁当"> お弁当
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="keywords[]" value="子供向け"> 子供向け
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="keywords[]" value="ダイエット"> ダイエット
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="keywords[]" value="作り置き"> 作り置き
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="keywords[]" value="節約"> 節約
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <p>
+            <label>
+              カテゴリ（必須項目）<br>
+              <select name="category" required>
+                <option value="" selected disabled>カテゴリーを選択して下さい</option>
+                <hr>
+                <option>ごはん</option>
+                <option>パン</option>
+                <option>パスタ</option>
+                <option>麺</option>
+                <option>お肉</option>
+                <option>魚介</option>
+                <option>揚げ物</option>
+                <option>スープ</option>
+                <option>サラダ</option>
+                <option>大豆加工品</option>
+                <option>粉物</option>
+              </select>
+            </label>
+          </p>
+
+          <p>
+            <label>
+              投稿内容（必須項目）<br>
+              <textarea name="content" cols="50" rows="15"></textarea>
+            </label>
+          </p>
+
+          <p><button>投稿する</button></p>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="copyright"><small lang="en">© <time>2024</time> Dummy Kitchen</small></p>
+    </footer>
+  </body>
+</html>

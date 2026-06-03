@@ -1,0 +1,5 @@
+@layer base, layout;
+
+@import "./base/reset.css" layer(base);
+@import "./layouts/header.css" layer(layout);
+@import "./layouts/footer.css" layer(layout);

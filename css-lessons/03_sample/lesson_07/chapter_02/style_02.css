@@ -1,0 +1,13 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  background-image: url(../images/wood.png);
+}
+
+.heading {
+  background-color: #202020;
+  background-image: url(../images/star.svg), url(../images/green.png);
+  background-repeat: no-repeat, round;
+  color: #fff;
+  font-size: 2rem;
+}

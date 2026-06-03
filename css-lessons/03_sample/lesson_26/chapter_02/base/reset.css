@@ -1,0 +1,54 @@
+:root {
+  --color-dark: #101010;
+  --color-light: #fff;
+
+  --font-xl: 3rem;
+
+  --offset-sm: 5vi;
+  --offset-md: 10vi;
+  --offset-lg: 15vi;
+
+  --duration-fast: 0.3s;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  padding: 0;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+:where(html) {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(html) {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+  }
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+:where(img, svg) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}

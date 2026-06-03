@@ -1,0 +1,78 @@
+/* Reset */
+:where(:root) {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 2;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #101010;
+  font-weight: 900;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: unset;
+  font-weight: unset;
+}
+
+:where(h1) {
+  font-size: 2.5rem;
+  color: #f8861d;
+}
+
+:where(h2) {
+  font-size: 2rem;
+  color: #f8861d;
+}
+
+:where(h3) {
+  font-size: 1.5rem;
+}
+
+:where(strong) {
+  font-weight: inherit;
+}
+
+:where(em) {
+  font-style: inherit;
+}
+
+:where(a:any-link) {
+  color: inherit;
+}
+
+:where(img, iframe) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Header */
+
+/* Footer */
+
+/* Container */
+.container {
+  max-inline-size: 840px;
+}
+
+/* Post */
+
+/* Local Nav */
+.local-nav {
+  inline-size: 80%;
+}
+
+/* Section */
+
+/* Heading */
+
+/* List  */
+
+/* Embed Video */
+.embed-video {
+  inline-size: 100%;
+}
+
+/* FAQ */

@@ -1,0 +1,16 @@
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1.5rem;
+}
+
+.font-1 {
+  font-stretch: ultra-condensed; /* 50% */
+}
+
+.font-2 {
+  font-stretch: 30%; /* パーセンテージで指定 [Level4:WD] */
+}
+
+.font-3 {
+  font-stretch: ultra-expanded; /* 200% */
+}

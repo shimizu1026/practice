@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+:where(body) {
+  min-block-size: 100vb;
+}
+:where(p) {
+  margin-block-end: 1em;
+}
+
+:where(img, svg) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.container {
+  padding-inline: 5vi;
+  padding-block: 5rem;
+}
+
+.page-title {
+  font-weight: 700;
+  margin-block-end: 1em;
+}
+
+.header {
+  padding-inline: 5vi;
+  padding-block: 1.5rem;
+}
+
+.logo {
+  display: block flow;
+  inline-size: 140px;
+}
+
+.button {
+  position: fixed;
+  inset-block-start: 1.5rem;
+  inset-inline-end: 5vi;
+  display: block grid;
+  grid-template-rows: 1fr auto;
+  inline-size: 5rem;
+  padding: 1rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #302e29;
+  border: 0;
+  color: #e8ddb0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  grid-area: 1 / 1;
+  place-self: center;
+  inline-size: 50%;
+  block-size: 2px;
+  background-color: #e8ddb0;
+}
+
+.button::before {
+  translate: 0 -200%;
+}
+.button::after {
+  translate: 0 200%;
+}
+
+.contents {
+  max-inline-size: 400px;
+  margin-inline: auto;
+  line-height: 2.25;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}

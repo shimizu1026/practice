@@ -1,0 +1,4 @@
+/* Spacer */
+.spacer {
+  margin-block-start: clamp(64 * var(--torem), 3.6479rem + 1.5023vw, 80 * var(--torem));
+}

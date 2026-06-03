@@ -1,0 +1,15 @@
+/* Nav */
+.nav-list {
+  display: block flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+
+  @media not screen and (width >= 80rem) {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

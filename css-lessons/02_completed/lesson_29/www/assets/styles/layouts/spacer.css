@@ -1,0 +1,26 @@
+/*
+  Spacer
+---------------------------------------------- */
+.spacer-sm {
+  margin-block-start: var(--space-sm);
+}
+
+.spacer-md {
+  margin-block-start: var(--space-md);
+}
+
+.spacer-lg {
+  margin-block-start: var(--space-lg);
+}
+
+.spacer-xl {
+  margin-block-start: var(--space-xl);
+}
+
+.spacer-2xl {
+  margin-block-start: var(--space-2xl);
+}
+
+.spacer-3xl {
+  margin-block-start: var(--space-3xl);
+}

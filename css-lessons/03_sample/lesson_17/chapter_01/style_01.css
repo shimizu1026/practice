@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+:where(body) {
+  min-block-size: 100vb;
+  background-color: #efefef;
+}
+:where(p) {
+  margin-block-end: 1em;
+}
+
+.container {
+  padding-inline: 5vi;
+  padding-block: 5rem;
+}
+
+.card {
+  position: relative;
+  inline-size: 400px;
+  margin-inline: auto;
+  background-color: #fff;
+}
+
+.card-label {
+  position: absolute;
+  top: 24px;
+  padding: 0.5em;
+  border: 2px solid;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background-color: #dda31b;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-thumbnail img {
+  inline-size: 100%;
+}
+
+.card-title {
+  margin-block: 0;
+}
+
+.card-label {
+  position: absolute;
+  top: 24px;
+  padding: 0.5em;
+  border: 2px solid;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background-color: #dda31b;
+}
+
+.card-text {
+  margin-block: 0.5rem 0;
+  line-height: 1.75;
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,16 @@
+.leading-tight {
+  line-height: 1;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
+.bold {
+  line-height: 32px;
+  font-weight: 700;
+}

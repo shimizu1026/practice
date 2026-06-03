@@ -1,0 +1,6 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh; /* 最低のボックスの高さを指定するプロパティ */
+  background-image: repeating-conic-gradient(#fea 0deg, #db0 20deg, #fea 40deg);
+}

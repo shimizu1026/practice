@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list-style-type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      body,
+      .controller * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :where(html) {
+        font-family: "Kumbh Sans", sans-serif;
+        line-height: 1.5;
+        line-break: strict;
+        overflow-wrap: anywhere;
+      }
+
+      :where(body) {
+        min-block-size: 100vb;
+      }
+
+      .container {
+        display: block flow-root;
+      }
+
+      .list {
+        list-style-type: var(--type);
+      }
+
+      .controller {
+        position: fixed;
+        inset-inline: 0;
+        inset-block-end: 0;
+        padding: 2.5rem 2rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 16px rgb(0 0 0 / 0.16);
+      }
+
+      fieldset {
+        border: none;
+        letter-spacing: 0.05em;
+      }
+
+      fieldset p+p {
+        margin-block-start: 0.5em;
+      }
+
+      code {
+        font-size: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      input {
+        font-family: inherit;
+        padding: 0.25em;
+        appearance: none;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+
+        color: #f233a6;
+      }
+
+      legend {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        background-color: #2f2f2f;
+        color: #ccc;
+        padding: 0.25em 0.5em;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="list">
+        <li>キミのブレンドコーヒー</li>
+        <li>スペシャルブレンドコーヒー</li>
+        <li>カフェラテ</li>
+        <li>カプチーノ</li>
+        <li>キャラメルマキアート</li>
+      </ul>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>
+              .list {
+            list-style-type: <select  data-change="type">
+              <optgroup label="Symbolic">
+                <option>disc</option>
+                <option>circle</option>
+                <option>square</option>
+                <option>disclosure-open</option>
+                <option>disclosure-closed</option>
+              </optgroup>
+              <optgroup label="Numeric">
+                <option>decimal</option>
+                <option>decimal-leading-zero</option>
+                <option>arabic-indic</option>
+                <option>armenian</option>
+                <option>upper-armenian</option>
+                <option>lower-armenian</option>
+                <option>bengali</option>
+                <option>cambodian</option>
+                <option>khmer</option>
+                <option>cjk-decimal</option>
+                <option>devanagari</option>
+                <option>georgian</option>
+                <option>gujarati</option>
+                <option>gurmukhi</option>
+                <option>hebrew</option>
+                <option>kannada</option>
+                <option>lao</option>
+                <option>malayalam</option>
+                <option>mongolian</option>
+                <option>myanmar</option>
+                <option>oriya</option>
+                <option>persian</option>
+                <option>lower-roman</option>
+                <option>upper-roman</option>
+                <option>tamil</option>
+                <option>telugu</option>
+                <option>thai</option>
+                <option>tibetan</option>
+              </optgroup>
+              <optgroup label="Alphabetic">
+                <option>lower-alpha</option>
+                <option>lower-latin</option>
+                <option>upper-alpha</option>
+                <option>upper-latin</option>
+                  <option>lower-greek</option>
+                  <option>hiragana</option>
+                  <option>hiragana-iroha</option>
+                  <option>katakana</option>
+                  <option>katakana-iroha</option>
+              </optgroup>
+              <option>none</option>
+            </select>
+            ; } 
+          </code>
+          </label>
+        </p>
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('.list'),
+      }
+
+      const controllers = {
+        "type": document.querySelector('[data-change="type"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems.container?.forEach(elem => {
+          elem?.style.setProperty(`--${target}`, value);
+        })
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

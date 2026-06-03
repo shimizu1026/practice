@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table-layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      .controller * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :where(html) {
+        font-family: "Kumbh Sans", sans-serif;
+        line-height: 1.5;
+        line-break: strict;
+        overflow-wrap: anywhere;
+      }
+
+      :where(body) {
+        min-block-size: 100vb;
+      }
+
+      .container {
+        display: block flow-root;
+      }
+
+      .table {
+        table-layout: var(--layout);
+        border-collapse: collapse;
+        border: 1px solid;
+        inline-size: 100%;
+      }
+
+      .table th,
+      .table td {
+        border: 1px solid;
+      }
+
+      .controller {
+        position: fixed;
+        inset-inline: 0;
+        inset-block-end: 0;
+        padding: 2.5rem 2rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 16px rgb(0 0 0 / 0.16);
+      }
+
+      fieldset {
+        border: none;
+        letter-spacing: 0.05em;
+      }
+
+      fieldset p+p {
+        margin-block-start: 0.5em;
+      }
+
+      code {
+        font-size: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      input {
+        font-family: inherit;
+        padding: 0.25em;
+        appearance: none;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+
+        color: #f233a6;
+      }
+
+      legend {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        background-color: #2f2f2f;
+        color: #ccc;
+        padding: 0.25em 0.5em;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table">
+        <caption>売上表</caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>2021</th>
+            <th>2022</th>
+            <th>2023</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>売上</th>
+            <td>926万円</td>
+            <td>1005万円</td>
+            <td>1422万円</td>
+          </tr>
+          <tr>
+            <th>原価</th>
+            <td>312万円</td>
+            <td>329万円</td>
+            <td>927万円</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>原価率</th>
+            <td>33.7%</td>
+            <td>32.7%</td>
+            <td>65.2%</td>
+          </tr>
+        </tfoot>
+      </table>
+
+
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>
+              .table {
+            table-layout: <select  data-change="layout">
+              
+              <option>auto</option>
+              <option>fixed</option>
+            </select>
+            ; border: 1px solid; inline-size: 100%; } <br>
+            .table th, .table td { border: 1px solid; }
+          </code>
+          </label>
+        </p>
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('.table'),
+      }
+
+      const controllers = {
+        "layout": document.querySelector('[data-change="layout"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems.container?.forEach(elem => {
+          elem?.style.setProperty(`--${target}`, value);
+        })
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

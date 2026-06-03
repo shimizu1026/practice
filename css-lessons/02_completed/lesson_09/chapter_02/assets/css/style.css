@@ -1,0 +1,18 @@
+* {
+  color: inherit;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+[data-theme~="dashboard"] {
+  background-color: #efefef;
+}
+
+[data-theme~="bold"] {
+  font-weight: 700;
+}

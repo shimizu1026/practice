@@ -1,0 +1,77 @@
+/*
+  Global Nav
+---------------------------------------------- */
+.global-nav {
+  display: none;
+
+  @container header (inline-size >= 48rem) {
+    display: block flex;
+    column-gap: var(--space-sm);
+  }
+
+  li {
+    writing-mode: vertical-rl;
+  }
+
+  a {
+    position: relative;
+    padding-block: .25em;
+    letter-spacing: .5em;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    transition: var(--duration-fast) var(--ease-out-sine);
+
+
+    &:not(.global-nav-button) {
+      &::after {
+        content: "";
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline: 0;
+        background-color: currentColor;
+        inline-size: 100%;
+        block-size: 1px;
+        transition: inherit;
+        transition-property: scale;
+        transform-origin: 0 100%;
+        scale: 1 0;
+      }
+
+      &:focus-visible {
+        &::after {
+          transform-origin: 0 0;
+          scale: 1 1;
+        }
+      }
+
+      @media (any-hover) {
+        &:hover {
+          &::after {
+            transform-origin: 0 0;
+            scale: 1 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.global-nav-button {
+  border: 1px solid var(--color-light);
+  padding-inline: .5em;
+  padding-block: .25em;
+  transition-property: color, background-color;
+
+  &:focus-visible {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
+
+  @media (any-hover) {
+    &:hover {
+      color: var(--color-dark);
+      background-color: var(--color-light);
+    }
+  }
+}

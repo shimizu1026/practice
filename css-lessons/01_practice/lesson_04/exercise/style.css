@@ -1,0 +1,40 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+}
+
+em {
+  font-style: normal;
+}
+
+.site-name {
+  font-family: "Inter", sans-serif;
+  line-height: 1.25;
+}
+
+.copy {
+  font-size: 2.5rem;
+  font-weight: 200;
+  font-feature-settings: "palt";
+}
+
+.heading {
+  font: 400 1.25rem "Inter", sans-serif;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.post-description {
+  font-size: 0.875rem;
+}
+
+.role {
+  font-size: 0.75rem;
+}
+
+.copyright {
+  font-family: "Inter", sans-serif;
+}

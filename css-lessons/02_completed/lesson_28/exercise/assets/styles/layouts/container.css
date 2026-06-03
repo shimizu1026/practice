@@ -1,0 +1,8 @@
+/* Container */
+.container {
+  container: container / inline-size;
+  max-inline-size: var(--max-container-size, var(--container-size-lg));
+  padding-inline: var(--container-offset, var(--offset-md));
+  margin-inline: auto;
+  box-sizing: content-box;
+}

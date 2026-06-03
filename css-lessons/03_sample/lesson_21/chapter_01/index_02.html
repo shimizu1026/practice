@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition-behavior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      body,
+      .controller * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :where(html) {
+        font-family: "Kumbh Sans", sans-serif;
+        line-height: 1.5;
+        line-break: strict;
+        overflow-wrap: anywhere;
+      }
+
+      :where(body) {
+        min-block-size: 100vb;
+        background-color: #fafafa;
+      }
+
+      .container {
+        display: block grid;
+        place-content: center;
+        min-block-size: calc(100vb - 192px);
+      }
+
+      [popover] {
+        transition: .6s ease-out;
+        transition-property: opacity, display, overlay;
+        transition-behavior: var(--transition-behavior, normal);
+        opacity: 0;
+      }
+
+      [popover]::backdrop {
+        transition: inherit;
+        opacity: 0;
+        background-color: rgb(0 0 0 / 0.5);
+      }
+
+      [popover]:popover-open {
+        opacity: 1;
+      }
+
+      [popover]:popover-open::backdrop {
+        opacity: 1;
+      }
+
+      @starting-style {
+        [popover]:popover-open {
+          opacity: 0;
+        }
+
+        [popover]:popover-open::backdrop {
+          opacity: 0;
+        }
+      }
+
+      .controller {
+        position: fixed;
+        inset-inline: 0;
+        inset-block-end: 0;
+        padding: 2.5rem 2rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 16px rgb(0 0 0 / 0.16);
+      }
+
+      fieldset {
+        border: none;
+        letter-spacing: 0.05em;
+      }
+
+      fieldset p+p {
+        margin-block-start: 0.5em;
+      }
+
+      code {
+        font-size: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      input {
+        font-family: inherit;
+        padding: 0.25em;
+        appearance: none;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+
+        color: #f233a6;
+      }
+
+      legend {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        background-color: #2f2f2f;
+        color: #ccc;
+        padding: 0.25em 0.5em;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button type="button" popovertarget="modal">Click!</button>
+      <div id="modal" class="box" popover>
+        <img src="https://shibajuku.net/demo/assets/images/hilosiva.png" srcset="https://shibajuku.net/demo/assets/images/hilosiva@2x.png 2x" alt="しばひろ" width="250" height="250" class="avatar">
+      </div>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+
+
+        <pre><code>[popover] {
+  transition: .6s ease-out;
+  transition-property: opacity, display, overlay;
+  <label>transition-behavior: <select  data-change="transition-behavior">
+    <option>normal</option>
+    <option>allow-discrete</option>
+  </select></label>;
+ }</code></pre>
+
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('[popover]'),
+      }
+
+      const controllers = {
+        "transition-behavior": document.querySelector('[data-change="transition-behavior"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems.container?.forEach(elem => {
+          elem?.style.setProperty(`--${target}`, value);
+        })
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

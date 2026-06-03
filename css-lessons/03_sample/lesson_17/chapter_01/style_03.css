@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+:where(body) {
+  min-block-size: 100vb;
+}
+
+:where(p) {
+  margin-block-end: 1em;
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+:where(img, svg) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.page {
+  display: block grid;
+  grid-template: "header main" 1fr / minmax(240px, 25%);
+}
+
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  align-self: start;
+  padding-inline: 5vi;
+  padding-block: 5rem;
+}
+
+.main {
+  padding-inline: 5vi;
+  padding-block: 5rem;
+}
+
+.header-nav {
+  margin-block-start: 5rem;
+}
+
+.global-nav {
+  display: block flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.global-nav a {
+  display: block flow;
+  font-weight: 700;
+  color: inherit;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+}
+
+.global-nav a:hover {
+  text-decoration: underline;
+}
+
+.page-title {
+  font-weight: 700;
+  margin-block-end: 1em;
+}
+
+.logo {
+  display: block flow;
+  inline-size: 140px;
+  margin-inline: auto;
+}
+
+.contents {
+  line-height: 2.25;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,14 @@
+/* 兄弟要素の中でその型の最初の要素 */
+p:first-of-type {
+  color: #a32525;
+}
+
+/* 兄弟要素の中でその型の先頭から偶数個目の要素（2n と同じ） */
+p:nth-of-type(even) {
+  background-color: #cbd5d9;
+}
+
+/* 兄弟要素の中でその型の最後の要素 */
+p:last-of-type {
+  color: #1856cb;
+}

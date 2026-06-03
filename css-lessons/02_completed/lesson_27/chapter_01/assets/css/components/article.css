@@ -1,0 +1,18 @@
+/*  Article */
+.article {
+  display: block grid;
+  grid-template:
+    [col-start] "author body meta" 1fr [col-end]
+    / minmax(180px, 15%) 1fr minmax(180px, 15%);
+  column-gap: 2.5rem;
+}
+
+.article-body {
+  grid-area: body;
+}
+.article-footer {
+  grid-area: author;
+}
+.article-meta {
+  grid-area: meta;
+}

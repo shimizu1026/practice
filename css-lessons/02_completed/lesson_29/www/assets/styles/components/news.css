@@ -1,0 +1,60 @@
+/*
+  News
+---------------------------------------------- */
+.news {
+  container: news / inline-size;
+  display: block grid;
+  row-gap: var(--space-sm);
+  align-items: center;
+  padding-block: calc(32 * var(--torem));
+  border: 1px solid var(--color-gray);
+  background-color: color-mix(in srgb, var(--color-dark) 80%, transparent);
+
+  @container hero (inline-size >= 48rem) {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.news-title {
+  padding-inline: var(--space-md);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.15em;
+}
+
+.news-body {
+  container: news-body / inline-size;
+}
+
+
+.news-list {
+  display: block grid;
+  padding-inline: var(--space-md);
+  row-gap: calc(16 * var(--torem));
+
+  @container hero (inline-size >= 48rem) {
+    border-inline-start: 1px solid var(--color-gray);
+  }
+
+  @container news-body (inline-size >= 40rem) {
+    grid-template-columns: max-content 1fr;
+  }
+
+}
+
+.news-item {
+  display: block grid;
+
+  @container news-body (inline-size >= 40rem) {
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    column-gap: 5cqi;
+  }
+
+  dt,
+  dd {
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.2em;
+  }
+}

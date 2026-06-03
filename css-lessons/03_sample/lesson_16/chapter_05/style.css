@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+:where(body) {
+  min-block-size: 100vb;
+}
+
+:where(h2, h3, p) {
+  margin-block: 1em;
+}
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+.container {
+  padding-inline: 5vi;
+  padding-block: 5rem;
+}
+
+.news-list {
+  margin-block-start: 2rem;
+  display: block grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 2rem;
+}
+
+.news-item {
+  display: block grid;
+  grid-template-columns: subgrid;
+  grid-column: span 2;
+  column-gap: 4rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.news-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

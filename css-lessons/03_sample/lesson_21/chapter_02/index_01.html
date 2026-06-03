@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      body,
+      .controller * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :where(html) {
+        font-family: "Kumbh Sans", sans-serif;
+        line-height: 1.5;
+        line-break: strict;
+        overflow-wrap: anywhere;
+      }
+
+      :where(body) {
+        min-block-size: 100vb;
+        background-color: #fafafa;
+        overflow: hidden;
+      }
+
+      .container {
+        display: block grid;
+        place-content: center;
+        min-block-size: calc(100vb - 300px);
+      }
+
+      .avatar {
+        animation-name: var(--animation-name, rotate);
+        animation-duration: var(--animation-duration, 5s);
+        animation-timing-function: var(--animation-timing-function, ease);
+        animation-delay: var(--animation-delay, 0s);
+        animation-iteration-count: var(--animation-iteration-count, infinite);
+        animation-direction: var(--animation-direction, alternate);
+        animation-fill-mode: var(--animation-fill-mode, both);
+        animation-play-state: var(--animation-play-state, running);
+        background-color: #fff;
+        box-shadow: 0 0 24px -8px rgb(0 0 0 / 0.16);
+      }
+
+      @keyframes rotate {
+        from {
+          rotate: 0deg;
+        }
+
+        to {
+          rotate: 360deg
+        }
+      }
+
+      @keyframes slide {
+        0% {
+          translate: -200%;
+        }
+
+        100% {
+          translate: 200%;
+        }
+      }
+
+      @keyframes move {
+
+        0%,
+        100% {
+          translate: 0 0;
+        }
+
+        25% {
+          translate: -50% -50%;
+        }
+
+        50% {
+          translate: 0% -100%;
+        }
+
+        75% {
+          translate: 50% -50%;
+        }
+
+      }
+
+      .controller {
+        position: fixed;
+        inset-inline: 0;
+        inset-block-end: 0;
+        padding: 2.5rem 2rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 16px rgb(0 0 0 / 0.16);
+      }
+
+      fieldset {
+        border: none;
+        letter-spacing: 0.05em;
+      }
+
+      fieldset p+p {
+        margin-block-start: 0.5em;
+      }
+
+      code {
+        font-size: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      input {
+        font-family: inherit;
+        padding: 0.25em;
+        appearance: none;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+
+        color: #f233a6;
+      }
+
+      legend {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        background-color: #2f2f2f;
+        color: #ccc;
+        padding: 0.25em 0.5em;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img src="https://shibajuku.net/demo/assets/images/hilosiva.png" srcset="https://shibajuku.net/demo/assets/images/hilosiva@2x.png 2x" alt="しばひろ" width="250" height="250" class="avatar">
+      </div>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+
+
+        <pre><code>.avatar {
+  <label>animation-name: <input type="text" data-change="animation-name" value="rotate" size="20"></label>;
+  <label>animation-duration: <input type="text" data-change="animation-duration" value="5s" size="20"></label>;
+  <label>animation-timing-function: <input type="text" data-change="animation-timing-function" value="ease" size="20"></label>;
+  <label>animation-delay: <input type="text" data-change="animation-delay" value="0s" size="20"></label>;
+  <label>animation-iteration-count: <input type="text" data-change="animation-iteration-count" value="infinite" size="20"></label>;
+  <label>animation-direction: <input type="text" data-change="animation-direction" value="alternate" size="20"></label>;
+  <label>animation-fill-mode: <input type="text" data-change="animation-fill-mode" value="both" size="20"></label>;
+  <label>animation-play-state: <input type="text" data-change="animation-play-state" value="running" size="20"></label>;
+ }</code></pre>
+
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('.avatar'),
+      }
+
+      const controllers = {
+        "animation-name": document.querySelector('[data-change="animation-name"]'),
+        "animation-duration": document.querySelector('[data-change="animation-duration"]'),
+        "animation-timing-function": document.querySelector('[data-change="animation-timing-function"]'),
+        "animation-delay": document.querySelector('[data-change="animation-delay"]'),
+        "animation-iteration-count": document.querySelector('[data-change="animation-iteration-count"]'),
+        "animation-direction": document.querySelector('[data-change="animation-direction"]'),
+        "animation-fill-mode": document.querySelector('[data-change="animation-fill-mode"]'),
+        "animation-play-state": document.querySelector('[data-change="animation-play-state"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems.container?.forEach(elem => {
+          elem?.style.setProperty(`--${target}`, value);
+        })
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

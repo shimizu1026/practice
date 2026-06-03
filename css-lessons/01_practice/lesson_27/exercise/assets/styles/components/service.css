@@ -1,0 +1,75 @@
+/* Service */
+.services {
+  display: block grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  margin-block-start: clamp(var(--space-lg), 1.0687rem + 6.1069vw, var(--space-xl));
+  gap: 1.5rem;
+}
+
+.service {
+  display: block grid;
+  align-items: center;
+  text-decoration: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
+    }
+  }
+}
+
+.service-cover {
+  grid-area: 1 / 1;
+  aspect-ratio: var(--service-ratio, 1);
+
+  @media screen and (width >= 48rem) {
+    --service-ratio: 1.5 / 1;
+  }
+
+  @media screen and (width >= 64rem) {
+    --service-ratio: 2 / 1;
+  }
+}
+
+.service-image {
+  filter: grayscale(30%) opacity(30%);
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover; /* 親要素に対して画像をどう配置するか */
+
+  .service:focus-visible & {
+    filter: opacity(70%);
+  }
+
+  @media (any-hover: hover) {
+    .service:hover & {
+      filter: opacity(70%);
+    }
+  }
+}
+
+.service-name {
+  grid-area: 1 / 1;
+  z-index: 1;
+  inline-size: fit-content;
+  margin-inline: 3rem;
+  font-family: var(--font-sans-serif-en);
+  font-size: clamp(var(--font-lg), 1.3239rem + 0.7512vw, var(--font-xl));
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+
+  .service:focus-visible & {
+    text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
+  }
+
+  @media (any-hover: hover) {
+    .service:hover & {
+      text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
+    }
+  }
+}

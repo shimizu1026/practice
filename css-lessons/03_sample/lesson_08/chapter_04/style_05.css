@@ -1,0 +1,8 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh; /* 最低のボックスの高さを指定するプロパティ */
+  background-image: radial-gradient(circle farthest-side at 88% 80%, rgb(255 255 255 / 0), rgb(255 255 255 / 1)),
+    radial-gradient(circle at 88% 80%, rgb(255 255 255 / 0) 7%, rgba(255, 249, 206, 0.5) 12%, rgb(255 255 255 / 0.5) 12.5%, rgba(255, 249, 206, 0.5) 15%, rgb(255 255 255 / 0) 17%),
+    repeating-conic-gradient(at 88% 80%, transparent 0deg 10deg, rgba(255, 234, 96, 0.4) 10deg 20deg);
+}

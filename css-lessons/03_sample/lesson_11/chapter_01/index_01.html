@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表示方法</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      .box {
+        --display: block;
+
+        background-color: #e6e2d3;
+        display: var(--display);
+      }
+
+      .box p {
+        --display: block;
+
+        display: var(--display);
+        margin-block: 2rem;
+        border: 2px dotted rgb(192, 49, 63);
+      }
+
+      .box em {
+        --display: inline;
+
+        display: var(--display);
+        border: 2px dotted rgb(32, 140, 180);
+      }
+
+      .controller {
+        margin-block-start: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>ブロックレベル要素の中に<em>インラインレベル要素</em>があります。</p>
+      <p>ブロックレベル要素の中に<em>インラインレベル要素</em>があります。</p>
+    </div>
+    <div class="box">
+      <p>ブロックレベル要素の中に<em>インラインレベル要素</em>があります。</p>
+      <p>ブロックレベル要素の中に<em>インラインレベル要素</em>があります。</p>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>.box</code>の<code>display</code>
+            <select data-change="box">
+              <option value="none">none</option>
+              <option value="contents">contents</option>
+              <option value="block flow" selected>block flow（block）</option>
+              <option value="block flow-root">block flow-root（flow-root）</option>
+              <option value="block flex">block flex（flex）</option>
+              <option value="block grid">block grid（grid）</option>
+              <option value="inline flow">inline flow（inline）</option>
+              <option value="inline flow-root">inline flow（inline-block）</option>
+              <option value="inline flex">inline flex（flex）</option>
+              <option value="inline grid">inline grid（grid）</option>
+
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            <code>p</code>の<code>display</code>
+            <select data-change="p">
+              <option value="none">none</option>
+              <option value="contents">contents</option>
+              <option value="block flow" selected>block flow（block）</option>
+              <option value="block flow-root">block flow-root（flow-root）</option>
+              <option value="block flex">block flex（flex）</option>
+              <option value="block grid">block grid（grid）</option>
+              <option value="inline flow">inline flow（inline）</option>
+              <option value="inline flow-root">inline flow（inline-block）</option>
+              <option value="inline flex">inline flex（flex）</option>
+              <option value="inline grid">inline grid（grid）</option>
+
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            <code>em</code>の<code>display</code>
+            <select data-change="em">
+              <option value="none">none</option>
+              <option value="contents">contents</option>
+              <option value="block flow">block flow（block）</option>
+              <option value="block flow-root">block flow-root（flow-root）</option>
+              <option value="block flex">block flex（flex）</option>
+              <option value="block grid">block grid（grid）</option>
+              <option value="inline flow" selected>inline flow（inline）</option>
+              <option value="inline flow-root">inline flow（inline-block）</option>
+              <option value="inline flex">inline flex（flex）</option>
+              <option value="inline grid">inline grid（grid）</option>
+
+            </select>
+          </label>
+        </p>
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        box: document.querySelectorAll('.box'),
+        p: document.querySelectorAll('.box p'),
+        em: document.querySelectorAll('.box em'),
+      }
+
+      const controllers = {
+        box: document.querySelector('[data-change="box"]'),
+        p: document.querySelector('[data-change="p"]'),
+        em: document.querySelector('[data-change="em"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems[target]?.forEach(elem => {
+          elem?.style.setProperty("--display", value);
+        })
+
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+          console.log(e.currentTarget.value);
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+
+    </script>
+  </body>
+</html>

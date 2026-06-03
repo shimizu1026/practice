@@ -1,0 +1,52 @@
+/* Reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(:root) {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #202020;
+}
+
+:where(body) {
+  block-size: 100svb;
+  background-color: #101010;
+  background-image: radial-gradient(#202020, #101010);
+  color: #fff;
+}
+
+body:has(input:checked) .dice {
+  animation: rotate linear 20s infinite;
+}
+
+.center {
+  text-align: center;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 1 1 1 0deg;
+  }
+
+  to {
+    rotate: 1 1 1 360deg;
+  }
+}
+
+.container {
+  display: block grid;
+  place-content: center;
+  row-gap: 8rem;
+  block-size: 100%;
+}
+
+/* Dice */
+
+/* Face */

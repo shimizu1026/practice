@@ -1,0 +1,4 @@
+/* Main */
+.main {
+  margin-block-start: clamp(var(--space-lg), 1.9718rem + 2.2535vw, var(--space-xl));
+}

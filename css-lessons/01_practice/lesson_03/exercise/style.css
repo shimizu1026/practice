@@ -1,0 +1,21 @@
+em {
+  font-style: normal;
+}
+
+.copy {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.post-description {
+  font-size: 0.875rem;
+}
+
+.role {
+  font-size: 0.75rem;
+}

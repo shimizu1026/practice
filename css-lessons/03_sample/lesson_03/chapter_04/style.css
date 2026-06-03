@@ -1,0 +1,14 @@
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", YuGothic, "Yu Gothic Medium", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.25rem;
+}
+
+.font-1 {
+  font-feature-settings: "palt";
+  font-variant-ligatures: none;
+}
+
+.font-2 {
+  font-feature-settings: "liga" 0, "pkna";
+  font-variant-east-asian: jis78;
+}

@@ -1,0 +1,66 @@
+/*
+  Footer
+---------------------------------------------- */
+.footer {
+  margin-block-start: var(--space-2xl);
+  padding-block-end: var(--space-lg);
+  text-align: center;
+  color: var(--color-light-gray);
+}
+
+.footer-logo {
+  display: block flow;
+  inline-size: fit-content;
+  margin-inline: auto;
+}
+
+.footer-holiday{
+  display: block flow;
+  font-size: 1em;
+}
+
+.footer-tel {
+  font-size: clamp(32 * var(--torem), 1.6479rem + 1.5023vi, 80 * var(--torem));
+  color: var(--color-gold);
+  font-weight: 700;
+  line-height: 1.25;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer-nav {
+  display: block flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: var(--space-md);
+  padding-inline: var(--offset-md);
+
+  li {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.2em;
+  }
+
+  a {
+    display: block flex;
+    align-items: center;
+    column-gap: 0.5em;
+
+    img {
+      margin-block-start: 2px;
+    }
+
+
+    &:focus-visible {
+      text-decoration: none;
+    }
+
+
+    @media (any-hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

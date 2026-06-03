@@ -1,0 +1,63 @@
+/* Reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+:where(html) {
+  font-family: var(--font-sans-serif-jp);
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  overflow-x: clip;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: unset;
+  font-weight: unset;
+}
+
+:where(strong) {
+  font-weight: unset;
+}
+
+:where(em) {
+  font-style: unset;
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+}
+
+:where(a:any-link) {
+  color: unset;
+}
+
+:where(img, iframe) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}

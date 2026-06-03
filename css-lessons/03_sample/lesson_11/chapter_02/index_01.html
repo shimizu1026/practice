@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表示方法</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      .box {
+        margin-block: 1rem;
+        padding: 1rem;
+        background-color: #e6e2d3;
+      }
+
+      .box em {
+        --visibility: visible;
+
+        visibility: var(--visibility);
+        border: 2px dotted rgb(32, 140, 180);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid;
+      }
+
+      th,
+      td {
+        padding: .5em;
+      }
+
+      .collapse {
+        --visibility: visible;
+
+        visibility: var(--visibility);
+        background-color: #26e1d2;
+      }
+
+      .controller {
+        margin-block-start: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>ブロックレベル要素の中に<em>インラインレベル要素</em>があります。</p>
+    </div>
+    <div class="box">
+      <table>
+        <caption>テーブル</caption>
+        <thead>
+          <tr>
+            <th>見出しセルA</th>
+            <th>見出しセルB</th>
+            <th>見出しセルC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="collapse">
+            <td>1行目の内容セルA</td>
+            <td>1行目の内容セルB</td>
+            <td>1行目の内容セルC</td>
+          </tr>
+          <tr>
+            <td>2行目の内容セルA</td>
+            <td class="collapse">2行目の内容セルB</td>
+            <td>2行目の内容セルC</td>
+          </tr>
+          <tr>
+            <td>3行目の内容セルA</td>
+            <td>3行目の内容セルB</td>
+            <td>3行目の内容セルC</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>em</code>の<code>visibility</code>
+            <select data-change="em">
+              <option selected>visible</option>
+              <option>hidden</option>
+              <option>collapse</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            <code>table</code>内の1行目と、2行目のセルBの<code>visibility</code>
+            <select data-change="collapse">
+              <option selected>visible</option>
+              <option>hidden</option>
+              <option>collapse</option>
+            </select>
+          </label>
+        </p>
+
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        box: document.querySelectorAll('.box'),
+        p: document.querySelectorAll('.box p'),
+        em: document.querySelectorAll('.box em'),
+        collapse: document.querySelectorAll('.collapse'),
+      }
+
+      const controllers = {
+        box: document.querySelector('[data-change="box"]'),
+        p: document.querySelector('[data-change="p"]'),
+        em: document.querySelector('[data-change="em"]'),
+        collapse: document.querySelector('[data-change="collapse"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems[target]?.forEach(elem => {
+          elem?.style.setProperty("--visibility", value);
+        })
+
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+          console.log(e.currentTarget.value);
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

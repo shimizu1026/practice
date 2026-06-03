@@ -1,0 +1,21 @@
+:where(body) {
+  background-color: #a49d7c;
+}
+
+.container {
+  width: 80%;
+  min-width: 600px;
+  max-width: 1200px;
+  background-color: #79745d;
+}
+
+.tagline {
+  inline-size: fit-content;
+  background-color: #3b392e;
+  color: #fff;
+}
+
+.section {
+  min-block-size: 160px;
+  background-color: #fff;
+}

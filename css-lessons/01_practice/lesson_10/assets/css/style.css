@@ -1,0 +1,60 @@
+/* Reset */
+:where(body) {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 2;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #101010;
+  font-weight: 900;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:where(h1) {
+  font-size: 2.5rem;
+  color: #f8861d;
+}
+
+:where(h2) {
+  font-size: 2rem;
+  color: #f8861d;
+}
+
+:where(h3) {
+  font-size: 1.5rem;
+}
+
+:where(strong) {
+  font-weight: inherit;
+}
+
+:where(em) {
+  font-style: inherit;
+}
+
+:where(a:any-link) {
+  color: inherit;
+}
+
+/* Header */
+
+/* Footer */
+
+/* Container */
+
+/* Post */
+
+/* Local Nav */
+
+/* Section */
+
+/* Heading */
+
+/* List  */
+
+/* Embed Video */
+
+/* FAQ */

@@ -1,0 +1,142 @@
+:root {
+  --color-dark: #101010;
+
+  --font-xl: 3rem;
+
+  --offset-sm: 5vi;
+  --offset-md: 10vi;
+  --offset-lg: 15vi;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  padding: 0;
+  margin: 0;
+}
+
+:where(html) {
+  color: var(--color-dark);
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+:where(img) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.container {
+  padding-inline: var(--offset-sm);
+  margin-inline: auto;
+}
+
+.header {
+  display: block flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+  padding-inline: var(--offset-sm);
+}
+
+.footer {
+  padding-block: 1.5rem;
+  padding-inline: var(--offset-sm);
+}
+
+.logo {
+  inline-size: 160px;
+}
+
+.global-nav {
+  display: block flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media not screen and (min-width: 64rem) {
+  .global-nav {
+    display: none;
+  }
+}
+
+.global-nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button-hamburger {
+  display: block grid;
+  place-content: center;
+  inline-size: 48px;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  appearance: none;
+  cursor: pointer;
+}
+
+@media (width >= 64rem) {
+  .button-hamburger {
+    display: none;
+  }
+}
+
+.section {
+  margin-block: 4rem;
+}
+
+.heading {
+  font-size: var(--font-xl);
+}
+
+.menu {
+  display: block grid;
+  margin-block-start: 2rem;
+  grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr));
+  gap: var(--gap, 1.5rem);
+}
+
+@media (width >= 48rem) {
+  .menu {
+    --cols: 2;
+    --gap: 2rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .menu {
+    --cols: 3;
+    --gap: 2.5rem;
+  }
+}
+
+@media (768px <= width <= 1023px) {
+  .menu-item:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-figure {
+  overflow: hidden;
+}
+
+.card-figure img {
+  inline-size: 100%;
+}
+
+.card-caption {
+  margin-block-start: 0.5rem;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,6 @@
+/* Footer */
+.footer {
+  padding-inline: var(--offset-md);
+  padding-block: clamp(var(--space-lg), 1.9718rem + 2.2535vw, var(--space-xl));
+  text-align: center;
+}

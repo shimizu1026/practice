@@ -1,0 +1,17 @@
+/*
+  Text
+---------------------------------------------- */
+.text-xs {
+  font-size: calc(12 * var(--torem));
+  letter-spacing: 0.2em;
+}
+
+.text-sm {
+  font-size: calc(14 * var(--torem));
+  letter-spacing: 0.2em;
+}
+
+.text-md {
+  font-size: calc(16 * var(--torem));
+  letter-spacing: 0.2em;
+}

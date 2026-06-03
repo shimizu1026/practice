@@ -1,0 +1,11 @@
+.font-1 {
+  font: 1.5rem serif;
+}
+
+.font-2 {
+  font: italic small-caps bold 1rem/1.5 "Noto Sans JP", system-ui;
+}
+
+.font-3 {
+  font: caption;
+}

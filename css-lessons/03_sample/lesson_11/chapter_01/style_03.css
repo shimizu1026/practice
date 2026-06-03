@@ -1,0 +1,8 @@
+.list > li {
+  display: inline flow-root;
+}
+
+.list > li:not(:last-child):after {
+  content: "/";
+  margin-inline-start: 0.25rem;
+}

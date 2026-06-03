@@ -1,0 +1,6 @@
+/* Logo */
+.logo {
+  img {
+    inline-size: min(40vw, 240px);
+  }
+}

@@ -1,0 +1,34 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", sans-serif;
+}
+
+em {
+  font-style: normal;
+}
+
+.site-name {
+  font-stretch: condensed;
+}
+
+.copy {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.post-description {
+  font-size: 0.875rem;
+}
+
+.role {
+  font-size: 0.75rem;
+}

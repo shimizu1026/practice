@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+}
+
+.header {
+  padding-inline: 5vi;
+  padding-block: 3rem;
+}
+
+.site-description {
+  letter-spacing: 0.1em;
+}
+
+.footer {
+  padding-inline: 5vi;
+  padding-block: 4rem;
+  background-color: #101010;
+  color: #dfdfdf;
+}
+
+.copyright {
+  margin-block-start: 2rem;
+}

@@ -1,0 +1,65 @@
+/* Service */
+.services {
+  display: block grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  margin-block-start: clamp(var(--space-lg), 1.0687rem + 6.1069vw, var(--space-xl));
+  gap: max(1.5rem, 2.5cqi);
+}
+
+.service {
+  container: service / inline-size;
+  display: block grid;
+  align-items: center;
+  text-decoration: none;
+}
+
+.service-cover {
+  grid-area: 1 / 1;
+  aspect-ratio: var(--service-ratio, 1);
+
+  @container service (width >= 30rem) {
+    --service-ratio: 1.5 / 1;
+  }
+
+  @container service (width >= 40rem) {
+    --service-ratio: 2 / 1;
+  }
+}
+
+.service-image {
+  filter: grayscale(30%) opacity(30%);
+  inline-size: 100%;
+
+
+  .service:focus-visible & {
+    filter: opacity(70%);
+  }
+
+  @media (any-hover: hover) {
+    .service:hover & {
+      filter: opacity(70%);
+    }
+  }
+}
+
+.service-name {
+  grid-area: 1 / 1;
+  z-index: 1;
+  inline-size: fit-content;
+  margin-inline: 3rem;
+  font-family: var(--font-sans-serif-en);
+  font-size: clamp(var(--font-lg), 1.2949rem + 1.0256cqi, var(--font-xl));
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+
+  .service:focus-visible & {
+    text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
+  }
+
+  @media (any-hover: hover) {
+    .service:hover & {
+      text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
+    }
+  }
+}

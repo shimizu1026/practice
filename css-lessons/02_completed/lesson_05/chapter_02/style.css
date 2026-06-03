@@ -1,0 +1,18 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+em {
+  font-style: normal;
+}
+
+.writing-rl {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.page-title {
+  font-size: 3rem;
+}

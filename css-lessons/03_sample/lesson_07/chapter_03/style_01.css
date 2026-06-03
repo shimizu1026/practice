@@ -1,0 +1,15 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  background-image: url(../images/wood.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.heading {
+  background-color: rgb(0 0 0 / 0.7);
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  color: #fff;
+}

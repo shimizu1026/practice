@@ -1,0 +1,58 @@
+/*
+  Valiables
+---------------------------------------------- */
+:root {
+  /* Color */
+  --color-dark: #020001;
+  --color-light: #FFFFFF;
+  --color-gray: #7D7D7D;
+  --color-light-gray: #C0C0C0;
+  --color-gold: #CABA82;
+
+  /* Font Family */
+  --font-serif-ja: "Noto Serif JP", serif;
+
+  /* Font Size */
+  --font-size-xs: calc(12 * var(--torem));
+  --font-size-sm: calc(14 * var(--torem));
+  --font-size-md: calc(16 * var(--torem));
+  --font-size-lg: calc(18 * var(--torem));
+  --font-size-xl: calc(24 * var(--torem));
+  --font-size-2xl: clamp(32 * var(--torem), 1.6479rem + 1.5023vi, 48 * var(--torem));
+  --font-size-3xl: clamp(40 * var(--torem), 1.9718rem + 2.2535vi, 64 * var(--torem));
+
+  /* Offset */
+  --offset-md: 5vi;
+
+  /* Contents Size */
+  --contents-size-md: 640px;
+  --contents-size-lg: 1024px;
+  --contents-size-xl: 1280px;
+  --contents-size-2xl: 1440px;
+
+  /* Spacer */
+  --space-sm: clamp(16 * var(--torem), 0.8239rem + 0.7512vi, 24 * var(--torem));
+  --space-md: clamp(24 * var(--torem), 1.1479rem + 1.5023vi, 40 * var(--torem));
+  --space-lg: clamp(40 * var(--torem), 1.9718rem + 2.2535vi, 64 * var(--torem));
+  --space-xl: clamp(64 * var(--torem), 3.6479rem + 1.5023vi, 80 * var(--torem));
+  --space-2xl: clamp(96 * var(--torem), 4.5915rem + 6.0094vi, 160 * var(--torem));
+  --space-3xl: clamp(112 * var(--torem), 4.5352rem + 10.5164vi, 224 * var(--torem));
+
+  /* Tool */
+  --torem: calc(1rem / 16);
+
+  /* Animation & Transition */
+  --duration-fast: 0.3s;
+  --duration-normal: 0.6s;
+  --duration-slow: 1.6s;
+  --ease-out-sine: cubic-bezier(0.61, 1, 0.88, 1);
+
+  /* Base */
+  --base-background: var(--color-dark);
+  --base-line-height: 2;
+  --base-color: var(--color-light);
+  --base-font-family: var(--font-serif-ja);
+  --base-font-weight: 500;
+  --base-strong-color: var(--color-gold);
+  --base-srcoll-margin: var(--space-2xl);
+}

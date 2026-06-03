@@ -1,0 +1,9 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  background-color: #acaba4;
+}
+
+.bg-white {
+  background-color: #fff;
+}

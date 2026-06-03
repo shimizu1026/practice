@@ -1,0 +1,133 @@
+/* Reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(:root) {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 2;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #101010;
+  font-weight: 900;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: unset;
+  font-weight: unset;
+}
+
+:where(h1) {
+  font-size: 2.5rem;
+  color: #f8861d;
+}
+
+:where(h2) {
+  font-size: 2rem;
+  color: #f8861d;
+}
+
+:where(h3) {
+  font-size: 1.5rem;
+}
+
+:where(strong) {
+  font-weight: inherit;
+}
+
+:where(em) {
+  font-style: inherit;
+}
+
+:where(a:any-link) {
+  color: inherit;
+}
+
+:where(img, iframe) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Header */
+.header {
+  padding-inline: 5vi;
+  padding-block: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  padding-inline: 5vi;
+  padding-block: 4rem;
+  background-color: #101010;
+  color: #fff;
+}
+
+/* Container */
+.container {
+  max-inline-size: 840px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}
+
+/* Post */
+.post-cover {
+  margin-block-start: 1.5rem;
+}
+
+.post-description {
+  margin-block-start: 1.5rem;
+}
+
+/* Local Nav */
+.local-nav {
+  inline-size: 80%;
+  margin-inline: auto;
+  margin-block-start: -1.5rem;
+}
+
+/* Section */
+.section {
+  margin-block: 4.5rem;
+}
+
+/* Heading */
+.heading {
+  border-inline-start: 4px solid #f8861d;
+  line-height: 1.2;
+  padding-inline-start: 0.5rem;
+  margin-block-end: 1.5rem;
+}
+
+/* List */
+.list > li {
+  border-block-end: 1px solid;
+  padding-block: 1rem;
+}
+
+/* Embed Video */
+.embed-video {
+  inline-size: 100%;
+  block-size: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* FAQ */
+.faq {
+  padding-block: 5rem;
+  background-color: #efefef;
+}
+
+.faq-list > div {
+  margin-block-start: 1.5rem;
+  background-color: #fff;
+  padding: 1.5rem;
+}

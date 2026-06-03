@@ -1,0 +1,84 @@
+/* Button */
+.button {
+  display: block grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 0.5em;
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+  border-radius: 2.5em;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 0 4px rgb(0 0 0 / 0.16);
+  transition: var(--duration-fast) var(--ease-out-quart);
+  transition-property: color, background-color;
+
+  &::after {
+    --arrow-width: 15%;
+
+    content: "";
+    inline-size: 0.75em;
+    block-size: 0.75em;
+    background-color: currentColor;
+    clip-path: polygon(
+        25% var(--arrow-width),
+        calc(25% + var(--arrow-width)) 0,
+        calc(75% + var(--arrow-width)) 50%,
+        calc(25% + var(--arrow-width)) 100%,
+        25% calc(100% - var(--arrow-width)),
+        calc(75% - var(--arrow-width)) 50%,
+        25% var(--arrow-width)
+      );
+  }
+}
+
+.login {
+  background-color: var(--color-dark);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-main);
+  }
+}
+
+.register {
+  border-color: var(--color-main);
+  background-color: var(--color-main);
+}
+
+.button-hamburger {
+  --button-size: 48px;
+
+  display: inline grid;
+  place-content: center;
+  inline-size: var(--button-size);
+  block-size: var(--button-size);
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  appearance: none;
+  cursor: pointer;
+
+  @media screen and (width >= 80rem) {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    grid-area: 1 / -1;
+    inline-size: calc(var(--button-size) / 2);
+    block-size: 2px;
+    background-color: #fff;
+  }
+
+  &::before {
+    translate: 0 -4px;
+  }
+
+  &::after {
+    translate: 0 4px;
+  }
+}

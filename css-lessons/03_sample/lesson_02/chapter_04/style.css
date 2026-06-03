@@ -1,0 +1,15 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", sans-serif;
+}
+
+.font-1 {
+  font-style: italic; /* イタリック体 */
+}
+
+.font-2 {
+  font-style: oblique; /* 斜体 */
+}
+
+.font-3 {
+  font-style: oblique 90deg; /* 斜体 なければ90度傾く */
+}

@@ -1,0 +1,32 @@
+.text::first-line {
+  background-color: #e8deb4;
+}
+
+.heading::first-letter {
+  font-size: 2em;
+}
+
+.copy::before {
+  content: "❤️";
+}
+
+.copy::after {
+  content: "❤️";
+}
+
+li::marker {
+  color: #1c7e62;
+}
+
+input[type="search"]::placeholder {
+  color: #7a92a4;
+}
+
+.drawer::backdrop {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
+::selection {
+  background-color: #29282e;
+  color: #e8deb4;
+}

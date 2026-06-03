@@ -1,0 +1,29 @@
+/* href属性を持つa要素 */
+a[href] {
+  font-weight: 700;
+}
+
+/* target属性に「_blank」を持つa要素 */
+a[target="_blank"] {
+  color: #2f9d69;
+}
+
+/* rel属性の空白リストのいずれかに「sponsored」を持つa要素 */
+a[rel~="sponsored"] {
+  font-style: italic;
+}
+
+/* href属性が「#」から始まるa要素 */
+a[href^="#"] {
+  text-decoration: underline wavy;
+}
+
+/* aria-label属性に「メニュ」を含む要素 */
+[aria-label*="メニュ"] {
+  background-color: #e6e6de;
+}
+
+/* lang属性が「en」または「en-」で始まる要素 */
+[lang|="en"] {
+  text-transform: uppercase;
+}

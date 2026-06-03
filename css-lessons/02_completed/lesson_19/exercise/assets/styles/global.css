@@ -1,0 +1,192 @@
+/* Reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(:root) {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #202020;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  background-color: #101010;
+  color: #fff;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: unset;
+  font-weight: unset;
+}
+
+:where(strong) {
+  font-weight: unset;
+}
+
+:where(em) {
+  font-style: unset;
+}
+
+:where(ul, ol) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+}
+
+:where(a:any-link) {
+  color: unset;
+}
+
+:where(img, iframe) {
+  display: block flow;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  display: block flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 5vi;
+  padding-block: 1.5rem;
+  mix-blend-mode: exclusion;
+}
+
+/* Main */
+.main {
+  margin-block-start: 4rem;
+}
+
+/* Footer */
+.footer {
+  padding-inline: 5vi;
+  padding-block: 3rem;
+  text-align: center;
+}
+
+/* Site Name */
+.site-name {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+/* Nav List */
+.nav-list {
+  display: block flex;
+  align-items: center;
+  gap: 0.5rem 2rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Page */
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Container */
+.container {
+  max-inline-size: 1100px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}
+
+/* Service */
+.services {
+  margin-block-start: 4rem;
+  display: block grid;
+  row-gap: 2.5rem;
+}
+
+.service {
+  display: block grid;
+  align-items: center;
+  text-decoration: none;
+}
+
+.service:hover,
+.service:focus {
+  box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
+}
+
+.service-cover {
+  grid-area: 1 / 1;
+  aspect-ratio: 3 / 1;
+}
+
+.service-image {
+  filter: grayscale(30%) opacity(30%);
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover; /* 親要素に対して画像をどう配置するか */
+}
+
+.service:hover .service-image,
+.service:focus .service-image {
+  filter: opacity(70%);
+}
+
+.service-name {
+  grid-area: 1 / 1;
+  z-index: 1;
+  inline-size: fit-content;
+  margin-inline: 3rem;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.service:hover .service-name,
+.service:focus .service-name {
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
+}
+
+/* Dialog */
+.dialog {
+  position: fixed;
+  z-index: 2;
+  inset-inline: auto 0;
+  inset-block: auto 0;
+  max-inline-size: 480px;
+  padding: 1.5rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background-color: rgb(0 0 0 / 0.5);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 16px rgb(0 0 0 / 0.5);
+  color: #f0f0f0;
+  font-size: 0.875rem;
+}
+
+.dialog-buttons {
+  margin-block-start: 1rem;
+  text-align: end;
+}

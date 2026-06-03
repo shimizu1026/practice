@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-fit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      body,
+      .controller * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :where(html) {
+        font-family: "Kumbh Sans", sans-serif;
+        line-height: 1.5;
+        line-break: strict;
+        overflow-wrap: anywhere;
+      }
+
+      :where(body) {
+        min-block-size: 100vb;
+        background-color: #fafafa;
+      }
+
+      :where(img) {
+        display: block flow;
+      }
+
+      .container {
+        display: block grid;
+        place-content: center;
+        min-block-size: calc(100vb - 144px);
+      }
+
+      .box {
+        inline-size: 300px;
+        aspect-ratio: 1;
+        background-color: #ccc;
+      }
+
+      .avatar {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: var(--object-fit, cover);
+      }
+
+      .controller {
+        position: fixed;
+        inset-inline: 0;
+        inset-block-end: 0;
+        padding: 2.5rem 2rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 16px rgb(0 0 0 / 0.16);
+      }
+
+      fieldset {
+        border: none;
+        letter-spacing: 0.05em;
+      }
+
+      fieldset p+p {
+        margin-block-start: 0.5em;
+      }
+
+      code {
+        font-size: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      input {
+        font-family: inherit;
+        padding: 0.25em;
+        appearance: none;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+
+        color: #f233a6;
+      }
+
+      legend {
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        background-color: #2f2f2f;
+        color: #ccc;
+        padding: 0.25em 0.5em;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img src="https://shibajuku.net/demo/assets/images/photo-coffee.webp" srcset="https://shibajuku.net/demo/assets/images/photo-coffee@2x.webp 2x" alt="ブレンドコーヒー" width="480" height="320" class="avatar">
+      </div>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <p>
+          <label>
+            <code>
+             .avatar {
+            object-fit: <select data-change="object-fit">
+              <option>fill</option>
+              <option>contain</option>
+              <option selected>cover</option>
+              <option>none</option>
+              <option>scale-down</option>
+            </select>; }
+          </code>
+          </label>
+        </p>
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('.avatar'),
+      }
+
+      const controllers = {
+        "object-fit": document.querySelector('[data-change="object-fit"]'),
+      }
+
+      const setValue = (target, value) => {
+        elems.container?.forEach(elem => {
+          elem?.style.setProperty(`--${target}`, value);
+        })
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

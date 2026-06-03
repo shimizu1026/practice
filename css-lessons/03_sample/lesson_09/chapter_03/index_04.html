@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録 | Dummy Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_04.css">
+  </head>
+  <body>
+    <h1>新規登録</h1>
+    <form action="receive.php" method="post">
+      <p>
+        <label>
+          ユーザー名（必須項目）：
+          <input type="text" name="name" autocomplete="username" autocapitalize="off" autocorrect="off" placeholder="打三井 太郎" required>
+        </label>
+      </p>
+      <p>
+        <label>
+          メールアドレス（必須項目）：
+          <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="hello@example.com" required>
+        </label>
+      </p>
+      <p>
+        <label>
+          Xアカウント：
+          @ <input type="text" name="x" autocomplete="username" autocapitalize="off" autocorrect="off" placeholder="dummy">
+        </label>
+      </p>
+      <p>
+        <label>
+          利用規約：
+          <input type="checkbox" name="term" required> 同意する
+        </label>
+      </p>
+      <p><button disabled>登録する</button></p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", sans-serif;
+}
+
+.font-1 {
+  font-weight: 100; /* Thin */
+}
+
+.font-2 {
+  font-weight: bolder; /* 1段階太く */
+}
+
+.font-3 {
+  font-weight: bold; /* 700と同じ */
+}

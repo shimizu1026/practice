@@ -1,0 +1,19 @@
+/* 無効状態のbutton要素  */
+button:disabled {
+  font-size: 0.75rem;
+}
+
+/* 必須項目のinput要素 */
+input:required {
+  color: #b01919;
+}
+
+/* 妥当性を満たさないinput要素 */
+input:invalid {
+  background-color: #f8f5b9;
+}
+
+/* ユーザーが誤った入力に変更したinput要素 */
+input:user-invalid {
+  background-color: #ee95af;
+}

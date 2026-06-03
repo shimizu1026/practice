@@ -1,0 +1,52 @@
+/* Reset */
+:where(:root) {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: anywhere;
+  color: #202020;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: unset;
+  font-weight: unset;
+}
+
+:where(strong) {
+  font-weight: unset;
+}
+
+:where(em) {
+  font-style: unset;
+}
+
+:where(a:any-link) {
+  color: unset;
+}
+
+.site-name {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.copy {
+  font-size: 3rem;
+  font-weight: 700;
+  word-break: keep-all;
+  text-wrap: balance;
+  font-feature-settings: "palt";
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}

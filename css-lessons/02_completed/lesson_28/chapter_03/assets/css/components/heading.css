@@ -1,0 +1,6 @@
+/* Heading */
+.heading {
+  color: var(--color-main);
+  font-size: clamp(24 * var(--torem), 1.3239rem + 0.7512vw, 32 * var(--torem));
+  margin-block-end: 1em;
+}

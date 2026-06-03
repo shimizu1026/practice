@@ -1,0 +1,24 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  background-image: url(../images/wood.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.heading {
+  background-color: rgb(0 0 0 / 0.7);
+  background-image: url(../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: right 2% center; /* 98% 50% と同じ */
+  color: #fff;
+}
+
+.heading {
+  background-position: top 0.25rem right 2%; /* 98% 0.25rem と同じ */
+}
+
+.heading {
+  background-position-x: right 2%;
+  background-position-y: 50%;
+}

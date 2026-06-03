@@ -1,0 +1,54 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  background: fixed url(../images/note@2x.png) 0% 0% / auto 400px round;
+}
+
+em {
+  font-style: normal;
+}
+
+.site-description {
+  letter-spacing: 0.1em;
+}
+
+.heading {
+  font-family: "Jost", sans-serif;
+  font-size: 5rem;
+  line-height: 1.25;
+  text-align: center;
+  color: #f8861d;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.post-text {
+  letter-spacing: 0.1em;
+}
+
+.post-date {
+  font-size: 0.875rem;
+}
+
+.post-author {
+  font-size: 0.75rem;
+  text-align: end;
+  letter-spacing: 0.1em;
+}
+
+.caution {
+  text-align: center;
+  background: url(../images/ornament-left.svg) 2% 0.5rem / contain no-repeat, url(../images/ornament-right.svg) right 2% top 0.5rem / contain no-repeat #f8861d;
+  color: #fff;
+  font-size: 1.5rem;
+}

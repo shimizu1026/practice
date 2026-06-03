@@ -1,0 +1,21 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.text-link {
+  text-decoration: none;
+}
+
+.text-wavy {
+  text-decoration: underline overline 0.25em red wavy;
+  text-underline-offset: 0.5em;
+}
+
+.emphasis-dot {
+  text-emphasis: dot;
+}
+
+.emphasis-sesame {
+  text-emphasis: open sesame red;
+}

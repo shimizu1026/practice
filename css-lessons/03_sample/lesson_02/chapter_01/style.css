@@ -1,0 +1,19 @@
+.font-1 {
+  font-size: x-large; /* 絶対サイズ */
+}
+
+.font-2 {
+  font-size: larger; /* 相対サイズ */
+}
+
+.font-3 {
+  font-size: 1.5rem; /* フォントによる相対的な長さ */
+}
+
+.font-4 {
+  font-size: 3vw; /* ビューポートによる相対的な長さ */
+}
+
+small {
+  font-size: 0.5em; /* フォントによる相対的な長さ */
+}

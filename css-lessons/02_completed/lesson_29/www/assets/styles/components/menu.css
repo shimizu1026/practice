@@ -1,0 +1,27 @@
+/*
+  Menu
+---------------------------------------------- */
+.menu {
+  display: block grid;
+  gap: clamp(32 * var(--torem), 3.125cqi, 40 * var(--torem));
+
+  :where(.heading) {
+    margin-block: auto;
+  }
+
+
+  @container container (inline-size >= 64rem) {
+    grid-template-columns: calc(284 * var(--torem)) 1fr;
+    align-items: center;
+  }
+}
+
+.menu-body {
+  container: menu-body / inline-size;
+}
+
+.menu-grid {
+  display: block grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(32 * var(--torem), 4.2cqi, 40 * var(--torem)) clamp(24 * var(--torem), 4.2cqi, 40 * var(--torem));
+}

@@ -1,0 +1,10 @@
+/* Hero */
+.hero-title {
+  position: relative;
+  z-index: 1;
+  color: var(--color-main);
+  text-align: center;
+  font-size: clamp(64 * var(--torem), 3.6479rem + 1.5023vw, 80 * var(--torem));
+  font-family: var(--font-sans-serif-en);
+  margin-block-end: -0.75em;
+}

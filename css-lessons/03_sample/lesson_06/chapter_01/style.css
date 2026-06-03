@@ -1,0 +1,16 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.midnightblue {
+  color: midnightblue;
+}
+
+.tomato {
+  color: tomato;
+}
+
+.teal {
+  color: teal;
+}

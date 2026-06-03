@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Alignment</title>
+    <style>
+      :root {
+        --color-padding-area: #e557ef80;
+        --aria-gradient: linear-gradient(-45deg, var(--color-padding-area) 10%, #0000 0, #0000 50%, var(--color-padding-area) 0, var(--color-padding-area) 60%, #0000 0, #0000);
+
+        --color-teal-1: #0EB981;
+        --color-teal-2: #0a825a;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      .grid-container {
+        display: block grid;
+        grid-template-columns: var(--grid-cols, repeat(3, auto));
+        place-content: var(--align-content, normal) var(--justify-content, normal);
+        place-items: var(--align-items, normal) var(--justify-items, legacy);
+        gap: var(--gap, normal);
+        background-image: var(--aria-gradient);
+        background-size: 6px 6px;
+        block-size: 460px;
+      }
+
+      .grid-item {
+        text-align: center;
+        padding: 2em;
+        background-color: var(--color-teal-1);
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid var(--color-teal-2);
+
+        &:nth-child(2) {
+          font-size: 2rem;
+        }
+
+        &:nth-child(5) {
+          font-size: .75rem;
+        }
+      }
+
+      .controller {
+        margin-block-start: 4rem;
+
+        pre {
+          line-height: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">01</div>
+      <div class="grid-item">02</div>
+      <div class="grid-item">03</div>
+      <div class="grid-item">04</div>
+      <div class="grid-item">05</div>
+      <div class="grid-item">06</div>
+    </div>
+
+
+    <div class="controller">
+      <fieldset>
+        <legend>コントローラー</legend>
+        <pre><code>.grid-container {
+  display: block grid;
+  grid-template-colmns: repeat(3, auto);
+  <label>justify-content: <select data-change="justify-content">
+    <option>normal</option>
+    <optgroup label="content-position">
+      <option>start</option>
+      <option>end</option>
+      <option>center</option>
+      <option>flex-start</option>
+      <option>flex-end</option>
+    </optgroup>
+    <optgroup label="content-distribution">
+      <option>space-between</option>
+      <option>space-around</option>
+      <option>space-evenly</option>
+      <option>stretch</option>
+    </optgroup>
+    <option>left</option>
+    <option>right</option>
+ </select>;</label> /* インライン軸のコンテンツ配置 */
+  <label>align-content: <select data-change="align-content">
+    <option>normal</option>
+    <optgroup label="content-position">
+      <option>start</option>
+      <option>end</option>
+      <option>center</option>
+      <option>flex-start</option>
+      <option>flex-end</option>
+    </optgroup>
+    <optgroup label="content-distribution">
+      <option>space-between</option>
+      <option>space-around</option>
+      <option>space-evenly</option>
+      <option>stretch</option>
+    </optgroup>
+    <optgroup label="baseline-position">
+      <option>baseline</option>
+      <option>first baseline</option>
+      <option>last baseline</option>
+    </optgroup>
+  </select>;</label> /* ブロック軸のコンテンツ配置 */
+  <label>justify-items: <select data-change="justify-items">
+    <option>normal</option>
+    <option>stretch</option>
+    <optgroup label="self-position">
+      <option>start</option>
+      <option>end</option>
+      <option>center</option>
+      <option>self-start</option>
+      <option>self-end</option>
+      <option>flex-start</option>
+      <option>flex-end</option>
+    </optgroup>
+    <optgroup label="baseline-position">
+      <option>baseline</option>
+      <option>first baseline</option>
+      <option>last baseline</option>
+    </optgroup>
+    <option>left</option>
+    <option>right</option>
+    <option selected>legacy</option>
+ </select>;</label> /* インライン軸のアイテム群の位置揃え */
+  <label>align-items: <select data-change="align-items">
+    <option>normal</option>
+    <option>stretch</option>
+    <optgroup label="self-position">
+      <option>start</option>
+      <option>end</option>
+      <option>center</option>
+      <option>self-start</option>
+      <option>self-end</option>
+      <option>flex-start</option>
+      <option>flex-end</option>
+    </optgroup>
+    <optgroup label="baseline-position">
+      <option>baseline</option>
+      <option>first baseline</option>
+      <option>last baseline</option>
+    </optgroup>
+  </select>;</label> /* ブロック軸のアイテム群の位置揃え */
+  <label>gap: <input type="text"  data-change="gap">;</label>
+  block-size: 460px;
+}</code></pre>
+
+      </fieldset>
+    </div>
+
+    <script>
+      const elems = {
+        container: document.querySelectorAll('.grid-container'),
+      }
+
+      const controllers = {
+        "justify-content": document.querySelector('[data-change="justify-content"]'),
+        "align-content": document.querySelector('[data-change="align-content"]'),
+        "justify-items": document.querySelector('[data-change="justify-items"]'),
+        "align-items": document.querySelector('[data-change="align-items"]'),
+        "gap": document.querySelector('[data-change="gap"]'),
+
+      }
+
+      const setValue = (target, value) => {
+        elems.container?.forEach(elem => {
+          elem?.style.setProperty(`--${target}`, value);
+        })
+
+
+      }
+
+      for (const [elem] of Object.entries(controllers)) {
+
+
+        controllers[elem]?.addEventListener('change', (e) => {
+          console.log(e.currentTarget.value);
+          setValue(elem, e.currentTarget.value);
+        })
+      }
+
+    </script>
+  </body>
+</html>

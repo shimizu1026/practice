@@ -1,0 +1,73 @@
+/*
+  Hero
+---------------------------------------------- */
+.hero {
+  container: hero / inline-size;
+  display: block grid;
+  grid-template-areas: "hero";
+  max-inline-size: var(--contents-size-2xl);
+  margin-inline: auto;
+}
+
+.hero-body {
+  grid-area: hero;
+  z-index: 1;
+  align-self: end;
+  padding-inline: 5cqi;
+
+  @container hero (inline-size >= 64rem) {
+    align-self: center;
+  }
+}
+
+.hero-cover {
+  grid-area: hero;
+  aspect-ratio: 1 / 1.618;
+
+  @container hero (inline-size >= 32rem) {
+    aspect-ratio: 1 / 1.2;
+  }
+
+  @container hero (inline-size >= 48rem) {
+    aspect-ratio: 1.414 / 1;
+  }
+
+  @container hero (inline-size >= 64rem) {
+    aspect-ratio: 720 / 553;
+  }
+
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-news {
+  margin-block-start: var(--space-xl);
+
+  @container hero (inline-size >= 64rem) {
+    grid-area: hero;
+    align-self: end;
+  }
+}
+
+.hero-copy {
+  inline-size: 10em;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  word-break: keep-all;
+  letter-spacing: .25em;
+  line-height: 2;
+
+  em {
+    --dot-size: 0.167em;
+    --dot-color: var(--color-gold);
+
+    background-image: radial-gradient(var(--dot-size), var( --dot-color) 50%, transparent 50%);
+    background-size: 1.2em var(--dot-size);
+    background-repeat: repeat-x;
+    padding-block-start: calc(var(--dot-size) / 2);
+  }
+}

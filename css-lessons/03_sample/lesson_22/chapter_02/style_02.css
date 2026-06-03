@@ -1,0 +1,57 @@
+:root {
+  --color-main: #715e25;
+  --color-dark: #101010;
+  --color-white: #fff;
+  --color-light-gray: #ebe8df;
+  --offset: 10vi;
+  --container-offset: var(--offset);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  padding: 0;
+  margin: 0;
+}
+
+:where(html) {
+  color: var(--color-dark);
+  background-color: var(--color-light-gray);
+}
+
+.container {
+  padding-inline: var(--container-offset);
+  margin-inline: auto;
+}
+
+.header {
+  --offset: 5vi;
+
+  color: var(--color-white);
+  background-color: var(--color-main);
+  padding-block: 1rem;
+}
+
+.footer {
+  --offset: 5vi;
+
+  color: var(--color-white);
+  background-color: var(--color-main);
+  padding-block: 1rem;
+}
+
+.hero {
+  padding-block: 4rem;
+}
+
+.section {
+  display: block grid;
+  margin-block: 2rem;
+  row-gap: 1rem;
+}
+
+.heading {
+  color: var(--color-main);
+}

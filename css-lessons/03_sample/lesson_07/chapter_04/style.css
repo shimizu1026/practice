@@ -1,0 +1,18 @@
+body {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.5;
+  background-image: url(../images/wood.png);
+  background-attachment: fixed;
+}
+
+.star {
+  background-image: url(../images/star.svg);
+}
+
+.local {
+  background-attachment: local;
+}
+
+.scroll {
+  background-attachment: scroll;
+}

@@ -1,0 +1,37 @@
+:where(body) {
+  background-color: #a49d7c;
+  margin: 0;
+}
+
+:where(h1, h2) {
+  margin: 0;
+}
+
+.container {
+  inline-size: 90%;
+  margin-inline: auto;
+  background-color: #79745d;
+}
+
+.tagline {
+  inline-size: fit-content;
+  margin: 2rem 1rem 1.5rem;
+  border: 1px solid #c5c3b8;
+  padding-block: 0.25rem;
+  padding-inline: 0.5rem;
+  background-color: #3b392e;
+  color: #fff;
+}
+
+.section {
+  margin-block-start: 3rem;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.heading {
+  border-inline-start: 4px solid #3b392e;
+  border-block-end: 1px solid #c5c3b8;
+  padding-inline-start: 1rem;
+  padding-block-end: 0.5rem;
+}

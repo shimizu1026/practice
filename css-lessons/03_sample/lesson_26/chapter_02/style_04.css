@@ -1,0 +1,25 @@
+@layer base {
+  p {
+    color: red;
+  }
+}
+
+@layer theme {
+  .text {
+    color: blue;
+  }
+}
+
+@layer framework {
+  @layer base {
+    p {
+      color: green;
+    }
+  }
+}
+
+@layer framework.base {
+  p {
+    font-size: 1.5rem;
+  }
+}
