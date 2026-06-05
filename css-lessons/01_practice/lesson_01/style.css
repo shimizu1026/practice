@@ -1,0 +1,14 @@
+/* タイプセレクタ */
+p {
+	color: gray;
+}
+
+/* クラスセレクタ */
+.text {
+	font-size: 12px;
+}
+
+/* IDセレクタ */
+#pickup {
+	color: orange;
+}
