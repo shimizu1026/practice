@@ -1,24 +1,30 @@
 body {
-  font-weight: 700;
+	/* font-family: "Noto Sans JP", sans-serif;
+	font-weight: 700;
+	line-height: 1.5; */
+	font: 700 1rem/1.5 "Noto Sans JP", sans-serif;
 }
 
 em {
-  font-style: normal;
+	font-style: normal;
 }
 
 .heading {
-  font-size: 5vw;
+	/* font-family: "Jost", sans-serif;
+	font-size: 5vw;
+	line-height: 1.25; */
+	font: 700 5vw/1.25 "Jost", sans-serif;
 }
 
 .post-title {
-  font-size: 1.5rem;
-  font-weight: 900;
+	font-size: 1.5rem;
+	font-weight: 900;
 }
 
 .post-date {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
 }
 
 .post-author {
-  font-size: 0.75rem;
+	font-size: 0.75rem;
 }
