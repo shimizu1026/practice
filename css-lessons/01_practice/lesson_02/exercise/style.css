@@ -1,0 +1,39 @@
+body {
+	font-family: "Helvetica Neue",
+		Arial,
+		"Hiragino Sans",
+		"Hiragino Kaku Gothic ProN",
+		"BIZ UDPGothic",
+		serif;
+}
+
+em {
+	font-weight: normal;
+}
+
+.site_title {
+	font-stretch: condensed;
+}
+
+.text {
+	font-size: 2.5rem;
+	font-weight: 200;
+}
+
+.heading {
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+.heading3 {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.words {
+	font-size: 0.875rem;
+}
+
+.list {
+	font-size: 0.75rem;
+}
