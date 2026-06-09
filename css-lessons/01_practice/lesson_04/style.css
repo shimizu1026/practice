@@ -8,23 +8,38 @@ em {
 	font-style: normal;
 }
 
+.site-description {
+	letter-spacing: 0.1em;
+}
+
 .heading {
 	font-family: "Jost", sans-serif;
 	font-size: 5rem;
 	line-height: 1.25;
 	text-align: center;
+	text-transform: uppercase;
+}
+
+.post-link {
+	text-decoration: none;
 }
 
 .post-title {
 	font-size: 1.5rem;
 	font-weight: 900;
+	letter-spacing: 0.05em;
 }
 
 .post-date {
 	font-size: 0.875rem;
 }
 
+.post-text {
+	letter-spacing: 0.1em;
+}
+
 .post-author {
 	font-size: 0.75rem;
 	text-align: end;
+	letter-spacing: 0.1em;
 }
