@@ -1,49 +1,58 @@
 body {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	letter-spacing: 0.05em;
+	overflow-wrap: anywhere;
 }
 
 em {
-  font-style: normal;
+	font-style: normal;
 }
 
 .site-name {
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  line-height: 1.25;
+	text-align: center;
+	font-family: "Inter", sans-serif;
+	line-height: 1.25;
 }
 
 .nav-link {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .copy {
-  font-size: 2.5rem;
-  font-weight: 200;
-  font-feature-settings: "palt";
-  letter-spacing: 0.1em;
+	font-size: 2.5rem;
+	font-weight: 200;
+	font-feature-settings: "palt";
+	letter-spacing: 0.1em;
+	word-break: auto-phrase;
+	text-wrap-mode: balance;
+}
+
+.heading-wrap {
+	writing-mode: vertical-rl;
 }
 
 .heading {
-  font: 400 1.25rem "Inter", sans-serif;
+	font: 400 1.25rem "Inter", sans-serif;
+
 }
 
 .post-title {
-  font-size: 2rem;
-  font-weight: 400;
+	font-size: 2rem;
+	font-weight: 400;
 }
 
 .post-description {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
 }
 
 .role {
-  font-size: 0.75rem;
+	font-size: 0.75rem;
 }
 
 .copyright {
-  text-align: end;
-  text-transform: uppercase;
-  font-family: "Inter", sans-serif;
+	text-align: end;
+	text-transform: uppercase;
+	font-family: "Inter", sans-serif;
 }
