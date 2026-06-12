@@ -1,52 +1,53 @@
 body {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  letter-spacing: 0.05em;
-  background-color: #fafafa;
-  color: #202020;
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	letter-spacing: 0.05em;
+	background-color: #fafafa;
+	color: #202020;
+
 }
 
 em {
-  font-style: normal;
+	font-style: normal;
 }
 
 .site-name {
-  font-family: "Inter", sans-serif;
-  line-height: 1.25;
+	font-family: "Inter", sans-serif;
+	line-height: 1.25;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 .copy {
-  font-size: 2.5rem;
-  font-weight: 200;
-  font-feature-settings: "palt";
-  letter-spacing: 0.1em;
-  text-wrap: balance;
-  word-break: auto-phrase;
+	font-size: 2.5rem;
+	font-weight: 200;
+	font-feature-settings: "palt";
+	letter-spacing: 0.1em;
+	text-wrap: balance;
+	word-break: auto-phrase;
 }
 
 .heading {
-  font: 400 1.25rem "Inter", sans-serif;
+	font: 400 1.25rem "Inter", sans-serif;
 }
 
 .post-title {
-  font-size: 2rem;
-  font-weight: 400;
+	font-size: 2rem;
+	font-weight: 400;
 }
 
 .footer {
-  background-color: #202020;
-  color: #999;
+	background-color: #202020;
+	color: #999;
 }
 
 .copyright {
-  text-align: end;
-  text-transform: uppercase;
-  font-family: "Inter", sans-serif;
+	text-align: end;
+	text-transform: uppercase;
+	font-family: "Inter", sans-serif;
 }
