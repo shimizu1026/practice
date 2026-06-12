@@ -3,6 +3,7 @@ body {
 	font-weight: 700;
 	line-height: 1.5;
 	background-image: url(images/note.png);
+	background-repeat: round;
 }
 
 em {
@@ -50,6 +51,7 @@ em {
 	text-align: center;
 	background-color: #f8861d;
 	background-image: url(images/ornament-left.svg), url(images/ornament-right.svg);
+	background-repeat: no-repeat;
 	color: #fff;
 	font-size: 1.5rem;
 }
