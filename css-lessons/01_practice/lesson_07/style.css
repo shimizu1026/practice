@@ -2,8 +2,11 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 700;
   line-height: 1.5;
-  background-image: url(images/note.png);
+  /* background-image: url(images/note@2x.png);
   background-repeat: round;
+  background-attachment: fixed;
+  background-size: auto 400px; */
+  background: url(images/note@2x.png) round fixed 0% 0% / auto 400px;
 }
 
 em {
@@ -49,13 +52,18 @@ em {
 
 .caution {
   text-align: center;
-  background-color: #f8861d;
+  /* background-color: #f8861d;
   background-image:
     url(images/ornament-left.svg), url(images/ornament-right.svg);
   background-repeat: no-repeat;
+  background-size: contain;
   background-position:
     5% 1.5rem,
-    right 5% top 1.5rem;
+    right 1% top 0.5rem; */
+  background:
+    url(images/ornament-left.svg) no-repeat 1% 0.5rem / contain,
+    url(images/ornament-right.svg) no-repeat right 1% top 0.5rem / contain
+      #f8861d;
   color: #fff;
   font-size: 1.5rem;
 }
