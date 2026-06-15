@@ -1,53 +1,65 @@
 body {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 700;
-  line-height: 1.5;
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 700;
+	line-height: 1.5;
+	min-height: 100vh;
+	background-image: repeating-linear-gradient(to right, transparent 0 40px, rgb(216 203 170 / 0.7) 40px 80px), linear-gradient(135deg, #f4edd6, #c8ba96);
+
 }
 
 em {
-  font-style: normal;
+	font-style: normal;
 }
 
 .site-description {
-  letter-spacing: 0.1em;
+	background-image: conic-gradient(from 315deg at 90%, transparent 270deg, #fff 270deg);
+	letter-spacing: 0.1em;
+}
+
+.section {
+	background-image: linear-gradient(to left bottom, transparent 5%, #fff 5% 95%, transparent 95%);
 }
 
 .heading {
-  font-family: "Jost", sans-serif;
-  font-size: 5rem;
-  line-height: 1.25;
-  text-align: center;
-  color: #f8861d;
+	font-family: "Jost", sans-serif;
+	font-size: 5rem;
+	line-height: 1.25;
+	text-align: center;
+	color: transparent;
+	background-image: linear-gradient(125deg, #fb218e, #f0f400);
+	background-color: #f8861d;
+	background-clip: text;
 }
 
 .post-link {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 .post-title {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
+	font-size: 1.5rem;
+	font-weight: 900;
+	letter-spacing: 0.05em;
 }
 
 .post-text {
-  letter-spacing: 0.1em;
+	letter-spacing: 0.1em;
 }
 
 .post-date {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
 }
 
 .post-author {
-  font-size: 0.75rem;
-  text-align: end;
-  letter-spacing: 0.1em;
+	font-size: 0.75rem;
+	text-align: end;
+	letter-spacing: 0.1em;
 }
 
 .caution {
-  text-align: center;
-  background-color: #f8861d;
-  color: #fff;
-  font-size: 1.5rem;
+	text-align: center;
+	background-color: #f8861d;
+	background-image: radial-gradient(at center top, #fbb674, #f8861d);
+	color: #fff;
+	font-size: 1.5rem;
 }
