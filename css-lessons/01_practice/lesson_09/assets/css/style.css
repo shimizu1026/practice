@@ -1,0 +1,10 @@
+* {
+	font-weight: 400;
+}
+
+body {
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	overflow-wrap: anywhere;
+}
