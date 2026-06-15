@@ -1,5 +1,5 @@
 * {
-	font-weight: 400;
+	color: inherit;
 }
 
 body {
@@ -7,4 +7,12 @@ body {
 	line-height: 1.5;
 	line-break: strict;
 	overflow-wrap: anywhere;
+}
+
+body[data-theme~="dashboard"] {
+	background-color: #efefef;
+}
+
+body[data-theme~="bold"] {
+	font-weight: 700;
 }
