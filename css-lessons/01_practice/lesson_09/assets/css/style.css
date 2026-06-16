@@ -2,6 +2,10 @@
 	color: inherit;
 }
 
+:where(h1, h2, h3) {
+	font-size: inherit;
+}
+
 body {
 	font-family: "Noto Sans JP", sans-serif;
 	line-height: 1.5;
@@ -15,4 +19,24 @@ body[data-theme~="dashboard"] {
 
 body[data-theme~="bold"] {
 	font-weight: 700;
+}
+
+.nav-item::marker {
+	color: #f8861d;
+}
+
+.nav-link {
+	text-decoration: none;
+}
+
+.nav-link:any-link:hover {
+	text-decoration: underline;
+}
+
+.table {
+	background-color: #fff;
+}
+
+tr:nth-child(even) {
+	background-color: #f0f0f0;
 }
