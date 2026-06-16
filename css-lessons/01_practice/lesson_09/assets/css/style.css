@@ -37,6 +37,10 @@ body[data-theme~="bold"] {
 	background-color: #fff;
 }
 
-tr:nth-child(even) {
+.table>tbody>tr:nth-child(even) {
 	background-color: #f0f0f0;
+}
+
+.footer small {
+	font-size: 0.75rem;
 }
