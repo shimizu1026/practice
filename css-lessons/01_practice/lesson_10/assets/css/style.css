@@ -1,4 +1,12 @@
 /* Reset */
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 :where(html) {
 	font-family: "Noto Sans JP", sans-serif;
 	line-height: 2;
@@ -49,30 +57,76 @@
 }
 
 /* Header */
+.header {
+	padding-inline: 5vi;
+	padding-block: 1.5rem;
+}
 
 /* Footer */
+.footer {
+	padding-inline: 5vi;
+	padding-block: 4rem;
+	background-color: #101010;
+	color: #fff;
+}
 
 /* Container */
 .container {
+	box-sizing: content-box;
 	max-inline-size: 840px;
+	padding-inline: 5vi;
+	margin-inline: auto;
 }
 
 /* Post */
+.post-cover {
+	margin-inline-start: 1.5rem;
+}
+
+.post-description {
+	margin-inline-start: 1.5rem;
+}
 
 /* Local Nav */
 .local-nav {
 	inline-size: 80%;
+	margin-inline: auto;
+	margin-inline-start: -1.5rem;
 }
 
 /* Section */
+.section {
+	margin-block: 4.5rem;
+}
 
 /* Heading */
+.heading {
+	border-inline-start: 4px solid #f8861d;
+	padding-inline-start: 0.5rem;
+	margin-block-end: 1.5rem;
+}
 
 /* List  */
+.list>li {
+	border-block-end: 1px solid;
+	padding-block: 1rem;
+}
 
 /* Embed Video */
 .embed-video {
 	inline-size: 100%;
+	aspect-ratio: 16/9;
+	block-size: 100%;
 }
 
 /* FAQ */
+.faq {
+	padding-inline: 5rem;
+	background-color: #efefef;
+}
+
+.faq-list>div {
+	padding: 1.5rem;
+	margin-block-start: 1.5rem;
+	background-color: #fff;
+}
