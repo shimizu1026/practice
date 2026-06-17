@@ -1,42 +1,51 @@
 /* Reset */
+:where(html) {
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 2;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	color: #101010;
+	font-weight: 900;
+}
+
 :where(body) {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 2;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  color: #101010;
-  font-weight: 900;
+	block-size: 100svb;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-size: inherit;
-  font-weight: inherit;
+	font-size: inherit;
+	font-weight: inherit;
 }
 
 :where(h1) {
-  font-size: 2.5rem;
-  color: #f8861d;
+	font-size: 2.5rem;
+	color: #f8861d;
 }
 
 :where(h2) {
-  font-size: 2rem;
-  color: #f8861d;
+	font-size: 2rem;
+	color: #f8861d;
 }
 
 :where(h3) {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 :where(strong) {
-  font-weight: inherit;
+	font-weight: inherit;
 }
 
 :where(em) {
-  font-style: inherit;
+	font-style: inherit;
 }
 
 :where(a:any-link) {
-  color: inherit;
+	color: inherit;
+}
+
+:where(img, picture, video, iframe) {
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Header */
@@ -44,10 +53,16 @@
 /* Footer */
 
 /* Container */
+.container {
+	max-inline-size: 840px;
+}
 
 /* Post */
 
 /* Local Nav */
+.local-nav {
+	inline-size: 80%;
+}
 
 /* Section */
 
@@ -56,5 +71,8 @@
 /* List  */
 
 /* Embed Video */
+.embed-video {
+	inline-size: 100%;
+}
 
 /* FAQ */
