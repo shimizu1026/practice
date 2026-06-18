@@ -32,3 +32,27 @@
 }
 
 /* Header */
+.header {
+  display: block flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding-block: 3rem;
+  padding-inline: 5vi;
+}
+
+.header-group {
+  display: block flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+.header-title {
+  font-size: inherit;
+}
+.nav-list {
+  display: block flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+}

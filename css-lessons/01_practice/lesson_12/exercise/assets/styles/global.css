@@ -47,6 +47,9 @@
 
 /* Header */
 .header {
+  display: block flex;
+  justify-content: space-between;
+  align-items: center;
   padding-inline: 5vi;
   padding-block: 1.5rem;
   border-block-end: 1px solid #e0e0e0;
@@ -67,7 +70,18 @@
 }
 
 /* Nav List */
-
+.nav-list {
+  display: block flex;
+  justify-content: center;
+  gap: 0.5rem 2rem;
+}
+.nav-list > a {
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-list > a:hover {
+  text-decoration: underline;
+}
 /* Hero */
 .hero {
   padding-inline: 10vi;
@@ -114,7 +128,12 @@
 }
 
 /* Post */
-
+.post {
+  display: block flex;
+  row-gap: 2rem;
+}
+.post-body {
+}
 .post-title {
   font-size: 2rem;
   font-weight: 700;
