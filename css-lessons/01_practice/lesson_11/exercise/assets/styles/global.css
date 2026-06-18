@@ -49,7 +49,9 @@
 }
 
 /* Global Nav */
-
+.global-nav {
+  display: none;
+}
 /* Footer */
 .footer {
   padding-inline: 5vi;
@@ -123,5 +125,28 @@
 }
 
 /* Role */
+.role > li {
+  display: inline flow-root;
+}
 
+.role > li:not(:last-child)::after {
+  content: "/";
+  margin-inline-start: 0.25em;
+}
 /* Button */
+.button {
+  display: block flow;
+  max-inline-size: 480px;
+  padding-inline: 2.5rem;
+  padding-block: 1.5rem;
+  margin-inline: auto;
+  text-align: center;
+  text-decoration: none;
+  background-color: #202020;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.button:hover {
+  opacity: 0.7;
+}

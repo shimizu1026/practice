@@ -21,6 +21,11 @@
   padding-block: 3rem;
 }
 
+.logo:hover,
+.logo:focus-visible {
+  opacity: 0.7;
+}
+
 .site-description {
   letter-spacing: 0.1em;
 }
@@ -34,4 +39,41 @@
 
 .copyright {
   margin-block-start: 2rem;
+}
+
+.nav-list {
+  display: block flex;
+}
+.nav-list > li {
+  display: block flow;
+}
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+}
+.action-list > li {
+  display: inline flow-root;
+}
+.button {
+  display: block flow;
+  margin-block: 2rem;
+  text-decoration: none;
+  color: #fff;
+  padding-block: 1.25rem;
+  padding-inline: 3rem;
+  border-radius: 2.5em;
+  letter-spacing: 0.05em;
+}
+.button:hover {
+  background-color: #fff;
+  color: #101010;
+}
+.login {
+  border: 2px solid;
+}
+.register {
+  background-color: #f8861d;
+}
+time {
+  visibility: hidden;
 }
