@@ -1,58 +1,65 @@
 /* Base */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(html) {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 700;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  line-height: 1.5;
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 700;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	line-height: 1.5;
 }
 
 :where(body) {
-  min-block-size: 100svb;
+	min-block-size: 100svb;
 }
 
 :where(ul, ol) {
-  list-style-type: ""; /* リストのマーカーを削除 */
+	list-style-type: "";
+	/* リストのマーカーを削除 */
 }
 
 :where(:any-link) {
-  color: unset;
+	color: unset;
 }
 
 :where(img, svg) {
-  display: block flow;
-  max-inline-size: 100%;
-  block-size: auto;
+	display: block flow;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Header */
 .header {
-  display: block flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem 2rem;
-  padding-block: 3rem;
-  padding-inline: 5vi;
+	display: block flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem 2rem;
+	padding-block: 3rem;
+	padding-inline: 5vi;
 }
 
 .header-group {
-  display: block flex;
-  align-items: center;
-  column-gap: 2rem;
+	display: block flex;
+	align-items: center;
+	column-gap: 2rem;
 }
+
 .header-title {
-  font-size: inherit;
+	font-size: inherit;
 }
+
 .nav-list {
-  display: block flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 2rem;
+	display: block flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem 2rem;
+}
+
+.nav-list>li {
+	flex: 1 1 auto;
 }
