@@ -137,3 +137,12 @@
 /* Pick Up */
 
 /* Posts */
+.posts {
+  display: block grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.post img {
+  border-radius: 1rem;
+  inline-size: 100%;
+}
