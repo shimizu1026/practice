@@ -139,7 +139,8 @@
 	grid-template-areas:
 		"head foot"
 		"body body";
-	column-gap: 2rem;
+
+	gap: 2rem;
 }
 
 .members-head {
@@ -164,6 +165,61 @@
 }
 
 /* Cover */
+.covers {
+	display: block grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+	gap: 2rem;
+
+}
+
 .cover {
+	display: block grid;
+	grid-template-rows: subgrid;
+	grid-template-areas: "head"
+		"."
+		" foot";
+	grid-row: span 3;
+	gap: 0;
 	color: #fff;
+}
+
+.cover-head {
+	grid-area: head;
+	writing-mode: vertical-rl;
+	padding: 1.5rem;
+	margin-block-start: auto;
+}
+
+.cover-foot {
+	grid-area: foot;
+	padding: 1.5rem;
+	background-image: linear-gradient(transparent, 40%, rgb(0 0 0 /0.8));
+}
+
+.cover-image {
+	grid-area: 1 / 1 / -1 / -1;
+	z-index: -1;
+}
+
+.cover-image img {
+	inline-size: 100%;
+}
+
+.cover-role {
+	font-size: 0.75rem;
+	font-family: "Inter", sans-serif;
+	letter-spacing: 0.1em;
+	font-weight: 300;
+}
+
+.cover-title {
+	font-size: 1.5rem;
+	letter-spacing: 0.2em;
+	font-weight: 300;
+}
+
+.cover-text {
+	font-size: 0.875rem;
+	line-height: 1.75;
+	letter-spacing: 0.1em;
 }

@@ -163,13 +163,50 @@
 /* Posts */
 .posts {
 	display: block grid;
-	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
 	gap: 2.5rem;
+}
+
+/* Post */
+.post {
+	display: block grid;
+	grid-template-rows: subgrid;
+	grid-row: span 3;
+	grid-template-areas:
+		"cover"
+		"title"
+		"footer";
+	gap: 1rem 0;
+}
+
+.post-cover {
+	order: -1;
 }
 
 .post-cover img {
 	border-radius: 1rem;
 	inline-size: 100%;
+}
+
+.post-footer {
+	display: block flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.75rem;
+}
+
+.post-author {
+	display: block flex;
+	gap: 0.5em;
+	align-items: center;
+}
+
+.post-author img {
+	border-radius: 50%;
+}
+
+.post-date {
+	font-family: "Jost", sans-serif;
 }
 
 /*  Article */
