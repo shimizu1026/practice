@@ -132,12 +132,34 @@
 }
 
 /* Members */
+.members {
+	display: block grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr auto;
+	grid-template-areas:
+		"head foot"
+		"body body";
+	column-gap: 2rem;
+}
+
+.members-head {
+	grid-area: head;
+}
+
+.members-body {
+	grid-area: body;
+}
+
+.members-foot {
+	grid-area: foot;
+	align-self: center;
+}
 
 /* Covers */
 .covers {
 	display: block grid;
-	grid-template-rows: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
-	row-gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+	gap: 2rem;
 
 }
 
