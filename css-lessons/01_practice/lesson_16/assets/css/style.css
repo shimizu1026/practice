@@ -134,6 +134,9 @@
 }
 
 /* clear */
+.clear {
+	clear: both;
+}
 
 /* Posts */
 .posts {
