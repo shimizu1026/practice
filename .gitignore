@@ -1,0 +1,18 @@
+# =========================
+# 誤コミット防止
+# =========================
+
+.env
+.env.*
+!.env.example
+!.env.sample
+
+secrets/
+private/
+credentials/
+
+**/*.pem
+**/*.key
+**/*credentials*.json
+**/*secret*.json
+**/*token*.txt
