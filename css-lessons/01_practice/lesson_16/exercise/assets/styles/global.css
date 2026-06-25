@@ -147,6 +147,7 @@
 }
 
 .history-subcolumn {
+	display: block flexbox;
 	columns: 15em 2;
 	column-gap: 1.5rem;
 	margin-block: 1.5em;
@@ -175,6 +176,11 @@
 	text-align: justify;
 }
 
+.history-photo {
+	inline-size: 50%;
+	margin-block-end: 0.25rem;
+}
+
 .history-photo img {
 	inline-size: 100%;
 }
@@ -190,14 +196,25 @@
 /*  Float */
 .history-photo {
 	float: inline-start;
+	margin-inline-end: 1rem;
 }
 
 .float-end {
 	float: inline-end;
+	margin-inline-start: 1rem;
+
 }
+
+.clear {
+	clear: both;
+}
+
+
 
 /*  News */
 .news-list {
+	overflow: scroll;
+	max-block-size: 320px;
 	display: block grid;
 	grid-template-columns: max-content 1fr;
 	row-gap: 1.5rem;
@@ -213,4 +230,10 @@
 	grid-column: span 2;
 	column-gap: 4rem;
 	letter-spacing: 0.05em;
+}
+
+.news-item dd {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
