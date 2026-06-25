@@ -2,132 +2,169 @@
 *,
 ::before,
 ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(:root) {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  color: #202020;
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	color: #202020;
 }
 
 :where(body) {
-  min-block-size: 100svb;
+	min-block-size: 100svb;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-size: unset;
-  font-weight: unset;
+	font-size: unset;
+	font-weight: unset;
 }
 
 :where(strong) {
-  font-weight: unset;
+	font-weight: unset;
 }
 
 :where(em) {
-  font-style: unset;
+	font-style: unset;
 }
 
 :where(ul, ol) {
-  list-style-type: ""; /* リストのマーカーを削除 */
+	list-style-type: "";
+	/* リストのマーカーを削除 */
 }
 
 :where(a:any-link) {
-  color: unset;
+	color: unset;
 }
 
 :where(img, iframe) {
-  display: block flow;
-  max-inline-size: 100%;
-  block-size: auto;
+	display: block flow;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Header */
 .header {
-  display: block flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 5vi;
-  padding-block: 1.5rem;
-  border-block-end: 1px solid #e0e0e0;
+	display: block flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 5vi;
+	padding-block: 1.5rem;
+	border-block-end: 1px solid #e0e0e0;
 }
 
 /* Footer */
 .footer {
-  padding-inline: 5vi;
-  padding-block: 3rem;
-  text-align: center;
+	padding-inline: 5vi;
+	padding-block: 3rem;
+	text-align: center;
 }
 
 /* Site Name */
 .site-name {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+	font-family: "Inter", sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: 0.05em;
+	font-weight: 700;
 }
 
 /* Nav List */
 .nav-list {
-  display: block flex;
-  align-items: center;
-  gap: 0.5rem 2rem;
+	display: block flex;
+	align-items: center;
+	gap: 0.5rem 2rem;
 }
 
 .nav-list a {
-  text-decoration: none;
-  font-weight: 500;
+	text-decoration: none;
+	font-weight: 500;
 }
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Hero */
 .hero {
-  display: block grid;
+	display: block grid;
 }
 
 .hero-copy {
-  grid-area: 1 / 1;
-  z-index: 1;
-  align-self: center;
-  max-inline-size: 10em;
-  margin-inline-start: 5vw;
-  font-size: 3rem;
-  font-weight: 700;
-  word-break: keep-all;
-  text-wrap: balance;
-  font-feature-settings: "palt";
+	grid-area: 1 / 1;
+	z-index: 1;
+	align-self: center;
+	max-inline-size: 10em;
+	margin-inline-start: 5vw;
+	font-size: 3rem;
+	font-weight: 700;
+	word-break: keep-all;
+	text-wrap: balance;
+	font-feature-settings: "palt";
 }
 
 .hero-cover {
-  grid-area: 1 / 1;
+	grid-area: 1 / 1;
 }
 
 /* Section */
 .section {
-  padding-block: 4rem;
+	padding-block: 4rem;
 }
 
 /* Container */
 .container {
-  max-inline-size: 1200px;
-  padding-inline: 5vi;
-  margin-inline: auto;
-  box-sizing: content-box;
+	max-inline-size: 1200px;
+	padding-inline: 5vi;
+	margin-inline: auto;
+	box-sizing: content-box;
 }
 
 /* Heading */
 .heading {
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
+	font-size: 3.5rem;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
 }
 
 /* History */
+.history-column {
+	columns: 30em 4;
+	column-gap: 4rem;
+	margin-block-start: 4rem;
+	column-rule: 1px solid;
+}
+
+.history-column p {
+	line-height: 2;
+	letter-spacing: 0.05em;
+	text-align: justify;
+}
+
+.history-subcolumn {
+	columns: 15em 2;
+	column-gap: 1.5rem;
+	margin-block: 1.5em;
+}
+
+.history-title {
+	margin-block-end: 1em;
+	padding-block-end: 0.5em;
+	border-block-end: 4px solid;
+	font-size: 2rem;
+
+}
+
+.history-subtitle {
+	margin-block-end: 1em;
+	font-size: 1.5rem;
+	word-break: keep-all;
+}
+
+.history-span-all {
+	column-span: all;
+}
