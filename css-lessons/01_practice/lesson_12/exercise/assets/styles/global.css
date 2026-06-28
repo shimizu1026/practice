@@ -2,180 +2,195 @@
 *,
 ::before,
 ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(:root) {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  color: #202020;
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	color: #202020;
 }
 
 :where(body) {
-  min-block-size: 100svb;
+	min-block-size: 100svb;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-size: unset;
-  font-weight: unset;
+	font-size: unset;
+	font-weight: unset;
 }
 
 :where(strong) {
-  font-weight: unset;
+	font-weight: unset;
 }
 
 :where(em) {
-  font-style: unset;
+	font-style: unset;
 }
 
 :where(ul, ol) {
-  list-style-type: ""; /* リストのマーカーを削除 */
+	list-style-type: "";
+	/* リストのマーカーを削除 */
 }
 
 :where(a:any-link) {
-  color: unset;
+	color: unset;
 }
 
 :where(img, iframe) {
-  max-inline-size: 100%;
-  block-size: auto;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Header */
 .header {
-  display: block flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 5vi;
-  padding-block: 1.5rem;
-  border-block-end: 1px solid #e0e0e0;
+	display: block flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 5vi;
+	padding-block: 1.5rem;
+	border-block-end: 1px solid #e0e0e0;
 }
 
 /* Footer */
 .footer {
-  padding-inline: 5vi;
-  padding-block: 3rem;
+	padding-inline: 5vi;
+	padding-block: 3rem;
 }
 
 /* Site Name */
 .site-name {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+	font-family: "Inter", sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: 0.05em;
+	font-weight: 700;
 }
 
 /* Nav List */
 .nav-list {
-  display: block flex;
-  justify-content: center;
-  gap: 0.5rem 2rem;
+	display: block flex;
+	justify-content: center;
+	gap: 0.5rem 2rem;
 }
-.nav-list > a {
-  text-decoration: none;
-  font-weight: 500;
+
+.nav-list a {
+	text-decoration: none;
+	font-weight: 500;
 }
-.nav-list > a:hover {
-  text-decoration: underline;
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+	text-decoration: underline;
 }
+
 /* Hero */
 .hero {
-  padding-inline: 10vi;
-  padding-block: 10rem;
-  border-block-end: 1px solid #e0e0e0;
+	padding-inline: 10vi;
+	padding-block: 10rem;
+	border-block-end: 1px solid #e0e0e0;
 }
 
 /* Copy */
 .copy {
-  font-size: 3rem;
-  font-weight: 700;
-  word-break: keep-all;
-  text-wrap: balance;
-  font-feature-settings: "palt";
+	font-size: 3rem;
+	font-weight: 700;
+	word-break: keep-all;
+	text-wrap: balance;
+	font-feature-settings: "palt";
 }
 
 /* Section */
 .section {
-  padding-block: 4rem;
+	padding-block: 4rem;
 }
 
 /* Container */
 .container {
-  max-inline-size: 1200px;
-  padding-inline: 5vi;
-  margin-inline: auto;
-  box-sizing: content-box;
+	max-inline-size: 1200px;
+	padding-inline: 5vi;
+	margin-inline: auto;
+	box-sizing: content-box;
 }
 
 /* Heading */
 .heading {
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
+	font-size: 3.5rem;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
 }
 
 /* Posts */
 .posts {
-  margin-block: 2rem;
+	margin-block: 2rem;
 }
 
 .posts-foot {
-  margin-block-start: 4rem;
+	margin-block-start: 4rem;
 }
 
 /* Post */
 .post {
-  display: block flex;
-  row-gap: 2rem;
+	display: block flex;
+	column-gap: 4rem;
 }
+
 .post-body {
+	/* flex-grow: 1;
+	flex-basis: auto; */
+	flex: auto;
 }
+
+.post-cover {
+	flex-basis: 50%;
+	order: -1;
+}
+
 .post-title {
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
+	font-size: 2rem;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
 }
 
 .post-description {
-  margin-block-start: 1rem;
+	margin-block-start: 1rem;
 }
 
 .post-meta {
-  margin-block-start: 1.5rem;
-  padding: 2rem;
-  border: 1px dotted #e0e0e0;
+	margin-block-start: 1.5rem;
+	padding: 2rem;
+	border: 1px dotted #e0e0e0;
 }
 
 /* Role */
-.role > li {
-  display: inline flow-root;
+.role>li {
+	display: inline flow-root;
 }
 
-.role > li:not(:last-child):after {
-  content: "/";
-  margin-inline-start: 0.25em;
+.role>li:not(:last-child):after {
+	content: "/";
+	margin-inline-start: 0.25em;
 }
 
 /* Button */
 .button {
-  display: block flow;
-  max-inline-size: 480px;
-  padding-inline: 2.5rem;
-  padding-block: 1.5rem;
-  margin-inline: auto;
-  text-align: center;
-  color: #fff;
-  background-color: #202020;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.1em;
+	display: block flow;
+	max-inline-size: 480px;
+	padding-inline: 2.5rem;
+	padding-block: 1.5rem;
+	margin-inline: auto;
+	text-align: center;
+	color: #fff;
+	background-color: #202020;
+	font-weight: 700;
+	text-decoration: none;
+	letter-spacing: 0.1em;
 }
 
 .button:hover,
 .button:focus-visible {
-  opacity: 0.7;
+	opacity: 0.7;
 }

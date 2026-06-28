@@ -1,79 +1,88 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(html) {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 700;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  line-height: 1.5;
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 700;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	line-height: 1.5;
 }
 
 :where(body) {
-  min-block-size: 100svb;
+	min-block-size: 100svb;
 }
 
 .header {
-  padding-inline: 5vi;
-  padding-block: 3rem;
+	padding-inline: 5vi;
+	padding-block: 3rem;
 }
 
 .logo:hover,
 .logo:focus-visible {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 .site-description {
-  letter-spacing: 0.1em;
+	letter-spacing: 0.1em;
 }
 
 .footer {
-  padding-inline: 5vi;
-  padding-block: 4rem;
-  background-color: #101010;
-  color: #dfdfdf;
+	padding-inline: 5vi;
+	padding-block: 4rem;
+	background-color: #101010;
+	color: #dfdfdf;
 }
 
 .copyright {
-  margin-block-start: 2rem;
+	margin-block-start: 2rem;
 }
 
 .nav-list {
-  display: block flex;
+	display: block flex;
 }
-.nav-list > li {
-  display: block flow;
+
+.nav-list>li {
+	display: block flow;
 }
+
 .nav-list a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
-.action-list > li {
-  display: inline flow-root;
+
+
+.action-list>li {
+	display: inline flow-root;
 }
+
 .button {
-  display: block flow;
-  margin-block: 2rem;
-  text-decoration: none;
-  color: #fff;
-  padding-block: 1.25rem;
-  padding-inline: 3rem;
-  border-radius: 2.5em;
-  letter-spacing: 0.05em;
+	display: block flow;
+	margin-block: 2rem;
+	text-decoration: none;
+	color: #fff;
+	padding-block: 1.25rem;
+	padding-inline: 3rem;
+	border-radius: 2.5em;
+	letter-spacing: 0.05em;
 }
+
 .button:hover {
-  background-color: #fff;
-  color: #101010;
+	background-color: #fff;
+	color: #101010;
 }
+
 .login {
-  border: 2px solid;
+	border: 2px solid;
 }
+
 .register {
-  background-color: #f8861d;
+	background-color: #f8861d;
 }
+
 time {
-  visibility: hidden;
+	visibility: hidden;
 }

@@ -1,0 +1,27 @@
+# =========================
+# 依存関係・ビルド成果物
+# =========================
+
+node_modules/
+.astro/
+dist/
+.DS_Store
+
+# =========================
+# 誤コミット防止
+# =========================
+
+.env
+.env.*
+!.env.example
+!.env.sample
+
+secrets/
+private/
+credentials/
+
+**/*.pem
+**/*.key
+**/*credentials*.json
+**/*secret*.json
+**/*token*.txt
