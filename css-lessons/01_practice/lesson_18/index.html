@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>投稿したレシピ一覧 | 管理画面 | Dummy Kitchen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
 
-  <body>
-    <header class="header">
-      <p class="header-title">
-        <a href="./" class="logo">
-          <img src="./assets/img/logo-dummy-kitchen.svg" width="216" height="43" alt="Dummy Ketchen">
-        </a>
-      </p>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>投稿したレシピ一覧 | 管理画面 | Dummy Kitchen</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-      <nav class="global-nav" aria-label="メインメニュー">
-        <p><a href="./edit.html" class="nav-button">新規レシピ投稿</a></p>
-      </nav>
-    </header>
+<body>
+	<header class="header">
+		<p class="header-title">
+			<a href="./" class="logo">
+				<img src="./assets/img/logo-dummy-kitchen.svg" width="216" height="43" alt="Dummy Ketchen">
+			</a>
+		</p>
 
-    <main class="main">
-      <div class="container">
-        <h1 class="page-title">投稿したレシピ一覧</h1>
+		<nav class="global-nav" aria-label="メインメニュー">
+			<p><a href="./edit.html" class="nav-button">新規レシピ投稿</a></p>
+		</nav>
+	</header>
 
-        <nav class="local-nav" aria-label="フィルター">
-          <ul class="filter-list">
-            <li>すべて</li>
-            <li>公開済み</li>
-            <li>非公開</li>
-          </ul>
-        </nav>
-        <table class="table">
-          <caption>すべてのレシピ</caption>
-          <thead>
-            <tr>
-              <th scope="col">タイトル</th>
-              <th scope="col">カテゴリ</th>
-              <th scope="col">投稿者</th>
-              <th scope="col">公開日</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">名店の味を再現！自宅で作る究極のTKG</th>
-              <td>ごはん</td>
-              <td>かな</td>
-              <td><time datetime="2024-04-01">2024年04月01日</time></td>
-            </tr>
-            <tr>
-              <th scope="row">超簡単！究極の時短テクニックで作る本格架空ボロネーゼ</th>
-              <td>パスタ</td>
-              <td>山田 太郎</td>
-              <td><time datetime="2024-03-28">2024年03月28日</time></td>
-            </tr>
-            <tr>
-              <th scope="row">シンプルにおいしい冷凍讃岐うどん</th>
-              <td>麺</td>
-              <td>さくら</td>
-              <td><time datetime="2024-03-27">2024年03月27日</time></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
+	<main class="main">
+		<div class="container">
+			<h1 class="page-title">投稿したレシピ一覧</h1>
 
-    <footer class="footer">
-      <p class="copyright"><small lang="en">© <time>2024</time> Dummy Kitchen</small></p>
-    </footer>
-  </body>
+			<nav class="local-nav" aria-label="フィルター">
+				<ul class="filter-list">
+					<li>すべて</li>
+					<li>公開済み</li>
+					<li>非公開</li>
+				</ul>
+			</nav>
+			<table class="table">
+				<caption>すべてのレシピ</caption>
+				<thead>
+					<tr>
+						<th scope="col">タイトル</th>
+						<th scope="col">カテゴリ</th>
+						<th scope="col">投稿者</th>
+						<th scope="col">公開日</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">名店の味を再現！自宅で作る究極のTKG</th>
+						<td>ごはん</td>
+						<td>かな</td>
+						<td><time datetime="2024-04-01">2024年04月01日</time></td>
+					</tr>
+					<tr>
+						<th scope="row">超簡単！究極の時短テクニックで作る本格架空ボロネーゼ</th>
+						<td>パスタ</td>
+						<td>山田 太郎</td>
+						<td><time datetime="2024-03-28">2024年03月28日</time></td>
+					</tr>
+					<tr>
+						<th scope="row">シンプルにおいしい冷凍讃岐うどん</th>
+						<td>麺</td>
+						<td>さくら</td>
+						<td><time datetime="2024-03-27">2024年03月27日</time></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<p class="copyright"><small lang="en">© <time>2024</time> Dummy Kitchen</small></p>
+	</footer>
+</body>
+
 </html>
