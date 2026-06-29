@@ -55,7 +55,9 @@
   border-block-end: 1px solid #e0e0e0;
   background-color: #fff;
 }
-
+.nav-list {
+  list-style-type: none;
+}
 /* Main */
 .main {
   margin-block-start: 4rem;
@@ -146,6 +148,27 @@
 
 /* Table */
 
+.table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  margin-block-start: 1rem;
+}
+
+.table caption {
+  text-align: left;
+}
+
+.table :is(th, td) {
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
+  text-align: start;
+  border: 1px solid #ddd;
+}
+
+.table td ul li {
+  margin-inline-start: 1rem;
+}
+
 /* Form */
 .form {
   display: block grid;
@@ -154,5 +177,79 @@
 
 .term {
   display: inline flow-root;
-  margin-block-end: 0.5em;
+  margin-block-end: 1em;
+  font-weight: 700;
+  color: #3d3d3d;
+}
+
+.field,
+.textarea {
+  inline-size: 100%;
+  padding-inline: 1em;
+  padding-block: 1em;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+input::placeholder {
+  counter-reset: #999;
+}
+.selectbox {
+  appearance: none;
+  font: inherit;
+  background: #fafafa url(../images/icon-down.svg) no-repeat 95% center;
+  padding-inline: 1em 3em;
+  padding-block: 1em;
+  border: 1px solid #ddd;
+  color: #3d3d3d;
+  cursor: pointer;
+}
+.checkbox {
+  position: relative;
+  appearance: none;
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.checkbox:checked::after {
+  position: absolute;
+  inset: 0;
+  content: "✓";
+  color: #fff;
+  background-color: lightgreen;
+}
+
+.fieldset {
+  border: 0;
+}
+
+.fieldset li {
+  list-style-type: none;
+}
+.fieldset ul {
+  display: grid;
+  gap: 0.25rem;
+}
+.fieldset li label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.textarea {
+  resize: vertical;
+}
+button {
+  appearance: none;
+  font: inherit;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding-inline: 1em;
+  padding-block: 0.75em;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
 }
