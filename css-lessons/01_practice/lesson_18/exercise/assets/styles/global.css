@@ -2,254 +2,264 @@
 *,
 ::before,
 ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(:root) {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  color: #202020;
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	color: #202020;
 }
 
 :where(body) {
-  min-block-size: 100svb;
+	min-block-size: 100svb;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-size: unset;
-  font-weight: unset;
+	font-size: unset;
+	font-weight: unset;
 }
 
 :where(strong) {
-  font-weight: unset;
+	font-weight: unset;
 }
 
 :where(em) {
-  font-style: unset;
+	font-style: unset;
 }
 
 :where(a:any-link) {
-  color: unset;
+	color: unset;
 }
 
 :where(img, iframe) {
-  display: block flow;
-  max-inline-size: 100%;
-  block-size: auto;
+	display: block flow;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Header */
 .header {
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 1;
-  display: block flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 5vi;
-  padding-block: 1.5rem;
-  border-block-end: 1px solid #e0e0e0;
-  background-color: #fff;
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 1;
+	display: block flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 5vi;
+	padding-block: 1.5rem;
+	border-block-end: 1px solid #e0e0e0;
+	background-color: #fff;
 }
+
 .nav-list {
-  list-style-type: none;
+	list-style-type: none;
 }
+
 /* Main */
 .main {
-  margin-block-start: 4rem;
+	margin-block-start: 4rem;
 }
 
 /* Footer */
 .footer {
-  padding-inline: 5vi;
-  padding-block: 3rem;
-  text-align: center;
+	padding-inline: 5vi;
+	padding-block: 3rem;
+	text-align: center;
 }
 
 /* Site Name */
 .site-name {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+	font-family: "Inter", sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: 0.05em;
+	font-weight: 700;
 }
 
 /* Nav List */
 .nav-list {
-  display: block flex;
-  align-items: center;
-  gap: 0.5rem 2rem;
+	display: block flex;
+	align-items: center;
+	gap: 0.5rem 2rem;
 }
 
 .nav-list a {
-  text-decoration: none;
-  font-weight: 500;
+	text-decoration: none;
+	font-weight: 500;
 }
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Page */
 .page-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.05em;
+	font-size: 3.5rem;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
+	letter-spacing: 0.05em;
 }
 
 /* Container */
 .container {
-  max-inline-size: 1024px;
-  padding-inline: 5vi;
-  margin-inline: auto;
-  box-sizing: content-box;
+	max-inline-size: 1024px;
+	padding-inline: 5vi;
+	margin-inline: auto;
+	box-sizing: content-box;
 }
 
 /* Section */
 .section {
-  padding-block: 4rem;
+	padding-block: 4rem;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-block-end: 1em;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin-block-end: 1em;
 }
 
 /* Inquiry */
 .inquiry {
-  position: fixed;
-  inset-block-end: 0;
-  inset-inline-end: 0;
+	position: fixed;
+	inset-block-end: 0;
+	inset-inline-end: 0;
 }
 
 .inquiry a {
-  display: block flow;
-  text-decoration: none;
-  writing-mode: vertical-rl;
-  background-color: #101010;
-  color: #fff;
-  padding: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  font-size: 0.875rem;
+	display: block flow;
+	text-decoration: none;
+	writing-mode: vertical-rl;
+	background-color: #101010;
+	color: #fff;
+	padding: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	font-size: 0.875rem;
 }
 
 .inquiry a:hover {
-  background-color: #3a3a3a;
+	background-color: #3a3a3a;
 }
 
 /* Table */
 
 .table {
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-  margin-block-start: 1rem;
+	border-collapse: collapse;
+	border: 1px solid #ddd;
+	margin-block-start: 1rem;
+	inline-size: 100%;
 }
 
 .table caption {
-  text-align: left;
+	text-align: left;
 }
 
 .table :is(th, td) {
-  padding-inline: 1rem;
-  padding-block: 1.5rem;
-  text-align: start;
-  border: 1px solid #ddd;
+	padding-inline: 1rem;
+	padding-block: 1.5rem;
+	text-align: start;
+	border: 1px solid #ddd;
 }
 
 .table td ul li {
-  margin-inline-start: 1rem;
+	margin-inline-start: 1rem;
 }
 
 /* Form */
 .form {
-  display: block grid;
-  row-gap: 2.5rem;
+	display: block grid;
+	row-gap: 2.5rem;
 }
 
 .term {
-  display: inline flow-root;
-  margin-block-end: 1em;
-  font-weight: 700;
-  color: #3d3d3d;
+	display: inline flow-root;
+	margin-block-end: 1em;
+	font-weight: 700;
+	color: #3d3d3d;
 }
 
 .field,
 .textarea {
-  inline-size: 100%;
-  padding-inline: 1em;
-  padding-block: 1em;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  font-size: 1rem;
+	inline-size: 100%;
+	padding-inline: 1em;
+	padding-block: 1em;
+	background-color: #fafafa;
+	border: 1px solid #ddd;
+	font-size: 1rem;
 }
+
 input::placeholder {
-  counter-reset: #999;
+	counter-reset: #999;
 }
+
 .selectbox {
-  appearance: none;
-  font: inherit;
-  background: #fafafa url(../images/icon-down.svg) no-repeat 95% center;
-  padding-inline: 1em 3em;
-  padding-block: 1em;
-  border: 1px solid #ddd;
-  color: #3d3d3d;
-  cursor: pointer;
+	appearance: none;
+	font: inherit;
+	background: #fafafa url(../images/icon-down.svg) no-repeat 95% center;
+	padding-inline: 1em 3em;
+	padding-block: 1em;
+	border: 1px solid #ddd;
+	color: #3d3d3d;
+	cursor: pointer;
 }
+
 .checkbox {
-  position: relative;
-  appearance: none;
-  inline-size: 1.25em;
-  block-size: 1.25em;
-  border: 1px solid #ddd;
-  background-color: #fafafa;
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+	position: relative;
+	appearance: none;
+	inline-size: 1.25em;
+	block-size: 1.25em;
+	border: 1px solid #ddd;
+	background-color: #fafafa;
+	inline-size: 1.5rem;
+	block-size: 1.5rem;
 }
 
 .checkbox:checked::after {
-  position: absolute;
-  inset: 0;
-  content: "✓";
-  color: #fff;
-  background-color: lightgreen;
+	position: absolute;
+	inset: 0;
+	content: "✓";
+	color: #fff;
+	background-color: lightgreen;
 }
 
 .fieldset {
-  border: 0;
+	border: 0;
 }
 
 .fieldset li {
-  list-style-type: none;
+	list-style-type: none;
 }
+
 .fieldset ul {
-  display: grid;
-  gap: 0.25rem;
+	display: grid;
+	gap: 0.25rem;
 }
+
 .fieldset li label {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
 }
+
 .textarea {
-  resize: vertical;
+	resize: vertical;
 }
+
 button {
-  appearance: none;
-  font: inherit;
-  background-color: #1a1a1a;
-  color: #fff;
-  padding-inline: 1em;
-  padding-block: 0.75em;
-  font-size: 1rem;
-  border: 0;
-  cursor: pointer;
+	appearance: none;
+	font: inherit;
+	background-color: #1a1a1a;
+	color: #fff;
+	padding-inline: 1em;
+	padding-block: 0.75em;
+	font-size: 1rem;
+	border: 0;
+	cursor: pointer;
 }
