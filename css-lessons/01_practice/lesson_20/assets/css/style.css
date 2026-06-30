@@ -1,65 +1,88 @@
 /* Base */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(html) {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 700;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  line-height: 1.5;
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 700;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	line-height: 1.5;
 }
 
 :where(body) {
-  min-block-size: 100svb;
-  background-color: #101010;
+	min-block-size: 100svb;
+	background-color: #101010;
 }
 
 :where(ul, ol) {
-  list-style-type: ""; /* リストのマーカーを削除 */
+	list-style-type: "";
+	/* リストのマーカーを削除 */
 }
 
 :where(:any-link) {
-  color: unset;
+	color: unset;
 }
 
 :where(img, svg) {
-  display: block flow;
-  max-inline-size: 100%;
-  block-size: auto;
+	display: block flow;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Container */
 .container {
-  max-inline-size: 1400px;
-  padding-inline: 5vi;
-  margin-block-start: 5rem;
-  margin-inline: auto;
-  box-sizing: content-box;
+	max-inline-size: 1400px;
+	padding-inline: 5vi;
+	margin-block-start: 5rem;
+	margin-inline: auto;
+	box-sizing: content-box;
 }
 
 /* Box */
 .box {
-  display: block grid;
-  row-gap: 1rem;
-  border: 1px solid #333;
+	display: block grid;
+	row-gap: 1rem;
+	border: 1px solid #333;
+	perspective: 1000px;
+	transform-style: preserve-3d;
 }
 
 /* Item */
 .item {
-  display: block grid;
-  place-content: center;
-  inline-size: 200px;
-  aspect-ratio: 1 / 1;
-  border: 1px solid rgb(255 255 255 / 0.3);
-  color: #fff;
-  font-family: "Jost", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 900;
-  background-color: rgb(0 0 0 / 0.3);
-  transition: 1s ease-in-out;
-  transition-property: translate, scale, rotate, transform;
+	display: block grid;
+	place-content: center;
+	inline-size: 200px;
+	aspect-ratio: 1 / 1;
+	border: 1px solid rgb(255 255 255 / 0.3);
+	color: #fff;
+	font-family: "Jost", sans-serif;
+	font-size: 1.25rem;
+	font-weight: 900;
+	background-color: rgb(0 0 0 / 0.3);
+	transition: 1s ease-in-out;
+	transition-property: translate, scale, rotate, transform;
+}
+
+/* .item:nth-child(1) {
+	translate: 0 0 -1000px;
+} */
+
+.item:nth-child(2) {
+	rotate: 1 2 1 1000deg;
+	translate: 100px;
+}
+
+.item:nth-child(3) {
+	translate: 0 0 100px;
+	rotate: y -90deg;
+	/* scale: 1.1;
+	transform-origin: 0 0; */
+}
+
+.item:nth-child(4) {
+	transform: translate3d(0, 0, -100px) rotateX(90deg);
 }
