@@ -42,6 +42,14 @@
 	block-size: auto;
 }
 
+:where(table) {
+	border-collapse: collapse;
+}
+
+:where(ul, ol) {
+	list-style-type: "";
+}
+
 /* Header */
 .header {
 	position: sticky;
@@ -56,9 +64,6 @@
 	background-color: #fff;
 }
 
-.nav-list {
-	list-style-type: none;
-}
 
 /* Main */
 .main {
@@ -151,9 +156,8 @@
 /* Table */
 
 .table {
-	border-collapse: collapse;
 	border: 1px solid #ddd;
-	margin-block-start: 1rem;
+
 	inline-size: 100%;
 }
 
@@ -170,6 +174,7 @@
 
 .table td ul li {
 	margin-inline-start: 1rem;
+	list-style-type: disc;
 }
 
 /* Form */
@@ -196,7 +201,7 @@
 }
 
 input::placeholder {
-	counter-reset: #999;
+	color: #999;
 }
 
 .selectbox {
@@ -213,8 +218,6 @@ input::placeholder {
 .checkbox {
 	position: relative;
 	appearance: none;
-	inline-size: 1.25em;
-	block-size: 1.25em;
 	border: 1px solid #ddd;
 	background-color: #fafafa;
 	inline-size: 1.5rem;
@@ -227,6 +230,7 @@ input::placeholder {
 	content: "✓";
 	color: #fff;
 	background-color: lightgreen;
+	text-align: center;
 }
 
 .fieldset {
@@ -252,7 +256,7 @@ input::placeholder {
 	resize: vertical;
 }
 
-button {
+.button {
 	appearance: none;
 	font: inherit;
 	background-color: #1a1a1a;
@@ -262,4 +266,7 @@ button {
 	font-size: 1rem;
 	border: 0;
 	cursor: pointer;
+}
+.button:hover {
+	opacity: 0.7;
 }
