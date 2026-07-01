@@ -110,23 +110,17 @@
 	background-color: #fff;
 	display: block;
 	scale: 0 1;
+	transform-origin: 100%;
+	transition: scale 0.3s ease-out;
 }
 
 .nav-list a:hover::after,
 .nav-list a:focus-visible::after {
-	animation: line 0.3s ease-out 1 both;
+	scale: 1 1;
+	transform-origin: 0 0 0;
 }
 
-@keyframes line {
-	from {
-		transform-origin: 0 0 0;
-		scale: 0 1;
-	}
 
-	to {
-		scale: 1 1;
-	}
-}
 
 /* Page */
 .page-title {
@@ -201,9 +195,12 @@
 .loop-text {
 	margin-block-start: 5rem;
 	overflow: hidden;
+	display: block flex;
+
 }
 
 .loop-text p {
+	padding-inline-end: 1em;
 	font-size: 5rem;
 	font-family: "Inter", sans-serif;
 	font-weight: 700;
@@ -215,25 +212,16 @@
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	animation-duration: 30s;
+	animation-fill-mode: both;
 	/* animation: loop 30s linear infinite; */
 }
 
 @keyframes loop {
 	from {
-		translate: 100%;
+		translate: 0;
 	}
 
 	to {
 		translate: -100%;
-	}
-}
-
-@keyframes loop-left {
-	from {
-		translate: -100%;
-	}
-
-	to {
-		translate: 100%;
 	}
 }
