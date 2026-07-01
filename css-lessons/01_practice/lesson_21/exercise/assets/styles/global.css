@@ -2,183 +2,234 @@
 *,
 ::before,
 ::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :where(:root) {
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.5;
-  line-break: strict;
-  overflow-wrap: anywhere;
-  color: #202020;
+	font-family: "Noto Sans JP", sans-serif;
+	line-height: 1.5;
+	line-break: strict;
+	overflow-wrap: anywhere;
+	color: #202020;
 }
 
 :where(body) {
-  min-block-size: 100svb;
-  background-color: #101010;
-  color: #fff;
-  overflow-x: clip;
+	min-block-size: 100svb;
+	background-color: #101010;
+	color: #fff;
+	overflow-x: clip;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  font-size: unset;
-  font-weight: unset;
+	font-size: unset;
+	font-weight: unset;
 }
 
 :where(strong) {
-  font-weight: unset;
+	font-weight: unset;
 }
 
 :where(em) {
-  font-style: unset;
+	font-style: unset;
 }
 
 :where(ul, ol) {
-  list-style-type: "";
+	list-style-type: "";
 }
 
 :where(table) {
-  border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 :where(a:any-link) {
-  color: unset;
+	color: unset;
 }
 
 :where(img, iframe) {
-  display: block flow;
-  max-inline-size: 100%;
-  block-size: auto;
+	display: block flow;
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
 /* Header */
 .header {
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 1;
-  display: block flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 5vi;
-  padding-block: 1.5rem;
-  mix-blend-mode: exclusion;
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 1;
+	display: block flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 5vi;
+	padding-block: 1.5rem;
+	mix-blend-mode: exclusion;
 }
 
 /* Main */
 .main {
-  margin-block-start: 4rem;
+	margin-block-start: 4rem;
 }
 
 /* Footer */
 .footer {
-  padding-inline: 5vi;
-  padding-block: 4rem;
-  text-align: center;
+	padding-inline: 5vi;
+	padding-block: 4rem;
+	text-align: center;
 }
 
 /* Site Name */
 .site-name {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+	font-family: "Inter", sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: 0.05em;
+	font-weight: 700;
 }
 
 /* Nav List */
 .nav-list {
-  display: block flex;
-  align-items: center;
-  gap: 0.5rem 2rem;
+	display: block flex;
+	align-items: center;
+	gap: 0.5rem 2rem;
 }
 
 .nav-list a {
-  display: inline flow-root;
-  padding-block: 0.25rem;
-  text-decoration: none;
-  font-weight: 500;
+	display: inline flow-root;
+	padding-block: 0.25rem;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.nav-list a::after {
+	content: "";
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	display: block;
+}
+
+.nav-list a:hover a::after,
+.nav-list a:focus-visible a::after {
+	animation: line 0.3s ease-out 1 both;
+}
+
+@keyframes line {
+	from {
+		transform-origin: 0 0 0;
+		scale: 0;
+	}
+
+	to {
+		scale: 1;
+	}
 }
 
 /* Page */
 .page-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
-  letter-spacing: 0.05em;
+	font-size: 3.5rem;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
+	letter-spacing: 0.05em;
 }
 
 /* Container */
 .container {
-  max-inline-size: 1100px;
-  padding-inline: 5vi;
-  margin-inline: auto;
-  box-sizing: content-box;
+	max-inline-size: 1100px;
+	padding-inline: 5vi;
+	margin-inline: auto;
+	box-sizing: content-box;
 }
 
 /* Service */
 .services {
-  margin-block-start: 4rem;
-  display: block grid;
-  row-gap: 2.5rem;
+	margin-block-start: 4rem;
+	display: block grid;
+	row-gap: 2.5rem;
 }
 
 .service {
-  display: block grid;
-  align-items: center;
-  text-decoration: none;
+	display: block grid;
+	align-items: center;
+	text-decoration: none;
 }
 
 .service:hover,
 .service:focus {
-  box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
+	box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
 }
 
 .service-cover {
-  grid-area: 1 / 1;
-  aspect-ratio: 3 / 1;
+	grid-area: 1 / 1;
+	aspect-ratio: 3 / 1;
 }
 
 .service-image {
-  filter: grayscale(30%) opacity(30%);
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover; /* 親要素に対して画像をどう配置するか */
+	filter: grayscale(30%) opacity(30%);
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+	/* 親要素に対して画像をどう配置するか */
 }
 
 .service:hover .service-image,
 .service:focus .service-image {
-  filter: opacity(70%);
+	filter: opacity(70%);
 }
 
 .service-name {
-  grid-area: 1 / 1;
-  z-index: 1;
-  inline-size: fit-content;
-  margin-inline: 3rem;
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+	grid-area: 1 / 1;
+	z-index: 1;
+	inline-size: fit-content;
+	margin-inline: 3rem;
+	font-family: "Inter", sans-serif;
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 0.1em;
 }
 
 .service:hover .service-name,
 .service:focus .service-name {
-  text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
+	text-shadow: 0 1px 4px rgb(0 0 0 / 0.16);
 }
 
 /* Loop Text */
 .loop-text {
-  margin-block-start: 5rem;
+	margin-block-start: 5rem;
+	overflow: hidden;
 }
 
 .loop-text p {
-  font-size: 5rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  color: #303030;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  text-transform: uppercase;
+	font-size: 5rem;
+	font-family: "Inter", sans-serif;
+	font-weight: 700;
+	color: #303030;
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+	text-transform: uppercase;
+	animation-name: loop;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-duration: 30s;
+	/* animation: loop 30s linear infinite; */
+}
+
+@keyframes loop {
+	from {
+		translate: 100%;
+	}
+
+	to {
+		translate: -100%;
+	}
+}
+
+@keyframes loop-left {
+	from {
+		translate: -100%;
+	}
+
+	to {
+		translate: 100%;
+	}
 }

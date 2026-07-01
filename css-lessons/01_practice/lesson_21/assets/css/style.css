@@ -155,6 +155,7 @@
 .pickup {
 	inline-size: 80%;
 	margin-inline: auto;
+	animation: slide 20s linear infinite both;
 }
 
 .pickup-link {
@@ -274,4 +275,16 @@
 
 .article-meta {
 	grid-area: meta;
+}
+
+/* Animation */
+@keyframes slide {
+	from {
+		translate: 150%;
+
+	}
+
+	to {
+		translate: -150%;
+	}
 }
