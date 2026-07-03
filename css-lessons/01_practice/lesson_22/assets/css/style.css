@@ -9,6 +9,17 @@
 	--font-sans-serif-ja: "Noto Sans JP", sans-serif;
 	--font-sans-serif-en: "Jost", sans-serif;
 
+	/* Offset */
+	--offset-sm: 5vi;
+	--offset-md: 10vi;
+	--offset-lg: 15vi;
+
+	/* Container Size */
+	--container-size-sm: 480px;
+	--container-size-md: 768px;
+	--container-size-lg: 960px;
+	--container-size-xl: 1400px;
+
 	/* Transition & Animation */
 	--duration-fast: 0.3s;
 	--ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -51,8 +62,8 @@
 
 /* Container */
 .container {
-	max-inline-size: 1400px;
-	padding-inline: 5vi;
+	max-inline-size: var(--max-container-size, var(--container-size-xl));
+	padding-inline: var(--container-offset), var(--offset-sm);
 	margin-inline: auto;
 	box-sizing: content-box;
 }
@@ -65,7 +76,7 @@
 	align-items: center;
 	gap: 2rem;
 	padding-block: 3rem;
-	padding-inline: 5vi;
+	padding-inline: var(--offset-sm);
 }
 
 .header-group {
@@ -82,7 +93,7 @@
 
 .footer {
 	margin-block-start: 6rem;
-	padding-inline: 5vi;
+	padding-inline: var(--offset-sm);
 	padding-block: 4rem;
 	background-color: var(--color-dark);
 	color: #dfdfdf;
@@ -172,6 +183,9 @@
 }
 
 /* Pickups */
+.pickups {
+	--max-container-size: var(--container-size-lg);
+}
 
 /* Pickup */
 .pickup-link {
