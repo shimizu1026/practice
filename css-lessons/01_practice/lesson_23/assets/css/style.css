@@ -88,13 +88,9 @@
 	font-size: unset;
 }
 
-.header-subtitle {
-	display: none;
-}
-
-@media screen and (min-width: 80rem) {
+@media not screen and (width >=80rem) {
 	.header-subtitle {
-		display: revert;
+		display: none;
 	}
 }
 
@@ -122,9 +118,9 @@
 	gap: 0.5rem 1rem;
 }
 
-@media screen and (min-width: 80rem) {
+@media not screen and (min-width >=80rem) {
 	.nav-list {
-		display: block flex;
+		display: none;
 	}
 }
 
@@ -181,7 +177,7 @@
 	cursor: pointer;
 }
 
-@media screen and (min-width: 80rem) {
+@media screen and (min-width>=80rem) {
 	.button-hamburger {
 		display: none;
 	}
@@ -260,7 +256,7 @@
 	background-image: linear-gradient(rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0.5));
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width>=48rem) {
 	.pickup-body {
 		flex-direction: row;
 		align-items: flex-end;
@@ -280,13 +276,13 @@
 	transition: scale var(--duration-fast) var(--ease-out-quart);
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width>=48rem) {
 	.pickup-cover {
 		aspect-ratio: 1.414 / 1;
 	}
 }
 
-@media screen and (min-width: 64rem) {
+@media screen and (min-width>=64rem) {
 	.pickup-cover {
 		aspect-ratio: 840 / 520;
 	}
