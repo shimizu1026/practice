@@ -32,6 +32,18 @@
 	box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	::before,
+	::after,
+	::backdrop {
+		transition: none !important;
+		animation: none !important;
+		scroll-behavior: none !important;
+	}
+}
+
 :where(html) {
 	font-family: var(--font-sans-serif-ja);
 	font-weight: 700;
@@ -288,9 +300,16 @@
 	}
 }
 
-.pickup-link:hover img,
 .pickup-link:focus-visible img {
 	scale: 1.02;
+}
+
+@media (any-hover: hover) {
+
+	.pickup-link:hover img {
+		scale: 1.02;
+	}
+
 }
 
 .pickup-title {
