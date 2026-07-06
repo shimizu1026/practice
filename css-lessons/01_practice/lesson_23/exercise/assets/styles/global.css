@@ -232,16 +232,15 @@
 
 /* Service */
 .services {
-	margin-block-start: var(--space-xl);
 	display: block grid;
-	row-gap: var(--space-lg);
+	row-gap: var(--space-md);
 	margin-block-start: var(--space-lg);
 }
 
 @media screen and (width>=768px) {
 	.services {
 		margin-block-start: var(--space-xl);
-		row-gap: var(--space-md);
+		row-gap: var(--space-lg);
 	}
 }
 
@@ -251,14 +250,19 @@
 	text-decoration: none;
 }
 
-.service:hover,
 .service:focus {
 	box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
 }
 
+@media (any-hover: hover) {
+	.service:hover {
+		box-shadow: 0 0 40px -8px rgb(255 255 255 / 0.1);
+	}
+}
+
 .service-cover {
 	grid-area: 2 / 1;
-	aspect-ratio: 3 / 1;
+	aspect-ratio: 2 / 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -281,9 +285,14 @@
 	/* 親要素に対して画像をどう配置するか */
 }
 
-.service:hover .service-image,
 .service:focus .service-image {
 	filter: opacity(70%);
+}
+
+@media (any-hover: hover) {
+	.service:hover .service-image {
+	filter: opacity(70%);
+}
 }
 
 .service-name {
