@@ -160,12 +160,13 @@
 
 .login {
 	background-color: var(--color-dark);
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--color-main);
+	}
 }
 
-.login:hover,
-.login:focus-visible {
-	background-color: var(--color-main);
-}
 
 .register {
 	border-color: var(--color-main);
@@ -188,25 +189,23 @@
 	@media screen and (width >=80rem) {
 		display: none;
 	}
-}
 
+	&::before,
+	&::after {
+		content: "";
+		grid-area: 1 / -1;
+		inline-size: calc(var(--button-size) / 2);
+		block-size: 2px;
+		background-color: #fff;
+	}
 
+	&::before {
+		translate: 0 -4px;
+	}
 
-.button-hamburger::before,
-.button-hamburger::after {
-	content: "";
-	grid-area: 1 / -1;
-	inline-size: calc(var(--button-size) / 2);
-	block-size: 2px;
-	background-color: #fff;
-}
-
-.button-hamburger::before {
-	translate: 0 -4px;
-}
-
-.button-hamburger::after {
-	translate: 0 4px;
+	&::after {
+		translate: 0 4px;
+	}
 }
 
 /* Hero */
@@ -289,15 +288,11 @@
 		/* 親要素にフィットするように拡大縮小をする */
 		transition: scale var(--duration-fast) var(--ease-out-quart);
 	}
-}
 
-.pickup-link:focus-visible img {
-	scale: 1.02;
-}
-
-@media (any-hover: hover) {
-	.pickup-link:hover img {
-		scale: 1.02;
+	&:focus-visible {
+		img {
+			scale: 1.02;
+		}
 	}
 }
 
