@@ -117,20 +117,20 @@
 
 /* Main */
 .main {
-	margin-block-start: clamp(var(--space-lg), 0.472rem + 2.25vw, var(--space-xl));
+	margin-block-start:clamp(var(--space-lg), 1.972rem + 2.25vw, var(--space-xl));
 }
 
 /* Footer */
 .footer {
 	padding-inline: var(--offset-md);
-	padding-block: clamp(var(--space-lg), 0.472rem + 2.25vw, var(--space-xl));
+	padding-block: clamp(var(--space-lg), 1.972rem + 2.25vw, var(--space-xl));
 	text-align: center;
 }
 
 /* Site Name */
 .site-name {
 	font-family: var(--font-sans-serif-en);
-	font-size: clamp(var(--space-md), 0.472rem + 2.25vw, var(--space-lg));
+	font-size: clamp(var(--font-md), 0.824rem + 0.75vw, var(--font-lg));
 	letter-spacing: var(--tracking-wider);
 	font-weight: 700;
 }
@@ -221,7 +221,7 @@
 
 /* Page */
 .page-title {
-	font-size: clamp(var(--font-xl), 0.472rem + 2.25vw, var(--font-2xl));
+	font-size: clamp(var(--font-xl), 1.472rem + 2.25vw, var(--font-2xl));
 	font-weight: 700;
 	font-family: var(--font-sans-serif-en);
 	letter-spacing: var(--tracking-wider);
@@ -237,18 +237,11 @@
 
 /* Service */
 .services {
-	margin-block-start: clamp(1rem, var(--space-lg + 2.25vw, var(--space-lg)));
-	margin-block-start: var(--service-start, var(--space-lg));
+	margin-block-start: clamp(var(--space-lg), 1.069rem + 6.11vw, var(--space-xl));
 	display: block grid;
-	row-gap: var(--service-gap, var(--space-md));
+	row-gap: clamp(var(--space-md), 0.546rem + 4.07vw, var(--space-lg));
 }
 
-@media screen and (width >=48rem) {
-	.services {
-		--service-start: var(--space-xl);
-		--service-gap: var(--space-lg);
-	}
-}
 
 .service {
 	display: block grid;
@@ -307,16 +300,10 @@
 	inline-size: fit-content;
 	margin-inline: 3rem;
 	font-family: var(--font-sans-serif-en);
-	font-size: clamp(var(--font-lg), 0.472rem + 2.25vw, var(--font-xl));
+	font-size: clamp(var(--font-lg), 1.324rem + 0.75vw, var(--font-xl));
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: var(--tracking-widest);
-}
-
-@media screen and (width >=64rem) {
-	.service-name {
-		--service-font-size: var(--font-xl);
-	}
 }
 
 .service:focus .service-name {
