@@ -1,11 +1,12 @@
 /* Pickups */
 .pickups {
+	container: pickups / inline-size;
 	--max-container-size: var(--container-size-lg);
 }
 
 /* Pickup */
 .pickup {
-	container-type: inline-size;
+	container: pickup / inline-size;
 }
 
 .pickup-link {
@@ -29,7 +30,7 @@
 	color: #fff;
 	background-image: linear-gradient(rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0.5));
 
-	@container (inline-size >=40rem) {
+	@container pickup (inline-size >=40rem) {
 		flex-direction: row;
 		align-items: flex-end;
 	}
@@ -39,11 +40,11 @@
 	grid-area: cover;
 	aspect-ratio: 1 / 1.2;
 
-	@container (inline-size >=40rem) {
+	@container pickup (inline-size >=40rem) {
 		aspect-ratio: 1.414 / 1;
 	}
 
-	@container (inline-size >=60rem) {
+	@container pickup (inline-size >=60rem) {
 		aspect-ratio: 840 / 520;
 	}
 
