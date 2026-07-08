@@ -39,11 +39,11 @@
 	grid-area: cover;
 	aspect-ratio: 1 / 1.2;
 
-	@media screen and (width >=48rem) {
+	@container (inline-size >=40rem) {
 		aspect-ratio: 1.414 / 1;
 	}
 
-	@media screen and (width >=64rem) {
+	@container (inline-size >=60rem) {
 		aspect-ratio: 840 / 520;
 	}
 
