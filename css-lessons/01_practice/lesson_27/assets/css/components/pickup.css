@@ -74,7 +74,7 @@
 }
 
 .pickup-title {
-	font-size: clamp(20 * var(--torem), 1.162rem + 0.3756vw, 24 * var(--torem));
+	font-size: clamp(20 * var(--torem), 1.125rem + 0.625cqi, 24 * var(--torem));
 	letter-spacing: 0.05em;
 }
 
