@@ -1,13 +1,13 @@
 /* Service */
 .services {
-	container: service / inline-size;
 	display: block grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
 	margin-block-start: clamp(var(--space-lg), 1.0687rem + 6.1069vw, var(--space-xl));
-	gap: 1.5cqi;
+	gap: max(1.5rem, 2.5cqi);
 }
 
 .service {
+	container: service / inline-size;
 	display: block grid;
 	align-items: center;
 	text-decoration: none;
