@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>イベントタイプ（ウインドウ）</title>
+    <script src="script_02.js" defer></script>
+    <style>
+      .panel {
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        padding: 3rem;
+        margin: 0;
+        list-style: "";
+        background-color: rgb(255 255 255 / 0.5);
+        backdrop-filter: blur(4px);
+        border: 1px solid #fff;
+        border-bottom-left-radius: 1rem;
+        box-shadow: 0 0 16px rgb(0 0 0 / 0.1);
+      }
+
+      .section {
+        display: block grid;
+        place-content: center;
+        min-block-size: 100vh;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>イベントタイプ（ウインドウ）</h1>
+
+    <ul class="panel">
+      <li>ローディング: <span data-load>読み込み中</span></li>
+      <li>スクロール量: <span data-scroll>0px</span></li>
+      <li>画面サイズ: <span data-resize>0px</span></li>
+    </ul>
+
+
+    <section class="section">
+      <p>高さが欲しいだけのセクション</p>
+    </section>
+    <section class="section">
+      <p>高さが欲しいだけのセクション</p>
+    </section>
+    <section class="section">
+      <p>高さが欲しいだけのセクション</p>
+    </section>
+    <section class="section">
+      <p>高さが欲しいだけのセクション</p>
+    </section>
+  </body>
+</html>

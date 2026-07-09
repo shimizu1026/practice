@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Resize Observer API</title>
+    <script src="script_01.js" defer></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        padding: 2.5vi;
+        text-align: center;
+      }
+
+      .box {
+        display: block grid;
+        place-content: center;
+        inline-size: min(600px, 100%);
+        aspect-ratio: 1;
+        padding: 40px;
+        margin-inline: auto;
+        background-color: #e0e0e0;
+
+        p {
+          font-weight: 700;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resize Observer API</h1>
+
+    <div class="box" data-resize-trigger>
+      <p>このBoxの大きさが変わったら発火</p>
+    </div>
+
+  </body>
+</html>

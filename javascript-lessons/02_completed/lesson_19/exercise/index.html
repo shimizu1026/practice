@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JavaScript Exercise 19</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>JavaScript Exercise 19</h1>
+    </header>
+
+    <main>
+      <nav class="nav-filter" aria-label="ポケモンを探す">
+        <div class="container">
+          <div class="filter">
+            <p>
+              <label class="label">
+                <span>名前検索</span><br>
+                <input type="search" class="textfield" placeholder="Search..." data-search />
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>タイプ</span><br>
+                <select class="selectbox" data-type-select>
+                  <option selected>すべて</option>
+                  <option>ほのお</option>
+                  <option>みず</option>
+                  <option>くさ</option>
+                  <option>でんき</option>
+                  <option>エスパー</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>並び替え</span><br>
+                <select class="selectbox" data-sort-select>
+                  <option value="id-asc" selected>IDが小さい順</option>
+                  <option value="id-desc">IDが大きい順</option>
+                  <option value="rarity-asc">レアリティが低い順</option>
+                  <option value="rarity-desc">レアリティが高い順</option>
+                </select>
+              </label>
+            </p>
+          </div>
+        </div>
+      </nav>
+
+      <div class="contents">
+        <div class="container">
+          <table class="pokemon-table">
+            <caption class="caption">ポケモン一覧</caption>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>タイプ</th>
+                <th>レアリティ</th>
+              </tr>
+            </thead>
+            <tbody data-table-body></tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="contents">
+        <div class="container">
+          <p class="caption">ポケモンを追加</p>
+          <form action="" class="form" data-add-form>
+
+            <p>
+              <label class="label">
+                <span>ID</span><br>
+                <input type="number" name="id" class="textfield" placeholder="151" required />
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>名前</span><br>
+                <input type="text" name="name" class="textfield" placeholder="ミューツー" required />
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>タイプ</span><br>
+                <select class="selectbox" name="type" required>
+                  <option>ほのお</option>
+                  <option>みず</option>
+                  <option>くさ</option>
+                  <option>でんき</option>
+                  <option>エスパー</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>レアリティ</span><br>
+                <select class="selectbox" name="rarity">
+                  <option>☆</option>
+                  <option>★★</option>
+                  <option>✦✦✦</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <button type="submit" class="button-add">追加</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

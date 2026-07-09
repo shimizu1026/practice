@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ユーザビリティの向上（HTMLのみ）</title>
+    <script src="script_03.js" defer></script>
+  </head>
+  <body>
+    <h1>ユーザビリティの向上（HTMLのみ）</h1>
+    <button type="button" commandfor="dialog" command="show-modal">
+      モーダルを開く
+    </button>
+    <dialog id="dialog" closedby="any" aria-label="ダイアログ">
+      <p>ダイアログコンテンツ</p>
+      <button commandfor="dialog" command="close">閉じる</button>
+    </dialog>
+  </body>
+</html>

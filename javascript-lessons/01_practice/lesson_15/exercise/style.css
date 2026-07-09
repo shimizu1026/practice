@@ -1,0 +1,199 @@
+/* ==============================
+  Reset and Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-1: #f0f0f8;
+  --color-light-2: #f4f4fc;
+  --color-light-3: #fafbff;
+
+  --color-gray-1: #6e7f8d;
+  --color-gray-2: #b5bfc6;
+
+  --color-dark-1: #1d2226;
+
+  --gradient-green: linear-gradient(45deg, #54ba98, #3da59c);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --shadow-1: -1px -1px 1px rgb(255 255 255 / 0.6), -10px -10px 20px #fafbff, 10px 10px 20px rgb(79 79 87 / 0.16);
+  --shadow-2: -1px -1px 1px rgb(255 255 255 / 0.6), -5px -5px 10px #fafbff, 5px 5px 10px rgb(79 79 87 / 0.16);
+  --shadow-3: inset 2px 2px 4px rgb(22 28 28 / 0.16), inset -2px -2px 4px var(--color-light-3);
+}
+
+:where(html) {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-light-1);
+  color: var(--color-gray-1);
+}
+
+:where(ul) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==============================
+  Header
+============================== */
+.header {
+  padding-inline: 5vi;
+  padding-block: 1.5rem;
+}
+
+/* ==============================
+  Container
+============================== */
+.container {
+  container: container / inline-size;
+  padding-inline: 5vi;
+}
+
+/* ==============================
+  Navigation and Filter
+============================== */
+.nav-filter {
+  margin-block-start: 2rem;
+}
+
+.filter {
+  display: block flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  p:last-child {
+    margin-inline-start: auto;
+  }
+}
+
+/* ==============================
+  Contents
+============================== */
+.contents {
+  margin-block-start: 2rem;
+}
+
+.caption {
+  text-align: start;
+  margin-block-end: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* ==============================
+  Table
+============================== */
+.pokemon-table {
+  inline-size: 100%;
+  background-color: var(--color-light-2);
+  box-shadow: var(--shadow-2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  tbody {
+    tr {
+      border-block-start: 1px solid var(--color-light-3);
+
+      &:hover {
+        background-color: var(--color-light-3);
+      }
+    }
+  }
+
+  th,
+  td {
+    font-weight: 500;
+    text-align: start;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+  }
+}
+
+/* ==============================
+  Form
+============================== */
+.form {
+  display: block flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-block-end: 2rem;
+
+  p:last-child {
+    align-self: end;
+  }
+}
+
+.label {
+  & > span {
+    display: inline flow-root;
+    margin-block-end: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+}
+.textfield {
+  appearance: none;
+  border: 0;
+  background-color: var(--color-light-1);
+  box-shadow: var(--shadow-3);
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+
+  &::placeholder {
+    color: var(--color-gray-2);
+  }
+}
+
+.selectbox {
+  border: 0;
+  background-color: var(--color-light-2);
+  box-shadow: var(--shadow-2);
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  width: fit-content;
+  color: var(--color-gray-1);
+  cursor: pointer;
+}
+
+.button-add {
+  display: inline grid;
+  place-content: center;
+  border-radius: 1em;
+  padding-inline: 1em;
+  padding-block: 1em;
+  border: 0;
+
+  box-shadow: var(--shadow-1);
+  color: var(--color-gray-1);
+  font-weight: 700;
+  appearance: none;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: 0.6s var(--ease-out-quart);
+  transition-property: box-shadow;
+  background-image: var(--gradient-green);
+  color: #fff;
+  border: 2px solid #fff;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--shadow-2);
+  }
+  &:active {
+    box-shadow: var(--shadow-3);
+  }
+}

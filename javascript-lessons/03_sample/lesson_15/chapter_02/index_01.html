@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>セレクトボックス</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="script_01.js" defer></script>
+    <style>
+      body {
+        font-family: var(--font-family, system-ui), sans-serif;
+
+      }
+
+      .content {
+        max-inline-size: 690px;
+        margin-block: 4rem;
+        margin-inline: auto;
+        padding-inline: 5vi;
+        font-size: 1.25em;
+
+        p {
+          line-height: 1.75;
+          letter-spacing: 0.025em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>セレクトボックス</h1>
+    <p>
+      <label>
+        書体を選択：
+        <select data-font-select>
+          <option>Inter</option>
+          <option>Open Sans</option>
+          <option>Poppins</option>
+          <option>Lato</option>
+          <option>Work Sans</option>
+          <option>TikTok Sans</option>
+        </select>
+      </label>
+    </p>
+
+    <section class="content">
+      <h2>How the Web Transformed Our World</h2>
+
+      <p>In the span of mere decades, the World Wide Web has evolved from a humble network of interconnected documents into the very fabric of modern existence. What began as a simple vision of shared information has blossomed into an intricate tapestry of human creativity, innovation, and connection.</p>
+    </section>
+  </body>
+</html>

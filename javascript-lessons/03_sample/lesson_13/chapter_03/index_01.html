@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>イベントタイプ（要素）</title>
+    <script src="script_01.js" defer></script>
+    <style>
+      .box {
+        display: block grid;
+        place-content: center;
+        inline-size: 300px;
+        block-size: 300px;
+        background-color: #d0d0d0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>イベントタイプ（要素）</h1>
+
+    <h2>click</h2>
+    <p>
+      <button type="button" data-click>クリック</button>
+    </p>
+
+    <h2>mousemove</h2>
+    <div class="box" data-move>
+      Move
+    </div>
+
+    <h2>input</h2>
+    <p>
+      <label>
+        メッセージ<br>
+        <textarea rows="10" cols="50" data-input></textarea>
+      </label>
+
+    </p>
+    <p data-text>入力内容</p>
+  </body>
+</html>

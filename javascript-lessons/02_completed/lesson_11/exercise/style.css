@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(html) {
+  font-family: "Kode Mono", monospace;
+  background-color: #101010;
+  color: #efefef;
+}
+
+.page {
+  display: block grid;
+  block-size: 100svb;
+}
+
+.header {
+  padding-inline: 2.5vi;
+  padding-block: 1.5rem;
+  grid-area: 1 / 1;
+}
+
+.main {
+  grid-area: 1 / 1;
+  place-self: center;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+.container {
+  padding-inline: 2.5vi;
+  text-align: center;
+}
+.date {
+  font-size: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+  font-weight: 700;
+}
+
+.time {
+  font-size: clamp(4rem, 3.2958rem + 3.0047vw, 6rem);
+  font-weight: 700;
+}

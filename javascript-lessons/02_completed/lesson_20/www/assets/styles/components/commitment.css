@@ -1,0 +1,30 @@
+/*
+  Commitment
+---------------------------------------------- */
+.commitment {
+  display: block grid;
+
+  :where(.heading) {
+    justify-self: center;
+  }
+
+  @container container (inline-size >= 37.5rem) {
+    align-items: end;
+    grid-template-columns: 1fr auto;
+    column-gap: clamp(24 * var(--torem), 6.25cqi, 40 * var(--torem));
+
+    :where(.heading) {
+      justify-self: end;
+    }
+  }
+
+}
+
+.commitment-text {
+  line-height: 2.5;
+  letter-spacing: .175em;
+
+  @container container (inline-size >= 37.5rem) {
+     order: -1;
+  }
+}

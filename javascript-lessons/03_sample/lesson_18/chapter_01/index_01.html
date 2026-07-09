@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Intersection Observer API</title>
+    <script src="script_01.js" defer></script>
+
+    <style>
+      header,
+      section {
+        display: block grid;
+        place-content: center;
+        min-block-size: 100vb;
+      }
+
+      section {
+
+        &:nth-child(even) {
+          background-color: #f0f0f0;
+        }
+
+        &:nth-child(odd) {
+          background-color: #fff;
+        }
+
+        p {
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
+      }
+
+      [data-inview-trigger] {
+        opacity: 0;
+        transition: 0.6s ease-out;
+        transition-property: opacity;
+
+        &[data-inview="true"] {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Intersection Observer API</h1>
+    </header>
+
+    <section>
+      <p data-inview-trigger>このテキストが画面に入ったらフェードで表示</p>
+    </section>
+    <section>
+      <p data-inview-trigger>このテキストが画面に入ったらフェードで表示</p>
+    </section>
+    <section>
+      <p data-inview-trigger>このテキストが画面に入ったらフェードで表示</p>
+    </section>
+  </body>
+</html>

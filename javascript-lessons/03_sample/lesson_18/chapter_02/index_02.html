@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Mutation Observer API</title>
+    <script src="script_02.js" defer></script>
+
+    <style>
+      header {
+        padding-inline: 2.5vi;
+      }
+
+      nav {
+        ul {
+          list-style: "";
+          padding: 0;
+          display: block flex;
+          gap: 1rem;
+        }
+
+      }
+
+      main {
+        padding-inline: 2.5vi;
+      }
+
+      .info {
+        border: 1px dotted;
+        padding: 1.5rem;
+
+      }
+
+      .container {
+        display: block grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
+        gap: 2vi;
+        margin-block: 2rem;
+
+        &>* {
+          display: block grid;
+          place-content: center;
+          margin: 0;
+          padding: 2rem;
+          background-color: #e0e0e0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Mutation Observer API</h1>
+      <nav>
+        <ul>
+          <li>
+            <button type="button" onclick="addElement()">要素を追加</button>
+          </li>
+          <li>
+            <button type="button" onclick="removeElement()">要素を削除</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <p class="info" data-info>ここに要素の変更情報が入ります。</p>
+
+      <div class="container" data-mutation-trigger>
+      </div>
+    </main>
+
+  </body>
+</html>

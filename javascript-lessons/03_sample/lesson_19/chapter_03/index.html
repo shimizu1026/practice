@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>localStorage</title>
+    <script src="script.js" defer></script>
+
+    <style>
+      [data-theme="light"] {
+        background-color: #fff;
+        color: #101010;
+      }
+
+      [data-theme="dark"] {
+        background-color: #101010;
+        color: #fff;
+      }
+    </style>
+
+  </head>
+  <body data-theme="light">
+    <h1>localStorage</h1>
+
+    <div class="settings">
+      <p>
+        <label>
+          テーマ:
+          <select data-theme-select>
+            <option value="light">ライト</option>
+            <option value="dark">ダーク</option>
+          </select>
+        </label>
+      </p>
+    </div>
+
+    <div class="content">
+      <h2>サンプルコンテンツ</h2>
+      <p>選択したテーマが自動保存され、次回も適用されます。</p>
+    </div>
+
+  </body>
+</html>

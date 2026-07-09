@@ -1,0 +1,14 @@
+/*
+  Reserve
+---------------------------------------------- */
+.reserve {
+  container: reserve / inline-size;
+}
+
+.reserve-header {
+  text-align: center;
+
+  p {
+    word-break: keep-all;
+  }
+}

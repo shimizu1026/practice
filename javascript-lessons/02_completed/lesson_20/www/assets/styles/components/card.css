@@ -1,0 +1,42 @@
+/*
+  Card
+---------------------------------------------- */
+.card {
+  display: block grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  row-gap: 0;
+}
+
+.card-title {
+  margin-block-start: calc(16 * var(--torem));
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+}
+
+.card-cover {
+  order: -1;
+
+  img {
+    inline-size: 100%;
+  }
+}
+
+.card-text {
+  margin-block-start: calc(8 * var(--torem));
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+}
+
+.card-price {
+  margin-block-start: calc(16 * var(--torem));
+  text-align: end;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
+
+  small {
+    font-size: 0.71em;
+  }
+}

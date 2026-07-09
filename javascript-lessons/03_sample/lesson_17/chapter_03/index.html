@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>要素の位置情報</title>
+    <script src="script.js" defer></script>
+
+    <style>
+      .box {
+        display: block grid;
+        place-content: center;
+        inline-size: 50%;
+        margin-block: 4rem;
+        margin-inline: auto;
+        padding: 4rem;
+        border-radius: 2rem;
+        background-color: #1c6a94;
+        border: 2px solid #123b51;
+        text-align: center;
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+      }
+
+      .panel {
+        border: 1px dotted;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>要素の位置情報</h1>
+    <button type="button" class="box" data-target>
+      この要素の位置情報を取得します
+    </button>
+
+    <div class="panel" data-info>
+      <p>ここに位置情報が表示されます</p>
+    </div>
+  </body>
+</html>

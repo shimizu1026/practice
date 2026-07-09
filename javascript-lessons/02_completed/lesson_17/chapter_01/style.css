@@ -1,0 +1,249 @@
+/* ==============================
+  Reset and Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-1: #f0f0f8;
+  --color-light-2: #eaeaf3;
+  --color-light-3: #d8dbdd;
+  --color-light-4: #fafaff;
+
+  --color-gray-1: #6e7f8d;
+  --color-dark-1: #1d2226;
+
+  --offset: 5vi;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --shadow-1: -1px 0 8px rgb(0 0 0 / 0.1);
+
+  scrollbar-gutter: stable;
+
+  &:has(:modal) {
+    overflow: hidden;
+  }
+}
+
+:where(html) {
+  font-family: "Inter", sans-serif;
+  /* background-color: var(--color-light-1); */
+  color: var(--color-dark-1);
+  line-height: 1.5;
+}
+
+:where(body) {
+  min-block-size: 100svb;
+  overflow-x: clip;
+}
+
+:where(ul) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:where(dialog, [popover]) {
+  max-inline-size: unset;
+  max-block-size: unset;
+  margin: auto;
+  color: unset;
+  background-color: unset;
+  border-style: none;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none;
+}
+
+:where(.visually-hidden:not(:focus-within, :active)) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after,
+  ::backdrop {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: unset !important;
+    transition-delay: unset !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    view-transition-name: none !important;
+  }
+}
+
+/* ==============================
+  Container
+============================== */
+.container {
+  container: container / inline-size;
+  padding-inline: var(--offset);
+}
+
+/* ==============================
+  Header
+============================== */
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  display: block flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+  padding-inline: var(--offset);
+  border-block-end: 1px solid var(--color-light-1);
+  background-color: #fff;
+}
+
+/* ==============================
+  Footer
+============================== */
+.footer {
+  padding-block: 3rem;
+  padding-inline: var(--offset);
+  background-color: var(--color-dark-1);
+  text-align: end;
+  color: #fff;
+
+  a {
+    color: inherit;
+  }
+}
+
+/* ==============================
+  Nav Global
+============================== */
+.nav-global {
+  ul {
+    display: block flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ==============================
+  Title
+============================== */
+.title {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+/* ==============================
+  Button
+============================== */
+.button {
+  --button-size: 40px;
+  --button-color: var(--color-dark-1);
+  --line-size: 2px;
+  --line-color: var(--color-light-1);
+
+  display: block grid;
+  inline-size: var(--button-size);
+  block-size: var(--button-size);
+  border: 1px solid;
+  background-color: var(--color-dark-1);
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    grid-area: 1 / 1;
+    place-self: center;
+    inline-size: 50%;
+    block-size: var(--line-size);
+    background-color: var(--line-color);
+  }
+}
+
+.button-hamburger {
+  &::before {
+    translate: 0 calc(1px - (var(--line-size) * 2));
+  }
+
+  &::after {
+    translate: 0 calc(var(--line-size) * 2);
+  }
+}
+
+.button-close {
+  &::before {
+    rotate: -45deg;
+  }
+
+  &::after {
+    rotate: 45deg;
+  }
+}
+
+/* ==============================
+  Section
+============================== */
+
+.section {
+  padding-block: 20rem;
+  text-align: center;
+
+  &:nth-child(odd) {
+    background-color: var(--color-light-1);
+  }
+}
+
+.section__title {
+  font-size: 2.5rem;
+  letter-spacing: 0.025em;
+  font-weight: 900;
+}
+
+.section__text {
+  margin-block-start: 1rem;
+  letter-spacing: 0.025em;
+  font-weight: 700;
+}
+
+/* ==============================
+  Inview
+============================== */
+[data-inview-trigger] {
+  translate: 0 2rem;
+  opacity: 0;
+  transition: 0.6s var(--ease-out-expo);
+  transition-property: translate, opacity;
+
+  &[data-inview="true"] {
+    translate: 0 0;
+    opacity: 1;
+  }
+}

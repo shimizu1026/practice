@@ -1,0 +1,108 @@
+/* ==============================
+  Reset and Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gradient-blue: linear-gradient(#5ec0ed, #246aba, #06497b, #021430);
+  --gradient-rainbow: linear-gradient(to right, #ebff09, #34e734, #32a7f5, #b54cd8);
+}
+
+:where(html) {
+  font-family: "Inter", sans-serif;
+}
+
+:where(ul) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:where(input, select, textarea, button) {
+  font: inherit;
+}
+
+body {
+  --progress: 0;
+
+  background-image: var(--gradient-blue);
+
+  &::before {
+    content: "";
+    position: fixed;
+    z-index: 1;
+    inset: 0 0 auto;
+    block-size: 8px;
+    background-image: var(--gradient-rainbow);
+    scale: var(--progress) 1;
+    transform-origin: left 0;
+  }
+}
+
+/* ==============================
+  Header
+============================== */
+.header {
+  block-size: 2500px;
+  padding-inline: 2.5vi;
+
+  h1 {
+    display: block grid;
+    block-size: 100vh;
+    align-content: center;
+    max-inline-size: 40%;
+  }
+}
+
+/* ==============================
+  Container
+============================== */
+.container {
+  container: container / inline-size;
+  color: #fff;
+}
+
+/* ==============================
+  Section
+============================== */
+.section {
+  block-size: 2500px;
+
+  h2 {
+    display: block flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    translate: 0 -50%;
+
+    &::before {
+      display: inline flow-root;
+      content: "";
+      inline-size: 2rem;
+      block-size: 1px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.fixed {
+  position: fixed;
+  inset: 0;
+  block-size: 100vh;
+  display: block grid;
+  place-content: center;
+  pointer-events: none;
+
+  span {
+    font-size: 3em;
+    font-weight: 700;
+  }
+}

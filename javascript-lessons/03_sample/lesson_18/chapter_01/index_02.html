@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Intersection Observer API</title>
+    <script src="script_02.js" defer></script>
+
+    <style>
+      body {
+        margin: 0;
+        container: body / inline-size;
+      }
+
+      .page {
+        display: block grid;
+        grid-template: "header main" 1fr / 300px 1fr;
+      }
+
+      header {
+        position: sticky;
+        inset-block-start: 0;
+        grid-area: header;
+        min-block-size: 100vh;
+        align-self: start;
+        border-inline-end: 1px solid #dfdfdf;
+        padding: 2rem;
+      }
+
+      nav {
+        ul {
+          list-style: "";
+          padding: 0;
+        }
+
+        a {
+          display: block flow;
+          text-decoration: none;
+          color: inherit;
+          padding: .5em;
+          color: #999;
+
+          &:hover,
+          &:focus-visible {
+            background-color: #f0f0f0;
+            color: #000;
+          }
+
+          &[data-current="true"] {
+            color: #000;
+            font-weight: 700;
+          }
+        }
+      }
+
+      main {
+        grid-area: main;
+      }
+
+      section {
+        display: block grid;
+        place-content: center;
+        min-block-size: 100vb;
+
+        &:nth-child(even) {
+          background-color: #f0f0f0;
+        }
+
+        &:nth-child(odd) {
+          background-color: #fff;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Intersection Observer API</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="#section1">Section1</a>
+            </li>
+            <li>
+              <a href="#section2">Section2</a>
+            </li>
+            <li>
+              <a href="#section3">Section3</a>
+            </li>
+            <li>
+              <a href="#section4">Section4</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="section1" data-section>
+          <h2>Section1</h2>
+        </section>
+        <section id="section2" data-section>
+          <h2>Section2</h2>
+        </section>
+        <section id="section3" data-section>
+          <h2>Section3</h2>
+        </section>
+        <section id="section4" data-section>
+          <h2>Section4</h2>
+        </section>
+      </main>
+    </div>
+
+  </body>
+</html>

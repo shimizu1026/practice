@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>sessionStorage</title>
+    <script src="script.js" defer></script>
+
+
+  </head>
+  <body>
+    <h1>sessionStorage</h1>
+
+    <div class="memo-form">
+      <p>
+        <label>
+          作業メモ（タブを閉じると消えます）:<br>
+          <textarea data-memo rows="6" cols="50" placeholder="作業中のメモを入力してください"></textarea>
+        </label>
+      </p>
+      <p>
+        <button type="button" data-save-memo>保存</button>
+        <button type="button" data-clear-memo>クリア</button>
+      </p>
+      <p class="note">※ リロードしても内容は残りますが、タブを閉じると消えます</p>
+    </div>
+
+  </body>
+</html>

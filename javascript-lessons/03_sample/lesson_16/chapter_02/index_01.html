@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>クローズボタン（formの場合）</title>
+    <script src="script_01.js" defer></script>
+  </head>
+  <body>
+    <h1>クローズボタン（formの場合）</h1>
+    <button type="button" data-command="show-modal">
+      モーダルを開く
+    </button>
+    <dialog id="dialog" data-dialog aria-label="ダイアログ">
+      <p autofocus>ダイアログコンテンツ</p>
+      <form method="dialog">
+        <button type="submit" value="OK">OK</button>
+      </form>
+    </dialog>
+  </body>
+</html>

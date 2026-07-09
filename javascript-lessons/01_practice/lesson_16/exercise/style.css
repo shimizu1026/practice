@@ -1,0 +1,243 @@
+/* ==============================
+  Reset and Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-1: #f0f0f8;
+  --color-light-2: #f4f4fc;
+  --color-light-3: #fafbff;
+
+  --color-gray-1: #6e7f8d;
+  --color-gray-2: #b5bfc6;
+
+  --color-dark-1: #1d2226;
+
+  --gradient-green: linear-gradient(45deg, #54ba98, #3da59c);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --shadow-1: -1px -1px 1px rgb(255 255 255 / 0.6), -10px -10px 20px #fafbff, 10px 10px 20px rgb(79 79 87 / 0.16);
+  --shadow-2: -1px -1px 1px rgb(255 255 255 / 0.6), -5px -5px 10px #fafbff, 5px 5px 10px rgb(79 79 87 / 0.16);
+  --shadow-3: inset 2px 2px 4px rgb(22 28 28 / 0.16), inset -2px -2px 4px var(--color-light-3);
+
+  scrollbar-gutter: stable;
+
+  &:has(:modal) {
+    overflow: hidden;
+  }
+}
+
+:where(html) {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-light-1);
+  color: var(--color-gray-1);
+}
+
+:where(ul) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:where(input, select, textarea, button) {
+  font: inherit;
+}
+
+/* ==============================
+  Header
+============================== */
+.header {
+  padding-inline: 5vi;
+  padding-block: 1.5rem;
+}
+
+/* ==============================
+  Container
+============================== */
+.container {
+  container: container / inline-size;
+  padding-inline: 5vi;
+}
+
+/* ==============================
+  Form
+============================== */
+.contact-form {
+  display: block grid;
+  gap: 2rem 1.5rem;
+  inline-size: fit-content;
+  margin-inline: auto;
+  padding-block: 4rem;
+
+  @container (inline-size >= 640px) {
+    grid-template-columns: max-content 400px;
+  }
+}
+
+.contact-form-item {
+  @container (inline-size >= 640px) {
+    display: block grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+  }
+}
+
+.contact-form-button {
+  margin-block-start: 2rem;
+  text-align: center;
+  @container (inline-size >= 640px) {
+    grid-column: span 2;
+  }
+}
+
+.label {
+  @container (inline-size >= 640px) {
+    display: block grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    align-items: start;
+  }
+
+  & > span {
+    display: inline flow-root;
+    margin-block-end: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+
+    @container (inline-size >= 640px) {
+      padding-block: 0.5rem;
+    }
+  }
+}
+.textfield {
+  appearance: none;
+  min-inline-size: 100%;
+  border: 0;
+  background-color: var(--color-light-1);
+  box-shadow: var(--shadow-3);
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+
+  &::placeholder {
+    color: var(--color-gray-2);
+  }
+}
+
+.button {
+  display: inline grid;
+  place-content: center;
+  border-radius: 1em;
+  padding-inline: 1em;
+  padding-block: 1em;
+  border: 0;
+  color: var(--color-gray-1);
+  font-weight: 700;
+  appearance: none;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: 0.6s var(--ease-out-quart);
+  transition-property: box-shadow, background-color;
+  background-color: var(--color-light-2);
+  box-shadow: var(--shadow-1);
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--shadow-2);
+    background-color: var(--color-light-3);
+  }
+  &:active {
+    box-shadow: var(--shadow-3);
+    background-color: var(--color-light-1);
+  }
+}
+
+.confirm {
+  container: confirm / inline-size;
+  position: fixed;
+  inset: 0;
+  inline-size: min(960px, 90vi);
+  block-size: 80svb;
+  margin: auto;
+  padding: 2.5rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--color-light-1);
+  color: var(--color-gray-1);
+  box-shadow: 0 0 16px rgb(0 0 0 / 0.1);
+  overscroll-behavior-block: contain;
+  transition: 0.6s var(--ease-out-expo);
+  transition-property: display, overlay, opacity;
+  transition-behavior: allow-discrete;
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 0.3);
+    backdrop-filter: blur(4px);
+    transition: inherit;
+    transition-property: opacity;
+  }
+
+  &:not(:modal),
+  &:not(:modal)::backdrop {
+    opacity: 0;
+  }
+
+  &:modal,
+  &:modal::backdrop {
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+.confirm-header {
+  text-align: center;
+}
+.confirm-title {
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.confirm-description {
+  margin-block-start: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.confirm-data {
+  display: block grid;
+
+  padding-block: 4rem;
+
+  @container (inline-size >= 560px) {
+    grid-template-columns: max-content 480px;
+    gap: 2rem;
+    inline-size: fit-content;
+    margin-inline: auto;
+  }
+
+  dd {
+    margin-block-end: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+
+    @container (inline-size >= 560px) {
+      margin-block-end: 0;
+    }
+  }
+}
+
+.confirm-footer {
+  display: block flex;
+  justify-content: center;
+  gap: 2rem;
+}

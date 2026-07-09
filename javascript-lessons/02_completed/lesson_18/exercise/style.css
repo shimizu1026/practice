@@ -1,0 +1,222 @@
+/* ==============================
+  Reset and Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --to-rem: calc(1rem / 16);
+
+  --color-blue: #08348d;
+
+  --gradient-blue: linear-gradient(#1b252f, #050518);
+}
+
+:where(html) {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+:where(body) {
+  container: body / inline-size;
+}
+
+:where(ul) {
+  list-style-type: "";
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:where(input, select, textarea, button) {
+  font: inherit;
+}
+
+/* ==============================
+  Page
+============================== */
+.page {
+  display: block grid;
+}
+
+/* ==============================
+  Header
+============================== */
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  display: block grid;
+  grid-area: 1 / 1;
+  min-block-size: 100vh;
+  align-self: start;
+  background-color: #0c052b;
+  /* padding: 2rem; */
+
+  & > * {
+    grid-area: 1 / 1;
+  }
+}
+
+/* ==============================
+  Main
+============================== */
+.main {
+  container: main / inline-size;
+  z-index: 1;
+  grid-area: 1 / 1;
+  display: block grid;
+  justify-self: end;
+  margin-inline: 10vi;
+  margin-block: 4rem;
+  inline-size: min(540px, 80vi);
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 16px rgb(0 0 0 / 0.16);
+}
+
+/* ==============================
+  Title
+============================== */
+.title {
+  place-self: start;
+  padding: 2rem;
+  color: #fff;
+}
+
+/* ==============================
+  Nav Global
+============================== */
+.nav-global {
+  align-self: center;
+  justify-self: start;
+  padding: 2rem;
+
+  ul > li + li {
+    margin-block-start: 0.75rem;
+  }
+
+  a {
+    display: block flow;
+    inline-size: fit-content;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+    color: #ccc;
+    font-size: calc(18 * var(--to-rem));
+
+    &:hover,
+    &:focus-visible {
+      color: #ffff6f;
+      outline: 1px dotted;
+      outline-offset: 4px;
+      border-radius: 1rem;
+      text-underline-offset: 4px;
+    }
+
+    &[data-current="true"] {
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+}
+
+/* ==============================
+  Cover
+============================== */
+.cover {
+  z-index: -1;
+  display: block grid;
+  inline-size: 100%;
+  block-size: 100vb;
+
+  & > img {
+    grid-area: 1 / 1;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  [data-image] {
+    visibility: hidden;
+    opacity: 0;
+    transition: 1.2s ease;
+    transition-property: opacity, visibility;
+
+    &[data-current="true"] {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/* ==============================
+  Hero
+============================== */
+.hero {
+  display: block grid;
+  place-content: center;
+  min-block-size: calc(100vb - 4rem);
+  background-color: #111224;
+  background-image: var(--gradient-blue);
+  color: #fff;
+  padding: 2rem;
+  font-size: calc(80 * var(--to-rem));
+  font-weight: 700;
+}
+
+/* ==============================
+  Section
+============================== */
+
+.section {
+  padding: 2rem 2.5cqi;
+}
+
+.section__title {
+  font-size: calc(40 * var(--to-rem));
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.section__subtitle {
+  font-size: calc(18 * var(--to-rem));
+  margin-block-start: 0.5em;
+  font-weight: 300;
+  color: var(--color-blue);
+}
+
+.section__body {
+  margin-block-start: 2.5rem;
+  letter-spacing: 0.05em;
+  line-height: 2;
+
+  & > * + * {
+    margin-block-start: 1em;
+  }
+}
+
+/* ==============================
+  Inview
+============================== */
+[data-inview-trigger] {
+  transition: 1.2s ease;
+}
+
+[data-inview-trigger="fade"] {
+  transition-property: opacity;
+
+  &[data-inview="false"] {
+    opacity: 0;
+  }
+  &[data-inview="true"] {
+    opacity: 1;
+  }
+}

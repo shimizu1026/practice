@@ -1,0 +1,106 @@
+/*
+  Drawer
+---------------------------------------------- */
+.drawer {
+  position: fixed;
+  inset: 0;
+  inline-size: min(400px, 80vi);
+  block-size: 100svb;
+  margin-inline: auto 0;
+  margin-block: 0;
+  border-inline-start: 1px solid #020001cc;
+  background-color: #020001cc;
+  color: #fff;
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-1);
+  overscroll-behavior-block: contain;
+  transition: 0.3s var(--ease-out-sine);
+  transition-property: display, overlay, opacity;
+  transition-behavior: allow-discrete;
+
+  &::backdrop {
+    transition: inherit;
+    transition-property: opacity;
+  }
+
+  &:not(:modal) {
+    opacity: 0;
+  }
+
+  &:not(:modal)::backdrop {
+    opacity: 0;
+  }
+
+  &:modal {
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  &:modal::backdrop {
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+.drawer-contents {
+  display: block grid;
+}
+
+.drawer-head {
+  justify-self: end;
+  padding-inline: var(--offset-md);
+  padding-block: clamp(32 * var(--torem), 1.4718rem + 2.2535vi, 56 * var(--torem));
+}
+
+.drawer-nav {
+  padding-inline: var(--offset-md);
+  padding-block: clamp(32 * var(--torem), 1.4718rem + 2.2535vi, 56 * var(--torem));
+  text-align: center;
+
+  ul {
+    display: block grid;
+    row-gap: var(--space-sm);
+  }
+
+  a {
+    position: relative;
+    padding-block: 0.25em;
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    transition: var(--duration-fast) var(--ease-out-sine);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline: 0;
+      background-color: currentColor;
+      inline-size: 100%;
+      block-size: 1px;
+      transition: inherit;
+      transition-property: scale;
+      transform-origin: 100% 0;
+      scale: 0 1;
+    }
+
+    &:focus-visible {
+      &::after {
+        transform-origin: 0 0;
+        scale: 1 1;
+      }
+    }
+
+    @media (any-hover) {
+      &:hover {
+        &::after {
+          transform-origin: 0 0;
+          scale: 1 1;
+        }
+      }
+    }
+  }
+}

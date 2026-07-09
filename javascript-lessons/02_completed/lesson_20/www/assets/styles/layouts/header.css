@@ -1,0 +1,39 @@
+/*
+  Header
+---------------------------------------------- */
+.header {
+  container: header / inline-size;
+  position: fixed;
+  z-index: 10;
+  inset-block-start: 0;
+  inset-inline: 0;
+  display: block flex;
+  justify-content: space-between;
+  padding-block: clamp(32 * var(--torem), 1.4718rem + 2.2535vi, 56 * var(--torem));
+  padding-inline: 5vi;
+  pointer-events: none; /* ヘッダーがフォームに被った時に入力できない対策 */
+  opacity: 0;
+
+  [data-loaded] & {
+    opacity: 1;
+
+    transition: var(--duration-slow) var(--ease-out-sine) 0.6s;
+    transition-property: translate, opacity;
+  }
+}
+
+.header-title {
+  inline-size: clamp(66px, 7vi, 106px);
+  pointer-events: auto;
+}
+
+.header-nav {
+  pointer-events: auto;
+
+  --nav-display: none;
+
+  @container header (inline-size >= 48rem) {
+    --nav-display: inline flex;
+    --button-display: none;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ストレージ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">ストレージ</h1>
+      </header>
+      <main>
+        <nav class="nav-filter" aria-label="タスクを探す">
+          <p>
+            <label class="label">
+              <span>タスクを検索</span><br>
+              <input type="search" class="textfield" placeholder="Search..." data-search />
+            </label>
+          </p>
+          <p>
+            <label class="label">
+              <span>ソート</span><br>
+              <select class="selectbox" data-sort-select>
+                <option value="asc" selected>期日が近い順</option>
+                <option value="desc">期日が遠い順</option>
+              </select>
+            </label>
+          </p>
+        </nav>
+        <div class="contents">
+          <table class="table">
+            <caption class="caption">Todo一覧</caption>
+            <thead>
+              <tr>
+                <th>タスク</th>
+                <th>カテゴリー</th>
+                <th>優先度</th>
+                <th>期日</th>
+                <th>完了</th>
+              </tr>
+            </thead>
+            <tbody data-table-body></tbody>
+          </table>
+        </div>
+        <div class="contents">
+          <p class="caption">タスクの追加</p>
+          <form action="" class="form" data-add-form>
+            <p>
+              <label class="label">
+                <span>タスク名</span><br>
+                <input type="text" name="title" class="textfield" placeholder="タスク名を入力" required />
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>カテゴリー</span><br>
+                <select name="category" class="selectbox" required>
+                  <option>仕事</option>
+                  <option>プライベート</option>
+                  <option>勉強</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>優先度</span><br>
+                <select name="priority" class="selectbox" required>
+                  <option>低</option>
+                  <option>中</option>
+                  <option>高</option>
+                </select>
+              </label>
+            </p>
+            <p>
+              <label class="label">
+                <span>期日</span><br>
+                <input type="date" name="dueDate" class="textfield" required />
+              </label>
+            </p>
+            <p>
+              <button type="submit" class="button-add">追加</button>
+            </p>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

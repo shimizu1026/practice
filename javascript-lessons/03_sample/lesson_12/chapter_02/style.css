@@ -1,0 +1,19 @@
+.red {
+  color: red;
+}
+
+.large {
+  font-size: 2rem;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: 700;
+}

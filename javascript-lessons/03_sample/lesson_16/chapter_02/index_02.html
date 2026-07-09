@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>クローズボタン（HTMLのみ）</title>
+  </head>
+  <body>
+    <h1>クローズボタン（HTMLのみ）</h1>
+    <button type="button" commandfor="dialog" command="show-modal">
+      モーダルを開く
+    </button>
+    <dialog id="dialog" aria-label="ダイアログ">
+      <p>ダイアログコンテンツ</p>
+      <button commandfor="dialog" command="close">閉じる</button>
+    </dialog>
+  </body>
+</html>

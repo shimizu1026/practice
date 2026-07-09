@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:where(html) {
+  font-family: "Inter", sans-serif;
+  background-color: #101010;
+  color: #efefef;
+}
+
+.page {
+  display: block grid;
+  place-content: center;
+  min-block-size: 100vh;
+}
+
+.text-display {
+  opacity: 0;
+  font-size: 5rem;
+  font-weight: 700;
+
+  &.is-active {
+    opacity: 1;
+    transition: 1.2s var(--ease-in-out-sine);
+    transition-property: opacity;
+  }
+
+  & > span {
+    display: inline flow-root;
+    transition: 1.2s var(--ease-out-expo);
+    transition-property: translate;
+  }
+
+  /* JS無効環境用 */
+  [data-disable-script] & {
+    animation: fadeIn 1.2s var(--ease-in-out-sine) 1s both;
+
+    & > span {
+      translate: 0 0 !important;
+    }
+  }
+}
+
+/* JS無効環境のアニメーション */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* アクセシビリティ */
+:where(.visually-hidden:not(:focus-within, :active)) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after,
+  ::backdrop {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: unset !important;
+    transition-delay: unset !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    view-transition-name: none !important;
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>バリデーション</title>
+    <script src="script_02.js" defer></script>
+
+  </head>
+  <body>
+    <h1>バリデーション</h1>
+    <form action="" method="post" data-form>
+      <p>
+        <label>
+          名前<br>
+          <input type="text" name="name" required />
+        </label>
+      </p>
+      <p>
+        <label>
+          メールアドレス<br>
+          <input type="email" name="email" required />
+        </label>
+      </p>
+      <p>
+        <button type="button" data-button-confirm>入力確認</button>
+      </p>
+    </form>
+
+    <section>
+      <h2>入力確認</h2>
+      <dl>
+        <div>
+          <dt>名前</dt>
+          <dd data-name></dd>
+        </div>
+        <div>
+          <dt>メールアドレス</dt>
+          <dd data-email></dd>
+        </div>
+      </dl>
+    </section>
+  </body>
+</html>

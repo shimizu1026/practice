@@ -1,0 +1,117 @@
+/*
+  Access
+---------------------------------------------- */
+.access {
+  container: access / inline-size;
+  display: block grid;
+  gap: clamp(24 * var(--torem), 1.1383rem + 1.7021cqi, 40 * var(--torem));
+
+  @container container (inline-size >= 64rem) {
+    grid-template:
+    "map head" auto
+    "map body" 1fr / 1fr calc(395 * var(--torem));
+  }
+}
+
+.access-title {
+  @container access (inline-size >= 64rem) {
+    grid-area: head;
+  }
+}
+
+.access-map {
+  aspect-ratio: 1;
+
+  @container access (inline-size >= 48rem) {
+     aspect-ratio: 1.5 / 1;
+  }
+
+  @container access (inline-size >= 64rem) {
+    grid-area: map;
+    aspect-ratio: auto;
+  }
+
+  iframe {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}
+
+.access-body {
+  container: access-body / inline-size;
+
+  @container access (inline-size >= 64rem) {
+    grid-area: body;
+  }
+}
+
+.access-list {
+  display: block grid;
+  row-gap: calc(24 * var(--torem));
+
+  @container access-body (inline-size >= 24rem) {
+    grid-template-columns: max-content 1fr;
+  }
+}
+
+.access-item {
+  display: block grid;
+
+  @container access-body (inline-size >= 24rem) {
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    gap: 0 var(--space-md);
+  }
+
+  dt,
+  dd {
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.2em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-inline-start: 1.75em;
+  }
+}
+
+.access-table {
+  --min-table-size: 395px;
+
+  caption {
+    text-align: start;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.2em;
+  }
+
+  thead {
+    text-align: center;
+    font-size:  var(--font-size-sm);
+    line-height: 1.25;
+    font-weight: 900;
+
+    span {
+      font-size: 0.71em;
+    }
+  }
+
+  tbody {
+    text-align: center;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+
+    th {
+      white-space: nowrap;
+    }
+  }
+
+  th,
+  td {
+    padding-block: calc(8 * var(--torem));
+    padding-inline: calc(4 * var(--torem));
+  }
+
+  .close {
+    opacity: .5;
+  }
+}

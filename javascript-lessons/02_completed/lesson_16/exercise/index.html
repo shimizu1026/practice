@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JavaScript Exercise 16</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>JavaScript Exercise 16</h1>
+    </header>
+
+    <main>
+      <div class="container">
+        <form id="contact-form" action="" method="post" class="contact-form" data-form="contact">
+          <p class="contact-form-item">
+            <label class="label">
+              <span>お名前（必須）</span>
+              <input type="text" name="name" class="textfield" required>
+            </label>
+          </p>
+          <p class="contact-form-item">
+            <label class="label">
+              <span>メールアドレス（必須）</span>
+              <input type="email" name="email" class="textfield" required>
+            </label>
+          </p>
+          <p class="contact-form-item">
+            <label class="label">
+              <span>お問い合わせ内容（必須）</span>
+              <textarea name="message" rows="6" class="textfield" required></textarea>
+            </label>
+          </p>
+
+          <p class="contact-form-button">
+            <button type="button" class="button" data-command="show-modal">入力確認</button>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <dialog id="confirm" class="confirm" data-dialog="confirm" aria-labelledby="confirm-title" aria-describedby="confirm-description" autofocus>
+      <div class="confirm-header">
+        <h1 id="confirm-title" class="confirm-title">入力確認</h1>
+        <p id="confirm-description" class="confirm-description">
+          以下の内容で送信してもよろしいですか？
+        </p>
+      </div>
+
+      <div class="confirm-body">
+
+
+        <dl class="confirm-data">
+          <dt>お名前</dt>
+          <dd data-confirm="name"></dd>
+
+          <dt>メールアドレス</dt>
+          <dd data-confirm="email"></dd>
+
+          <dt>お問い合わせ内容</dt>
+          <dd data-confirm="message"></dd>
+        </dl>
+      </div>
+
+      <div class="confirm-footer">
+        <button type="button" class="button" data-command="edit">修正する</button>
+        <button type="button" form="contact-form" class="button" data-command="submit">送信する</button>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+/*
+  Inview
+---------------------------------------------- */
+[data-inview-trigger] {
+  transition: 1s var(--ease-out-sine);
+}
+
+[data-inview-trigger="fade"] {
+  transition-property: opacity;
+
+  &[data-inview="false"] {
+    opacity: 0;
+  }
+  &[data-inview="true"] {
+    opacity: 1;
+  }
+}
