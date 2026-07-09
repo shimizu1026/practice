@@ -1,6 +1,9 @@
 /* Button */
 .button {
-	display: block flow;
+	display: block grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	column-gap: 0.5rem;
 	padding-block: 0.75rem;
 	padding-inline: 1.5rem;
 	letter-spacing: 0.05em;
@@ -11,6 +14,23 @@
 	text-shadow: 0 0 4px rgb(0 0 0 / 0.16);
 	transition: var(--duration-fast) var(--ease-out-quart);
 	transition-property: color, background-color;
+
+	&::after {
+		/* 太さ */
+		--arrow-width: 15%;
+
+		content: "";
+		inline-size: 0.75em;
+		block-size: .75em;
+		background-color: currentColor;
+		clip-path: polygon(25% var(--arrow-width),
+				calc(25% + var(--arrow-width)) 0,
+				calc(75% + var(--arrow-width)) 50%,
+				calc(25% + var(--arrow-width)) 100%,
+				25% calc(100% - var(--arrow-width)),
+				calc(75% - var(--arrow-width)) 50%,
+				25% var(--arrow-width));
+	}
 }
 
 .login {
