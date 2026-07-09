@@ -1,1 +1,1 @@
-document.querySelector("p").textContent = "test";
+document.querySelector("h1").textContent = "test";
