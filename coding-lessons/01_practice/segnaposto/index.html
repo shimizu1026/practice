@@ -317,7 +317,73 @@
 
         <form action="#" method="post" class="form">
           <p>
-            <label class="form__item">お名前（必須）</label>
+            <label class="form__item"
+              >お名前（必須）
+              <input
+                type="text"
+                name="name"
+                class="textfield"
+                autocomplete="name"
+                autocapitalize="off"
+                autocorrect="off"
+                placeholder="架空 太郎"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >メールアドレス（必須）
+              <input
+                type="email"
+                name="email"
+                class="textfield"
+                autocomplete="email"
+                autocapitalize="off"
+                autocorrect="off"
+                inputmode="email"
+                placeholder="kakuu@example.jp"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >来店日（必須）
+              <input type="date" name="date" class="textfield" required />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >来店時間（必須）
+              <input type="time" name="time" class="textfield" required />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >人数（必須）
+              <input
+                type="number"
+                name="guests"
+                min="1"
+                max="20"
+                inputmode="numeric"
+                placeholder="2"
+                class="textfield"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >ご要望・アレルギー等
+              <textarea
+                name="notes"
+                rows="4"
+                placeholder="たまご、小麦粉アレルギーです"
+                class="textfield"
+              ></textarea>
+            </label>
           </p>
         </form>
       </section>
