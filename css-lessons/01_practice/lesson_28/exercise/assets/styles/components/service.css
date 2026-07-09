@@ -34,7 +34,8 @@
 	block-size: 100%;
 	object-fit: cover;
 	clip-path: inset(0);
-	transition: all 0.3s ease-out;
+	transition: 0.3s ease-out;
+	transition-property: clip-path, filter;
 
 	.service:focus-visible & {
 		filter: opacity(70%);
