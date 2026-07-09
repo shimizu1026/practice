@@ -1,0 +1,17 @@
+@charset "utf-8";
+@layer base, layouts, components, utilities;
+
+/* Base */
+@import "./base/reset.css" layer(base);
+@import "./base/variable.css" layer(base);
+
+/* Layouts */
+@import "./layouts/header.css" layer(layouts);
+@import "./layouts/footer.css" layer(layouts);
+@import "./layouts/spacer.css" layer(layouts);
+
+/* Components */
+@import "" layer(components);
+
+/* utilities */
+@import "" layer(utilities);

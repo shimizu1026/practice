@@ -1,0 +1,27 @@
+:root {
+	/* Tool */
+	--torem: calc(1rem / 16);
+
+	/* Color */
+	--color-main: #;
+	--color-dark: #;
+
+	/* Font */
+	--font-sans-serif-ja: "Noto Sans JP", sans-serif;
+	--font-sans-serif-en: "Jost", sans-serif;
+
+	/* Offset */
+	--offset-sm: vi;
+	--offset-md: vi;
+	--offset-lg: vi;
+
+	/* Container size */
+	--container-size-sm: ;
+	--container-size-md: ;
+	--container-size-lg: ;
+	--container-size-xl: ;
+
+	/* Transition & Animation */
+	--duration-fast: s;
+	--ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
