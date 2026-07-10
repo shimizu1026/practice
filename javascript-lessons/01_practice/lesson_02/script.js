@@ -23,3 +23,7 @@ age = 24;
 console.log(age);
 console.log(since);
 console.log(year - age);
+
+// テンプレートリテラル
+
+console.log(`${message}、${year - age}年生まれの${userName}です。`);
