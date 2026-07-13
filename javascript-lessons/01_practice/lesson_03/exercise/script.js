@@ -8,12 +8,12 @@ if (isConfirmed) {
 		alert("金額を入力してください");
 	}
 
-	if (amount < 1000) {
+	if (amount && amount < 1000) {
 		alert("1000円未満のお振込みはできません");
 	}
 
-	if (!amount && amount < 1000) {
-		alert(amount);
+	if (amount && amount >= 1000) {
+		alert(`${amount}円お振込しました`);
 	}
 } else {
 	alert("振込をキャンセルしました");
