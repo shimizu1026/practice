@@ -1,286 +1,457 @@
 <!doctype html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Segnaposto | 東京都架空区の街角にある架空のイタリアンレストラン
+    </title>
+    <script src="/scripts/libs/invoker-polyfill.js" defer></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>
-		Segnaposto | 東京都架空区の街角にある架空のイタリアンレストラン
-	</title>
-	<script src="/scripts/libs/invoker-polyfill.js" defer></script>
-</head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">
+        <a href="/" class="logo"
+          ><img
+            src="/images/logo.svg"
+            alt="Segnaposto"
+            width="227"
+            height="37"
+            decoding="async"
+        /></a>
+      </h1>
+      <nav class="header__nav" aria-label="グローバル">
+        <button
+          type="button"
+          class="button-hamburger"
+          command="toggle-popover"
+          commandfor="drawer"
+        >
+          メニュー
+        </button>
+        <div id="drawer" popover>
+          <ul>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservation">Reservation</a></li>
+          </ul>
+        </div>
+        <ul class="nav-global">
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#menu">Menu</a></li>
+        </ul>
+        <p class="nav-action">
+          <a href="#reservation"
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M6.75 3V5.25M17.25 3V5.25M3 18.75V7.5C3 6.90326 3.23705 6.33097 3.65901 5.90901C4.08097 5.48705 4.65326 5.25 5.25 5.25H18.75C19.3467 5.25 19.919 5.48705 20.341 5.90901C20.7629 6.33097 21 6.90326 21 7.5V18.75M21 18.75V11.25C21 10.6533 20.7629 10.081 20.341 9.65901C19.919 9.23705 19.3467 9 18.75 9H5.25C4.65326 9 4.08097 9.23705 3.65901 9.65901C3.23705 10.081 3 10.6533 3 11.25V18.75C3 19.3467 3.23705 19.919 3.65901 20.341C4.08097 20.7629 4.65326 21 5.25 21H18.75C19.3467 21 19.919 20.7629 20.341 20.341C20.7629 19.919 21 19.3467 21 18.75ZM12 12.75H12.008V12.758H12V12.75ZM12 15H12.008V15.008H12V15ZM12 17.25H12.008V17.258H12V17.25ZM9.75 15H9.758V15.008H9.75V15ZM9.75 17.25H9.758V17.258H9.75V17.25ZM7.5 15H7.508V15.008H7.5V15ZM7.5 17.25H7.508V17.258H7.5V17.25ZM14.25 12.75H14.258V12.758H14.25V12.75ZM14.25 15H14.258V15.008H14.25V15ZM14.25 17.25H14.258V17.258H14.25V17.25ZM16.5 12.75H16.508V12.758H16.5V12.75ZM16.5 15H16.508V15.008H16.5V15Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Reservation</a
+          >
+        </p>
+      </nav>
+    </header>
 
-<body>
-	<header class="header">
-		<h1 class="header__title">
-			<a href="/" class="logo"><img src="/images/logo.svg" alt="Segnaposto" width="227" height="37"
-					decoding="async" /></a>
-		</h1>
-		<nav class="header__nav" aria-label="グローバル">
-			<button type="button" class="button-hamburger" command="toggle-popover" commandfor="drawer">
-				メニュー
-			</button>
-			<div id="drawer" popover>
-				<ul>
-					<li><a href="#concept">Concept</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#reservation">Reservation</a></li>
-				</ul>
-			</div>
-			<ul class="nav-global">
-				<li><a href="#concept">Concept</a></li>
-				<li><a href="#menu">Menu</a></li>
-			</ul>
-			<p class="nav-action">
-				<a href="#reservation"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-						<path
-							d="M6.75 3V5.25M17.25 3V5.25M3 18.75V7.5C3 6.90326 3.23705 6.33097 3.65901 5.90901C4.08097 5.48705 4.65326 5.25 5.25 5.25H18.75C19.3467 5.25 19.919 5.48705 20.341 5.90901C20.7629 6.33097 21 6.90326 21 7.5V18.75M21 18.75V11.25C21 10.6533 20.7629 10.081 20.341 9.65901C19.919 9.23705 19.3467 9 18.75 9H5.25C4.65326 9 4.08097 9.23705 3.65901 9.65901C3.23705 10.081 3 10.6533 3 11.25V18.75C3 19.3467 3.23705 19.919 3.65901 20.341C4.08097 20.7629 4.65326 21 5.25 21H18.75C19.3467 21 19.919 20.7629 20.341 20.341C20.7629 19.919 21 19.3467 21 18.75ZM12 12.75H12.008V12.758H12V12.75ZM12 15H12.008V15.008H12V15ZM12 17.25H12.008V17.258H12V17.25ZM9.75 15H9.758V15.008H9.75V15ZM9.75 17.25H9.758V17.258H9.75V17.25ZM7.5 15H7.508V15.008H7.5V15ZM7.5 17.25H7.508V17.258H7.5V17.25ZM14.25 12.75H14.258V12.758H14.25V12.75ZM14.25 15H14.258V15.008H14.25V15ZM14.25 17.25H14.258V17.258H14.25V17.25ZM16.5 12.75H16.508V12.758H16.5V12.75ZM16.5 15H16.508V15.008H16.5V15Z"
-							stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					Reservation</a>
-			</p>
-		</nav>
-	</header>
+    <main class="main">
+      <div class="hero">
+        <figure class="hero__figure">
+          <img
+            src="/images/hero-image.png"
+            srcset="/images/hero-image@2x.png 2x"
+            alt="料理が並ぶテーブルの様子"
+            width="954"
+            height="636"
+            decoding="async"
+          />
+        </figure>
+        <p class="hero__caption" lang="it">Segnaposto</p>
+        <p class="hero__lead">街角に、架空のイタリアンを。</p>
+        <p class="hero__text">
+          素材にこだわった架空のパスタとピザを、気取らない雰囲気でどうぞ。
+        </p>
+      </div>
+      <!-- /.hero -->
 
-	<main class="main">
-		<div class="hero">
-			<figure class="hero__figure">
-				<img src="/images/hero-image.png" srcset="/images/hero-image@2x.png 2x" alt="料理が並ぶテーブルの様子" width="954"
-					height="636" decoding="async" />
-			</figure>
-			<p class="hero__caption" lang="it">Segnaposto</p>
-			<p class="hero__lead">街角に、架空のイタリアンを。</p>
-			<p class="hero__text">
-				素材にこだわった架空のパスタとピザを、気取らない雰囲気でどうぞ。
-			</p>
-		</div>
-		<!-- /.hero -->
+      <section id="news" class="news">
+        <h2 class="news__title">お知らせ</h2>
+        <article class="post">
+          <p class="post__date">
+            <time datetime="2026-03-10">2026.03.10</time>
+          </p>
+          <p class="post__title">
+            春季休業のお知らせ（2026.03.10 〜 2026.05.01 ）
+          </p>
+          <button
+            type="button"
+            class="button-more"
+            command="show-modal"
+            commandfor="news-modal"
+          >
+            記事を開く
+          </button>
+        </article>
+      </section>
+      <dialog
+        id="news-modal"
+        closedby="any"
+        class="modal-news"
+        aria-labelledby="news-modal-heading"
+        autofocus
+      >
+        <header class="modal-header">
+          <h2 id="news-modal-heading" lang="en" class="modal__title">News</h2>
+          <button
+            type="button"
+            class="button-primary"
+            command="close"
+            commandfor="news-modal"
+          >
+            閉じる
+          </button>
+        </header>
+        <article class="entry">
+          <p class="entry__date">
+            <time datetime="2026-03-10">2026.03.10</time>
+          </p>
+          <h3 class="entry__title">
+            春季休業のお知らせ（2026.03.10 〜 2026.05.01 ）
+          </h3>
+          <p>
+            平素より、Segnapstoをご愛顧いただき誠にありがとうございます。
+            誠に勝手ながら、下記の期間を春季休業とさせていただきます。
+          </p>
+          <p>休業期間：2026年3月10日（火）〜 2026年5月1日（金）</p>
+          <p>
+            休業中はご不便をおかけいたしますが、何卒ご理解賜りますようお願い申し上げます。
+            なお、休業期間中もご予約フォームからのご連絡は受け付けております。いただいたお問い合わせにつきましては、営業再開後に順次ご返信いたします。
+          </p>
+          <p>
+            営業再開は2026年5月2日（土）を予定しております。
+            再開初日より通常通りランチ・ディナーともにご利用いただけます。
+          </p>
+          <p>
+            長期のお休みをいただく中、スタッフ一同、より良いお料理とサービスをお届けできるよう準備を整えてまいります。ご来店を心よりお待ち申し上げております。
+          </p>
+        </article>
+      </dialog>
+      <section id="concept" class="concept">
+        <hgroup class="heading">
+          <h2 lang="en" class="heading__title">Concept</h2>
+          <p class="heading__subtitle">コンセプト</p>
+        </hgroup>
 
-		<section id="news" class="news">
-			<h2 class="news__title">お知らせ</h2>
-			<article class="post">
-				<p class="post__date">
-					<time datetime="2026-03-10">2026.03.10</time>
-				</p>
-				<p class="post__title">
-					春季休業のお知らせ（2026.03.10 〜 2026.05.01 ）
-				</p>
-				<button type="button" class="button-more" command="show-modal" commandfor="news-modal">
-					記事を開く
-				</button>
-			</article>
-		</section>
-		<dialog id="news-modal" closedby="any" class="modal-news" aria-labelledby="news-modal-heading" autofocus>
-			<header class="modal-header">
-				<h2 id="news-modal-heading" lang="en" class="modal__title">News</h2>
-				<button type="button" class="button-primary" command="close" commandfor="news-modal">
-					閉じる
-				</button>
-			</header>
-			<article class="entry">
-				<p class="entry__date">
-					<time datetime="2026-03-10">2026.03.10</time>
-				</p>
-				<h3 class="entry__title">
-					春季休業のお知らせ（2026.03.10 〜 2026.05.01 ）
-				</h3>
-				<p>
-					平素より、Segnapstoをご愛顧いただき誠にありがとうございます。
-					誠に勝手ながら、下記の期間を春季休業とさせていただきます。
-				</p>
-				<p>休業期間：2026年3月10日（火）〜 2026年5月1日（金）</p>
-				<p>
-					休業中はご不便をおかけいたしますが、何卒ご理解賜りますようお願い申し上げます。
-					なお、休業期間中もご予約フォームからのご連絡は受け付けております。いただいたお問い合わせにつきましては、営業再開後に順次ご返信いたします。
-				</p>
-				<p>
-					営業再開は2026年5月2日（土）を予定しております。
-					再開初日より通常通りランチ・ディナーともにご利用いただけます。
-				</p>
-				<p>
-					長期のお休みをいただく中、スタッフ一同、より良いお料理とサービスをお届けできるよう準備を整えてまいります。ご来店を心よりお待ち申し上げております。
-				</p>
-			</article>
-		</dialog>
-		<section id="concept" class="concept">
-			<hgroup class="heading">
-				<h2 lang="en" class="heading__title">Concept</h2>
-				<p class="heading__subtitle">コンセプト</p>
-			</hgroup>
+        <figure class="concept__figure">
+          <img
+            src="/images/photo-interior.png"
+            srcset="/images/photo-interior@2x.png 2x"
+            alt="店内にある4人がけの木目のテーブルと椅子。テーブルの上にはお花やお皿が置いてある"
+            width="508"
+            height="625"
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
 
-			<figure class="concept__figure">
-				<img src="/images/photo-interior.png" srcset="/images/photo-interior@2x.png 2x"
-					alt="店内にある4人がけの木目のテーブルと椅子。テーブルの上にはお花やお皿が置いてある" width="508" height="625" decoding="async"
-					loading="lazy" />
-			</figure>
+        <section class="message">
+          <h3 class="message__title">特別な日じゃなくていい。</h3>
+          <!-- /.message__title -->
+          <p>
+            架空のイタリア・ロレム州で修業を積んだシェフが、この街に持ち帰ったのは華やかなレシピではなく、「食事を囲む時間のゆたかさ」でした。
+          </p>
+          <p>
+            肩肘張らずに、ただおいしいものを食べてほしい。
+            Segnapostoはそんな思いから生まれた、あなたの街の架空のイタリアンです。
+          </p>
+        </section>
+        <!-- /.message -->
 
-			<section class="message">
-				<h3 class="message__title">特別な日じゃなくていい。</h3>
-				<!-- /.message__title -->
-				<p>
-					架空のイタリア・ロレム州で修業を積んだシェフが、この街に持ち帰ったのは華やかなレシピではなく、「食事を囲む時間のゆたかさ」でした。
-				</p>
-				<p>
-					肩肘張らずに、ただおいしいものを食べてほしい。
-					Segnapostoはそんな思いから生まれた、あなたの街の架空のイタリアンです。
-				</p>
-			</section>
-			<!-- /.message -->
+        <figure>
+          <img
+            class="profile__figure"
+            src="/images/photo-chef.png"
+            srcset="/images/photo-chef2x.png 2x"
+            alt="厨房でパスタを盛り付けているオーナーシェフ。ダミー中村"
+            decoding="async"
+            loading="lazy"
+            width="469"
+            height="256"
+          />
+        </figure>
 
-			<figure>
-				<img class="profile__figure" src="/images/photo-chef.png" srcset="/images/photo-chef2x.png 2x"
-					alt="厨房でパスタを盛り付けているオーナーシェフ。ダミー中村" decoding="async" loading="lazy" width="469" height="256" />
-			</figure>
+        <p>オーナーシェフ <br /><b class="profile__name">ダミー中村</b></p>
+        <p>
+          架空のイタリア・ロレム州にある星付きリストランテで10年間修業を積み、帰国後この街に「Segnaposto」をオープン。「特別な日だけじゃなく、日常に架空のイタリアンを」をモットーに、肩肘張らずに楽しめる空間を大切にしています。地元の農家から直送される季節の野菜と、毎朝仕入れる新鮮な魚介を使ったメニューをお楽しみください。
+        </p>
+      </section>
 
-			<p>オーナーシェフ <br /><b class="profile__name">ダミー中村</b></p>
-			<p>
-				架空のイタリア・ロレム州にある星付きリストランテで10年間修業を積み、帰国後この街に「Segnaposto」をオープン。「特別な日だけじゃなく、日常に架空のイタリアンを」をモットーに、肩肘張らずに楽しめる空間を大切にしています。地元の農家から直送される季節の野菜と、毎朝仕入れる新鮮な魚介を使ったメニューをお楽しみください。
-			</p>
-		</section>
+      <section id="menu" class="menu">
+        <hgroup class="heading">
+          <h2 lang="en" class="heading__title">Menu</h2>
+          <p class="heading__subtitle">メニュー</p>
+        </hgroup>
 
-		<section id="menu" class="menu">
-			<hgroup class="heading">
-				<h2 lang="en" class="heading__title">Menu</h2>
-				<p class="heading__subtitle">メニュー</p>
-			</hgroup>
+        <article class="card">
+          <h3 class="card__title">マルゲリータ</h3>
+          <p class="card__badge">おすすめ</p>
+          <figure class="card__thumbnail">
+            <img
+              src="./images/photo-margherita.png"
+              srcset="./images/photo-margherita@2x.png 2x"
+              alt="6枚にスライスされたマルゲリータ"
+              width="416"
+              height="277"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <p class="card__description">
+            トマト・モッツァレラ・バジルのクラシックピザ
+          </p>
+          <p class="card__price">¥1,480</p>
+        </article>
 
-			<article class="card">
-				<h3 class="card__title">マルゲリータ</h3>
-				<p class="card__badge">おすすめ</p>
-				<figure class="card__thumbnail">
-					<img src="./images/photo-margherita.png" srcset="./images/photo-margherita@2x.png 2x"
-						alt="6枚にスライスされたマルゲリータ" width="416" height="277" decoding="async" loading="lazy" />
-				</figure>
-				<p class="card__description">
-					トマト・モッツァレラ・バジルのクラシックピザ
-				</p>
-				<p class="card__price">¥1,480</p>
-			</article>
+        <article class="card">
+          <h3 class="card__title">カルボナーラ</h3>
+          <figure class="card__thumbnail">
+            <img
+              src="./images/photo-carbonara.png"
+              srcset="./images/photo-carbonara@2x.png 2x"
+              alt="削ったチーズがたっぷりかかったパンチェッタ入りのカルボナーラ"
+              width="416"
+              height="277"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <p class="card__description">
+            濃厚クリームと自家製パンチェッタのスパゲッティ
+          </p>
+          <p class="card__price">¥1,580</p>
+        </article>
 
-			<article class="card">
-				<h3 class="card__title">カルボナーラ</h3>
-				<figure class="card__thumbnail">
-					<img src="./images/photo-carbonara.png" srcset="./images/photo-carbonara@2x.png 2x"
-						alt="削ったチーズがたっぷりかかったパンチェッタ入りのカルボナーラ" width="416" height="277" decoding="async" loading="lazy" />
-				</figure>
-				<p class="card__description">
-					濃厚クリームと自家製パンチェッタのスパゲッティ
-				</p>
-				<p class="card__price">¥1,580</p>
-			</article>
+        <article class="card">
+          <h3 class="card__title">ティラミス</h3>
+          <figure class="card__thumbnail">
+            <img
+              src="./images/photo-tiramisu.png"
+              srcset="./images/photo-tiramisu@2x.png 2x"
+              alt="ココアパウダーと赤い実ののったティラミス"
+              width="416"
+              height="277"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <p class="card__description">
+            マスカルポーネとエスプレッソの定番デザート
+          </p>
+          <p class="card__price">¥680</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title">ラザニア</h3>
+          <figure class="card__thumbnail">
+            <img
+              src="./images/photo-lasagna.png"
+              srcset="./images/photo-lasagna@2x.png 2x"
+              alt="とろけたチーズがたっぷりのラザニア"
+              width="416"
+              height="277"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <p class="card__description">
+            自家製ミートソースと贅沢なチーズのオーブン焼き
+          </p>
+          <p class="card__price">¥1,680</p>
+        </article>
 
-			<article class="card">
-				<h3 class="card__title">ティラミス</h3>
-				<figure class="card__thumbnail">
-					<img src="./images/photo-tiramisu.png" srcset="./images/photo-tiramisu@2x.png 2x"
-						alt="ココアパウダーと赤い実ののったティラミス" width="416" height="277" decoding="async" loading="lazy" />
-				</figure>
-				<p class="card__description">
-					マスカルポーネとエスプレッソの定番デザート
-				</p>
-				<p class="card__price">¥680</p>
-			</article>
-			<article class="card">
-				<h3 class="card__title">ラザニア</h3>
-				<figure class="card__thumbnail">
-					<img src="./images/photo-lasagna.png" srcset="./images/photo-lasagna@2x.png 2x"
-						alt="とろけたチーズがたっぷりのラザニア" width="416" height="277" decoding="async" loading="lazy" />
-				</figure>
-				<p class="card__description">
-					自家製ミートソースと贅沢なチーズのオーブン焼き
-				</p>
-				<p class="card__price">¥1,680</p>
-			</article>
+        <article class="card">
+          <h3 class="card__title">カプレーゼ</h3>
+          <figure class="card__thumbnail">
+            <img
+              src="./images/photo-caprese.png"
+              srcset="./images/photo-caprese@2x.png 2x"
+              alt="くし形切りにしたトマトと四角く切ったモッツァレラチーズにオリーブオイルがかかっている ローズマリー添え"
+              width="416"
+              height="277"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <p class="card__description">
+            完熟トマトとモッツァレラ・バジルオイルがけ
+          </p>
+          <p class="card__price">¥980</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title">パンナコッタ</h3>
+          <figure class="card__thumbnail">
+            <img
+              src="./images/photo-panna-cotta.png"
+              srcset="./images/photo-panna-cotta@2x.png 2x"
+              alt="粉砂糖とミントをあしらい、いちごのソースとミルクプリンが斜めに2層になっている 一緒にいちごや赤い実が添えてある"
+              width="416"
+              height="277"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <p class="card__description">
+            なめらかなミルクプリン・ベリーソース添え
+          </p>
+          <p class="card__price">¥680</p>
+        </article>
+      </section>
 
-			<article class="card">
-				<h3 class="card__title">カプレーゼ</h3>
-				<figure class="card__thumbnail">
-					<img src="./images/photo-caprese.png" srcset="./images/photo-caprese@2x.png 2x"
-						alt="くし形切りにしたトマトと四角く切ったモッツァレラチーズにオリーブオイルがかかっている ローズマリー添え" width="416" height="277"
-						decoding="async" loading="lazy" />
-				</figure>
-				<p class="card__description">
-					完熟トマトとモッツァレラ・バジルオイルがけ
-				</p>
-				<p class="card__price">¥980</p>
-			</article>
-			<article class="card">
-				<h3 class="card__title">パンナコッタ</h3>
-				<figure class="card__thumbnail">
-					<img src="./images/photo-panna-cotta.png" srcset="./images/photo-panna-cotta@2x.png 2x"
-						alt="粉砂糖とミントをあしらい、いちごのソースとミルクプリンが斜めに2層になっている 一緒にいちごや赤い実が添えてある" width="416" height="277"
-						decoding="async" loading="lazy" />
-				</figure>
-				<p class="card__description">
-					なめらかなミルクプリン・ベリーソース添え
-				</p>
-				<p class="card__price">¥680</p>
-			</article>
-		</section>
+      <section id="reservation" class="reservation">
+        <hgroup class="heading">
+          <h2 lang="en" class="heading__title">Reservation</h2>
+          <p class="heading__subtitle">ご予約</p>
+        </hgroup>
 
-		<section id="reservation" class="reservation">
-			<hgroup class="heading">
-				<h2 lang="en" class="heading__title">Reservation</h2>
-				<p class="heading__subtitle">ご予約</p>
-			</hgroup>
+        <p>
+          ご来店のご予約はこちらのフォームよりお願いいたします。<br />
+          架空のため送信はできませんが、どうぞお気軽にご入力ください。
+        </p>
 
-			<p>
-				ご来店のご予約はこちらのフォームよりお願いいたします。<br />
-				架空のため送信はできませんが、どうぞお気軽にご入力ください。
-			</p>
+        <form action="#" method="post" class="form">
+          <p>
+            <label class="form__item"
+              >お名前（必須）
+              <input
+                type="text"
+                name="name"
+                class="textfield"
+                autocomplete="name"
+                autocapitalize="off"
+                autocorrect="off"
+                placeholder="架空 太郎"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >メールアドレス（必須）
+              <input
+                type="email"
+                name="email"
+                class="textfield"
+                autocomplete="email"
+                autocapitalize="off"
+                autocorrect="off"
+                inputmode="email"
+                placeholder="kakuu@example.jp"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >来店日（必須）
+              <input type="date" name="date" class="textfield" required />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >来店時間（必須）
+              <input type="time" name="time" class="textfield" required />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >人数（必須）
+              <input
+                type="number"
+                name="guests"
+                min="1"
+                max="20"
+                inputmode="numeric"
+                placeholder="2"
+                class="textfield"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label class="form__item"
+              >ご要望・アレルギー等
+              <textarea
+                name="notes"
+                rows="4"
+                placeholder="たまご、小麦粉アレルギーです"
+                class="textfield"
+              ></textarea>
+            </label>
+          </p>
+          <p>
+            <label class="privacy-check">
+              <input
+                type="checkbox"
+                name="privacy"
+                class="checkbox"
+                required
+                switch
+              /><a href="./privacy.html">プライバシーポリシー</a>に同意する
+            </label>
+          </p>
+          <p>
+            <button class="button-primary">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
+                  stroke="#4D4229"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              予約する
+            </button>
+          </p>
+        </form>
+      </section>
+    </main>
 
-			<form action="#" method="post" class="form">
-				<p>
-					<label class="form__item">お名前（必須）
-						<input type="text" name="name" class="textfield" autocomplete="name" autocapitalize="off"
-							autocorrect="off" placeholder="架空 太郎" required />
-					</label>
-				</p>
-				<p>
-					<label class="form__item">メールアドレス（必須）
-						<input type="email" name="email" class="textfield" autocomplete="email" autocapitalize="off"
-							autocorrect="off" inputmode="email" placeholder="kakuu@example.jp" required />
-					</label>
-				</p>
-				<p>
-					<label class="form__item">来店日（必須）
-						<input type="date" name="date" class="textfield" required />
-					</label>
-				</p>
-				<p>
-					<label class="form__item">来店時間（必須）
-						<input type="time" name="time" class="textfield" required />
-					</label>
-				</p>
-				<p>
-					<label class="form__item">人数（必須）
-						<input type="number" name="guests" min="1" max="20" inputmode="numeric" placeholder="2"
-							class="textfield" required />
-					</label>
-				</p>
-				<p>
-					<label class="form__item">ご要望・アレルギー等
-						<textarea name="notes" rows="4" placeholder="たまご、小麦粉アレルギーです" class="textfield"></textarea>
-					</label>
-				</p>
-				<p>
-					<label class="privacy-check">
-						<input type="checkbox" name="privacy" class="checkbox" required switch /><a
-							href="./privacy.html">プライバシーポリシー</a>に同意する
-					</label>
-				</p>
-				<p>
-					<button class="button-primary">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-							<path
-								d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
-								stroke="#4D4229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-						予約する</button>
-				</p>
-			</form>
-		</section>
-	</main>
-</body>
+    <footer class="footer">
+      <p class="footer__title">
+        <span lang="it" class="footer__name">Segnaposto</span>
+        <span class="footer__ruby">セニャポスト</span>
+      </p>
 
+      <address class="footer__address">
+        <dl>
+          <dt>住所</dt>
+          <dd>東京都架空区架空1-1-1</dd>
+        </dl>
+        <dl>
+          <dt>電話番号</dt>
+          <dd><a href="tel:+8131234XXXX">03-1234-XXXX</a></dd>
+        </dl>
+        <dl>
+          <dt>営業時間</dt>
+          <dd>17:00 – 23:00（LO: 22:30）</dd>
+        </dl>
+      </address>
+    </footer>
+  </body>
 </html>
