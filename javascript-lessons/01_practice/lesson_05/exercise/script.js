@@ -1,12 +1,17 @@
 // 「ヒトカゲ」、「フシギダネ」、「ゼニガメ」を要素とした配列を変数partyに代入
 const partys = ["ヒトカゲ", "フシギダネ", "ゼニガメ"];
-console.log(members);
+console.log(partys);
+const pikachu = "ピカチュウ";
+
 // 確認ダイアログで「野生のピカチュウが現れた！捕まえますか？」と表示
 const question = prompt(`野生のピカチュウが現れた！捕まえますか？`);
-// 上記ダイアログの結果がOKの場合
-if () {
-	partys.push;
+for (let i =; i === pikachu i++) {
+	// 上記ダイアログの結果がOKの場合
+	if () {
+		partys.push;
+	}
 }
+
 // 変数party の末尾に「ピカチュウ」を追加
 // 警告ダイアログで「ピカチュウを捕まえた！」と表示
 const caveat = alert(`ピカチュウを捕まえた！`);
