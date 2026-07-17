@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -24,23 +24,31 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:site_name" content="Segnaposto" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Segnaposto" />
     <title>
       Segnaposto | 東京都架空区の街角にある架空のイタリアンレストラン
     </title>
+    <link rel="canonical" href="https://segnaposto.example.com" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
     <script src="/scripts/libs/invoker-polyfill.js" defer></script>
   </head>
 
   <body>
     <header class="header">
       <h1 class="header__title">
-        <a href="/" class="logo"
-          ><img
+        <a href="/" class="logo">
+          <img
             src="/images/logo.svg"
             alt="Segnaposto"
             width="227"
             height="37"
             decoding="async"
-        /></a>
+          />
+        </a>
       </h1>
       <nav class="header__nav" aria-label="グローバル">
         <button
@@ -63,8 +71,8 @@
           <li><a href="#menu">Menu</a></li>
         </ul>
         <p class="nav-action">
-          <a href="#reservation"
-            ><svg
+          <a href="#reservation">
+            <svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -79,8 +87,8 @@
                 stroke-linejoin="round"
               />
             </svg>
-            Reservation</a
-          >
+            Reservation
+          </a>
         </p>
       </nav>
     </header>
@@ -211,7 +219,11 @@
           />
         </figure>
 
-        <p>オーナーシェフ <br /><b class="profile__name">ダミー中村</b></p>
+        <p>
+          オーナーシェフ
+          <br />
+          <b class="profile__name">ダミー中村</b>
+        </p>
         <p>
           架空のイタリア・ロレム州にある星付きリストランテで10年間修業を積み、帰国後この街に「Segnaposto」をオープン。「特別な日だけじゃなく、日常に架空のイタリアンを」をモットーに、肩肘張らずに楽しめる空間を大切にしています。地元の農家から直送される季節の野菜と、毎朝仕入れる新鮮な魚介を使ったメニューをお楽しみください。
         </p>
@@ -344,14 +356,15 @@
         </hgroup>
 
         <p>
-          ご来店のご予約はこちらのフォームよりお願いいたします。<br />
+          ご来店のご予約はこちらのフォームよりお願いいたします。
+          <br />
           架空のため送信はできませんが、どうぞお気軽にご入力ください。
         </p>
 
         <form action="#" method="post" class="form">
           <p>
-            <label class="form__item"
-              >お名前（必須）
+            <label class="form__item">
+              お名前（必須）
               <input
                 type="text"
                 name="name"
@@ -365,8 +378,8 @@
             </label>
           </p>
           <p>
-            <label class="form__item"
-              >メールアドレス（必須）
+            <label class="form__item">
+              メールアドレス（必須）
               <input
                 type="email"
                 name="email"
@@ -381,20 +394,20 @@
             </label>
           </p>
           <p>
-            <label class="form__item"
-              >来店日（必須）
+            <label class="form__item">
+              来店日（必須）
               <input type="date" name="date" class="textfield" required />
             </label>
           </p>
           <p>
-            <label class="form__item"
-              >来店時間（必須）
+            <label class="form__item">
+              来店時間（必須）
               <input type="time" name="time" class="textfield" required />
             </label>
           </p>
           <p>
-            <label class="form__item"
-              >人数（必須）
+            <label class="form__item">
+              人数（必須）
               <input
                 type="number"
                 name="guests"
@@ -408,8 +421,8 @@
             </label>
           </p>
           <p>
-            <label class="form__item"
-              >ご要望・アレルギー等
+            <label class="form__item">
+              ご要望・アレルギー等
               <textarea
                 name="notes"
                 rows="4"
@@ -426,7 +439,9 @@
                 class="checkbox"
                 required
                 switch
-              /><a href="./privacy.html">プライバシーポリシー</a>に同意する
+              />
+              <a href="./privacy.html">プライバシーポリシー</a>
+              に同意する
             </label>
           </p>
           <p>
@@ -468,9 +483,14 @@
 
           <dt>営業時間</dt>
           <dd>
-            <time>17:00</time> – <time>23:00</time>（<abbr title="Last Order"
-              >LO</abbr
-            >: <time>22:30</time>）
+            <time>17:00</time>
+            –
+            <time>23:00</time>
+            （
+            <abbr title="Last Order">LO</abbr>
+            :
+            <time>22:30</time>
+            ）
           </dd>
         </dl>
       </address>
@@ -480,7 +500,11 @@
       </nav>
 
       <p class="copyright" lang="en">
-        <small>© <time>2026</time> Segnaposto</small>
+        <small>
+          ©
+          <time>2026</time>
+          Segnaposto
+        </small>
       </p>
     </footer>
   </body>
