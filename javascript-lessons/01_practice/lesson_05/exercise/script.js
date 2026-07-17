@@ -1,24 +1,29 @@
 // 「ヒトカゲ」、「フシギダネ」、「ゼニガメ」を要素とした配列を変数partyに代入
-const partys = ["ヒトカゲ", "フシギダネ", "ゼニガメ"];
-console.log(partys);
+const party = ["ヒトカゲ", "フシギダネ", "ゼニガメ"];
+console.log(party);
 const pikachu = "ピカチュウ";
 
 // 確認ダイアログで「野生のピカチュウが現れた！捕まえますか？」と表示
-const question = prompt(`野生のピカチュウが現れた！捕まえますか？`);
-for (let i =; i === pikachu i++) {
-	// 上記ダイアログの結果がOKの場合
-	if () {
-		partys.push;
-	}
-}
+const question = confirm(`野生のピカチュウが現れた！捕まえますか？`);
 
-// 変数party の末尾に「ピカチュウ」を追加
-// 警告ダイアログで「ピカチュウを捕まえた！」と表示
-const caveat = alert(`ピカチュウを捕まえた！`);
+console.log(question);
+
+	// 上記ダイアログの結果がOKの場合
+	if (question) {
+		// 変数party の末尾に「ピカチュウ」を追加
+		partys.push("ピカチュウ");
+
+		// 警告ダイアログで「ピカチュウを捕まえた！」と表示
+		alert(`ピカチュウを捕まえた！`);
+	}
 
 // 入力ダイアログ「野生のミューツーが現れた！戦うポケモンを選んでください」の結果を変数 chosenName に代入
 const chosenName = prompt(`野生のミューツーが現れた！戦うポケモンを選んでください`);
 
 // 変数（配列） party 内に、変数chosenNameと一致するポケモンがあれば、警告ダイアログに「いけ！{変数chosenName}！」と表示
-alert(`いけ！${変数chosenName}！`);
+alert(`いけ！${chosenName}！`);
+let selected = null;
+
+for (const pokemon of party) {
+}
 // 余裕があれば、変数 party 内に、変数chosenName のポケモンがいなければ、警告ダイアログに「{変数chosenName}を持っていません。サトシは逃げた！」と表示してください
