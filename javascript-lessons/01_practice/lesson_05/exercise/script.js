@@ -21,12 +21,14 @@ console.log(question);
 const chosenName = prompt(`野生のミューツーが現れた！戦うポケモンを選んでください`);
 
 // 変数（配列） party 内に、変数chosenNameと一致するポケモンがあれば、警告ダイアログに「いけ！{変数chosenName}！」と表示
-alert(`いけ！${chosenName}！`);
+// alert(`いけ！${chosenName}！`);
 let selected = null;
 
 for (const pokemon of party) {
 	if (pokemon === chosenName) {
 		selected = pokemon;
+	} else {
+		
 	}
 }
 // 余裕があれば、変数 party 内に、変数chosenName のポケモンがいなければ、警告ダイアログに「{変数chosenName}を持っていません。サトシは逃げた！」と表示してください
