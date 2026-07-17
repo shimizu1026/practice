@@ -11,7 +11,7 @@ console.log(question);
 	// 上記ダイアログの結果がOKの場合
 	if (question) {
 		// 変数party の末尾に「ピカチュウ」を追加
-		partys.push("ピカチュウ");
+		party.push("ピカチュウ");
 
 		// 警告ダイアログで「ピカチュウを捕まえた！」と表示
 		alert(`ピカチュウを捕まえた！`);
