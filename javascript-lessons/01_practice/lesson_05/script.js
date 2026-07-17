@@ -14,4 +14,12 @@ todos.shift();//先頭の削除
 // 配列の長さ
 console.log(todos.length);
 
+todos.push("歯を磨く");
 // 配列のループ
+// for (let i = 0; i < todos.length; i++) {
+// 	console.log(todos[i]);
+// }
+// for...of
+for (const todo of todos) {
+	console.log(todo);
+}
