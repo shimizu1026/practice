@@ -25,5 +25,8 @@ alert(`いけ！${chosenName}！`);
 let selected = null;
 
 for (const pokemon of party) {
+	if (pokemon === chosenName) {
+		selected = pokemon;
+	}
 }
 // 余裕があれば、変数 party 内に、変数chosenName のポケモンがいなければ、警告ダイアログに「{変数chosenName}を持っていません。サトシは逃げた！」と表示してください
