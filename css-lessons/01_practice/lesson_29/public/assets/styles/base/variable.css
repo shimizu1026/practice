@@ -1,31 +1,46 @@
 :root {
-	/* Tool */
-	--torem: calc(1rem / 16);
+  /* Tool */
+  --torem: calc(1rem / 16);
 
-	/* Color */
-	--base-color: #020001;
-	--base-background: #FFFFFF;
-	--base-strong-color: #CABA82;
-	--base-light-gray: #C0C0C0;
+  /* Color */
+  --base-color: #020001;
+  --base-light: #ffffff;
+  --base-strong-color: #caba82;
+  --base-light-gray: #c0c0c0;
 
-	/* Font */
-	--base-font-family: "Noto Serif JP", sans-serif;
-	--base-font-weight: 500;
-	--base-line-height: 2;
+  /* Font */
+  --base-font-family: "Noto Serif JP", sans-serif;
+  --base-font-weight: 500;
+  --font-size-xsmal: calc(12 * var(--torem));
+  --font-size-sm: calc(14 * var(--torem));
+  --font-size-md: calc(16 * var(--torem));
+  --font-size-l: calc(18 * var(--torem));
+  --font-size-xl: calc(24 * var(--torem));
+  --font-size-2xl: clamp(calc(32 * var(--torem)), 1.648rem + 1.5vw, 3rem);
+  --font-size-3xl: clamp(calc(40 * var(--torem)), 1.972rem + 2.25vw, 4rem);
+  --base-line-height: 2;
 
-	/* Offset */
-	--base-srcoll-margin: ;
-	--offset-sm: vi;
-	--offset-md: vi;
-	--offset-lg: vi;
+  /* Offset */
+  --base-scroll-margin: --font-size-3xl;
+  --offset-sm: vi;
+  --offset-md: vi;
+  --offset-lg: vi;
 
-	/* Container size */
-	--container-size-md: 640px;
-	--container-size-lg: 1024px;
-	--container-size-xl: 1280px;
-	--container-size-xl: 1440px;
+  /* Container size */
+  --container-size-md: 640px;
+  --container-size-lg: 1024px;
+  --container-size-xl: 1280px;
+  --container-size-2xl: 1440px;
 
-	/* Transition & Animation */
-	--duration-fast: s;
-	--ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  /* Space */
+  --spacer-sm: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+  --spacer-md: clamp(1.5rem, 1.148rem + 1.5vw, 2.5rem);
+  --spacer-l: clamp(2.5rem, 1.972rem + 2.25vw, 4rem);
+  --spacer-xl: clamp(4rem, 3.648rem + 1.5vw, 5rem);
+  --spacer-2xl: clamp(6rem, 4.592rem + 6.01vw, 10rem);
+  --spacer-3xl: clamp(7rem, 4.535rem + 10.52vw, 14rem);
+
+  /* Transition & Animation */
+  --duration-fast: s;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
