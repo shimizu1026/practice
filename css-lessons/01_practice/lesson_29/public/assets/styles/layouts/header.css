@@ -1,0 +1,51 @@
+.header {
+  position: fixed;
+  inline-size: 100%;
+  padding-inline: 5vw;
+  padding-block: clamp(
+    calc(32 * var(--torem)),
+    1.472rem + 2.25vw,
+    calc(56 * var(--torem))
+  );
+  display: flex block;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo {
+  inline-size: clamp(4.125rem, 3.245rem + 3.76vw, 6.625rem);
+}
+
+.nav_global {
+  /* display: none; */
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+  }
+}
+
+.nav_list {
+  display: flex;
+  column-gap: var(--spacer-sm);
+}
+
+.nav_item {
+  font-size: var(--font-size-l);
+  color: var(--base-light);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--base-font-weight-b);
+  writing-mode: vertical-rl;
+  a {
+    &:hover {
+      color: var(--base-color);
+    }
+  }
+}
+
+.reserve {
+  border: 1px solid var(--base-color);
+}
+
+.main {
+  background-color: var(--base-color);
+}
