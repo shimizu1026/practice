@@ -20,3 +20,19 @@ console.log(todo.isDone);
 // プロパティの追加
 todo.priority = "高";
 console.log(todo);
+
+// プロパティの削除
+delete todo.priority;
+console.log(todo);
+
+// 分割代入
+const { task, dueDate: completed, isDone } = todo;
+console.log(`${completed}までに${task}(${isDone})`);
+
+// オブジェクトのループ
+for (const key in todo) {
+	if (todo.hasOwnProperty(key)) {
+		console.log(todo[key]);
+	}
+
+}
