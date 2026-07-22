@@ -25,7 +25,8 @@ console.log(area1);
 console.log(area2);
 
 // 三角形の面積のサイズをチェック
-
+console.log(checkTriangleSize(area1));
+console.log(checkTriangleSize(area2));
 
 // if (area1 >= 50) {
 // 	console.log("大きい三角形ですね");
