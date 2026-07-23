@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,13 @@
     <title>
       Segnaposto | 東京都架空区の街角にある架空のイタリアンレストラン
     </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Zen+Old+Mincho&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/global.css" />
     <link rel="canonical" href="https://segnaposto.example.com" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -41,7 +48,7 @@
       <h1 class="header__title">
         <a href="/" class="logo">
           <img
-            src="/images/logo.svg"
+            src="./images/logo.svg"
             alt="Segnaposto"
             width="227"
             height="37"
@@ -59,17 +66,17 @@
           メニュー
         </button>
         <div id="drawer" popover>
-          <ul>
+          <ul lang="en">
             <li><a href="#concept">Concept</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#reservation">Reservation</a></li>
           </ul>
         </div>
-        <ul class="nav-global">
+        <ul class="nav-global" lang="en">
           <li><a href="#concept">Concept</a></li>
           <li><a href="#menu">Menu</a></li>
         </ul>
-        <p class="nav-action">
+        <p class="nav-action" lang="en">
           <a href="#reservation">
             <svg
               width="24"
@@ -96,8 +103,8 @@
       <div class="hero">
         <figure class="hero__figure">
           <img
-            src="/images/hero-image.png"
-            srcset="/images/hero-image@2x.png 2x"
+            src="./images/hero-image.png"
+            srcset="./images/hero-image@2x.png 2x"
             alt="料理が並ぶテーブルの様子"
             width="954"
             height="636"
@@ -182,8 +189,8 @@
 
         <figure class="concept__figure">
           <img
-            src="/images/photo-interior.png"
-            srcset="/images/photo-interior@2x.png 2x"
+            src="./images/photo-interior.png"
+            srcset="./images/photo-interior@2x.png 2x"
             alt="店内にある4人がけの木目のテーブルと椅子。テーブルの上にはお花やお皿が置いてある"
             width="508"
             height="625"
@@ -208,8 +215,8 @@
         <figure>
           <img
             class="profile__figure"
-            src="/images/photo-chef.png"
-            srcset="/images/photo-chef2x.png 2x"
+            src="./images/photo-chef.png"
+            srcset="./images/photo-chef2x.png 2x"
             alt="厨房でパスタを盛り付けているオーナーシェフ。ダミー中村"
             decoding="async"
             loading="lazy"
@@ -439,7 +446,7 @@
                 required
                 switch
               />
-              <a href="./privacy.html">プライバシーポリシー</a>
+              <a href="./privacy-policy/">プライバシーポリシー</a>
               に同意する
             </label>
           </p>
