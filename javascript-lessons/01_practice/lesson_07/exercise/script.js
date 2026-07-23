@@ -25,8 +25,6 @@ const catchPokemon = (pokemon) => {
 	confirm(`野生の${name}が現れた！捕まえますか？`);
 	// 捕まえたら pokemon を return
 
-
-
 	alert(`${name}を捕まえた！`);
 	// 捕まえなかったら null を return
 };
