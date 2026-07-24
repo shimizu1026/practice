@@ -15,3 +15,16 @@ const upperCaseName = userName.toUpperCase();
 
 // console.log(renamed);
 console.log(upperCaseName);
+
+if (upperCaseName.includes("Y")) {
+	console.log("あなたの名前に「Y」が含まれていますね。");
+} else {
+	console.log("あなたの名前に「Y」がありませんね。");
+}
+
+const parts = userName.split(" ");
+console.log(parts);
+
+for (const part of parts) {
+	console.log(`${part} (${part.length}文字)`);
+}
