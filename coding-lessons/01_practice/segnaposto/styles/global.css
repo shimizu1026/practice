@@ -21,8 +21,8 @@
 		--font-display-en: "Playfair Display", serif;
 
 		/* animation */
-		--duration-fast: 0.3s;
 		/* 早めにしたいとき */
+		--duration-fast: 0.3s;
 		--ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 	}
 }
@@ -322,5 +322,14 @@
 			scroll-behavior: auto !important;
 			view-transition-name: none !important;
 		}
+	}
+}
+
+@layer base {
+	:where(html) {
+		background-color: var(--color-natural-100);
+		font-family: var(--font-serif-ja);
+		font-weight: 500;
+		color: var(--color-brown-900);
 	}
 }
