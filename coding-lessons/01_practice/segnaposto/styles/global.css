@@ -335,4 +335,18 @@
 		scroll-behavior: smooth;
 		/* クロームでバグで未入力状態で画面から入力欄が消えている状態でボタン押すとフォームの必須がでない */
 	}
+
+	:where(abbr) {
+		text-decoration: none;
+	}
+
+	:where(a:any-link) {
+		transition: var(--duration-fast) var(--ease-in-out-quart);
+		transition-property: text-decoration-color;
+
+		&:hover,
+		&:focus-visible {
+			text-decoration: transparent;
+		}
+	}
 }
