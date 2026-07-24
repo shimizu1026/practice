@@ -1,8 +1,5 @@
 // Chapter4」の練習問題で作成した「ナベアツ」プログラムを、1秒ごとに数字をカウントするプログラムを作成する。
 let counter = 1;
-let timerId;
-let rafId;
-
 
 // 「1」〜「30」までを1秒ごとにコンソールに出力
 const timer = setInterval(() => {

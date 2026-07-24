@@ -325,6 +325,7 @@
 	}
 }
 
+/* このタグが出てきたらこういうスタイルつけといてほしい */
 @layer base {
 	:where(html) {
 		background-color: var(--color-natural-100);
