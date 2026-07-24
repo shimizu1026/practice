@@ -331,5 +331,8 @@
 		font-family: var(--font-serif-ja);
 		font-weight: 500;
 		color: var(--color-brown-900);
+		-webkit-font-smoothing: antialiased;
+		scroll-behavior: smooth;
+		/* クロームでバグで未入力状態で画面から入力欄が消えている状態でボタン押すとフォームの必須がでない */
 	}
 }
