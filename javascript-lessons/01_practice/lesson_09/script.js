@@ -5,6 +5,13 @@ const inputName = prompt("フルネームをローマ字で入力してくださ
 // 	inputName = "";
 // }
 // String オブジェクト
-const renamed = inputName.replaceAll("　", " ");
+// const renamed = inputName.replaceAll("　", " ");
+// const userName = inputName.trim();
 
-console.log(renamed);
+const userName = inputName.replaceAll("　", " ").trim();
+console.log(userName);
+
+const upperCaseName = userName.toUpperCase();
+
+// console.log(renamed);
+console.log(upperCaseName);
