@@ -41,5 +41,7 @@ if (Number.isNaN(userAge)) {
 
 // Mathオブジェくと
 const greeds = ["おはよう", "こんにちは", "こんばんは"];
-const random = Math.random();
-console.log(greeds);
+// ランダムのテンプレ　ランダムは0～1しか返ってこない
+// const random = Math.floor(Math.random() * 最大値);
+const random = Math.floor(Math.random() * greeds.length);
+console.log(greeds[random]);
