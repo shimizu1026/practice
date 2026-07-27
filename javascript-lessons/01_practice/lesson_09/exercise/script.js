@@ -1,10 +1,10 @@
 // 以下の仕様の「今日のあなたの運勢」プログラムを作成
 
 // 名前を入力ダイアログに入力してもらう（未入力やキャンセルされた場合は「名無し」にする）
-const inputName = prompt("名前を入力");
+const inputName = prompt("名前を入力") || "名無し";
 
 // 入力された名前の前後に半角スペースが含まれていたら取り除く
-const userName = inputName.replaceAll(" ").trim();
+const userName = inputName.replaceAll("　", " ").trim();
 
 // 運勢の一覧（大吉、中吉、小吉など）を配列で管理
 const fortunes = ["大吉", "中吉", "小吉", "凶"];
@@ -12,7 +12,11 @@ const fortunes = ["大吉", "中吉", "小吉", "凶"];
 // ラッキーアイテムの一覧（赤い靴下、青いペン、黄色い花など）を配列で管理
 const items = ["赤い靴下", "青いペン", "黄色い花", "黒いペン"];
 // 運勢の一覧からランダムで運勢が選択される
-const random = Math.floor(Math.random * (items.length));
+const random = Math.floor(Math.random() * fortunes.length);
 // 名前の文字数（スペースを含んでも可）をインデックスとしてラッキーアイテムを選択（名前の文字数がラッキーアイテムの数を超える場合は、配列内の最後のアイテムが選択されるようにインデックスを調整）
 // 名前、運勢、ラッキーアイテムを含んだメッセージを作成し、警告ダイアログで表示
-alert(random);
+
+const itemIndex = Math.min(userName.length, items.length - 1);
+
+const item = items[itemIndex];
+alert(`${userName}さんの今日の運勢は「${fortunes[random]}」、ラッキーアイテムは「${item}」`);
