@@ -1,4 +1,6 @@
 const inputName = prompt("フルネームをローマ字で入力してください") || "";
+
+const inputAge = prompt("年齢を入力") || "";
 // falsyだったら空文字を返す
 
 // if (!inputName) {
@@ -28,3 +30,16 @@ console.log(parts);
 for (const part of parts) {
 	console.log(`${part} (${part.length}文字)`);
 }
+
+// Numberオブジェクト
+const userAge = Number.parseInt(inputAge, 10);
+console.log(userAge);
+
+if (Number.isNaN(userAge)) {
+	console.log("年齢が正しく入力されていません");
+}
+
+// Mathオブジェくと
+const greeds = ["おはよう", "こんにちは", "こんばんは"];
+const random = Math.random();
+console.log(greeds);
