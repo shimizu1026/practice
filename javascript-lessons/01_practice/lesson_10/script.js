@@ -25,7 +25,13 @@ if (newTask) {
 		priority: 3,
 	}
 
-	todos.push(todos);
-}
+	todos.push(newTodo);
+};
 
 console.log(todos);
+
+// 逆順にした新しい配列をつくる
+const copy = todos.slice();
+const reveredTodos = copy.reverse();
+
+console.log(reveredTodos);
