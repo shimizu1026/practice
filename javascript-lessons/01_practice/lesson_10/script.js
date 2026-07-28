@@ -19,6 +19,13 @@ const newTask = prompt("タスクを入力");
 if (newTask) {
 
 	const newTodo = {
-		id: slice,
+		id: todos.length + 1,
+		task: newTask,
+		isDone: false,
+		priority: 3,
 	}
+
+	todos.push(todos);
 }
+
+console.log(todos);
