@@ -50,3 +50,5 @@ doneTodos.forEach((todo) => {
 	const { task, isDone, priority } = todo;
 	console.log(`${task} | ${isDone} | ${priority}`);
 })
+
+// 
