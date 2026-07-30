@@ -38,6 +38,8 @@ let position = 0;//現在位置の取得
 
 const moveImage = () => {
 	position++;
+	// position += 2;
+	// position = position + 0.1;
 
 	imgElem.style.setProperty("translate", `${position}px`);
 
