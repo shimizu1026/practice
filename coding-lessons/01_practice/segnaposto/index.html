@@ -101,21 +101,24 @@
 
     <main class="main">
       <div class="hero">
-        <figure class="hero__figure">
-          <img
-            src="./images/hero-image.png"
-            srcset="./images/hero-image@2x.png 2x"
-            alt="料理が並ぶテーブルの様子"
-            width="954"
-            height="636"
-            decoding="async"
-          />
-        </figure>
-        <p class="hero__caption" lang="it">Segnaposto</p>
-        <p class="hero__lead">街角に、架空のイタリアンを。</p>
-        <p class="hero__text">
-          素材にこだわった架空のパスタとピザを、気取らない雰囲気でどうぞ。
-        </p>
+        <div class="container">
+          <figure class="hero__figure">
+            <img
+              src="./images/hero-image.png"
+              srcset="./images/hero-image@2x.png 2x"
+              alt="料理が並ぶテーブルの様子"
+              width="954"
+              height="636"
+              decoding="async"
+            />
+          </figure>
+          <p class="hero__caption" lang="it">Segnaposto</p>
+          <p class="hero__lead">街角に、架空のイタリアンを。</p>
+          <p class="hero__text">
+            素材にこだわった架空のパスタとピザを、気取らない雰囲気でどうぞ。
+          </p>
+        </div>
+        <!-- container -->
       </div>
       <!-- /.hero -->
 
@@ -182,336 +185,336 @@
         </article>
       </dialog>
       <section id="concept" class="concept">
-        <hgroup class="heading">
-          <h2 lang="en" class="heading__title">Concept</h2>
-          <p class="heading__subtitle">コンセプト</p>
-        </hgroup>
+        <div class="container">
+          <hgroup class="heading">
+            <h2 lang="en" class="heading__title">Concept</h2>
+            <p class="heading__subtitle">コンセプト</p>
+          </hgroup>
+          <figure class="concept__figure">
+            <img
+              src="./images/photo-interior.png"
+              srcset="./images/photo-interior@2x.png 2x"
+              alt="店内にある4人がけの木目のテーブルと椅子。テーブルの上にはお花やお皿が置いてある"
+              width="508"
+              height="625"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+          <section class="message">
+            <h3 class="message__title">特別な日じゃなくていい。</h3>
+            <!-- /.message__title -->
+            <p>
+              架空のイタリア・ロレム州で修業を積んだシェフが、この街に持ち帰ったのは華やかなレシピではなく、「食事を囲む時間のゆたかさ」でした。
+            </p>
+            <p>
+              肩肘張らずに、ただおいしいものを食べてほしい。
+              Segnapostoはそんな思いから生まれた、あなたの街の架空のイタリアンです。
+            </p>
+          </section>
+          <!-- /.message -->
 
-        <figure class="concept__figure">
-          <img
-            src="./images/photo-interior.png"
-            srcset="./images/photo-interior@2x.png 2x"
-            alt="店内にある4人がけの木目のテーブルと椅子。テーブルの上にはお花やお皿が置いてある"
-            width="508"
-            height="625"
-            decoding="async"
-            loading="lazy"
-          />
-        </figure>
+          <figure>
+            <img
+              class="profile__figure"
+              src="./images/photo-chef.png"
+              srcset="./images/photo-chef2x.png 2x"
+              alt="厨房でパスタを盛り付けているオーナーシェフ。ダミー中村"
+              decoding="async"
+              loading="lazy"
+              width="469"
+              height="256"
+            />
+          </figure>
 
-        <section class="message">
-          <h3 class="message__title">特別な日じゃなくていい。</h3>
-          <!-- /.message__title -->
           <p>
-            架空のイタリア・ロレム州で修業を積んだシェフが、この街に持ち帰ったのは華やかなレシピではなく、「食事を囲む時間のゆたかさ」でした。
+            オーナーシェフ
+            <br />
+            <b class="profile__name">ダミー中村</b>
           </p>
           <p>
-            肩肘張らずに、ただおいしいものを食べてほしい。
-            Segnapostoはそんな思いから生まれた、あなたの街の架空のイタリアンです。
+            架空のイタリア・ロレム州にある星付きリストランテで10年間修業を積み、帰国後この街に「Segnaposto」をオープン。「特別な日だけじゃなく、日常に架空のイタリアンを」をモットーに、肩肘張らずに楽しめる空間を大切にしています。地元の農家から直送される季節の野菜と、毎朝仕入れる新鮮な魚介を使ったメニューをお楽しみください。
           </p>
-        </section>
-        <!-- /.message -->
-
-        <figure>
-          <img
-            class="profile__figure"
-            src="./images/photo-chef.png"
-            srcset="./images/photo-chef2x.png 2x"
-            alt="厨房でパスタを盛り付けているオーナーシェフ。ダミー中村"
-            decoding="async"
-            loading="lazy"
-            width="469"
-            height="256"
-          />
-        </figure>
-
-        <p>
-          オーナーシェフ
-          <br />
-          <b class="profile__name">ダミー中村</b>
-        </p>
-        <p>
-          架空のイタリア・ロレム州にある星付きリストランテで10年間修業を積み、帰国後この街に「Segnaposto」をオープン。「特別な日だけじゃなく、日常に架空のイタリアンを」をモットーに、肩肘張らずに楽しめる空間を大切にしています。地元の農家から直送される季節の野菜と、毎朝仕入れる新鮮な魚介を使ったメニューをお楽しみください。
-        </p>
+        </div>
+        <!-- /.container -->
       </section>
 
       <section id="menu" class="menu">
-        <hgroup class="heading">
-          <h2 lang="en" class="heading__title">Menu</h2>
-          <p class="heading__subtitle">メニュー</p>
-        </hgroup>
-
-        <article class="card">
-          <h3 class="card__title">マルゲリータ</h3>
-          <p class="card__badge">おすすめ</p>
-          <figure class="card__thumbnail">
-            <img
-              src="./images/photo-margherita.png"
-              srcset="./images/photo-margherita@2x.png 2x"
-              alt="6枚にスライスされたマルゲリータ"
-              width="416"
-              height="277"
-              decoding="async"
-              loading="lazy"
-            />
-          </figure>
-          <p class="card__description">
-            トマト・モッツァレラ・バジルのクラシックピザ
-          </p>
-          <p class="card__price">¥1,480</p>
-        </article>
-
-        <article class="card">
-          <h3 class="card__title">カルボナーラ</h3>
-          <figure class="card__thumbnail">
-            <img
-              src="./images/photo-carbonara.png"
-              srcset="./images/photo-carbonara@2x.png 2x"
-              alt="削ったチーズがたっぷりかかったパンチェッタ入りのカルボナーラ"
-              width="416"
-              height="277"
-              decoding="async"
-              loading="lazy"
-            />
-          </figure>
-          <p class="card__description">
-            濃厚クリームと自家製パンチェッタのスパゲッティ
-          </p>
-          <p class="card__price">¥1,580</p>
-        </article>
-
-        <article class="card">
-          <h3 class="card__title">ティラミス</h3>
-          <figure class="card__thumbnail">
-            <img
-              src="./images/photo-tiramisu.png"
-              srcset="./images/photo-tiramisu@2x.png 2x"
-              alt="ココアパウダーと赤い実ののったティラミス"
-              width="416"
-              height="277"
-              decoding="async"
-              loading="lazy"
-            />
-          </figure>
-          <p class="card__description">
-            マスカルポーネとエスプレッソの定番デザート
-          </p>
-          <p class="card__price">¥680</p>
-        </article>
-        <article class="card">
-          <h3 class="card__title">ラザニア</h3>
-          <figure class="card__thumbnail">
-            <img
-              src="./images/photo-lasagna.png"
-              srcset="./images/photo-lasagna@2x.png 2x"
-              alt="とろけたチーズがたっぷりのラザニア"
-              width="416"
-              height="277"
-              decoding="async"
-              loading="lazy"
-            />
-          </figure>
-          <p class="card__description">
-            自家製ミートソースと贅沢なチーズのオーブン焼き
-          </p>
-          <p class="card__price">¥1,680</p>
-        </article>
-
-        <article class="card">
-          <h3 class="card__title">カプレーゼ</h3>
-          <figure class="card__thumbnail">
-            <img
-              src="./images/photo-caprese.png"
-              srcset="./images/photo-caprese@2x.png 2x"
-              alt="くし形切りにしたトマトと四角く切ったモッツァレラチーズにオリーブオイルがかかっている ローズマリー添え"
-              width="416"
-              height="277"
-              decoding="async"
-              loading="lazy"
-            />
-          </figure>
-          <p class="card__description">
-            完熟トマトとモッツァレラ・バジルオイルがけ
-          </p>
-          <p class="card__price">¥980</p>
-        </article>
-        <article class="card">
-          <h3 class="card__title">パンナコッタ</h3>
-          <figure class="card__thumbnail">
-            <img
-              src="./images/photo-panna-cotta.png"
-              srcset="./images/photo-panna-cotta@2x.png 2x"
-              alt="粉砂糖とミントをあしらい、いちごのソースとミルクプリンが斜めに2層になっている 一緒にいちごや赤い実が添えてある"
-              width="416"
-              height="277"
-              decoding="async"
-              loading="lazy"
-            />
-          </figure>
-          <p class="card__description">
-            なめらかなミルクプリン・ベリーソース添え
-          </p>
-          <p class="card__price">¥680</p>
-        </article>
+        <div class="container">
+          <hgroup class="heading">
+            <h2 lang="en" class="heading__title">Menu</h2>
+            <p class="heading__subtitle">メニュー</p>
+          </hgroup>
+          <article class="card">
+            <h3 class="card__title">マルゲリータ</h3>
+            <p class="card__badge">おすすめ</p>
+            <figure class="card__thumbnail">
+              <img
+                src="./images/photo-margherita.png"
+                srcset="./images/photo-margherita@2x.png 2x"
+                alt="6枚にスライスされたマルゲリータ"
+                width="416"
+                height="277"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <p class="card__description">
+              トマト・モッツァレラ・バジルのクラシックピザ
+            </p>
+            <p class="card__price">¥1,480</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">カルボナーラ</h3>
+            <figure class="card__thumbnail">
+              <img
+                src="./images/photo-carbonara.png"
+                srcset="./images/photo-carbonara@2x.png 2x"
+                alt="削ったチーズがたっぷりかかったパンチェッタ入りのカルボナーラ"
+                width="416"
+                height="277"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <p class="card__description">
+              濃厚クリームと自家製パンチェッタのスパゲッティ
+            </p>
+            <p class="card__price">¥1,580</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">ティラミス</h3>
+            <figure class="card__thumbnail">
+              <img
+                src="./images/photo-tiramisu.png"
+                srcset="./images/photo-tiramisu@2x.png 2x"
+                alt="ココアパウダーと赤い実ののったティラミス"
+                width="416"
+                height="277"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <p class="card__description">
+              マスカルポーネとエスプレッソの定番デザート
+            </p>
+            <p class="card__price">¥680</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">ラザニア</h3>
+            <figure class="card__thumbnail">
+              <img
+                src="./images/photo-lasagna.png"
+                srcset="./images/photo-lasagna@2x.png 2x"
+                alt="とろけたチーズがたっぷりのラザニア"
+                width="416"
+                height="277"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <p class="card__description">
+              自家製ミートソースと贅沢なチーズのオーブン焼き
+            </p>
+            <p class="card__price">¥1,680</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">カプレーゼ</h3>
+            <figure class="card__thumbnail">
+              <img
+                src="./images/photo-caprese.png"
+                srcset="./images/photo-caprese@2x.png 2x"
+                alt="くし形切りにしたトマトと四角く切ったモッツァレラチーズにオリーブオイルがかかっている ローズマリー添え"
+                width="416"
+                height="277"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <p class="card__description">
+              完熟トマトとモッツァレラ・バジルオイルがけ
+            </p>
+            <p class="card__price">¥980</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">パンナコッタ</h3>
+            <figure class="card__thumbnail">
+              <img
+                src="./images/photo-panna-cotta.png"
+                srcset="./images/photo-panna-cotta@2x.png 2x"
+                alt="粉砂糖とミントをあしらい、いちごのソースとミルクプリンが斜めに2層になっている 一緒にいちごや赤い実が添えてある"
+                width="416"
+                height="277"
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <p class="card__description">
+              なめらかなミルクプリン・ベリーソース添え
+            </p>
+            <p class="card__price">¥680</p>
+          </article>
+        </div>
+        <!-- /.container -->
       </section>
 
       <section id="reservation" class="reservation">
-        <hgroup class="heading">
-          <h2 lang="en" class="heading__title">Reservation</h2>
-          <p class="heading__subtitle">ご予約</p>
-        </hgroup>
-
-        <p>
-          ご来店のご予約はこちらのフォームよりお願いいたします。
-          <br />
-          架空のため送信はできませんが、どうぞお気軽にご入力ください。
-        </p>
-
-        <form action="#" method="post" class="form">
+        <div class="container">
+          <hgroup class="heading">
+            <h2 lang="en" class="heading__title">Reservation</h2>
+            <p class="heading__subtitle">ご予約</p>
+          </hgroup>
           <p>
-            <label class="form__item">
-              お名前（必須）
-              <input
-                type="text"
-                name="name"
-                class="textfield"
-                autocomplete="name"
-                autocapitalize="off"
-                autocorrect="off"
-                placeholder="架空 太郎"
-                required
-              />
-            </label>
+            ご来店のご予約はこちらのフォームよりお願いいたします。
+            <br />
+            架空のため送信はできませんが、どうぞお気軽にご入力ください。
           </p>
-          <p>
-            <label class="form__item">
-              メールアドレス（必須）
-              <input
-                type="email"
-                name="email"
-                class="textfield"
-                autocomplete="email"
-                autocapitalize="off"
-                autocorrect="off"
-                inputmode="email"
-                placeholder="kakuu@example.jp"
-                required
-              />
-            </label>
-          </p>
-          <p>
-            <label class="form__item">
-              来店日（必須）
-              <input type="date" name="date" class="textfield" required />
-            </label>
-          </p>
-          <p>
-            <label class="form__item">
-              来店時間（必須）
-              <input type="time" name="time" class="textfield" required />
-            </label>
-          </p>
-          <p>
-            <label class="form__item">
-              人数（必須）
-              <input
-                type="number"
-                name="guests"
-                min="1"
-                max="20"
-                inputmode="numeric"
-                placeholder="2"
-                class="textfield"
-                required
-              />
-            </label>
-          </p>
-          <p>
-            <label class="form__item">
-              ご要望・アレルギー等
-              <textarea
-                name="notes"
-                rows="4"
-                placeholder="たまご、小麦粉アレルギーです"
-                class="textfield"
-              ></textarea>
-            </label>
-          </p>
-          <p>
-            <label class="privacy-check">
-              <input
-                type="checkbox"
-                name="privacy"
-                class="checkbox"
-                required
-                switch
-              />
-              <a href="./privacy-policy/">プライバシーポリシー</a>
-              に同意する
-            </label>
-          </p>
-          <p>
-            <button class="button-primary">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
-                  stroke="#4D4229"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+          <form action="#" method="post" class="form">
+            <p>
+              <label class="form__item">
+                お名前（必須）
+                <input
+                  type="text"
+                  name="name"
+                  class="textfield"
+                  autocomplete="name"
+                  autocapitalize="off"
+                  autocorrect="off"
+                  placeholder="架空 太郎"
+                  required
                 />
-              </svg>
-              予約する
-            </button>
-          </p>
-        </form>
+              </label>
+            </p>
+            <p>
+              <label class="form__item">
+                メールアドレス（必須）
+                <input
+                  type="email"
+                  name="email"
+                  class="textfield"
+                  autocomplete="email"
+                  autocapitalize="off"
+                  autocorrect="off"
+                  inputmode="email"
+                  placeholder="kakuu@example.jp"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label class="form__item">
+                来店日（必須）
+                <input type="date" name="date" class="textfield" required />
+              </label>
+            </p>
+            <p>
+              <label class="form__item">
+                来店時間（必須）
+                <input type="time" name="time" class="textfield" required />
+              </label>
+            </p>
+            <p>
+              <label class="form__item">
+                人数（必須）
+                <input
+                  type="number"
+                  name="guests"
+                  min="1"
+                  max="20"
+                  inputmode="numeric"
+                  placeholder="2"
+                  class="textfield"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label class="form__item">
+                ご要望・アレルギー等
+                <textarea
+                  name="notes"
+                  rows="4"
+                  placeholder="たまご、小麦粉アレルギーです"
+                  class="textfield"
+                ></textarea>
+              </label>
+            </p>
+            <p>
+              <label class="privacy-check">
+                <input
+                  type="checkbox"
+                  name="privacy"
+                  class="checkbox"
+                  required
+                  switch
+                />
+                <a href="./privacy-policy/">プライバシーポリシー</a>
+                に同意する
+              </label>
+            </p>
+            <p>
+              <button class="button-primary">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
+                    stroke="#4D4229"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                予約する
+              </button>
+            </p>
+          </form>
+        </div>
+        <!-- /.container -->
       </section>
     </main>
 
     <footer class="footer">
-      <p class="footer__title">
-        <span lang="it" class="footer__name">Segnaposto</span>
-        <span class="footer__ruby">セニャポスト</span>
-      </p>
-
-      <address class="footer__address">
-        <dl class="address">
-          <dt>住所</dt>
-          <dd>東京都架空区架空1-1-1</dd>
-          <dt>電話番号</dt>
-          <dd><a href="tel:+8131234XXXX">03-1234-XXXX</a></dd>
-
-          <dt>営業時間</dt>
-          <dd>
-            <time>17:00</time>
-            –
-            <time>23:00</time>
-            （
-            <abbr title="Last Order">LO</abbr>
-            :
-            <time>22:30</time>
-            ）
-          </dd>
-        </dl>
-      </address>
-
-      <nav class="nav-footer" aria-label="フッター">
-        <p><a href="/privacy-policy/">Privacy Pricy</a></p>
-      </nav>
-
-      <p class="copyright" lang="en">
-        <small>
-          ©
-          <time>2026</time>
-          Segnaposto
-        </small>
-      </p>
+      <div class="container">
+        <p class="footer__title">
+          <span lang="it" class="footer__name">Segnaposto</span>
+          <span class="footer__ruby">セニャポスト</span>
+        </p>
+        <address class="footer__address">
+          <dl class="address">
+            <dt>住所</dt>
+            <dd>東京都架空区架空1-1-1</dd>
+            <dt>電話番号</dt>
+            <dd><a href="tel:+8131234XXXX">03-1234-XXXX</a></dd>
+            <dt>営業時間</dt>
+            <dd>
+              <time>17:00</time>
+              –
+              <time>23:00</time>
+              （
+              <abbr title="Last Order">LO</abbr>
+              :
+              <time>22:30</time>
+              ）
+            </dd>
+          </dl>
+        </address>
+        <nav class="nav-footer" aria-label="フッター">
+          <p><a href="/privacy-policy/">Privacy Pricy</a></p>
+        </nav>
+        <p class="copyright" lang="en">
+          <small>
+            ©
+            <time>2026</time>
+            Segnaposto
+          </small>
+        </p>
+      </div>
+      <!-- /.container -->
     </footer>
   </body>
 </html>
