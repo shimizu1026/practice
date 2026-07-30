@@ -3,16 +3,29 @@ const url = "https://shibajuku.net/demo/assets/images/";
 
 // 画像の配列
 const images = [
-  {
-    fileName: "photo-pasta.webp",
-    altText: "白いお皿の上に美味しそうに盛られているボロネーゼ",
-  },
-  {
-    fileName: "photo-chicken.webp",
-    altText: "一口サイズにカットされた照り焼きチキン",
-  },
-  {
-    fileName: "photo-salmon.webp",
-    altText: "たくさんのサーモンのお刺身が乗ったサーモン丼",
-  },
+	{
+		fileName: "photo-pasta.webp",
+		altText: "白いお皿の上に美味しそうに盛られているボロネーゼ",
+	},
+	{
+		fileName: "photo-chicken.webp",
+		altText: "一口サイズにカットされた照り焼きチキン",
+	},
+	{
+		fileName: "photo-salmon.webp",
+		altText: "たくさんのサーモンのお刺身が乗ったサーモン丼",
+	},
 ];
+
+// 要素の取得
+const imgElem = document.querySelector("[data-image]");
+console.log(imgElem);
+
+// ランダムのインデックス番号を作成
+const index = Math.floor(Math.random() * images.length);
+console.log(index);
+
+// img要素のscr属性とalt属性にセット
+imgElem.setAttribute("src", `${url}${images[index].fileName}`);
+imgElem.setAttribute("alt", images[index].altText);
+
