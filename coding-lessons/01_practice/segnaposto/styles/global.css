@@ -20,10 +20,15 @@
     --font-serif-en: "Playfair", serif;
     --font-display-en: "Playfair Display", serif;
 
+    /* Container */
+    /* --container-max-size: 1296px; */
+    /* --container-inset: calc(72 / 1440 * 100vi); */
+    --container-inset: calc(72 / 1440 * 100vi);
+
     /* animation */
     /* 早めにしたいとき */
     --duration-fast: 0.3s;
-    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-in-out-quart: 5vi;
   }
 }
 
@@ -364,6 +369,11 @@
 @layer components {
   /* Container */
   .container {
-    padding-inline: 5vi; /*横書きのビューポートに対しての割合*/
+    box-sizing: content-box;
+    padding-inline: var(
+      --container-inset
+    ); /*横書きのビューポートに対しての割合*/
+    max-inline-size: var(--container-max-size);
+    margin-inline: var(--container-align, auto);
   }
 }
