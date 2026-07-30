@@ -29,3 +29,23 @@ console.log(index);
 imgElem.setAttribute("src", `${url}${images[index].fileName}`);
 imgElem.setAttribute("alt", images[index].altText);
 
+// classの操作
+const toggleTheme = () => {
+	document.body.classList.toggle("dark");
+}
+//スタイルの操作
+let position = 0;//現在位置の取得
+
+const moveImage = () => {
+	position++;
+
+	imgElem.style.setProperty("translate", `${position}px`);
+
+	requestAnimationFrame(moveImage);
+
+	if (position < 500) {
+		requestAnimationFrame(moveImage);
+	}
+}
+// 初期の実行
+moveImage();
