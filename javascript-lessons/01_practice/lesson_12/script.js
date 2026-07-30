@@ -41,8 +41,6 @@ const moveImage = () => {
 
 	imgElem.style.setProperty("translate", `${position}px`);
 
-	requestAnimationFrame(moveImage);
-
 	if (position < 500) {
 		requestAnimationFrame(moveImage);
 	}
