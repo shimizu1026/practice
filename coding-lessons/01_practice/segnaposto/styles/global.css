@@ -2,7 +2,6 @@
 
 @layer tokens {
 	:root {
-
 		/* Design */
 		--design-size-sm: 390;
 		--design-size-lg: 1440;
@@ -47,10 +46,10 @@
 		--grid-12: repeat(12, min-max(0, 1fr));
 
 		--grid-cols: var(--grid-1);
-		--grid-cols-gap: calc(24 / var(--to-vi-lg));
 
 		@media (width>=1024px) {
 			--grid-cols: var(--grid-12);
+			--grid-cols-gap: calc(24 / var(--to-vi-lg));
 		}
 
 		/* animation */
