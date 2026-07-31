@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>イベントリスナー</title>
-    <link rel="stylesheet" href="style.css">
 
-  </head>
-  <body>
-    <h1 class="title">イベントリスナー</h1>
-    <p>
-      <button type="button" data-theme>
-        テーマの切り替え
-      </button>
-    </p>
-    <figure>
-      <img id="main-image" src="https://shibajuku.net/demo/assets/images/photo-coffee.webp" alt="厳選したコーヒー豆を使った淹れたてのブレンドコーヒー" width="480" height="320" data-image aria-live="polite">
-    </figure>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>イベントリスナー</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
 
-    <ul class="flex">
-      <li>
-        <button type="button" class="button-thumbnail" aria-controls="main-image" aria-label="ボロネーゼの画像に変更" data-button>
-          <img src="https://shibajuku.net/demo/assets/images/photo-pasta.webp" alt="白いお皿の上に美味しそうに盛られているボロネーゼ" width="120" height="80">
-        </button>
-      </li>
-      <li>
-        <button type="button" class="button-thumbnail" aria-controls="main-image" aria-label="照り焼きチキンの画像に変更" data-button>
-          <img src="https://shibajuku.net/demo/assets/images/photo-chicken.webp" alt="一口サイズにカットされた照り焼きチキン" width="120" height="80">
-        </button>
-      </li>
-      <li>
-        <button type="button" class="button-thumbnail" aria-controls="main-image" aria-label="サーモン丼の画像に変更" data-button>
-          <img src="https://shibajuku.net/demo/assets/images/photo-salmon.webp" alt="たくさんのサーモンのお刺身が乗ったサーモン丼" width="120" height="80">
-        </button>
-      </li>
-    </ul>
+<body>
+	<h1 class="title">イベントリスナー</h1>
+	<p>
+		<button type="button" data-theme>
+			テーマの切り替え
+		</button>
+	</p>
+	<figure>
+		<img id="main-image" src="https://shibajuku.net/demo/assets/images/photo-coffee.webp"
+			alt="厳選したコーヒー豆を使った淹れたてのブレンドコーヒー" width="480" height="320" data-image aria-live="polite">
+	</figure>
 
-    <div class="mouse" data-move></div>
-  </body>
+	<ul class="flex">
+		<li>
+			<button type="button" class="button-thumbnail" aria-controls="main-image" aria-label="ボロネーゼの画像に変更"
+				data-button>
+				<img src="https://shibajuku.net/demo/assets/images/photo-pasta.webp" alt="白いお皿の上に美味しそうに盛られているボロネーゼ"
+					width="120" height="80">
+			</button>
+		</li>
+		<li>
+			<button type="button" class="button-thumbnail" aria-controls="main-image" aria-label="照り焼きチキンの画像に変更"
+				data-button>
+				<img src="https://shibajuku.net/demo/assets/images/photo-chicken.webp" alt="一口サイズにカットされた照り焼きチキン"
+					width="120" height="80">
+			</button>
+		</li>
+		<li>
+			<button type="button" class="button-thumbnail" aria-controls="main-image" aria-label="サーモン丼の画像に変更"
+				data-button>
+				<img src="https://shibajuku.net/demo/assets/images/photo-salmon.webp" alt="たくさんのサーモンのお刺身が乗ったサーモン丼"
+					width="120" height="80">
+			</button>
+		</li>
+	</ul>
+
+	<div class="mouse" data-move></div>
+</body>
+
 </html>
