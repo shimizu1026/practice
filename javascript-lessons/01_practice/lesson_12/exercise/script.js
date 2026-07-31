@@ -1,3 +1,4 @@
+
 // data-text 属性が指定されている要素を取得
 const textElem = document.querySelector("[");
 // data-text 属性が指定されている要素の子要素の span 要素を全て取得
