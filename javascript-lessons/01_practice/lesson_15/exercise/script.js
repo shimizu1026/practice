@@ -41,7 +41,7 @@ const displayPokemon = (pokemons) => {
 		dataElem.appendChild(row);
 	});
 };
-displayPokemon(pokemons);
+
 //  「ポケモンを検索」入力フィールドを活用してリアルタイムでポケモン名で絞り込めるようにする
 const searchElem = document.querySelector("[data-search]");
 
@@ -49,10 +49,17 @@ searchElem.addEventListener("input", () => {
 	const searchPokemon = searchElem.value.toLowerCase();
 
 	let displayPokemons = pokemonData.slice();
-})
-//  「タイプ」のセレクトボックスでタイプごとのポケモンを絞り込めるようにする
 
-//  「ソート」のセレクトボックスでレアリティ順に並び替えできるようにする
+	//  「タイプ」のセレクトボックスでタイプごとのポケモンを絞り込めるようにする
+	if (searchPokemon) {
+		displayPokemons = 
+	}
+
+	//  「ソート」のセレクトボックスでレアリティ順に並び替えできるようにする
+
+})
+
+displayPokemon(pokemonData);
 
 
 //  ポケモンを追加できるようにする
