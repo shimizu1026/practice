@@ -17,7 +17,7 @@ const dataElem = document.querySelector("[data-table-body]");
 const searchElem = document.querySelector("[data-search]");
 const typeSelectElem = document.querySelector("[data-type-select]");
 const sortSelectElem = document.querySelector("[data-sort-select]");
-const formElem = document.querySelector("[data-add-form]");
+const addFormElem = document.querySelector("[data-add-form]");
 
 // pokemonをテーブルに追加する関数
 const displayPokemon = (pokemons) => {
@@ -96,21 +96,21 @@ updatePokemon();
 
 //  ポケモンを追加できるようにする
 addFormElem.addEventListener("submit", (event) => {
-	event.preventDefault;
+	event.preventDefault();
 
-	const formData = formElem.value.toLocaleLowerCase();
+	const formData = new FormData(event.target);
 
 	const newPokemon = {
-		id: formData.get("id"),
-		id: formData.get("name"),
-		id: formData.get("type"),
-		id: formData.get("rarity")
+		id: Number(formData.get("id")),
+		name: formData.get("name"),
+		type: formData.get("type"),
+		rarity: formData.get("rarity")
 	}
 
 	pokemonData.push(newPokemon);
 
 	updatePokemon();
 
-	addFormElem.requestFullscreen();
+	addFormElem.reset();
 });
 
