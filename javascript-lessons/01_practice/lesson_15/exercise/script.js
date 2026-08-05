@@ -16,6 +16,7 @@ const pokemonData = [
 const dataElem = document.querySelector("[data-table-body]");
 const searchElem = document.querySelector("[data-search]");
 const typeSelectElem = document.querySelector("[data-type-select]");
+const sortSelectElem = document.querySelector("[data-sort-select]");
 
 // pokemonをテーブルに追加する関数
 const displayPokemon = (pokemons) => {
@@ -50,6 +51,7 @@ const updatePokemon = () => {
 	const searchPokemon = searchElem.value.toLowerCase();
 	let copyList = pokemonData.slice();
 	const selectedType = typeSelectElem.value;
+	const sortOrder = sortSelectElem.value;
 
 	//  「ポケモンを検索」入力フィールドを活用してリアルタイムでポケモン名で絞り込めるようにする
 	if (searchPokemon) {
@@ -68,7 +70,13 @@ const updatePokemon = () => {
 	displayPokemon(copyList);
 
 	//  「ソート」のセレクトボックスでレアリティ順に並び替えできるようにする
-	// copyList.sort(())
+
+	copyList.sort((a, b) => {
+		if (sortOrder === "is-asc") {
+			return a.id - b.id;
+		}
+	});
+	displayPokemon(copyList);
 }
 
 searchElem.addEventListener("input", updatePokemon);

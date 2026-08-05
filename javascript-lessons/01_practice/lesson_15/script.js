@@ -71,7 +71,7 @@ const updateTodo = () => {
 	// 	入力内容を小文字で取得
 	const searchText = searchElem.value.toLowerCase();
 	const sortOrder = sortSelectElem.value;//ソート順
-	console.log(sortOrder);
+	// console.log(sortOrder);
 	let displayTodos = todoData.slice();//配列のコピー
 
 	// フィルタリング
