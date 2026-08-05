@@ -17,6 +17,7 @@ const dataElem = document.querySelector("[data-table-body]");
 const searchElem = document.querySelector("[data-search]");
 const typeSelectElem = document.querySelector("[data-type-select]");
 const sortSelectElem = document.querySelector("[data-sort-select]");
+const formElem = document.querySelector("[data-add-form]");
 
 // pokemonをテーブルに追加する関数
 const displayPokemon = (pokemons) => {
@@ -67,13 +68,21 @@ const updatePokemon = () => {
 			return pokemon.type === selectedType;
 		});
 	}
-	displayPokemon(copyList);
 
 	//  「ソート」のセレクトボックスでレアリティ順に並び替えできるようにする
 
 	copyList.sort((a, b) => {
-		if (sortOrder === "is-asc") {
+		if (sortOrder === "id-asc") {
 			return a.id - b.id;
+		}
+		if (sortOrder === "id-desc") {
+			return b.id - a.id;
+		}
+		if (sortOrder === "rarity-asc") {
+			return a.rarity.length - b.rarity.length;
+		}
+		if (sortOrder === "rarity-desc") {
+			return b.rarity.length - a.rarity.length;
 		}
 	});
 	displayPokemon(copyList);
@@ -81,15 +90,27 @@ const updatePokemon = () => {
 
 searchElem.addEventListener("input", updatePokemon);
 typeSelectElem.addEventListener("change", updatePokemon);
+sortSelectElem.addEventListener("change", updatePokemon);
 
 updatePokemon();
 
 //  ポケモンを追加できるようにする
-// addFormElem.addEventListener("submit", (event) => {
-// 	event.preventDefault;
+addFormElem.addEventListener("submit", (event) => {
+	event.preventDefault;
 
-// 	const newPokemon = {
-// 		id:
-// }
-// })
+	const formData = formElem.value.toLocaleLowerCase();
+
+	const newPokemon = {
+		id: formData.get("id"),
+		id: formData.get("name"),
+		id: formData.get("type"),
+		id: formData.get("rarity")
+	}
+
+	pokemonData.push(newPokemon);
+
+	updatePokemon();
+
+	addFormElem.requestFullscreen();
+});
 
