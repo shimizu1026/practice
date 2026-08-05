@@ -14,6 +14,8 @@ const pokemonData = [
 
 // 要素の取得
 const dataElem = document.querySelector("[data-table-body]");
+const searchElem = document.querySelector("[data-search]");
+const typeSelectElem = document.querySelector("[data-type-select]");
 
 // pokemonをテーブルに追加する関数
 const displayPokemon = (pokemons) => {
@@ -42,24 +44,44 @@ const displayPokemon = (pokemons) => {
 	});
 };
 
-//  「ポケモンを検索」入力フィールドを活用してリアルタイムでポケモン名で絞り込めるようにする
-const searchElem = document.querySelector("[data-search]");
-
-searchElem.addEventListener("input", () => {
-	const searchPokemon = searchElem.value.toLowerCase();
-
-	let displayPokemons = pokemonData.slice();
-
-	//  「タイプ」のセレクトボックスでタイプごとのポケモンを絞り込めるようにする
-	if (searchPokemon) {
-		displayPokemons = 
-	}
-
-	//  「ソート」のセレクトボックスでレアリティ順に並び替えできるようにする
-
-})
-
 displayPokemon(pokemonData);
 
+const updatePokemon = () => {
+	const searchPokemon = searchElem.value.toLowerCase();
+	let copyList = pokemonData.slice();
+	const selectedType = typeSelectElem.value;
+
+	//  「ポケモンを検索」入力フィールドを活用してリアルタイムでポケモン名で絞り込めるようにする
+	if (searchPokemon) {
+		copyList = copyList.filter((pokemon) => {
+			return pokemon.name.toLocaleLowerCase().includes(searchPokemon);
+		});
+	}
+
+	//  「タイプ」のセレクトボックスでタイプごとのポケモンを絞り込めるようにする
+	// 選ばれている値を取る 
+	if (selectedType !== "すべて") {
+		copyList = copyList.filter((pokemon) => {
+			return pokemon.type === selectedType;
+		});
+	}
+	displayPokemon(copyList);
+
+	//  「ソート」のセレクトボックスでレアリティ順に並び替えできるようにする
+	// copyList.sort(())
+}
+
+searchElem.addEventListener("input", updatePokemon);
+typeSelectElem.addEventListener("change", updatePokemon);
+
+updatePokemon();
 
 //  ポケモンを追加できるようにする
+// addFormElem.addEventListener("submit", (event) => {
+// 	event.preventDefault;
+
+// 	const newPokemon = {
+// 		id:
+// }
+// })
+
