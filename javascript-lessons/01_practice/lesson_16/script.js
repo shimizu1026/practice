@@ -14,3 +14,6 @@ closeButton.addEventListener("click", () => {
 drawer.addEventListener("click", (event) => {
 	console.log(event.clientX);
 })
+
+// ダイアログの位置とサイズを取得
+const rect
