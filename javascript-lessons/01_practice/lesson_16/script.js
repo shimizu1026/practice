@@ -9,3 +9,8 @@ openButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
 	drawer.close();
 })
+
+// 背景クリック機能
+drawer.addEventListener("click", (event) => {
+	console.log(event.clientX);
+})
