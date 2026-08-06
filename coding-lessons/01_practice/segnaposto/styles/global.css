@@ -29,7 +29,7 @@
     /* Container */
     /* --container-max-size: 1296px; */
     /* --container-inset: calc(72 / 1440 * 100vi); */
-    --container-inset: calc(72 / var(--to-vi-lg));
+    --container-inset: calc(72 * var(--to-vi-lg));
 
     /* Grid */
     --grid-1: repeat(1, min-max(0, 1fr));
@@ -418,12 +418,47 @@
 
   /* Header */
   .header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 10;
+    display: block grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    padding-inline: var(--container-inset);
+    padding-block-start: clamp(0.875rem, 0.271rem + 2.48vi, 2.5rem);
+
+    @media (width>=1024px) {
+      position: revert;
+      grid-template-columns: 1fr auto 1fr;
+    }
+  }
+  .header__nav {
+    @media (width>=1024px) {
+      display: contents;
+    }
   }
 
   /* Button Hamburger */
-  button-hamburger {
+  .button-hamburger {
     @media (width>=1024px) {
       display: none;
+    }
+  }
+
+  /* Nav Global */
+  .nav-global {
+    display: none;
+    @media (width>=1024px) {
+      display: block flex;
+    }
+  }
+
+  /* Nav Action */
+  .nav-action {
+    display: none;
+    @media (width>=1024px) {
+      display: revert; /*ブラウザのデフォルトスタイルに戻る*/
+      justify-self: end; /*中の子供だけ動かす*/
     }
   }
 }
