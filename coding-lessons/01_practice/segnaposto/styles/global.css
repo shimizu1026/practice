@@ -461,6 +461,7 @@
 
 		a {
 			--nav-line-scale: 0;
+			--nav-line-origin: 100%;
 
 			position: relative;
 			font-family: var(--font-serif-en);
@@ -473,6 +474,7 @@
 			&:hover,
 			&:focus-visible {
 				--nav-line-scale: 1;
+				--nav-line-origin: 0;
 			}
 
 			&::after {
@@ -483,11 +485,11 @@
 				block-size: 1px;
 				background-color: currentColor;
 				scale: var(--nav-line-scale) 1;
+				transform-origin: var(--nav-line-origin) bottom;
 				transition: inherit;
 				transition-property: scale;
 			}
 		}
-
 	}
 }
 
