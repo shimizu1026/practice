@@ -1,7 +1,7 @@
 // 要素の取得
 const metaViewport = document.querySelector('meta[name="viewport"]');
 const scrollLinks = document.querySelectorAll('a[href^="#"]');
-
+// console.log(scrollLinks);
 // debounce関数の実装
 function debounce(func, delay) {
 	let timeoutId;
@@ -32,3 +32,26 @@ if (metaViewport) {
 	updateViewport();
 }
 
+// スムーススクロール
+scrollLinks.forEach((link) => {
+	link.addEventListener("click", (e) => {
+		e.preventDefault();//リンク機能無効か
+
+		// href属性を取得
+		const targetId = link.getAttribute("href");
+
+		// 移動先の要素を取得
+		const targetElement = document.querySelector(targetId);
+
+		if (!targetElement) {
+			return;//早期リターン
+
+		}
+		// シュルシュルスクロール
+		targetElement.scrollIntoView({
+			behavior: "smooth",
+			block: "start",
+		});
+
+	});
+});
