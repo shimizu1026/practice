@@ -1,7 +1,9 @@
 // 要素の取得
 const metaViewport = document.querySelector('meta[name="viewport"]');
 const scrollLinks = document.querySelectorAll('a[href^="#"]');
-// console.log(scrollLinks);
+const animateElements = document.querySelectorAll("[data-inview-trigger]");
+
+// console.log(animateElements);
 // debounce関数の実装
 function debounce(func, delay) {
 	let timeoutId;
@@ -55,3 +57,22 @@ scrollLinks.forEach((link) => {
 
 	});
 });
+
+// スクロールアニメーション
+window.addEventListener("scroll", () => {
+	animateElements.forEach((element) => {
+		// 要素の位置情報を取得
+		const rect = element.getBoundingClientRect();
+		const windowHight = window.innerHeight;
+
+		// 要素が画面の中に入っているかをチェック
+		// 要素の上からの距離がウィンドウ（－100）の高さより小さい
+		// かつ、要素の下らからの距離が0より大きいとき
+		if (rect.top < windowHight - 100 && rect.bottom > 0) {
+			element.setAttribute("data-inview", true);
+
+		} else {
+			element.setAttribute("data-inview", false);
+		}
+	})
+})
