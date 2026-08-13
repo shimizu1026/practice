@@ -16,3 +16,8 @@ const options = {
 
 // Intersection Observer(監視員)を作成
 const observer = new IntersectionObserver(handleAnimation, options);
+
+// すべての要素を監視開始
+targets.forEach((target) => {
+  observer.observe(target);
+});
