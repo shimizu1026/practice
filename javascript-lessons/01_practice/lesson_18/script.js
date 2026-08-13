@@ -1,11 +1,18 @@
 // 要素の取得
 const targets = document.querySelectorAll("[data-inview-trigger]");
 
-console.log(targets);
+// console.log(targets);
 
 // コールバック関数
-const handleAnimation = () => {
-  console.log("callback");
+const handleAnimation = (entries, observer) => {
+  // console.log(entries);
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // ビューポートに入ったら、"data-inview=true"を付ける
+      // console.log(entry.target);
+      entry.target.setAttribute("data-inview", true);
+    }
+  });
 };
 
 // オプション
