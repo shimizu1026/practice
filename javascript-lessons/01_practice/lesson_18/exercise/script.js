@@ -21,6 +21,7 @@ const handleIntersection = (entries, observer) => {
   });
 };
 // セクションのid属性を取得
+const targetElem = document.querySelectorAll(`a[href="#${target}"]`);
 // 対応するナビゲーションリンク（a[href="#セクションid"]）を取得
 // 対応する画像（img[data-image="セクションid"]）を取得
 const targetUImg = document.querySelectorAll('img[data-image="セクションid"]');
@@ -45,3 +46,38 @@ targets.forEach((target) => {
 });
 
 // inviewObserverを監視する際に全てのtargets の要素に data-inview="false" 属性を付与（初期表示で非表示にする用）
+
+// セクションの取得
+const sections = document.querySelectorAll("[data-section]");
+
+// コールバック関数
+const handleIntersection = (entries) => {
+  entries.forEach((entry) => {
+    // 監視要素のid属性を取得（entry.target.getAttribute("id") でもOK）
+    const targetId = entry.target.id;
+
+    // 監視要素へのページ内リンクを持つa要素を取得
+    const targetElem = document.querySelector(`a[href="#${targetId}"]`);
+
+    if (entry.isIntersecting) {
+      // 要素が見えたら data-current="true" 属性を付与
+      targetElem.setAttribute("data-current", "true");
+    } else {
+      // 要素が見えなくなったら data-current="false" 属性を付与
+      targetElem.setAttribute("data-current", "false");
+    }
+  });
+};
+
+// オプション
+const options = {
+  rootMargin: "-50% 0%", //. ビューポートの天地中央
+};
+
+// Intersection Observer作成
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// 全ての要素を監視開始
+sections.forEach((section) => {
+  observer.observe(section);
+});

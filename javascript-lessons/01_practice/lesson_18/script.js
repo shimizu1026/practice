@@ -11,6 +11,9 @@ const handleAnimation = (entries, observer) => {
       // ビューポートに入ったら、"data-inview=true"を付ける
       // console.log(entry.target);
       entry.target.setAttribute("data-inview", true);
+
+      // 一度アニメーションしたら監視を停止
+      observer.unobserve(entry.target);
     }
   });
 };
