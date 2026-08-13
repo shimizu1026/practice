@@ -1,11 +1,18 @@
 // data-inview-trigger属性を持つ全ての要素を取得し、変数 targets に代入
+const targets = document.querySelectorAll("[data-inview-trigger]");
 
 //  data-section属性を持つ全ての要素を取得し、変数 sections に代入
+const sections = document.querySelectorAll("[data-section]");
 
 //  アニメーション用コールバック関数 handleAnimation を作成
+
+const handleAnimation = () => {
+  console.log("callback");
+};
 // 要素が見えたらdata-inview="true"属性を付与
 // 一度アニメーションしたらunobserve()で監視を停止
 //  セクション監視用コールバック関数 handleIntersection を作成
+const handleIntersection = () => {};
 // セクションのid属性を取得
 // 対応するナビゲーションリンク（a[href="#セクションid"]）を取得
 // 対応する画像（img[data-image="セクションid"]）を取得
