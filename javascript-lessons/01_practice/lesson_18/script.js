@@ -10,9 +10,8 @@ const handleAnimation = () => {
 
 // オプション
 const options = {
-  rootMargin="-25% 0%",
-
-}
+  rootMargin: "-25% 0%",
+};
 
 // Intersection Observer(監視員)を作成
 const observer = new IntersectionObserver(handleAnimation, options);
