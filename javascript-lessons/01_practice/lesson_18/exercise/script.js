@@ -22,12 +22,14 @@ const handleIntersection = (entries, observer) => {
     // セクションのid属性を取得
     const targetId = entry.target.getAttribute("id");
 
-// 対応するナビゲーションリンク（a[href="#セクションid"]）を取得
-const targetElem = document.querySelectorAll(`a[href="#${targetId}"]`);
+    // 対応するナビゲーションリンク（a[href="#セクションid"]）を取得
+    const targetElem = document.querySelectorAll(`a[href="#${targetId}"]`);
 
-// 対応する画像（img[data-image="セクションid"]）を取得
-    const targetUImg = document.querySelectorAll('img[data-image="セクションid"]');
-    
+    // 対応する画像（img[data-image="セクションid"]）を取得
+    const targetUImg = document.querySelectorAll(
+      `img[data-image="${targetId}"]`,
+    );
+
     if (entry.isIntersecting) {
       // セクションが見えたら対応要素にdata-current="true"を付与
       entry.target.setAttribute("data-current", true);
@@ -35,17 +37,9 @@ const targetElem = document.querySelectorAll(`a[href="#${targetId}"]`);
       // セクションが見えなくなったら対応要素にdata-current="false"を付与
       entry.target.setAttribute("data-current", false);
     }
-  };);
+  });
 };
 
-
-
-//  2つのIntersection Observerを作成
-const inviewObserver = new IntersectionObserver(handleAnimation, inviewOptions);
-const sectionObserver = new IntersectionObserver(
-  handleIntersection,
-  sectionOptions,
-);
 // inviewObserver: rootMargin: "-10% 0%"でアニメーション用
 const inviewOptions = {
   rootMargin: "-10% 0%",
@@ -55,12 +49,20 @@ const inviewOptions = {
 const sectionOptions = {
   rootMargin: "-50% 0%",
 };
+
+//  2つのIntersection Observerを作成
+const inviewObserver = new IntersectionObserver(handleAnimation, inviewOptions);
+const sectionObserver = new IntersectionObserver(
+  handleIntersection,
+  sectionOptions,
+);
+
 //  全ての対象要素の監視を開始し、動作確認
 targets.forEach((target) => {
-  observer.observe(target);
+  inviewObserver.observe(target);
 });
 
 // inviewObserverを監視する際に全てのtargets の要素に data-inview="false" 属性を付与（初期表示で非表示にする用）
 targets.forEach((target) => {
-  entry.target.setAttribute("data-inview", false);
+  target.target.setAttribute("data-inview", false);
 });
