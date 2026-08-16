@@ -1,5 +1,5 @@
 // Todoデータ
-const todoData = [
+const defaultTodoData = [
   {
     title: "提案書の提出",
     category: "仕事",
@@ -51,10 +51,15 @@ const loadTodoData = () => {
       // JSONをオブジェクトに変換してTodoを返す
       return JSON.parse(savedData);
     }
+    // Todoがなければ、デフォルトのTodoを返す
+    return defaultTodoData;
   } catch (error) {
     console.error("Todoデータの読み込みに失敗しました", error);
   }
 };
+
+// Todoデータの初期化
+const todoData = loadTodoData();
 
 // 検索・フィルタ状態を保存する関数
 const saveFilterState = () => {
