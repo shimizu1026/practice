@@ -29,6 +29,23 @@ const searchElem = document.querySelector("[data-search]");
 const sortSelectElem = document.querySelector("[data-sort-select]");
 const addFormElem = document.querySelector("[data-add-form]");
 
+// 検索・フィルタ状態を保存する関数
+const saveFilterState = () => {
+  try {
+    const filterState = {
+      search: searchElem.value,
+      sort: sortSelectElem.value,
+    };
+
+    // セッションストレージに保存(JSONに変換して)
+    sessionStorage.setItem("todoFilterState", JSON.stringify(filterState));
+  } catch (error) {
+    console.error("フィルタ状態の保存に失敗", error);
+  }
+};
+
+// 検索・フィルタ状態を復元する関数
+
 // Todoをテーブルに追加する関数
 const displayTodo = (todos) => {
   // 既存の行をクリア
@@ -89,6 +106,9 @@ const updateTodo = () => {
       return dateB - dateA; // 期日が遠い順
     }
   });
+
+  // フィルタ条件の保存
+  saveFilterState();
 
   // フィルタリング結果を表示
   displayTodo(displayTodos);
