@@ -29,6 +29,33 @@ const searchElem = document.querySelector("[data-search]");
 const sortSelectElem = document.querySelector("[data-sort-select]");
 const addFormElem = document.querySelector("[data-add-form]");
 
+// Todoを保存する関数
+const saveTodoData = (data) => {
+  try {
+    // ローカルストレージにtodoを保存
+    localStorage.setItem("todoData", JSON.stringify(data));
+    return true;
+  } catch (error) {
+    console.error("Todoの保存に失敗しました", error);
+    return false;
+  }
+};
+
+// Todoを読み込む関数
+const loadTodoData = () => {
+  try {
+    // ローカルストレージからtodoを読み込む
+    const savedData = localStorage.getItem("todoData");
+
+    if (savedData) {
+      // JSONをオブジェクトに変換してTodoを返す
+      return JSON.parse(savedData);
+    }
+  } catch (error) {
+    console.error("Todoデータの読み込みに失敗しました", error);
+  }
+};
+
 // 検索・フィルタ状態を保存する関数
 const saveFilterState = () => {
   try {
@@ -151,9 +178,14 @@ addFormElem.addEventListener("submit", (event) => {
   };
 
   todoData.push(newTodo); // 新しいTodoを追加
-  updateTodo(); // Todoリストを更新
 
-  addFormElem.reset(); // フォームをリセット
+  // ローカルストレージに保存
+  if (saveTodoData(todoData)) {
+    updateTodo(); // Todoリストを更新
+    addFormElem.reset(); // フォームをリセット
+  } else {
+    alert("Todoの保存に失敗しました");
+  }
 });
 
 // ページ読み込み時
