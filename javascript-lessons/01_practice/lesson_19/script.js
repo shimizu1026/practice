@@ -45,6 +45,23 @@ const saveFilterState = () => {
 };
 
 // 検索・フィルタ状態を復元する関数
+const loadFilterState = () => {
+  try {
+    // セッションストレージから読み込み
+    const savedState = sessionStorage.getItem("todoFilterState");
+
+    if (savedState) {
+      // JSONをオブジェクトに変換
+      const filterState = JSON.parse(savedState);
+
+      // コントロール部品委復元
+      searchElem.value = filterState.search || "";
+      sortSelectElem.value = filterState.sort || "asc";
+    }
+  } catch (error) {
+    console.error("フィルタ状態の復元に失敗：", error);
+  }
+};
 
 // Todoをテーブルに追加する関数
 const displayTodo = (todos) => {
