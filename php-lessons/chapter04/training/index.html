@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>練習問題4</title>
+</head>
+<body>
+  <h1>お問い合わせ</h1>
+  <form action="receive.php" method="post">
+    <dl>
+      <dt><label for="your_name">お名前</label></dt>
+      <dd>
+        <input type="text" name="your_name" id="your_name">
+      </dd>
+      <dt><label for="your_email">メールアドレス</label></dt>
+      <dd>
+        <input type="text" name="your_email" id="your_email">
+      </dd>
+      <dt><label for="inquiry">お問い合わせ内容</label></dt>
+      <dd>
+        <textarea name="inquiry" id="inquiry" rows="8" cols="50"></textarea>
+      </dd>
+    </dl>
+    <p><input type="submit" value="入力確認"></p>
+  </form>
+</body>
+</html>

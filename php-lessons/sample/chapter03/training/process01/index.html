@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>練習問題3</title>
+</head>
+<body>
+  <h1>消費税計算機</h1>
+  <form action="receive.php" method="post">
+    <dl>
+      <dt><label for="plice">金額</label></dt>
+      <dd>
+        &yen; <input type="text" name="price" id="plice">
+      </dd>
+      <dt>消費税</dt>
+      <dd>
+        <ul>
+          <li><label><input type="radio" name="tax" value="1.05"> 5%</label></li>
+          <li><label><input type="radio" name="tax" value="1.08" checked> 8%</label></li>
+          <li><label><input type="radio" name="tax" value="1.1"> 10%</label></li>
+        </ul>
+      </dd>
+    </dl>
+    <p><input type="submit" value="計算する"></p>
+  </form>
+</body>
+</html>
