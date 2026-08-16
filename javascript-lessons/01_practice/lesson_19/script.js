@@ -162,6 +162,4 @@ window.addEventListener("load", () => {
   loadFilterState();
   // 初期表示
   updateTodo();
-};);
-
-
+});
