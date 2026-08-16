@@ -156,5 +156,12 @@ addFormElem.addEventListener("submit", (event) => {
   addFormElem.reset(); // フォームをリセット
 });
 
-// 初期表示
-updateTodo();
+// ページ読み込み時
+window.addEventListener("load", () => {
+  // フィルタ状態の復元
+  loadFilterState();
+  // 初期表示
+  updateTodo();
+};);
+
+
