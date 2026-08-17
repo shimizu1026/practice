@@ -41,12 +41,24 @@ const loadPokemonData = () => {
 		console.error("データの読み込みに失敗しました", error);
 	}
 
-	pokemonData.push(newPokemon);
+}
+
+// === sessionStorage 検索・フィルタ状態の保存 ===
+const saveFilterState = () => {
+	try {
+		const filterState = {
+			search: searchElem.value,
+			type: typeSelectElem.value,
+			sort: sortSelectElem.value,
+		};
+
+		sessionStorage.setItem("pokemonFilterState", JSON.stringify(filterState));
+	} catch (error) {
+		console.error("フィルタ状態の保存に失敗", error);
+	}
 }
 
 
-
-// === sessionStorage 検索・フィルタ状態の保存 ===
 
 // === ポケモン図鑑の機能 ===
 
@@ -81,6 +93,22 @@ const displayPokemon = (pokemons) => {
 		tableBodyElem.appendChild(row);
 	});
 };
+
+const loadFilterState = () => {
+	try {
+		const savedState = sessionStorage.getItem("pokemonFilterState");
+
+		if (savedState) {
+			const filterState = JSON.parse(savedState);
+
+			searchElem.value = filterState.search || "";
+			typeSelectElem.value = filterState.type || "";
+			sortSelectElem.value = filterState.sort || "";
+		}
+	} catch (error) {
+		console.error("フィルタ状態の復元に失敗：", error);
+	}
+}
 
 const updatePokemon = () => {
 	const searchText = searchElem.value.toLowerCase(); // 入力値を小文字に変換
@@ -152,12 +180,15 @@ addFormElem.addEventListener("submit", (event) => {
 
 		pokemonData.push(newPokemon); // 新しいポケモンを追加
 
+		savePokemonData(pokemonData);
+
 		updatePokemon(); // ポケモンリストを更新
 
 		addFormElem.reset(); // フォームをリセット
 	} catch (error) {
 		console.error("ポケモンの追加に失敗:", error);
 		alert("ポケモンの追加に失敗しました");
+
 	}
 });
 
