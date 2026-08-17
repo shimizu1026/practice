@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+/*
+  Header
+*/
+.p-header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  background-color: #fff;
+
+  &__info {
+    float: left;
+    font-size: 0;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: medium;
+    vertical-align: middle;
+  }
+
+  &__text {
+    display: none;
+    font-size: medium;
+    margin-left: 1em;
+    vertical-align: middle;
+
+    @include mq(tab) {
+      display: inline-block;
+    }
+  }
+
+  &__nav {
+    float: right;
+  }
+
+}

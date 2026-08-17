@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+/*
+  Project
+*/
+.p-project {
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .16);
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__text {
+    font-size: .75rem;
+    margin-top: .5rem;
+  }
+
+  &[href]:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+
+@include mq(tab) {
+  .p-project {
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__text {
+      font-size: .875rem;
+    }
+  }
+}
