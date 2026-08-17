@@ -39,6 +39,7 @@ const loadPokemonData = () => {
 		return defaultPokemonData;
 	} catch (error) {
 		console.error("データの読み込みに失敗しました", error);
+		return defaultPokemonData;
 	}
 
 }
@@ -152,6 +153,7 @@ const updatePokemon = () => {
 
 	// フィルタリング結果を表示
 	displayPokemon(displayPokemons);
+	saveFilterState();
 };
 
 // === イベントリスナー ===
@@ -197,6 +199,8 @@ let pokemonData = loadPokemonData();
 
 
 // === 初期化処理 ===
+loadFilterState();
 
 // 初期表示
 updatePokemon();
+
