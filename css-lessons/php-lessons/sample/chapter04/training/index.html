@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>練習問題4</title>
+  <link rel="stylesheet" href="../../../asset/css/common.css">
+</head>
+<body>
+  <header class="l-header">
+    <div class="l-wrapper">
+      <h1 class="l-header-logo">
+        <a href="./" class="logo-primary">
+          PHP <span class="logo-caption">練習問題4</span>
+        </a>
+      </h1>
+    </div>
+  </header>
+  <main class="l-main">
+    <div class="l-wrapper">
+      <section class="l-section">
+        <h2>お問い合わせ</h2>
+        <!-- ここまではテンプレート -->
+
+        <form action="receive.php" method="post">
+          <dl class="define-table">
+            <dt><label for="your_name">お名前</label></dt>
+            <dd>
+              <input type="text" name="your_name" id="your_name" class="textfield">
+            </dd>
+            <dt><label for="your_email">メールアドレス</label></dt>
+            <dd>
+              <input type="text" name="your_email" id="your_email" class="textfield">
+            </dd>
+            <dt><label for="inquiry">お問い合わせ内容</label></dt>
+            <dd>
+              <textarea name="inquiry" id="inquiry" class="textfield" rows="8" cols="50"></textarea>
+            </dd>
+          </dl>
+          <p><input type="submit" class="button button-primary" value="送信する"></p>
+        </form>
+
+        <!-- ここからはテンプレート -->
+      </section>
+      <!-- /.l-section -->
+    </div>
+    <!-- /.l-wrapper -->
+  </main>
+  <footer class="l-footer">
+    <div class="l-wrapper">
+      <p class="copyright"><small>&copy; 2016 Shibata Hironori</small></p>
+    </div>
+    <!-- /.l-wrapper -->
+  </footer>
+</body>
+</html>

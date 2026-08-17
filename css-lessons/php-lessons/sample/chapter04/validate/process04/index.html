@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>if文による入力内容のチェック</title>
+</head>
+<body>
+  <h1>会員登録</h1>
+  <form action="receive.php" method="post">
+    <dl>
+      <dt><label for="your_name">お名前（必須）</label></dt>
+      <dd><input type="text" id="your_name" name="your_name"></dd>
+      <dt><label for="your_email">メールアドレス</label></dt>
+      <dd><input type="text" id="your_email" name="your_email"></dd>
+      <dt><label for="your_password">パスワード（4文字以上）</label></dt>
+      <dd><input type="password" id="your_password" name="your_password"></dd>
+    </dl>
+    <p><input type="submit" value="入力確認"></p>
+  </form>
+</body>
+</html>

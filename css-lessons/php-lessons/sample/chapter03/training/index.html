@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>練習問題3</title>
+  <link rel="stylesheet" href="../../../asset/css/common.css">
+</head>
+<body>
+  <header class="l-header">
+    <div class="l-wrapper">
+      <h1 class="l-header-logo">
+        <a href="./" class="logo-primary">
+          PHP <span class="logo-caption">練習問題3</span>
+        </a>
+      </h1>
+    </div>
+  </header>
+  <main class="l-main">
+    <div class="l-wrapper">
+      <section class="l-section">
+        <h2>消費税計算機</h2>
+        <!-- ここまではテンプレート -->
+
+        <form action="receive.php" method="post">
+          <dl class="define-table">
+            <dt><label for="plice">金額</label></dt>
+            <dd>
+              &yen; <input type="text" name="price" id="plice" class="textfield">
+            </dd>
+            <dt>消費税</dt>
+            <dd>
+              <ul class="inline-list">
+                <li><label><input type="radio" name="tax" value="1.05"> 5%</label></li>
+                <li><label><input type="radio" name="tax" value="1.08" checked> 8%</label></li>
+                <li><label><input type="radio" name="tax" value="1.1"> 10%</label></li>
+              </ul>
+            </dd>
+          </dl>
+          <p><input type="submit" class="button button-primary" value="計算する"></p>
+        </form>
+
+        <!-- ここからはテンプレート -->
+      </section>
+      <!-- /.l-section -->
+    </div>
+    <!-- /.l-wrapper -->
+  </main>
+  <footer class="l-footer">
+    <div class="l-wrapper">
+      <p class="copyright"><small>&copy; 2016 Shibata Hironori</small></p>
+    </div>
+    <!-- /.l-wrapper -->
+  </footer>
+</body>
+</html>
