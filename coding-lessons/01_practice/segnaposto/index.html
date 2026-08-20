@@ -62,8 +62,19 @@
           class="button-hamburger"
           command="toggle-popover"
           commandfor="drawer"
+          aria-label="メニュー"
         >
-          メニュー
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <line x1="4" y1="6.5" x2="20" y2="6.5" stroke="#36332D" />
+            <line x1="4" y1="11.5" x2="20" y2="11.5" stroke="#36332D" />
+            <line x1="4" y1="16.5" x2="20" y2="16.5" stroke="#36332D" />
+          </svg>
         </button>
         <div id="drawer" popover>
           <ul lang="en">
@@ -77,7 +88,7 @@
           <li><a href="#menu">Menu</a></li>
         </ul>
         <p class="nav-action" lang="en">
-          <a href="#reservation">
+          <a href="#reservation" class="button-primary">
             <svg
               width="24"
               height="24"
