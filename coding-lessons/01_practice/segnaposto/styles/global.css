@@ -512,12 +512,20 @@
 
 			line {
 				stroke: var(--color-brown-900);
+				transform-box: fill-box;
+				/*line要素自体のボックスを基準にする*/
+				transform-origin: center center;
+				transition: var(--duration-fast) var(--ease-out-quart);
+				transition-property: translate, rotate, opacity;
+				transition-delay: var(--duration-fast), 0s, 0s;
 			}
 		}
 
 		:root:has(.drawer:popover-open) & {
 			svg {
 				line {
+					transition-delay: 0s, var(--duration-fast), var(--duration-fast);
+
 					&:nth-child(1) {
 						translate: 0 5px;
 						rotate: 45deg;
