@@ -18,16 +18,16 @@
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">All</a>
+            <a href="#" class="nav__link" data-category="all">All</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Banner</a>
+            <a href="#" class="nav__link" data-category="banner">Banner</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">Website</a>
+            <a href="#" class="nav__link" data-category="website">Website</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">About</a>
+            <a href="about.html" class="nav__link">About</a>
           </li>
         </ul>
       </nav>
@@ -35,63 +35,7 @@
     </header>
     <!-- /.header -->
     <main class="main">
-      <section class="contents">
-        <article class="article">
-          <a
-            href="https://miyajima-project-ecru.vercel.app/"
-            class="article__link"
-          >
-            <img
-              src="assets/images/article1.jpg"
-              alt=""
-              class="article__image"
-            />
-            <h2 class="article__title">クーポンサイト</h2>
-            <p class="article__tags">デザイン、コーディング</p>
-            <p class="article__year">2026</p>
-          </a>
-        </article>
-        <!-- /.article -->
-        <article class="article">
-          <a href="https://gallery-dusky-one.vercel.app/" class="article__link">
-            <img
-              src="assets/images/article1.jpg"
-              alt=""
-              class="article__image"
-            />
-            <h2 class="article__title">ギャラリーサイト</h2>
-            <p class="article__tags">デザイン、コーディング</p>
-            <p class="article__year">2026</p>
-          </a>
-        </article>
-        <!-- /.article -->
-        <article class="article">
-          <a href="https://takayanet.com/" class="article__link">
-            <img
-              src="assets/images/article1.jpg"
-              alt=""
-              class="article__image"
-            />
-            <h2 class="article__title">お好み焼屋サイト</h2>
-            <p class="article__tags">デザイン、コーディング</p>
-            <p class="article__year">2026</p>
-          </a>
-        </article>
-        <!-- /.article -->
-        <article class="article">
-          <a href="#" class="article__link">
-            <img
-              src="assets/images/article2.jpg"
-              alt=""
-              class="article__image"
-            />
-            <h2 class="article__title">病院バナー</h2>
-            <p class="article__tags">デザイン</p>
-            <p class="article__year">2026</p>
-          </a>
-        </article>
-        <!-- /.article -->
-      </section>
+      <section class="contents" id="js-contents"></section>
       <!-- /.contents -->
     </main>
     <!-- /.main -->
@@ -99,5 +43,7 @@
       <p>© Akiyo Shimizu</p>
     </footer>
     <!-- /.footer -->
+    <script src="assets/js/config.js"></script>
+    <script type="module" src="assets/js/script.js"></script>
   </body>
 </html>
