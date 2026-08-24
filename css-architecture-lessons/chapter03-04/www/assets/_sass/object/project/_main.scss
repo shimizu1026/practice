@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+/*
+  Main
+*/
+.p-main {
+  padding-top: pxToRem(48px);
+  background-color: #fafafa;
+
+  @include mq(md) {
+    padding-top: pxToRem(72px);
+  }
+
+  @include mq(lg) {
+    padding-top: pxToRem(80px);
+  }
+}

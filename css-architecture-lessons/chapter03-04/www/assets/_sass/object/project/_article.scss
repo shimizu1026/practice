@@ -1,0 +1,74 @@
+@charset 'UTF-8';
+/*
+  Article
+*/
+.p-article {
+}
+.p-article {
+  padding: pxToRem(8px);
+  border: 1px solid #ddd;
+  color: $primary-text-color;
+  text-decoration: none;
+  justify-content: space-between;
+
+  @include mq(md) {
+    padding: 1em;
+  }
+
+  &[href]:hover,
+  &[href]:focus {
+    background-color: #f5f5f5;
+  }
+
+  &__thumbnail {
+    width: 34%;
+
+    @include mq(md) {
+      width: 37%;
+    }
+    @include mq(lg) {
+      width: 40%;
+    }
+  }
+
+  &__body {
+    position: relative;
+    width: 63%;
+    line-height: 1.5;
+
+    @include mq(md) {
+      width: 60%;
+    }
+    @include mq(lg) {
+      width: 57%;
+    }
+  }
+
+  &__title {
+    margin-top: 1.5em;
+    font-weight: 400;
+    font-size: pxToRem(14px);
+
+    @include mq(md) {
+      font-size: pxToRem(16px);
+    }
+    @include mq(lg) {
+      font-size: pxToRem(20px);
+    }
+  }
+
+  &__publish {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: pxToRem(12px);
+    font-family: "Roboto Condensed", Arial, sans-serif;
+
+    @include mq(md) {
+      font-size: pxToRem(14px);
+    }
+    @include mq(lg) {
+      font-size: pxToRem(16px);
+    }
+  }
+}

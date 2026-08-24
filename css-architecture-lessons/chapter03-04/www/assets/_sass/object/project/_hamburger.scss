@@ -1,0 +1,77 @@
+@charset 'UTF-8';
+/*
+  Hamburger
+*/
+$position: right;
+$line-color: $primary-text-color;
+$active-line-color: #fff;
+
+.p-hamburger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.5%;
+  z-index: 1;
+  margin: auto 0;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+
+  @include mq(md) {
+    display: none;
+  }
+
+  // ---------------------------------
+  //  Line
+  // ---------------------------------
+
+  &__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    margin: auto;
+    width: 18px;
+    height: 2px;
+    background-color: $main-color;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      content: "";
+      transition: transform $duration $easing;
+    }
+
+    &::before {
+      top: -5px;
+    }
+    &::after {
+      top: 5px;
+    }
+
+    // State
+    .is-drawerActive & {
+      background-color: transparent;
+    }
+
+    .is-drawerActive &::before,
+    .is-drawerActive &::after {
+      top: 0;
+      background-color: $main-color;
+    }
+
+    .is-drawerActive &::before {
+      transform: rotate(-45deg);
+    }
+
+    .is-drawerActive &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

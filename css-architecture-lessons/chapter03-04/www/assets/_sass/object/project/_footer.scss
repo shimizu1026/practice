@@ -1,0 +1,75 @@
+@charset 'UTF-8';
+/*
+  Footer
+*/
+.p-footer {
+  @include mq(md) {
+    text-align: left;
+  }
+
+  // ---------------------------------
+  //  Nav
+  // ---------------------------------
+  &__nav {
+    @include mq(md) {
+      margin-bottom: pxToRem(16px);
+    }
+  }
+
+  // ---------------------------------
+  //  Inner
+  // ---------------------------------
+  &__inner {
+    @include mq(md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  // ---------------------------------
+  //  Site Info
+  // ---------------------------------
+  &__siteinfo {
+    padding: pxToRem(20px);
+    background-color: $main-color;
+    color: #ccc;
+    text-align: center;
+
+    @include mq(lg) {
+      padding: pxToRem(28px);
+    }
+  }
+
+  // ---------------------------------
+  //  Address
+  // ---------------------------------
+  &__address {
+    font-style: normal;
+    font-size: pxToRem(12px);
+    line-height: 1.3;
+  }
+
+  // ---------------------------------
+  //  Copyright
+  // ---------------------------------
+  &__copyright {
+    margin-top: pxToRem(12px);
+    color: #9e9e9e;
+    text-transform: capitalize;
+
+    @include mq(md) {
+      text-align: right;
+      margin-top: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    small {
+      font-size: pxToRem(12px);
+    }
+  }
+}

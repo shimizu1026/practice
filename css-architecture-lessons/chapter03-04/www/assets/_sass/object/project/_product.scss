@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+/*
+  Product
+*/
+.p-product {
+  position: relative;
+  background-color: $base-color;
+  color: $primary-text-color;
+  text-decoration: none;
+  overflow: hidden;
+
+  &[href]:hover,
+  &[href]:focus {
+    background-color: #f5f5f5;
+  }
+
+  &__body {
+    padding: pxToRem(8px);
+
+    @include mq(md) {
+      padding: pxToRem(16px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: pxToRem(12px);
+    font-weight: 400;
+
+    @include mq(md) {
+      font-size: pxToRem(16px);
+    }
+  }
+  &__text {
+    font-size: pxToRem(12px);
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    @include mq(md) {
+      font-size: pxToRem(16px);
+    }
+    &.-right {
+      text-align: right;
+    }
+  }
+
+  &__thumbnail {
+    overflow: hidden;
+  }
+
+  &__image {
+    transition: transform $duration $easing;
+  }
+
+  &[href]:hover &__image {
+    transform: scale(1.2);
+  }
+
+  & .c-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+}

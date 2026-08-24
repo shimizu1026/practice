@@ -1,0 +1,74 @@
+@charset 'UTF-8';
+/*
+  Header
+*/
+
+.p-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: 1px solid $primary-border-color;
+  background-color: $base-color;
+
+  // ---------------------------------
+  //  Inner
+  // ---------------------------------
+
+  &__inner {
+    position: relative;
+    padding: pxToRem(12px) 0;
+
+    @include mq(md) {
+      padding: pxToRem(24px) 0;
+      display: flex;
+      align-items: center;
+    }
+
+    @include mq(lg) {
+      padding: pxToRem(28px) 0;
+    }
+  }
+
+  // ---------------------------------
+  //  Title
+  // ---------------------------------
+  &__title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    font-size: pxToRem(16px);
+
+    @include mq(md) {
+      text-align: left;
+    }
+  }
+
+  // ---------------------------------
+  //  Nav
+  // ---------------------------------
+  &__nav {
+    @include mq(md) {
+      margin-left: pxToRem(32px);
+    }
+    @include mq(lg) {
+      margin-left: pxToRem(64px);
+    }
+  }
+
+  // ---------------------------------
+  //  Action
+  // ---------------------------------
+  &__action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 24px;
+    height: 24px;
+  }
+}

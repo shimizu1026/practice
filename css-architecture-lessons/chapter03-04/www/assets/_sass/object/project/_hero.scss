@@ -1,0 +1,99 @@
+@charset 'UTF-8';
+/*
+  Logo
+*/
+.p-hero {
+  $this: &;
+  position: relative;
+
+  // ---------------------------------
+  //  Body
+  // ---------------------------------
+  &__body {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    // home
+    #{$this}.-home & {
+      margin-left: 20%;
+
+      @include mq(md) {
+        margin-left: 30%;
+      }
+      @include mq(lg) {
+        margin-left: 32%;
+      }
+    }
+  }
+
+  // ---------------------------------
+  //  Copy
+  // ---------------------------------
+  &__copy {
+    // home
+    #{$this}.-home & {
+      color: $primary-text-color;
+      text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      font-size: pxToVw(12px);
+      line-height: 1;
+
+      @include mq(md) {
+        font-size: pxToVw(23px, $tab-comp-width);
+      }
+      @include mq(lg) {
+        font-size: pxToVw(28px, $pc-comp-width);
+      }
+    }
+  }
+
+  // ---------------------------------
+  //  Emphasis
+  // ---------------------------------
+  &__emphasis {
+    font-style: normal;
+
+    // home
+    #{$this}.-home & {
+      display: block;
+      font-size: 4.5em;
+      margin-left: -0.03em;
+    }
+  }
+
+  // ---------------------------------
+  //  Sub Text
+  // ---------------------------------
+  &__subtext {
+    #{$this}.-home & {
+      display: inline-block;
+      margin-bottom: 1em;
+      font-size: 2em;
+      letter-spacing: 0.04em;
+    }
+  }
+  // ---------------------------------
+  // Date
+  // ---------------------------------
+  &__date {
+    #{$this}.-home & {
+      font-size: 1.166667em;
+      letter-spacing: 0.05em;
+      margin-left: 0.04em;
+    }
+  }
+
+  // ---------------------------------
+  //  Img
+  // ---------------------------------
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+}

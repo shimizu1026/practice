@@ -1,0 +1,77 @@
+@charset 'UTF-8';
+/*
+  Base
+-----------------------------------------------------*/
+html {
+  &::before {
+    content: "";
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    animation: fadeOut 0.5s ease-out 3s 1 both;
+  }
+
+  // JSが使える環境様
+  &.is-jsEnabled::before {
+    animation: none;
+  }
+
+  &.is-jsEnabled.is-loaded::before {
+    transition-property: opacity, visibility;
+    transition-duration: 0.5s;
+    transition-timing-function: $easing;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+body {
+  color: $primary-text-color;
+  font-family: $font-set-primary;
+
+  .is-drawerActive & {
+    overflow: hidden;
+  }
+
+  &::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    opacity: 0;
+    transition-property: visibility, opacity;
+    transition-duration: $duration;
+    transition-timing-function: $easing;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  .is-drawerActive &::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+a {
+  transition-property: color, background-color, border;
+  transition-duration: $duration;
+  transition-timing-function: $easing;
+}
+
+*[lang="en"] {
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+}

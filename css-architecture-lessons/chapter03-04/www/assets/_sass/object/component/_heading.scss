@@ -1,0 +1,30 @@
+@charset 'UTF-8';
+/*
+  Heading
+*/
+.c-heading {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 1em;
+
+  &.-primary {
+    text-align: center;
+    font-size: pxToRem(32px);
+    // line-height: 0.55;
+
+    @include mq(md) {
+      margin-bottom: 0.83333333em;
+      font-size: pxToRem(48px);
+    }
+  }
+
+  &__caption {
+    display: block;
+    font-weight: 500;
+    font-size: pxToRem(12px);
+
+    @include mq(md) {
+      font-size: pxToRem(16px);
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@charset 'UTF-8';
+
+// -----------------------------------
+//  Layout Settings
+//------------------------------------
+
+// Contentの幅
+$content-width: 1200px !default; // 実際は 1024px ですがアレンジ
+
+// デザインカンプのアートボードサイズ
+$sp-comp-width: 320px;
+$tab-comp-width: 768px;
+$pc-comp-width: 1280px;
+
+// ブレークポイント
+$breakpoints: (
+  xxs: 0,
+  xs: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+// 余白
+$spaces: (
+  xxs: 24px,
+  xs: 32px,
+  sm: 64px,
+  md: 72px,
+  lg: 104px,
+  xl: 144px,
+  xxl: 176px,
+) !default;
+
+//====================================
+//  Color Setings
+//====================================
+
+// ベースカラー
+$base-color: #fff;
+
+// メインカラー
+$main-color: #212121;
+
+// テキストの色
+$primary-text-color: #212121;
+
+// ボーダーの色
+$primary-border-color: #e0e0e0;
+
+//====================================
+//  Typeface
+//====================================
+$font-set-primary: "Noto Sans JP", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, sans-serif;
+
+//====================================
+//  Animation
+//====================================
+$duration: 0.3s;
+$easing: cubic-bezier(0, 0.29, 0.11, 1);

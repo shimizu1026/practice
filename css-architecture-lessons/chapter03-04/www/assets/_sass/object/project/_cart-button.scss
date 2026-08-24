@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+/*
+  Cart Button
+*/
+.p-cartButton {
+  z-index: 1;
+  height: 100%;
+  background-image: url(../img/common/icon-cart.png);
+  background-image: image-set(url(../img/common/icon-cart.png) 1x, url(../img/common/icon-cart@2x.png) 2x);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &__bagge {
+    position: absolute;
+    top: pxToRem(-8px);
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: pxToRem(16px);
+    height: pxToRem(16px);
+    border-radius: 50%;
+    background-color: #eee;
+    color: inherit;
+    text-align: center;
+    font-weight: 700;
+    font-size: pxToRem(12px);
+  }
+}

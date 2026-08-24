@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dummy Store - 架空のオンラインショップ</title>
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="l-header p-header">
+      <div class="l-container">
+        <div class="p-header__inner">
+          <h1 class="p-header__title">
+            <span class="u-visuallyHidden" lang="en">Dummy Store</span>
+            <a href="./" class="p-logo -primary">
+              <img src="assets/img/common/logo-primary.png" srcset="assets/img/common/logo-primary.png 1x, assets/img/common/logo-primary@2x.png 2x" alt="Dummy Store" decoding="async" />
+            </a>
+          </h1>
+          <nav class="p-header__nav">
+            <h2 class="u-visuallyHidden">サイト内メニュー</h2>
+            <a href="#main" class="u-visuallyHidden">本文までスキップ</a>
+            <button type="button" class="js-hamburger c-button p-hamburger" aria-controls="globalNav" aria-expanded="false">
+              <span class="p-hamburger__line">
+                <span class="u-visuallyHidden">メニューを開閉する</span>
+              </span>
+            </button>
+            <ul id="globalNav" class="p-globalNav" lang="en">
+              <li class="p-globalNav__item">
+                <a href="#" class="p-globalNav__link">All</a>
+              </li>
+              <li class="p-globalNav__item">
+                <a href="#" class="p-globalNav__link">Women</a>
+              </li>
+              <li class="p-globalNav__item">
+                <a href="#" class="p-globalNav__link">Men</a>
+              </li>
+              <li class="p-globalNav__item">
+                <a href="#" class="p-globalNav__link">Kids</a>
+              </li>
+            </ul>
+            <p class="p-header__action">
+              <a href="#" class="c-button p-cartButton">
+                <span class="u-visuallyHidden">カートを見る</span>
+                <span class="p-cartButton__bagge">0</span><span class="u-visuallyHidden">個</span>
+              </a>
+            </p>
+          </nav>
+        </div>
+        <!-- /.p-header__inner -->
+      </div>
+      <!-- /.l-container -->
+    </header>
+    <main class="p-main">
+      <div class="p-hero -home">
+        <picture class="p-hero__image">
+          <source srcset="assets/img/top/hero_sp.png 1x, assets/img/top/hero_sp@2x.png 2x" media="(max-width: 767px)" />
+          <source srcset="assets/img/top/hero_tab.png 1x, assets/img/top/hero_tab@2x.png 2x" media="(max-width: 1023px)" />
+          <img
+            src="assets/img/top/hero_pc.png"
+            srcset="assets/img/top/hero_pc.png 1x, assets/img/top/hero_pc@2x.png 2x"
+            alt="6月30日から7月9日まで2017年春夏Tシャツコレクション開催。"
+            decoding="async"
+          />
+        </picture>
+        <div class="p-hero__body">
+          <p class="p-hero__copy" lang="en">
+            2017 Spring &amp; Summer <em class="p-hero__emphasis">Shirt</em> <span class="p-hero__subtext">Collection</span><br />
+            <time datetime="2017-06-30" class="p-hero__date">6/30(Fri)</time> ~ <time datetime="2017-07-09" class="p-hero__date">7/9(Sun)</time>
+          </p>
+        </div>
+        <!-- /.hero-body -->
+      </div>
+      <!-- /.hero -->
+      <section class="l-spacer">
+        <div class="l-container">
+          <h2 class="c-heading -primary">
+            <span lang="en">New Arrival</span><br />
+            <span class="c-heading__caption">新作アイテム</span>
+          </h2>
+          <div class="l-grid" data-align="justify" data-gutter="normal">
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">Fade Out Tシャツ</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -blue">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Men</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 3,800</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-fade.png"
+                    srcset="assets/img/product/item-fade.png 1x, assets/img/product/item-fade@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="Fade Out Tシャツ"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">オーガニックTシャツ</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -blue">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Men</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 3,800</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-oganic.png"
+                    srcset="assets/img/product/item-oganic.png 1x, assets/img/product/item-oganic@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="オーガニックTシャツ"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">Next Up ジャージ</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -blue">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Men</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 6,900</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-next-up.png"
+                    srcset="assets/img/product/item-next-up.png 1x, assets/img/product/item-next-up@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="Next Up ジャージ"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">ボーダーカットソー</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -blue">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Men</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 5,200</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-border-cut.png"
+                    srcset="assets/img/product/item-border-cut.png 1x, assets/img/product/item-border-cut@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="ボーダーカットソー"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">ワッフル編みニット</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -red">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Women</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 5,400</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-wahhule.png"
+                    srcset="assets/img/product/item-wahhule.png 1x, assets/img/product/item-wahhule@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="ワッフル編みニット"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">ボリュームスリーブシャツ</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -red">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Women</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 4,900</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-volume-shirt.png"
+                    srcset="assets/img/product/item-volume-shirt.png 1x, assets/img/product/item-volume-shirt@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="ボリュームスリーブシ…"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">長袖ジャージジャケット</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -red">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Women</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 7,980</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-long-zya-zi.png"
+                    srcset="assets/img/product/item-long-zya-zi.png 1x, assets/img/product/item-long-zya-zi@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="長袖ジャージジャケット"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">丸襟半袖シャツ</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -amber">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Kids</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 980</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-marueri.png"
+                    srcset="assets/img/product/item-marueri.png 1x, assets/img/product/item-marueri@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="丸襟半袖シャツ"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">ピンストライプジャケット</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -red">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Women</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 15,600</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-pin-jackets.png"
+                    srcset="assets/img/product/item-pin-jackets.png 1x, assets/img/product/item-pin-jackets@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="ピンストライプジャケ…"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">男性用エプロン</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -blue">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Men</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 1,000</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-mens-epuron.png"
+                    srcset="assets/img/product/item-mens-epuron.png 1x, assets/img/product/item-mens-epuron@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="男性用エプロン"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">はっぴ</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -red">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Women</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 2,400</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-happi.png"
+                    srcset="assets/img/product/item-happi.png 1x, assets/img/product/item-happi@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="はっぴ"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+            <article class="l-grid__item" data-grid="xxs6 md4 lg3">
+              <a href="#" class="c-card p-product">
+                <div class="c-card__body p-product__body">
+                  <h3 class="p-product__title">オリジナル振り袖</h3>
+                  <ul class="p-product__meta">
+                    <li class="c-label -red">
+                      <span class="u-visuallyHidden">カテゴリー： </span>
+                      <span lang="en">Women</span>
+                    </li>
+                    <li class="p-product__text -right"><span class="u-visuallyHidden">販売価格： </span>&yen; 210,000</li>
+                  </ul>
+                </div>
+                <figure class="c-card__thumbnail p-product__thumbnail">
+                  <img
+                    src="assets/img/product/item-hurisode.png"
+                    srcset="assets/img/product/item-hurisode.png 1x, assets/img/product/item-hurisode@2x.png 2x"
+                    class="c-card__image p-product__image"
+                    alt="オリジナル振り袖"
+                    decoding="async"
+                  />
+                </figure>
+              </a>
+            </article>
+            <!-- /.grid__item -->
+          </div>
+          <!-- /.l-grid -->
+          <div class="l-spacer">
+            <p class="l-container -button">
+              <a href="#" class="c-button -primary">新作アイテムをもっと見る</a>
+            </p>
+          </div>
+          <!-- /.l-spacer -->
+        </div>
+        <!-- /.l-container -->
+      </section>
+      <section class="l-spacer -white">
+        <div class="l-container">
+          <h2 class="c-heading -primary">
+            <span lang="en">News</span><br />
+            <span class="c-heading__caption">お知らせ</span>
+          </h2>
+          <div class="l-grid" data-align="justify" data-gutter="normal">
+            <article class="l-grid__item" data-grid="xxs12 md6">
+              <a href="#" class="c-media p-article">
+                <div class="c-media__body p-article__body">
+                  <h3 class="p-article__title">秋冬の新作続々入荷しています。</h3>
+                  <p class="p-article__publish"><time datetime="2017-07-04" class="p-article__date">2017.07.04</time></p>
+                </div>
+                <figure class="c-media__thumbnail p-article__thumbnail">
+                  <img src="assets/img/post/img-aw.png" srcset="assets/img/post/img-aw.png 1x, assets/img/post/img-aw@2x.png 2x" alt="秋冬物" decoding="async" loading="lazy" />
+                </figure>
+              </a>
+            </article>
+            <article class="l-grid__item" data-grid="xxs12 md6">
+              <a href="#" class="c-media p-article">
+                <div class="c-media__body p-article__body">
+                  <h3 class="p-article__title">少し早めの、ハロウィングッズ特集。</h3>
+                  <p class="p-article__publish"><time datetime="2017-07-01" class="p-article__date">2017.07.01</time></p>
+                </div>
+                <figure class="c-media__thumbnail p-article__thumbnail">
+                  <img
+                    src="assets/img/post/img-halloween.png"
+                    srcset="assets/img/post/img-halloween.png 1x, assets/img/post/img-halloween@2x.png 2x"
+                    alt="ハロウィングッズ特集"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </figure>
+              </a>
+            </article>
+            <article class="l-grid__item" data-grid="xxs12 md6">
+              <a href="#" class="c-media p-article">
+                <div class="c-media__body p-article__body">
+                  <h3 class="p-article__title">「オリジナルウォッチ」の販売延期について。</h3>
+                  <p class="p-article__publish"><time datetime="2017-06-30" class="p-article__date">2017.06.30</time></p>
+                </div>
+                <figure class="c-media__thumbnail p-article__thumbnail">
+                  <img src="assets/img/post/img-watch.png" srcset="assets/img/post/img-watch.png 1x, assets/img/post/img-watch@2x.png 2x" alt="オリジナルウォッチ" decoding="async" loading="lazy" />
+                </figure>
+              </a>
+            </article>
+            <article class="l-grid__item" data-grid="xxs12 md6">
+              <a href="#" class="c-media p-article">
+                <div class="c-media__body p-article__body">
+                  <h3 class="p-article__title">「涼しいスーツ」再入荷時期について。</h3>
+                  <p class="p-article__publish"><time datetime="2017-06-20" class="p-article__date">2017.06.20</time></p>
+                </div>
+                <figure class="c-media__thumbnail p-article__thumbnail">
+                  <img src="assets/img/post/img-suzushii.png" srcset="assets/img/post/img-suzushii.png 1x, assets/img/post/img-suzushii@2x.png 2x" alt="涼しいスーツ" decoding="async" loading="lazy" />
+                </figure>
+              </a>
+            </article>
+            <article class="l-grid__item" data-grid="xxs12 md6">
+              <a href="#" class="c-media p-article">
+                <div class="c-media__body p-article__body">
+                  <h3 class="p-article__title">大人気のプリントTシャツが再入荷致しました。</h3>
+                  <p class="p-article__publish"><time datetime="2017-06-11" class="p-article__date">2017.06.11</time></p>
+                </div>
+                <figure class="c-media__thumbnail p-article__thumbnail">
+                  <img
+                    src="assets/img/post/img-print-t.png"
+                    srcset="assets/img/post/img-print-t.png 1x, assets/img/post/img-print-t@2x.png 2x"
+                    alt="大人気のプリントTシャツ"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </figure>
+              </a>
+            </article>
+            <article class="l-grid__item" data-grid="xxs12 md6">
+              <a href="#" class="c-media p-article">
+                <div class="c-media__body p-article__body">
+                  <h3 class="p-article__title">大人気のシューズが再入荷致しました。</h3>
+                  <p class="p-article__publish"><time datetime="2017-06-01" class="p-article__date">2017.06.01</time></p>
+                </div>
+                <figure class="c-media__thumbnail p-article__thumbnail">
+                  <img src="assets/img/post/img-kutu.png" srcset="assets/img/post/img-kutu.png 1x, assets/img/post/img-kutu@2x.png 2x" alt="大人気のシューズ" decoding="async" loading="lazy" />
+                </figure>
+              </a>
+            </article>
+          </div>
+          <!-- /.l-grid -->
+          <div class="l-spacer">
+            <p class="l-container -button">
+              <a href="#" class="c-button -primary">ニュースをもっと見る</a>
+            </p>
+          </div>
+          <!-- /.l-spacer -->
+        </div>
+        <!-- /.l-container -->
+      </section>
+    </main>
+    <footer class="l-footer p-footer">
+      <div class="p-footer__nav">
+        <div class="l-container -spFull">
+          <ul class="p-footerNav">
+            <li class="p-footerNav__item">
+              <a href="#" class="p-footerNav__link">ご利用案内</a>
+            </li>
+            <li class="p-footerNav__item">
+              <a href="#" class="p-footerNav__link">特定商取引法に基づく表記</a>
+            </li>
+            <li class="p-footerNav__item">
+              <a href="#" class="p-footerNav__link">プライバシポリシー</a>
+            </li>
+            <li class="p-footerNav__item">
+              <a href="#" class="p-footerNav__link">サイトマップ</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.l-container -->
+      </div>
+      <!-- /.p-footer-nav -->
+      <div class="p-footer__siteinfo">
+        <div class="l-container">
+          <div class="p-footer__inner">
+            <address class="p-footer__address">
+              <span class="u-visuallyHidden" lang="en">Dummy Store</span>
+              <a href="mailto:info@dummy.jp" class="p-logo -secondary">
+                <img src="assets/img/common/logo-secondary.png" srcset="assets/img/common/logo-secondary.png 1x, assets/img/common/logo-secondary@2x.png 2x" alt="Dummy Store" />
+              </a>
+            </address>
+            <p class="p-footer__copyright" lang="en">
+              <small>&copy; 2017 <a href="mailto:info@dummy.jp">Dummy Store</a> All Right Reserved.</small>
+            </p>
+          </div>
+          <!-- /.p-footer__inner -->
+        </div>
+        <!-- /.l-container -->
+      </div>
+      <!-- /.p-footer__siteinfo -->
+    </footer>
+  </body>
+</html>
