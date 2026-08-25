@@ -43,6 +43,38 @@
       <p>© Akiyo Shimizu</p>
     </footer>
     <!-- /.footer -->
+    <dialog class="work-dialog" id="js-work-dialog" aria-labelledby="js-work-dialog-title">
+      <button type="button" class="work-dialog__close" id="js-work-dialog-close" aria-label="閉じる">
+        ×
+      </button>
+      <div class="work-dialog__media">
+        <img src="" alt="" class="work-dialog__image" id="js-work-dialog-image" />
+      </div>
+      <div class="work-dialog__body">
+        <h2 class="work-dialog__title" id="js-work-dialog-title"></h2>
+        <p class="work-dialog__description" id="js-work-dialog-description"></p>
+        <dl class="work-dialog__meta">
+          <div class="work-dialog__meta-item">
+            <dt class="work-dialog__meta-label">担当領域</dt>
+            <dd class="work-dialog__role" id="js-work-dialog-role"></dd>
+          </div>
+          <div class="work-dialog__meta-item" id="js-work-dialog-ai-wrap" hidden>
+            <dt class="work-dialog__meta-label">使用AI</dt>
+            <dd class="work-dialog__ai" id="js-work-dialog-ai"></dd>
+          </div>
+        </dl>
+        <a
+          href="#"
+          class="work-dialog__link"
+          id="js-work-dialog-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >
+          サイトを見る
+        </a>
+      </div>
+    </dialog>
     <script src="assets/js/config.js"></script>
     <script type="module" src="assets/js/script.js"></script>
   </body>

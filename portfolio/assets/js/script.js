@@ -2,8 +2,18 @@
 
 const contentsEl = document.getElementById("js-contents");
 const navLinks = document.querySelectorAll(".nav__link[data-category]");
+const workDialog = document.getElementById("js-work-dialog");
+const workDialogClose = document.getElementById("js-work-dialog-close");
+const workDialogImage = document.getElementById("js-work-dialog-image");
+const workDialogTitle = document.getElementById("js-work-dialog-title");
+const workDialogDescription = document.getElementById("js-work-dialog-description");
+const workDialogRole = document.getElementById("js-work-dialog-role");
+const workDialogAiWrap = document.getElementById("js-work-dialog-ai-wrap");
+const workDialogAi = document.getElementById("js-work-dialog-ai");
+const workDialogLink = document.getElementById("js-work-dialog-link");
 
 let allWorks = [];
+const worksById = new Map();
 
 const escapeHtml = (value) => {
   return String(value)
@@ -14,6 +24,14 @@ const escapeHtml = (value) => {
     .replaceAll("'", "&#39;");
 };
 
+const formatTagsText = (tags) => {
+  if (Array.isArray(tags)) {
+    return tags.join("・");
+  }
+
+  return String(tags ?? "").replaceAll("、", "・");
+};
+
 const formatTags = (tags) => {
   if (Array.isArray(tags)) {
     return tags.map(escapeHtml).join("、");
@@ -22,7 +40,13 @@ const formatTags = (tags) => {
   return escapeHtml(tags ?? "");
 };
 
-const normalizeCategory = (category) => String(category ?? "").trim().toLowerCase();
+const normalizeCategory = (category) => {
+  if (Array.isArray(category)) {
+    return String(category[0] ?? "").trim().toLowerCase();
+  }
+
+  return String(category ?? "").trim().toLowerCase();
+};
 
 const getInitialCategory = () => {
   const params = new URLSearchParams(window.location.search);
@@ -63,16 +87,15 @@ const updateUrl = (category) => {
 
 const renderArticle = (work) => {
   const title = escapeHtml(work.title);
-  const url = escapeHtml(work.url);
-  const year = escapeHtml(work.year);
   const tags = formatTags(work.tags);
+  const year = escapeHtml(work.year);
   const imageUrl = escapeHtml(work.thumbnail?.url ?? "");
   const imageWidth = work.thumbnail?.width ?? 370;
   const imageHeight = work.thumbnail?.height ?? 250;
 
   return `
     <article class="article">
-      <a href="${url}" class="article__link" target="_blank" rel="noopener noreferrer">
+      <button type="button" class="article__trigger" data-work-id="${escapeHtml(work.id)}">
         <div class="article__media">
           <img
             src="${imageUrl}"
@@ -85,9 +108,50 @@ const renderArticle = (work) => {
         <h2 class="article__title">${title}</h2>
         <p class="article__tags">${tags}</p>
         <p class="article__year">${year}</p>
-      </a>
+      </button>
     </article>
   `;
+};
+
+const openWorkDialog = (work) => {
+  if (!workDialog) {
+    return;
+  }
+
+  workDialogTitle.textContent = work.title ?? "";
+  workDialogDescription.textContent = work.description ?? "";
+  workDialogRole.textContent = formatTagsText(work.tags);
+
+  const usedAi = String(work.usedAi ?? "").trim();
+
+  if (usedAi) {
+    workDialogAi.textContent = usedAi;
+    workDialogAiWrap.hidden = false;
+  } else {
+    workDialogAi.textContent = "";
+    workDialogAiWrap.hidden = true;
+  }
+
+  if (work.thumbnail?.url) {
+    workDialogImage.src = work.thumbnail.url;
+    workDialogImage.hidden = false;
+  } else {
+    workDialogImage.removeAttribute("src");
+    workDialogImage.hidden = true;
+  }
+
+  if (work.url) {
+    workDialogLink.href = work.url;
+    workDialogLink.hidden = false;
+  } else {
+    workDialogLink.hidden = true;
+  }
+
+  workDialog.showModal();
+};
+
+const closeWorkDialog = () => {
+  workDialog?.close();
 };
 
 const fetchAllWorks = async () => {
@@ -97,7 +161,12 @@ const fetchAllWorks = async () => {
     throw new Error("config.js に serviceDomain と apiKey を設定してください。");
   }
 
-  const endpoint = `https://${config.serviceDomain}.microcms.io/api/v1/works`;
+  const endpoint = new URL(
+    `https://${config.serviceDomain}.microcms.io/api/v1/works`
+  );
+  endpoint.searchParams.set("limit", "100");
+  endpoint.searchParams.set("orders", "-publishedAt");
+
   const response = await fetch(endpoint, {
     headers: {
       "X-MICROCMS-API-KEY": config.apiKey,
@@ -144,6 +213,10 @@ const init = async () => {
 
   try {
     allWorks = await fetchAllWorks();
+    worksById.clear();
+    allWorks.forEach((work) => {
+      worksById.set(work.id, work);
+    });
     switchCategory(getInitialCategory());
   } catch (error) {
     contentsEl.innerHTML = `<p>${escapeHtml(error.message)}</p>`;
@@ -155,6 +228,40 @@ navLinks.forEach((link) => {
     event.preventDefault();
     switchCategory(link.dataset.category ?? "all");
   });
+});
+
+contentsEl?.addEventListener("click", (event) => {
+  const trigger = event.target.closest(".article__trigger");
+
+  if (!trigger) {
+    return;
+  }
+
+  const work = worksById.get(trigger.dataset.workId);
+
+  if (work) {
+    openWorkDialog(work);
+  }
+});
+
+workDialogClose?.addEventListener("click", closeWorkDialog);
+
+workDialog?.addEventListener("click", (event) => {
+  const rect = workDialog.getBoundingClientRect();
+  const isInDialog =
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom;
+
+  if (!isInDialog) {
+    closeWorkDialog();
+  }
+});
+
+workDialog?.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeWorkDialog();
 });
 
 init();
