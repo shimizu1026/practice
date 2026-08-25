@@ -100,21 +100,7 @@
     grid-row: span 4;
     align-self: start;
     margin-block-end: 24px;
-  }
-
-  .article__link,
-  .article__trigger {
-    display: contents;
-  }
-
-  .article__trigger {
     cursor: pointer;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    font: inherit;
-    color: inherit;
-    text-align: inherit;
   }
 }
 
@@ -222,8 +208,9 @@
     position: relative;
     width: min(92vw, 640px);
     max-height: 90vh;
-    padding: 0;
+    padding: 40px 50px;
     border: 0;
+    border-radius: 30px;
     overflow: auto;
     background: #fff;
     color: var(--color-primary);
@@ -257,7 +244,7 @@
   }
 
   .work-dialog__body {
-    padding: 32px 40px 40px;
+    padding-block-start: 32px;
   }
 
   .work-dialog__title {
@@ -290,5 +277,20 @@
     margin-block-start: 24px;
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+
+  .work-dialog--banner {
+    width: min(95vw, 900px);
+  }
+
+  .work-dialog--banner .work-dialog__media {
+    aspect-ratio: auto;
+  }
+
+  .work-dialog--banner .work-dialog__image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
   }
 }

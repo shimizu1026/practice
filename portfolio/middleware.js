@@ -14,7 +14,11 @@ export default function middleware(request) {
         user === process.env.BASIC_AUTH_USER &&
         password === process.env.BASIC_AUTH_PASSWORD
       ) {
-        return;
+        return new Response(null, {
+          headers: {
+            "x-middleware-next": "1",
+          },
+        });
       }
     }
   }
