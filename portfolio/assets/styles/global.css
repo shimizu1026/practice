@@ -20,6 +20,10 @@
 		--to-vi-sm: calc(100vi/var(--design-size-sm));
 		--to-vi-lg: calc(100vi/var(--design-size-lg));
 
+    --font-size-base: calc(16 * var(--to-rem));
+    --font-size-sm: calc(14 * var(--to-rem));
+    --font-size-lg: calc(24 * var(--to-rem));
+
     --font-serif-ja: "Zen Old Mincho", serif;
 
     --space-page: 5vi;
@@ -52,6 +56,7 @@
     padding-inline: var(--space-page);
     min-height: 100vh;
     font-family: var(--font-serif-ja);
+    font-size: var(--font-size-base);
   }
 
   .header {
@@ -171,12 +176,12 @@
 
   .article__tags {
     grid-row: 3;
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
   }
 
   .article__year {
     grid-row: 4;
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
   }
 
   .article:nth-child(3n + 1),
@@ -211,7 +216,7 @@
     padding: 40px 50px;
     border: 0;
     border-radius: 30px;
-    overflow: auto;
+    overflow: hidden auto;
     background: #fff;
     color: var(--color-primary);
   }
@@ -227,7 +232,7 @@
     z-index: 1;
     inline-size: 32px;
     block-size: 32px;
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     line-height: 1;
   }
 
@@ -248,7 +253,7 @@
   }
 
   .work-dialog__title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
   }
 
   .work-dialog__description {
@@ -264,7 +269,7 @@
   }
 
   .work-dialog__meta-label {
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
   }
 
   .work-dialog__role,
@@ -277,6 +282,11 @@
     margin-block-start: 24px;
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+
+  .work-dialog__link[hidden],
+  .work-dialog__meta-item[hidden] {
+    display: none !important;
   }
 
   .work-dialog--banner {
