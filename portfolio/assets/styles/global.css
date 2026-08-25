@@ -272,7 +272,7 @@
     margin-block-start: 8px;
   }
 
-  .work-dialog__link {
+  .work-dialog__link:not([hidden]) {
     display: inline-block;
     margin-block-start: 24px;
     text-decoration: underline;

@@ -182,6 +182,7 @@ const openWorkDialog = (work) => {
     workDialogLink.href = work.url;
     workDialogLink.hidden = false;
   } else {
+    workDialogLink.removeAttribute("href");
     workDialogLink.hidden = true;
   }
 
