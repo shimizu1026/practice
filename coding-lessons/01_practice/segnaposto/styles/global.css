@@ -611,6 +611,14 @@
 
   /* Drawer */
   .drawer {
+    --drawer-list-start-translate-x: 1rem;
+    --drawer-list-start-opacity: 0;
+
+    /* メニューが閉じているとき */
+    --drawer-list-translate-x: var(--drawer-list-start-translate-x);
+    --drawer-list-opacity: var(--drawer-list-start-opacity);
+    --drawer-list-delay: 0s; /*メニューが閉じるときのディレイ*/
+
     position: fixed; /*念のため*/
     inset: auto;
     position-anchor: auto;
@@ -620,5 +628,56 @@
 
     inset-block-start: anchor(bottom);
     inset-inline-end: anchor(right);
+    color: var(--color-brown-900);
+    transition: var(--duration-fast) var(--ease-out-quart);
+    transition-property: display, overlay;
+    transition-behavior: allow-discrete; /*ディスプレイがアニメーション可能になる*/
+
+    /* ポップオーバーが開いているとき */
+    &:popover-open {
+      --drawer-list-translate-x: 0;
+      --drawer-list-opacity: 1;
+      --drawer-list-delay: 0.08s;
+    }
+
+    @media (width>=1024px) {
+      display: none;
+    }
+  }
+  .drawer__list {
+    display: block grid;
+    gap: calc(8 * var(--to-rem));
+    text-align: end;
+
+    li {
+      translate: var(--drawer-list-translate-x) 0;
+      opacity: var(--drawer-list-opacity);
+      transition: var(--duration-fast) var(--ease-out-quart);
+      transition-property: opacity, translate;
+      transition-delay: calc((sibling-index() - 1) * var(--drawer-list-delay));
+
+      /* アニメーション開始時 */
+      @starting-style {
+        translate: var(--drawer-list-start-translate-x);
+        opacity: var(--drawer-list-start-opacity);
+      }
+    }
+
+    a {
+      display: inline flow-root;
+      text-decoration: none;
+      font-size: calc(16 * var(--to-rem));
+      font-weight: 700;
+      letter-spacing: var(--tracking-wide);
+
+      &:lang(en) {
+        font-family: var(--font-serif-en);
+      }
+
+      &:hover,
+      &:focus-visible {
+        opacity: 0.6;
+      }
+    }
   }
 }
