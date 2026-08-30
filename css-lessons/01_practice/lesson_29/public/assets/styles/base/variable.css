@@ -12,7 +12,7 @@
   --base-font-family: "Noto Serif JP", sans-serif;
   --base-font-weight: 500;
   --base-font-weight-b: 600;
-  --font-size-xsmal: calc(12 * var(--torem));
+  --font-size-xsmall: calc(12 * var(--torem));
   --font-size-sm: calc(14 * var(--torem));
   --font-size-md: calc(16 * var(--torem));
   --font-size-l: calc(18 * var(--torem));
