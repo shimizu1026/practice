@@ -54,6 +54,9 @@
       --grid-col-gap: calc(24 * var(--to-vi-lg));
     }
 
+    /*Radius*/
+    --radius-full: calc(infinity * 1px);
+
     /* Animation */
     /* 早めにしたいとき */
     --duration-fast: 0.3s;
@@ -693,10 +696,16 @@
 
   .hero__figure {
     aspect-ratio: 1;
+    border-radius: var(--radius-full) var(--radius-full) 0 0;
+    overflow: hidden;
+    margin-inline: calc(16 * var(--to-rem));
+
     @media (width >= 1024px) {
       --row-start: 1;
       --col-start: 4;
       --col-end: span 6;
+
+      margin-inline: 0;
     }
   }
 
@@ -709,10 +718,36 @@
   }
 
   .hero_head {
+    text-align: center;
+    margin-block-start: calc(42 * var(--to-rem));
     @media (width >= 1024px) {
       --row-start: 1;
       --col-start: -4;
       --col-end: span 2;
+
+      justify-items: center;
+      text-align: start;
+
+      margin-block-start: calc(64 * var(--to-vi-lg));
+    }
+  }
+
+  .hero__lead {
+    font-size: clamp(1.5rem, 1.3143rem + 0.7619vw, 2rem);
+    font-weight: 700;
+
+    @media (width >= 1024px) {
+      writing-mode: vertical-rl;
+      letter-spacing: 0.25em;
+      line-height: 1.75;
+    }
+
+    & > span {
+      display: block flow;
+
+      &:not(:first-child) {
+        margin-inline-start: calc(43 / 32 * 1em);
+      }
     }
   }
 
