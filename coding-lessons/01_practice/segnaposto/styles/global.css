@@ -738,8 +738,8 @@
 
     @media (width >= 1024px) {
       writing-mode: vertical-rl;
-      letter-spacing: 0.25em;
-      line-height: 1.75;
+      letter-spacing: 0.25em; /*Figmaの行間（％）—　100%をemに*/
+      line-height: 1.75; /*Figmaのテキストレイヤーの横幅（＋間隔）/文字サイズ*/
     }
 
     & > span {
