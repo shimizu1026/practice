@@ -752,10 +752,17 @@
   }
 
   .hero_body {
+    margin-block-start: calc(24 * var(--to-rem));
+    text-align: center;
+
     @media (width >= 1024px) {
       --row-start: 1;
       --col-start: 2;
       --col-end: span 2;
+
+      text-align: start;
+      align-self: end;
+      margin-block-end: ;
     }
   }
 }
