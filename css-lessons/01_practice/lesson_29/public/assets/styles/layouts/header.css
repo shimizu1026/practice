@@ -57,3 +57,14 @@
     inline-size: calc(106 * var(--torem));
   }
 }
+
+.nav_global {
+  display: none;
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+    font-size: var(--font-size-l);
+    letter-spacing: var(--letter-spacing);
+    font-weight: 700;
+  }
+}
