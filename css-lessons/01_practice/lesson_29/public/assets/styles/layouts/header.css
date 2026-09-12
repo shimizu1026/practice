@@ -49,3 +49,11 @@
 .main {
   background-color: var(--base-color);
 }
+
+.header_logo {
+  inline-size: calc(66 * var(--torem));
+
+  @media screen and (min-width: 1440px) {
+    inline-size: calc(106 * var(--torem));
+  }
+}
