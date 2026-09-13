@@ -68,3 +68,8 @@
     font-weight: 700;
   }
 }
+
+.footer {
+  inline-size: 5vw;
+  padding-block-end: var(--spacer-l);
+}
