@@ -21,12 +21,21 @@
     --color-brown-900: #4d4229;
     --color-brown-950: #36332d;
 
-    /* Font */
+    /* Font Family */
     --font-serif-ja: "Zen Old Mincho", serif;
     --font-serif-en: "Playfair", serif;
     --font-display-en: "Playfair Display", serif;
 
     --tracking-wide: 0.05em;
+
+    /* Font Size */
+    --font-size-body-sm: calc(14 * var(--to-rem));
+    --font-size-body-md: calc(16 * var(--to-rem));
+
+    /* Leading */
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.65;
+    --leading-loose: 2;
 
     /* Container */
     /* --container-max-size: 1296px; */
@@ -763,6 +772,19 @@
       text-align: start;
       align-self: end;
       margin-block-end: calc(136 * var(--to-vi-lg));
+    }
+  }
+
+  .hero__text {
+    font-size: var(--font-size-body-sm);
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-wide);
+    /* text-wrap: balance; */
+    /* text-wrap: pretty; */
+    /* word-break: auto-phrase; */
+
+    & > span {
+      display: block flow;
     }
   }
 }
