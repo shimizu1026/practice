@@ -687,7 +687,7 @@
   .hero {
     container: hero / inline-size;
     margin-block-start: clamp(
-      49 * var(--to-rem),
+      48 * var(--to-rem),
       2.8143rem + 0.7619vi,
       56 * var(--to-rem)
     );
@@ -762,7 +762,7 @@
 
       text-align: start;
       align-self: end;
-      margin-block-end: ;
+      margin-block-end: calc(136 * var(--to-vi-lg));
     }
   }
 }
