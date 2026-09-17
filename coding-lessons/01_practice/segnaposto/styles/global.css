@@ -787,6 +787,24 @@
       display: block flow;
     }
   }
+  /* News */
+  .news {
+    inline-size: calc(100vi - var(--container-inset));
+    max-inline-size: 598px;
+    margin-block-start: clamp(
+      64 * var(--to-rem),
+      3.2571rem + 3.0476vi,
+      96 * var(--to-rem)
+    );
+    margin-inline-start: auto;
+    padding: calc(24 * var(--to-rem));
+    background-color: var(--color-natural-0);
+
+    @media (width >= 1024px) {
+      padding-block: calc(32 * var(--to-rem));
+      padding-inline: calc(40 * var(--to-rem)) calc(24 * var(--to-rem));
+    }
+  }
 }
 
 @layer utilities {
