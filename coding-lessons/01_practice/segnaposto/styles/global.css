@@ -799,8 +799,10 @@
     margin-inline-start: auto;
     padding: calc(24 * var(--to-rem));
     background-color: var(--color-natural-0);
+    border-radius: calc(24 * var(--to-rem)) 0 0 calc(24 * var(--to-rem));
 
     @media (width >= 1024px) {
+      border-radius: var(--radius-full) 0 0 var(--radius-full);
       padding-block: calc(32 * var(--to-rem));
       padding-inline: calc(40 * var(--to-rem)) calc(24 * var(--to-rem));
     }
