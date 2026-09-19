@@ -785,6 +785,7 @@
 
     & > span {
       display: block flow;
+      word-break: keep-all;
     }
   }
   /* News */
