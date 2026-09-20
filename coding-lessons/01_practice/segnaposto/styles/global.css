@@ -31,7 +31,7 @@
     /* Font Size */
     --font-size-body-sm: calc(14 * var(--to-rem));
     --font-size-body-md: calc(16 * var(--to-rem));
-    --font-size-display: clamp(4rem, 1.771rem + 9.14vw, 10rem);
+    --font-size-display: max(64 * var(--to-rem), 1.771rem + 9.14vw);
 
     /* Leading */
     --leading-normal: 1.5;
@@ -723,11 +723,15 @@
     font-size: var(--font-size-display);
     font-family: var(--font-display-en);
     text-align: center;
+    justify-self: center;
     color: var(--color-natural-0);
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: var(--tracking-wide);
-    
+    /* margin-block-start: calc(-1 *(124 * var(--to-vi-lg))); */
+    margin-block-start: calc(-1 *(124 / 160 * 1em));
+    white-space: nowrap;
+
     @media (width >= 1024px) {
       --row-start: 2;
       --col-start: 1;
