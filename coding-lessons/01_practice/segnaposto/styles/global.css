@@ -31,6 +31,7 @@
     /* Font Size */
     --font-size-body-sm: calc(14 * var(--to-rem));
     --font-size-body-md: calc(16 * var(--to-rem));
+    --font-size-display: clamp(4rem, 1.771rem + 9.14vw, 10rem);
 
     /* Leading */
     --leading-normal: 1.5;
