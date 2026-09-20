@@ -720,6 +720,14 @@
   }
 
   .hero__caption {
+    font-size: var(--font-size-display);
+    font-family: var(--font-display-en);
+    text-align: center;
+    color: var(--color-natural-0);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-wide);
+    
     @media (width >= 1024px) {
       --row-start: 2;
       --col-start: 1;
