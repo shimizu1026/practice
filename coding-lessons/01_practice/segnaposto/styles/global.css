@@ -804,6 +804,8 @@
   /* News */
   .news {
     --_radius: calc(24 * var(--to-rem));
+    display: block grid;
+    row-gap: calc(8 * var(--to-rem));
     inline-size: calc(100vi - var(--container-inset));
     max-inline-size: 598px;
     margin-block-start: clamp(
@@ -818,6 +820,10 @@
 
     @media (width >= 1024px) {
       --_radius: var(--radius-full);
+
+      column-gap: calc(40 * var(--to-rem));
+      align-items: center;
+      grid-template-columns: max-content 1fr;
       padding-block: calc(32 * var(--to-rem));
       padding-inline: calc(40 * var(--to-rem)) calc(24 * var(--to-rem));
     }
