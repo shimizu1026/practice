@@ -803,6 +803,7 @@
   }
   /* News */
   .news {
+    --_radius: calc(24 * var(--to-rem));
     inline-size: calc(100vi - var(--container-inset));
     max-inline-size: 598px;
     margin-block-start: clamp(
@@ -813,10 +814,10 @@
     margin-inline-start: auto;
     padding: calc(24 * var(--to-rem));
     background-color: var(--color-natural-0);
-    border-radius: calc(24 * var(--to-rem)) 0 0 calc(24 * var(--to-rem));
+    border-radius: var(--_radius) 0 0 var(--_radius);
 
     @media (width >= 1024px) {
-      border-radius: var(--radius-full) 0 0 var(--radius-full);
+      --_radius: var(--radius-full);
       padding-block: calc(32 * var(--to-rem));
       padding-inline: calc(40 * var(--to-rem)) calc(24 * var(--to-rem));
     }
