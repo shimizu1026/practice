@@ -828,6 +828,24 @@
       padding-inline: calc(40 * var(--to-rem)) calc(24 * var(--to-rem));
     }
   }
+
+  .news__title {
+    letter-spacing: var(--tracking-wide);
+    font-size: calc(16 * var(--to-rem));
+
+  }
+
+  /* Post */
+.post {
+  display: block grid;
+  grid-template-columns: max-content 1fr max-content;
+  column-gap: calc(16 * var(--to-rem));
+  align-items: center;
+}
+
+.post__date {
+  align-self: start;
+}
 }
 
 @layer utilities {
