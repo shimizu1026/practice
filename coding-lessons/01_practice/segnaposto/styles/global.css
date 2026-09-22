@@ -845,6 +845,17 @@
 
 .post__date {
   align-self: start;
+  font-family: var(--font-serif-en);
+  font-size: calc(12 * var(--to-rem));
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-brown-950);
+}
+
+.post__title {
+  font-size: calc(12 * var(--to-rem));
+  letter-spacing: var(--tracking-wide);
+  font-weight: 700;
+  color: var(--color-brown-950);
 }
 }
 
