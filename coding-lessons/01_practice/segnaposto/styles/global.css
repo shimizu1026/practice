@@ -524,7 +524,7 @@
     --_size: clamp(24 * var(--to-rem), 1.3143rem + 0.7619vw, 32 * var(--to-rem));
 
     display: block grid;
-    place-content: center;
+    align-content: center;
     inline-size: var(--_size);
     block-size: var(--_size);
     aspect-ratio: 1;
