@@ -503,6 +503,17 @@
       grid-template-columns: 1fr max-content;
     }
 
+    &[command="close"] {
+      grid-template-columns: 1fr max-content;
+      grid-template-areas: ". icon";
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      grid-area: icon;
+    }
+
     &:focus-visible {
       background-color: var(--button-hover-bg-color, var(--color-brown-500));
     }
