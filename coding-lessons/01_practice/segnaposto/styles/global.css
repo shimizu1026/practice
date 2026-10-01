@@ -8,8 +8,8 @@
 
     /* Tools */
     --to-rem: calc(1rem / 16);
-    --to-vi-sm: calc(100vi / var(--design-size-sm));
-    --to-vi-lg: calc(100vi / var(--design-size-lg));
+    --to-vi-sm: calc(100svi / var(--design-size-sm));
+    --to-vi-lg: calc(100svi / var(--design-size-lg));
 
     /* Color */
     /* primitive */
@@ -901,6 +901,20 @@
   letter-spacing: var(--tracking-wide);
   font-weight: 700;
   color: var(--color-brown-950);
+}
+/* Modal-News */
+.modal-news {
+  inline-size: calc(100svi - (40 * var(--to-vi-sm)));
+  max-inline-size: 856px;
+  block-size: 80svb;
+  padding: clamp(0.0625rem, 0.6286rem + 1.5238vw, 2rem);
+  background-color: var(--color-natural-0);
+  box-shadow: 0 1px 16px rgb(0 0 0 / 0.1);
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+    backdrop-filter: blur(8px);
+  }
 }
 }
 
