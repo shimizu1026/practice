@@ -38,6 +38,7 @@
     --font-size-display: max(24 * var(--to-rem), 1.771rem + 9.14vw);
 
     /* Leading */
+    --leading-tight: 1.35;
     --leading-normal: 1.5;
     --leading-relaxed: 1.65;
     --leading-loose: 2;
@@ -915,6 +916,22 @@
     background-color: rgb(0 0 0 / 0.5);
     backdrop-filter: blur(8px);
   }
+}
+
+/*Modal*/
+.modal-header {
+  display: block grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+
+.modal__title {
+  font-family: var(--font-display-en);
+  font-weight: 500;
+  font-size: calc(24 * var(--to-rem));
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-tight);
+  
 }
 }
 
