@@ -474,14 +474,18 @@
 
   /* Button Primary */
   .button-primary {
+    --_padding-inline: var(--button-padding-inline, calc(16 * var(--to-rem)));
+    --_padding-block: var(--button-padding-block, calc(8 * var(--to-rem)));
+    --_font-size: var(--button-font-size, inherit);
+
     display: inline grid;
     column-gap: calc(8 * var(--to-rem));
     background-color: var(--button-bg-color, var(--color-brown-700));
     align-items: center;
     color: var(--button-color, var(--color-natural-0));
-    font-size: var(--button-label-size);
-    padding-inline: calc(16 * var(--to-rem));
-    padding-block: calc(8 * var(--to-rem));
+    font-size: var(--_font-size);
+    padding-inline: var(--_padding-inline);
+    padding-block: var(--_padding-block);
     text-decoration: none;
     border-radius: calc(8 * var(--to-rem));
     letter-spacing: var(--tracking-wide);
@@ -512,6 +516,16 @@
     &::after {
       content: "";
       grid-area: icon;
+      block-size: 1px;
+      inline-size: 1em;
+      background-color: currentColor;
+    }
+
+    &::before {
+      rotate: 45deg;
+    }
+    &::after {
+      rotate: -45deg;
     }
 
     &:focus-visible {
@@ -931,6 +945,9 @@
 
 /*Modal*/
 .modal-header {
+  --button-font-size: calc(12 * var(var(--to-rem)));
+  --button-padding-inline: 1em;
+
   display: block grid;
   grid-template-columns: 1fr max-content;
   align-items: center;
