@@ -1,0 +1,757 @@
+﻿diff --git a/coding-lessons/01_practice/segnaposto/index.html b/coding-lessons/02_completed/segnaposto/lesson_12/index.html
+index 5c53c62..be0b90b 100644
+--- a/coding-lessons/01_practice/segnaposto/index.html
++++ b/coding-lessons/02_completed/segnaposto/lesson_12/index.html
+@@ -1 +1 @@
+-<!DOCTYPE html>
++<!doctype html>
+@@ -6,4 +6,2 @@
+-    <meta
+-      name="description"
+-      content="Segnaposto縺ｯ縲∵擲莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ縺ｧ縺吶・
+-    />
++    <meta name="robots" content="noindex, nofollow" />
++    <meta name="description" content="Segnaposto縺ｯ縲∵擲莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ縺ｧ縺吶・ />
+@@ -11,13 +9,4 @@
+-    <meta
+-      property="og:title"
+-      content="Segnaposto | 譚ｱ莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ"
+-    />
+-    <meta
+-      property="og:description"
+-      content="Segnaposto縺ｯ縲∵擲莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ縺ｧ縺吶・
+-    />
+-    <meta
+-      property="og:image"
+-      content="https://segnaposto.example.com/ogp.png"
+-    />
+-    <meta property="og:alt" content="Segnaposto" />
++    <meta property="og:title" content="Segnaposto | 譚ｱ莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ" />
++    <meta property="og:description" content="Segnaposto縺ｯ縲∵擲莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ縺ｧ縺吶・ />
++    <meta property="og:image" content="https://segnaposto.example.com/ogp.png" />
++    <meta property="og:image:alt" content="Segnaposto" />
+@@ -29,3 +18 @@
+-    <title>
+-      Segnaposto | 譚ｱ莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ
+-    </title>
++    <title>Segnaposto | 譚ｱ莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ縺ｮ陦苓ｧ偵↓縺ゅｋ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繝ｬ繧ｹ繝医Λ繝ｳ</title>
+@@ -35 +21,0 @@
+-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Zen+Old+Mincho&display=swap"
+@@ -36,0 +23 @@
++      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Zen+Old+Mincho&display=swap"
+@@ -38 +25 @@
+-    <link rel="stylesheet" href="styles/global.css" />
++    <link rel="stylesheet" href="./styles/global.css" />
+@@ -40,4 +27,5 @@
+-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+-    <script src="/scripts/libs/invoker-polyfill.js" defer></script>
++    <link rel="icon" href="../favicon.ico" sizes="32x32" />
++    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
++    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180" />
++    <script src="./scripts/libs/invoker-polyfill.js" defer></script>
++    <script src="./scripts/main.js" defer></script>
+@@ -45 +32,0 @@
+-
+@@ -49,8 +36,2 @@
+-        <a href="/" class="logo">
+-          <img
+-            src="./images/logo.svg"
+-            alt="Segnaposto"
+-            width="227"
+-            height="37"
+-            decoding="async"
+-          />
++        <a href="./" class="logo">
++          <img src="../assets/images/logo.svg" alt="Segnaposto" width="227" height="37" />
+@@ -59,18 +40,6 @@
+-      <nav class="header__nav" aria-label="繧ｰ繝ｭ繝ｼ繝舌Ν">
+-        <button
+-          type="button"
+-          class="button-hamburger"
+-          command="toggle-popover"
+-          commandfor="drawer"
+-          aria-label="繝｡繝九Η繝ｼ"
+-        >
+-          <svg
+-            width="24"
+-            height="24"
+-            viewBox="0 0 24 24"
+-            fill="none"
+-            aria-hidden="true"
+-          >
+-            <line x1="4" y1="6.5" x2="20" y2="6.5" stroke="#36332D" />
+-            <line x1="4" y1="11.5" x2="20" y2="11.5" stroke="#36332D" />
+-            <line x1="4" y1="16.5" x2="20" y2="16.5" stroke="#36332D" />
++      <nav class="header__nav" aria-label="繧ｰ繝ｭ繝ｼ繝舌Ν繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ">
++        <button type="button" class="button-hamburger" command="toggle-popover" commandfor="drawer" aria-label="繝｡繝九Η繝ｼ">
++          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
++            <line x1="4" y1="11.5" x2="20" y2="11.5" />
++            <line x1="4" y1="11.5" x2="20" y2="11.5" />
++            <line x1="4" y1="11.5" x2="20" y2="11.5" />
+@@ -80 +49 @@
+-          <ul lang="en" class="drawer__list">
++          <ul>
+@@ -86 +55 @@
+-        <ul class="nav-global" lang="en">
++        <ul class="nav-global">
+@@ -90,9 +59,4 @@
+-        <p class="nav-action" lang="en">
+-          <a href="#reservation" class="button-primary">
+-            <svg
+-              width="24"
+-              height="24"
+-              viewBox="0 0 24 24"
+-              fill="none"
+-              aria-hidden="true"
+-            >
++
++        <p class="nav-action">
++          <a href="#reservation" lang="en" class="button-primary">
++            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+@@ -107 +71 @@
+-            Reservation
++            <span>Reservation</span>
+@@ -113 +77 @@
+-    <main class="main">
++    <main>
+@@ -119,3 +83,2 @@
+-                class="cover"
+-                src="./images/hero-image.png"
+-                srcset="./images/hero-image@2x.png 2x"
++                src="../assets/images/hero-image.png"
++                srcset="../assets/images/hero-image@2x.png 2x"
+@@ -124,0 +88 @@
++                class="cover"
+@@ -125,0 +90 @@
++                data-intro="1"
+@@ -128,6 +93,4 @@
+-            <p class="hero__caption" lang="it">Segnaposto</p>
+-            <div class="hero_head">
+-              <p class="hero__lead">
+-                <span>陦苓ｧ偵↓縲∵楔遨ｺ縺ｮ</span>
+-                <span>繧､繧ｿ繝ｪ繧｢繝ｳ繧偵・/span>
+-              </p>
++            <p class="hero__caption" lang="it" data-intro="2">Segnaposto</p>
++
++            <div class="hero__head" data-intro="3">
++              <p class="hero__lead"><span>陦苓ｧ偵↓縲∵楔遨ｺ縺ｮ</span><span>繧､繧ｿ繝ｪ繧｢繝ｳ繧偵・/span></p>
+@@ -135,14 +98,3 @@
+-            <div class="hero_body">
+-              <p class="hero__text">
+-                <span>邏譚舌↓縺薙□繧上▲縺・/span>
+-                <span>
+-                  譫ｶ遨ｺ縺ｮ繝代せ繧ｿ縺ｨ
+-                  <wbr />
+-                  繝斐じ繧偵・-                </span>
+-                <span>
+-                  豌怜叙繧峨↑縺・-                  <wbr />
+-                  髮ｰ蝗ｲ豌励〒縺ｩ縺・◇縲・-                </span>
+-              </p>
++            <!-- /.hero__head -->
++            <div class="hero__body" data-intro="4">
++              <p class="hero__text"><span>邏譚舌↓縺薙□繧上▲縺・/span><span>譫ｶ遨ｺ縺ｮ繝代せ繧ｿ縺ｨ繝斐じ繧偵・/span><span>豌怜叙繧峨↑縺・峅蝗ｲ豌励〒縺ｩ縺・◇縲・/span></p>
+@@ -149,0 +102 @@
++            <!-- /.hero__body -->
+@@ -150,0 +104 @@
++          <!-- /.grid -->
+@@ -152 +106 @@
+-        <!-- container -->
++        <!-- /.container -->
+@@ -158,16 +112,11 @@
+-        <article class="post">
+-          <p class="post__date">
+-            <time datetime="2026-03-10">2026.03.10</time>
+-          </p>
+-          <p class="post__title">
+-            譏･蟄｣莨第･ｭ縺ｮ縺顔衍繧峨○・・026.03.10 縲・2026.05.01 ・・-          </p>
+-          <button
+-            type="button"
+-            class="button-more"
+-            command="show-modal"
+-            commandfor="news-modal"
+-          >
+-            <span class="visually-hidden">險倅ｺ九ｒ髢九￥</span>
+-          </button>
+-        </article>
++
++        <div class="news__body">
++          <article class="post">
++            <p class="post__date"><time datetime="2026-03-10">2026.03.10</time></p>
++            <p class="post__title">譏･蟄｣莨第･ｭ縺ｮ縺顔衍繧峨○・・026.03.10 縲・2026.05.01・・/p>
++            <button type="button" command="show-modal" commandfor="news-modal" class="button-more">
++              <span class="visually-hidden">險倅ｺ九ｒ髢九￥</span>
++            </button>
++          </article>
++        </div>
++        <!-- /.news__body -->
+@@ -175,7 +124,2 @@
+-      <dialog
+-        id="news-modal"
+-        closedby="any"
+-        class="modal-news"
+-        aria-labelledby="news-modal-heading"
+-        autofocus
+-      >
++
++      <dialog id="news-modal" closedby="any" aria-labelledby="news-modal-heading" class="modal-news">
+@@ -184,7 +128,2 @@
+-          <button
+-            type="button"
+-            class="button-primary"
+-            command="close"
+-            commandfor="news-modal"
+-          >
+-            髢峨§繧・+          <button type="button" command="close" commandfor="news-modal" class="button-primary">
++            <span>髢峨§繧・/span>
+@@ -195,2 +134,2 @@
+-            <p class="entry__date">
+-              <time datetime="2026-03-10">2026.03.10</time>
++            <p>
++              <time datetime="2026-03-10" class="entry__date">2026.03.10</time>
+@@ -198,3 +137 @@
+-            <h3 class="entry__title">
+-              譏･蟄｣莨第･ｭ縺ｮ縺顔衍繧峨○・・026.03.10 縲・2026.05.01 ・・-            </h3>
++            <h3 class="entry__title">譏･蟄｣莨第･ｭ縺ｮ縺顔衍繧峨○・・026.03.10 縲・2026.05.01・・/h3>
+@@ -204,4 +141 @@
+-            <p>
+-              蟷ｳ邏繧医ｊ縲ヾegnapsto繧偵＃諢幃｡ｧ縺・◆縺縺崎ｪ縺ｫ縺ゅｊ縺後→縺・＃縺悶＞縺ｾ縺吶・-              隱縺ｫ蜍晄焔縺ｪ縺後ｉ縲∽ｸ玖ｨ倥・譛滄俣繧呈丼蟄｣莨第･ｭ縺ｨ縺輔○縺ｦ縺・◆縺縺阪∪縺吶・-            </p>
++            <p>蟷ｳ邏繧医ｊ縲ヾegnaposto繧偵＃諢幃｡ｧ縺・◆縺縺崎ｪ縺ｫ縺ゅｊ縺後→縺・＃縺悶＞縺ｾ縺吶りｪ縺ｫ蜍晄焔縺ｪ縺後ｉ縲∽ｸ玖ｨ倥・譛滄俣繧呈丼蟄｣莨第･ｭ縺・◆縺励∪縺吶・/p>
+@@ -210,9 +144 @@
+-              莨第･ｭ荳ｭ縺ｯ縺比ｸ堺ｾｿ繧偵♀縺九￠縺・◆縺励∪縺吶′縲∽ｽ募穀縺皮炊隗｣雉懊ｊ縺ｾ縺吶ｈ縺・♀鬘倥＞逕ｳ縺嶺ｸ翫￡縺ｾ縺吶・-              縺ｪ縺翫∽ｼ第･ｭ譛滄俣荳ｭ繧ゅ＃莠育ｴ・ヵ繧ｩ繝ｼ繝縺九ｉ縺ｮ縺秘｣邨｡縺ｯ蜿励￠莉倥￠縺ｦ縺翫ｊ縺ｾ縺吶ゅ＞縺溘□縺・◆縺雁撫縺・粋繧上○縺ｫ縺､縺阪∪縺励※縺ｯ縲∝霧讌ｭ蜀埼幕蠕後↓鬆・ｬ｡縺碑ｿ比ｿ｡縺・◆縺励∪縺吶・-            </p>
+-            <p>
+-              蝟ｶ讌ｭ蜀埼幕縺ｯ2026蟷ｴ5譛・譌･・亥悄・峨ｒ莠亥ｮ壹＠縺ｦ縺翫ｊ縺ｾ縺吶・-              蜀埼幕蛻晄律繧医ｊ騾壼ｸｸ騾壹ｊ繝ｩ繝ｳ繝√・繝・ぅ繝翫・縺ｨ繧ゅ↓縺泌茜逕ｨ縺・◆縺縺代∪縺吶・-            </p>
+-            <p>
+-              髟ｷ譛溘・縺贋ｼ代∩繧偵＞縺溘□縺丈ｸｭ縲√せ繧ｿ繝・ヵ荳蜷後√ｈ繧願憶縺・♀譁咏炊縺ｨ繧ｵ繝ｼ繝薙せ繧偵♀螻翫￠縺ｧ縺阪ｋ繧医≧貅門ｙ繧呈紛縺医※縺ｾ縺・ｊ縺ｾ縺吶ゅ＃譚･蠎励ｒ蠢・ｈ繧翫♀蠕・■逕ｳ縺嶺ｸ翫￡縺ｦ縺翫ｊ縺ｾ縺吶・+              莨第･ｭ荳ｭ縺ｯ縺比ｸ堺ｾｿ繧偵♀縺九￠縺・◆縺励∪縺吶′縲∽ｽ募穀縺皮炊隗｣雉懊ｊ縺ｾ縺吶ｈ縺・♀鬘倥＞逕ｳ縺嶺ｸ翫￡縺ｾ縺吶ゅ↑縺翫∽ｼ第･ｭ譛滄俣荳ｭ繧ゅ＃莠育ｴ・ヵ繧ｩ繝ｼ繝縺九ｉ縺ｮ縺秘｣邨｡縺ｯ蜿励￠莉倥￠縺ｦ縺翫ｊ縺ｾ縺吶ゅ＞縺溘□縺・◆縺雁撫縺・粋繧上○縺ｫ縺､縺阪∪縺励※縺ｯ縲∝霧讌ｭ蜀埼幕蠕後↓鬆・ｬ｡縺碑ｿ比ｿ｡縺・◆縺励∪縺吶・@@ -219,0 +146,2 @@
++            <p>蝟ｶ讌ｭ蜀埼幕縺ｯ2026蟷ｴ5譛・譌･・亥悄・峨ｒ莠亥ｮ壹＠縺ｦ縺翫ｊ縺ｾ縺吶ょ・髢句・譌･繧医ｊ騾壼ｸｸ騾壹ｊ繝ｩ繝ｳ繝√・繝・ぅ繝翫・縺ｨ繧ゅ↓縺泌茜逕ｨ縺・◆縺縺代∪縺吶・/p>
++            <p>髟ｷ譛溘・縺贋ｼ代∩繧偵＞縺溘□縺丈ｸｭ縲√せ繧ｿ繝・ヵ荳蜷後√ｈ繧願憶縺・♀譁咏炊縺ｨ繧ｵ繝ｼ繝薙せ繧偵♀螻翫￠縺ｧ縺阪ｋ繧医≧貅門ｙ繧呈紛縺医※縺ｾ縺・ｊ縺ｾ縺吶ゅ＃譚･蠎励ｒ蠢・ｈ繧翫♀蠕・■逕ｳ縺嶺ｸ翫￡縺ｦ縺翫ｊ縺ｾ縺吶・/p>
+@@ -223,0 +152 @@
++
+@@ -230,45 +159,48 @@
+-          <figure class="concept__figure">
+-            <img
+-              src="./images/photo-interior.png"
+-              srcset="./images/photo-interior@2x.png 2x"
+-              alt="蠎怜・縺ｫ縺ゅｋ4莠ｺ縺後￠縺ｮ譛ｨ逶ｮ縺ｮ繝・・繝悶Ν縺ｨ讀・ｭ舌ゅユ繝ｼ繝悶Ν縺ｮ荳翫↓縺ｯ縺願干繧・♀逧ｿ縺檎ｽｮ縺・※縺ゅｋ"
+-              width="508"
+-              height="625"
+-              decoding="async"
+-              loading="lazy"
+-            />
+-          </figure>
+-          <section class="message">
+-            <h3 class="message__title">迚ｹ蛻･縺ｪ譌･縺倥ｃ縺ｪ縺上※縺・＞縲・/h3>
+-            <!-- /.message__title -->
+-            <p>
+-              譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｻ繝ｭ繝ｬ繝蟾槭〒菫ｮ讌ｭ繧堤ｩ阪ｓ縺繧ｷ繧ｧ繝輔′縲√％縺ｮ陦励↓謖√■蟶ｰ縺｣縺溘・縺ｯ闖ｯ繧・°縺ｪ繝ｬ繧ｷ繝斐〒縺ｯ縺ｪ縺上√碁｣滉ｺ九ｒ蝗ｲ繧譎る俣縺ｮ繧・◆縺九＆縲阪〒縺励◆縲・-            </p>
+-            <p>
+-              閧ｩ閧伜ｼｵ繧峨★縺ｫ縲√◆縺縺翫＞縺励＞繧ゅ・繧帝｣溘∋縺ｦ縺ｻ縺励＞縲・-              Segnaposto縺ｯ縺昴ｓ縺ｪ諤昴＞縺九ｉ逕溘∪繧後◆縲√≠縺ｪ縺溘・陦励・譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ縺ｧ縺吶・-            </p>
+-          </section>
+-          <!-- /.message -->
+-
+-          <figure>
+-            <img
+-              class="profile__figure"
+-              src="./images/photo-chef.png"
+-              srcset="./images/photo-chef2x.png 2x"
+-              alt="蜴ｨ謌ｿ縺ｧ繝代せ繧ｿ繧堤屁繧贋ｻ倥￠縺ｦ縺・ｋ繧ｪ繝ｼ繝翫・繧ｷ繧ｧ繝輔ゅム繝溘・荳ｭ譚・
+-              decoding="async"
+-              loading="lazy"
+-              width="469"
+-              height="256"
+-            />
+-          </figure>
+-
+-          <p>
+-            繧ｪ繝ｼ繝翫・繧ｷ繧ｧ繝・-            <br />
+-            <b class="profile__name">繝繝溘・荳ｭ譚・/b>
+-          </p>
+-          <p>
+-            譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｻ繝ｭ繝ｬ繝蟾槭↓縺ゅｋ譏滉ｻ倥″繝ｪ繧ｹ繝医Λ繝ｳ繝・〒10蟷ｴ髢謎ｿｮ讌ｭ繧堤ｩ阪∩縲∝ｸｰ蝗ｽ蠕後％縺ｮ陦励↓縲郡egnaposto縲阪ｒ繧ｪ繝ｼ繝励Φ縲ゅ檎音蛻･縺ｪ譌･縺縺代§繧・↑縺上∵律蟶ｸ縺ｫ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繧偵阪ｒ繝｢繝・ヨ繝ｼ縺ｫ縲∬か閧伜ｼｵ繧峨★縺ｫ讌ｽ縺励ａ繧狗ｩｺ髢薙ｒ螟ｧ蛻・↓縺励※縺・∪縺吶ょ慍蜈・・霎ｲ螳ｶ縺九ｉ逶ｴ騾√＆繧後ｋ蟄｣遽縺ｮ驥手除縺ｨ縲∵ｯ取悃莉募・繧後ｋ譁ｰ魄ｮ縺ｪ鬲壻ｻ九ｒ菴ｿ縺｣縺溘Γ繝九Η繝ｼ繧偵♀讌ｽ縺励∩縺上□縺輔＞縲・-          </p>
++          <div class="concept__body">
++            <div class="grid">
++              <figure class="concept__figure">
++                <img
++                  src="../assets/images/photo-interior.png"
++                  srcset="../assets/images/photo-interior@2x.png 2x"
++                  alt="蠎怜・縺ｫ縺ゅｋ4莠ｺ縺後￠縺ｮ譛ｨ逶ｮ縺ｮ繝・・繝悶Ν縺ｨ讀・ｭ舌ゅユ繝ｼ繝悶Ν縺ｮ荳翫↓縺ｯ縺願干繧・♀逧ｿ縺檎ｽｮ縺・※縺ゅｋ"
++                  width="416"
++                  height="625"
++                  class="cover"
++                  decoding="async"
++                  data-inview-trigger="clip"
++                />
++              </figure>
++              <section class="message">
++                <h3 class="message__title">迚ｹ蛻･縺ｪ譌･縺倥ｃ縺ｪ縺上※縺・＞縲・/h3>
++                <div class="message__body">
++                  <p>譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｻ繝ｭ繝ｬ繝蟾槭〒菫ｮ讌ｭ繧堤ｩ阪ｓ縺繧ｷ繧ｧ繝輔′縲√％縺ｮ陦励↓謖√■蟶ｰ縺｣縺溘・縺ｯ闖ｯ繧・°縺ｪ繝ｬ繧ｷ繝斐〒縺ｯ縺ｪ縺上√碁｣滉ｺ九ｒ蝗ｲ繧譎る俣縺ｮ繧・◆縺九＆縲阪〒縺励◆</p>
++                  <p>閧ｩ閧伜ｼｵ繧峨★縺ｫ縲√◆縺縺翫＞縺励＞繧ゅ・繧帝｣溘∋縺ｦ縺ｻ縺励＞縲・/p>
++                  <p>Segnaposto縺ｯ縺昴ｓ縺ｪ諤昴＞縺九ｉ逕溘∪繧後◆縲√≠縺ｪ縺溘・陦励・譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ縺ｧ縺吶・/p>
++                </div>
++                <!-- /.message__body -->
++              </section>
++              <div class="profile">
++                <figure class="profile__figure">
++                  <img
++                    src="../assets/images/photo-chef.png"
++                    srcset="../assets/images/photo-chef@2x.png 2x"
++                    alt="蜴ｨ謌ｿ縺ｧ繝代せ繧ｿ繧堤屁繧贋ｻ倥￠縺ｦ縺・ｋ繧ｪ繝ｼ繝翫・繧ｷ繧ｧ繝輔ゅム繝溘・荳ｭ譚・
++                    width="469"
++                    height="256"
++                    class="cover"
++                    data-inview-trigger="clip"
++                  />
++                </figure>
++                <div class="profile__body">
++                  <p><span class="profile__role">繧ｪ繝ｼ繝翫・繧ｷ繧ｧ繝・/span> <b class="profile__name">繝繝溘・荳ｭ譚・/b></p>
++                  <p>
++                    譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｻ繝ｭ繝ｬ繝蟾槭↓縺ゅｋ譏滉ｻ倥″繝ｪ繧ｹ繝医Λ繝ｳ繝・〒10蟷ｴ髢謎ｿｮ讌ｭ繧堤ｩ阪∩縲∝ｸｰ蝗ｽ蠕後％縺ｮ陦励↓縲郡egnaposto縲阪ｒ繧ｪ繝ｼ繝励Φ縲ゅ檎音蛻･縺ｪ譌･縺縺代§繧・↑縺上∵律蟶ｸ縺ｫ譫ｶ遨ｺ縺ｮ繧､繧ｿ繝ｪ繧｢繝ｳ繧偵阪ｒ繝｢繝・ヨ繝ｼ縺ｫ縲∬か閧伜ｼｵ繧峨★縺ｫ讌ｽ縺励ａ繧狗ｩｺ髢薙ｒ螟ｧ蛻・↓縺励※縺・∪縺吶ょ慍蜈・・霎ｲ螳ｶ縺九ｉ逶ｴ騾√＆繧後ｋ蟄｣遽縺ｮ驥手除縺ｨ縲∵ｯ取悃莉募・繧後ｋ譁ｰ魄ｮ縺ｪ鬲壻ｻ九ｒ菴ｿ縺｣縺溘Γ繝九Η繝ｼ繧偵♀讌ｽ縺励∩縺上□縺輔＞縲・+                  </p>
++                </div>
++                <!-- /.profile__body -->
++              </div>
++              <!-- /.profile -->
++            </div>
++            <!-- /.grid -->
++          </div>
++          <!-- /.concept__body -->
+@@ -285,109 +217,97 @@
+-          <article class="card">
+-            <h3 class="card__title">繝槭Ν繧ｲ繝ｪ繝ｼ繧ｿ</h3>
+-            <p class="card__badge">縺翫☆縺吶ａ</p>
+-            <figure class="card__thumbnail">
+-              <img
+-                src="./images/photo-margherita.png"
+-                srcset="./images/photo-margherita@2x.png 2x"
+-                alt="6譫壹↓繧ｹ繝ｩ繧､繧ｹ縺輔ｌ縺溘・繝ｫ繧ｲ繝ｪ繝ｼ繧ｿ"
+-                width="416"
+-                height="277"
+-                decoding="async"
+-                loading="lazy"
+-              />
+-            </figure>
+-            <p class="card__description">
+-              繝医・繝医・繝｢繝・ヤ繧｡繝ｬ繝ｩ繝ｻ繝舌ず繝ｫ縺ｮ繧ｯ繝ｩ繧ｷ繝・け繝斐じ
+-            </p>
+-            <p class="card__price">ﾂ･1,480</p>
+-          </article>
+-          <article class="card">
+-            <h3 class="card__title">繧ｫ繝ｫ繝懊リ繝ｼ繝ｩ</h3>
+-            <figure class="card__thumbnail">
+-              <img
+-                src="./images/photo-carbonara.png"
+-                srcset="./images/photo-carbonara@2x.png 2x"
+-                alt="蜑翫▲縺溘メ繝ｼ繧ｺ縺後◆縺｣縺ｷ繧翫°縺九▲縺溘ヱ繝ｳ繝√ぉ繝・ち蜈･繧翫・繧ｫ繝ｫ繝懊リ繝ｼ繝ｩ"
+-                width="416"
+-                height="277"
+-                decoding="async"
+-                loading="lazy"
+-              />
+-            </figure>
+-            <p class="card__description">
+-              豼・字繧ｯ繝ｪ繝ｼ繝縺ｨ閾ｪ螳ｶ陬ｽ繝代Φ繝√ぉ繝・ち縺ｮ繧ｹ繝代ご繝・ユ繧｣
+-            </p>
+-            <p class="card__price">ﾂ･1,580</p>
+-          </article>
+-          <article class="card">
+-            <h3 class="card__title">繝・ぅ繝ｩ繝溘せ</h3>
+-            <figure class="card__thumbnail">
+-              <img
+-                src="./images/photo-tiramisu.png"
+-                srcset="./images/photo-tiramisu@2x.png 2x"
+-                alt="繧ｳ繧ｳ繧｢繝代え繝繝ｼ縺ｨ襍､縺・ｮ溘・縺ｮ縺｣縺溘ユ繧｣繝ｩ繝溘せ"
+-                width="416"
+-                height="277"
+-                decoding="async"
+-                loading="lazy"
+-              />
+-            </figure>
+-            <p class="card__description">
+-              繝槭せ繧ｫ繝ｫ繝昴・繝阪→繧ｨ繧ｹ繝励Ξ繝・た縺ｮ螳夂分繝・じ繝ｼ繝・-            </p>
+-            <p class="card__price">ﾂ･680</p>
+-          </article>
+-          <article class="card">
+-            <h3 class="card__title">繝ｩ繧ｶ繝九い</h3>
+-            <figure class="card__thumbnail">
+-              <img
+-                src="./images/photo-lasagna.png"
+-                srcset="./images/photo-lasagna@2x.png 2x"
+-                alt="縺ｨ繧阪￠縺溘メ繝ｼ繧ｺ縺後◆縺｣縺ｷ繧翫・繝ｩ繧ｶ繝九い"
+-                width="416"
+-                height="277"
+-                decoding="async"
+-                loading="lazy"
+-              />
+-            </figure>
+-            <p class="card__description">
+-              閾ｪ螳ｶ陬ｽ繝溘・繝医た繝ｼ繧ｹ縺ｨ雍・ｲ｢縺ｪ繝√・繧ｺ縺ｮ繧ｪ繝ｼ繝悶Φ辟ｼ縺・-            </p>
+-            <p class="card__price">ﾂ･1,680</p>
+-          </article>
+-          <article class="card">
+-            <h3 class="card__title">繧ｫ繝励Ξ繝ｼ繧ｼ</h3>
+-            <figure class="card__thumbnail">
+-              <img
+-                src="./images/photo-caprese.png"
+-                srcset="./images/photo-caprese@2x.png 2x"
+-                alt="縺上＠蠖｢蛻・ｊ縺ｫ縺励◆繝医・繝医→蝗幄ｧ偵￥蛻・▲縺溘Δ繝・ヤ繧｡繝ｬ繝ｩ繝√・繧ｺ縺ｫ繧ｪ繝ｪ繝ｼ繝悶が繧､繝ｫ縺後°縺九▲縺ｦ縺・ｋ 繝ｭ繝ｼ繧ｺ繝槭Μ繝ｼ豺ｻ縺・
+-                width="416"
+-                height="277"
+-                decoding="async"
+-                loading="lazy"
+-              />
+-            </figure>
+-            <p class="card__description">
+-              螳檎・繝医・繝医→繝｢繝・ヤ繧｡繝ｬ繝ｩ繝ｻ繝舌ず繝ｫ繧ｪ繧､繝ｫ縺後￠
+-            </p>
+-            <p class="card__price">ﾂ･980</p>
+-          </article>
+-          <article class="card">
+-            <h3 class="card__title">繝代Φ繝翫さ繝・ち</h3>
+-            <figure class="card__thumbnail">
+-              <img
+-                src="./images/photo-panna-cotta.png"
+-                srcset="./images/photo-panna-cotta@2x.png 2x"
+-                alt="邊臥らｳ悶→繝溘Φ繝医ｒ縺ゅ＠繧峨＞縲√＞縺｡縺斐・繧ｽ繝ｼ繧ｹ縺ｨ繝溘Ν繧ｯ繝励Μ繝ｳ縺梧万繧√↓2螻､縺ｫ縺ｪ縺｣縺ｦ縺・ｋ 荳邱偵↓縺・■縺斐ｄ襍､縺・ｮ溘′豺ｻ縺医※縺ゅｋ"
+-                width="416"
+-                height="277"
+-                decoding="async"
+-                loading="lazy"
+-              />
+-            </figure>
+-            <p class="card__description">
+-              縺ｪ繧√ｉ縺九↑繝溘Ν繧ｯ繝励Μ繝ｳ繝ｻ繝吶Μ繝ｼ繧ｽ繝ｼ繧ｹ豺ｻ縺・-            </p>
+-            <p class="card__price">ﾂ･680</p>
+-          </article>
++          <div class="menu__body">
++            <article class="card">
++              <h3 class="card__title">繝槭Ν繧ｲ繝ｪ繝ｼ繧ｿ</h3>
++              <p class="card__badge" data-inview-trigger="pop">縺翫☆縺吶ａ</p>
++              <figure class="card__thumbnail">
++                <img
++                  src="../assets/images/photo-margherita.png"
++                  srcset="../assets/images/photo-margherita@2x.png 2x"
++                  alt="6譫壹↓繧ｹ繝ｩ繧､繧ｹ縺輔ｌ縺溘・繝ｫ繧ｲ繝ｪ繝ｼ繧ｿ"
++                  width="416"
++                  height="277"
++                  class="cover"
++                  decoding="async"
++                  loading="lazy"
++                />
++              </figure>
++              <p class="card__description">繝医・繝医・繝｢繝・ヤ繧｡繝ｬ繝ｩ繝ｻ繝舌ず繝ｫ縺ｮ繧ｯ繝ｩ繧ｷ繝・け繝斐じ</p>
++              <p class="card__price">ﾂ･1,480</p>
++            </article>
++            <article class="card">
++              <h3 class="card__title">繧ｫ繝ｫ繝懊リ繝ｼ繝ｩ</h3>
++              <figure class="card__thumbnail">
++                <img
++                  src="../assets/images/photo-carbonara.png"
++                  srcset="../assets/images/photo-carbonara@2x.png 2x"
++                  alt="繝√・繧ｺ縺後◆縺｣縺ｷ繧翫°縺九▲縺溘き繝ｫ繝懊リ繝ｼ繝ｩ"
++                  width="416"
++                  height="277"
++                  class="cover"
++                  decoding="async"
++                  loading="lazy"
++                />
++              </figure>
++              <p class="card__description">豼・字繧ｯ繝ｪ繝ｼ繝縺ｨ閾ｪ螳ｶ陬ｽ繝代Φ繝√ぉ繝・ち縺ｮ繧ｹ繝代ご繝・ユ繧｣</p>
++              <p class="card__price">ﾂ･1,580</p>
++            </article>
++            <article class="card">
++              <h3 class="card__title">繝・ぅ繝ｩ繝溘せ</h3>
++              <figure class="card__thumbnail">
++                <img
++                  src="../assets/images/photo-tiramisu.png"
++                  srcset="../assets/images/photo-tiramisu@2x.png 2x"
++                  alt="繝・ぅ繝ｩ繝溘せ"
++                  width="416"
++                  height="277"
++                  class="cover"
++                  decoding="async"
++                  loading="lazy"
++                />
++              </figure>
++              <p class="card__description">繝槭せ繧ｫ繝ｫ繝昴・繝阪→繧ｨ繧ｹ繝励Ξ繝・た縺ｮ螳夂分繝・じ繝ｼ繝・/p>
++              <p class="card__price">ﾂ･680</p>
++            </article>
++            <article class="card">
++              <h3 class="card__title">繝ｩ繧ｶ繝九い</h3>
++              <figure class="card__thumbnail">
++                <img src="../assets/images/photo-lasagna.png" srcset="../assets/images/photo-lasagna@2x.png 2x" alt="繝ｩ繧ｶ繝九い" width="416" height="277" class="cover" decoding="async" loading="lazy" />
++              </figure>
++              <p class="card__description">閾ｪ螳ｶ陬ｽ繝溘・繝医た繝ｼ繧ｹ縺ｨ雍・ｲ｢縺ｪ繝√・繧ｺ縺ｮ繧ｪ繝ｼ繝悶Φ辟ｼ縺・/p>
++              <p class="card__price">ﾂ･1,680</p>
++            </article>
++            <article class="card">
++              <h3 class="card__title">繧ｫ繝励Ξ繝ｼ繧ｼ</h3>
++              <figure class="card__thumbnail">
++                <img
++                  src="../assets/images/photo-caprese.png"
++                  srcset="../assets/images/photo-caprese@2x.png 2x"
++                  alt="繧ｫ繝励Ξ繝ｼ繧ｼ"
++                  width="416"
++                  height="277"
++                  class="cover"
++                  decoding="async"
++                  loading="lazy"
++                />
++              </figure>
++              <p class="card__description">螳檎・繝医・繝医→繝｢繝・ヤ繧｡繝ｬ繝ｩ繝ｻ繝舌ず繝ｫ繧ｪ繧､繝ｫ縺後￠</p>
++              <p class="card__price">ﾂ･980</p>
++            </article>
++            <article class="card">
++              <h3 class="card__title">繝代Φ繝翫さ繝・ち</h3>
++              <figure class="card__thumbnail">
++                <img
++                  src="../assets/images/photo-panna-cotta.png"
++                  srcset="../assets/images/photo-panna-cotta@2x.png 2x"
++                  alt="繝代Φ繝翫さ繝・ち"
++                  width="416"
++                  height="277"
++                  class="cover"
++                  decoding="async"
++                  loading="lazy"
++                />
++              </figure>
++              <p class="card__description">縺ｪ繧√ｉ縺九↑繝溘Ν繧ｯ繝励Μ繝ｳ繝ｻ繝吶Μ繝ｼ繧ｽ繝ｼ繧ｹ豺ｻ縺・/p>
++              <p class="card__price">ﾂ･680</p>
++            </article>
++          </div>
++          <!-- /.menu__body -->
+@@ -400,113 +320,83 @@
+-          <hgroup class="heading">
+-            <h2 lang="en" class="heading__title">Reservation</h2>
+-            <p class="heading__subtitle">縺比ｺ育ｴ・/p>
+-          </hgroup>
+-          <p>
+-            縺疲擂蠎励・縺比ｺ育ｴ・・縺薙■繧峨・繝輔か繝ｼ繝繧医ｊ縺企｡倥＞縺・◆縺励∪縺吶・-            <br />
+-            譫ｶ遨ｺ縺ｮ縺溘ａ騾∽ｿ｡縺ｯ縺ｧ縺阪∪縺帙ｓ縺後√←縺・◇縺頑ｰ苓ｻｽ縺ｫ縺泌・蜉帙￥縺縺輔＞縲・-          </p>
+-          <form action="#" method="post" class="form">
+-            <p>
+-              <label class="form__item">
+-                縺雁錐蜑搾ｼ亥ｿ・茨ｼ・-                <input
+-                  type="text"
+-                  name="name"
+-                  class="textfield"
+-                  autocomplete="name"
+-                  autocapitalize="off"
+-                  autocorrect="off"
+-                  placeholder="譫ｶ遨ｺ 螟ｪ驛・
+-                  required
+-                />
+-              </label>
+-            </p>
+-            <p>
+-              <label class="form__item">
+-                繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ・亥ｿ・茨ｼ・-                <input
+-                  type="email"
+-                  name="email"
+-                  class="textfield"
+-                  autocomplete="email"
+-                  autocapitalize="off"
+-                  autocorrect="off"
+-                  inputmode="email"
+-                  placeholder="kakuu@example.jp"
+-                  required
+-                />
+-              </label>
+-            </p>
+-            <p>
+-              <label class="form__item">
+-                譚･蠎玲律・亥ｿ・茨ｼ・-                <input type="date" name="date" class="textfield" required />
+-              </label>
+-            </p>
+-            <p>
+-              <label class="form__item">
+-                譚･蠎玲凾髢難ｼ亥ｿ・茨ｼ・-                <input type="time" name="time" class="textfield" required />
+-              </label>
+-            </p>
+-            <p>
+-              <label class="form__item">
+-                莠ｺ謨ｰ・亥ｿ・茨ｼ・-                <input
+-                  type="number"
+-                  name="guests"
+-                  min="1"
+-                  max="20"
+-                  inputmode="numeric"
+-                  placeholder="2"
+-                  class="textfield"
+-                  required
+-                />
+-              </label>
+-            </p>
+-            <p>
+-              <label class="form__item">
+-                縺碑ｦ∵悍繝ｻ繧｢繝ｬ繝ｫ繧ｮ繝ｼ遲・-                <textarea
+-                  name="notes"
+-                  rows="4"
+-                  placeholder="縺溘∪縺斐∝ｰ城ｺｦ邊峨い繝ｬ繝ｫ繧ｮ繝ｼ縺ｧ縺・
+-                  class="textfield"
+-                ></textarea>
+-              </label>
+-            </p>
+-            <p>
+-              <label class="privacy-check">
+-                <input
+-                  type="checkbox"
+-                  name="privacy"
+-                  class="checkbox"
+-                  required
+-                  switch
+-                />
+-                <a href="./privacy-policy/">繝励Λ繧､繝舌す繝ｼ繝昴Μ繧ｷ繝ｼ</a>
+-                縺ｫ蜷梧э縺吶ｋ
+-              </label>
+-            </p>
+-            <p>
+-              <button class="button-primary">
+-                <svg
+-                  width="24"
+-                  height="24"
+-                  viewBox="0 0 24 24"
+-                  fill="none"
+-                  aria-hidden="true"
+-                >
+-                  <path
+-                    d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
+-                    stroke="#4D4229"
+-                    stroke-width="1.5"
+-                    stroke-linecap="round"
+-                    stroke-linejoin="round"
+-                  />
+-                </svg>
+-                莠育ｴ・☆繧・-              </button>
+-            </p>
+-          </form>
++          <div class="grid">
++            <div class="reservation__head">
++              <hgroup class="heading">
++                <h2 lang="en" class="heading__title">Reservation</h2>
++                <p class="heading__subtitle">縺比ｺ育ｴ・/p>
++              </hgroup>
++
++              <div class="reservation__description">
++                <p>縺疲擂蠎励・縺比ｺ育ｴ・・縺薙■繧峨・繝輔か繝ｼ繝繧医ｊ<wbr />縺企｡倥＞縺・◆縺励∪縺吶・br />譫ｶ遨ｺ縺ｮ縺溘ａ騾∽ｿ｡縺ｯ縺ｧ縺阪∪縺帙ｓ縺後・wbr />縺ｩ縺・◇縺頑ｰ苓ｻｽ縺ｫ縺泌・蜉帙￥縺縺輔＞縲・/p>
++              </div>
++              <!-- /.reservation__description -->
++            </div>
++            <!-- /.reservation__head -->
++
++            <div class="reservation__form">
++              <form action="#" method="post" class="form">
++                <div class="form__body">
++                  <p>
++                    <label class="form__item">
++                      <span class="form__term">縺雁錐蜑搾ｼ亥ｿ・茨ｼ・/span>
++                      <input class="textfield" type="text" name="name" autocomplete="name" autocapitalize="off" autocorrect="off" placeholder="譫ｶ遨ｺ 螟ｪ驛・ required />
++                    </label>
++                  </p>
++                  <p>
++                    <label class="form__item">
++                      <span class="form__term">繝｡繝ｼ繝ｫ繧｢繝峨Ξ繧ｹ・亥ｿ・茨ｼ・/span>
++                      <input type="email" name="email" autocomplete="email" autocapitalize="off" autocorrect="off" inputmode="email" class="textfield" placeholder="kakuu@example.com" required />
++                    </label>
++                  </p>
++                  <p>
++                    <label class="form__item">
++                      <span class="form__term">譚･蠎玲律・亥ｿ・茨ｼ・/span>
++                      <input type="date" name="date" class="textfield" required />
++                    </label>
++                  </p>
++                  <p>
++                    <label class="form__item">
++                      <span class="form__term">譚･蠎玲凾髢難ｼ亥ｿ・茨ｼ・/span>
++                      <input type="time" name="time" class="textfield" required />
++                    </label>
++                  </p>
++                  <p>
++                    <label class="form__item">
++                      <span class="form__term">莠ｺ謨ｰ・亥ｿ・茨ｼ・/span>
++                      <span class="form__number"><input type="number" name="guests" min="1" max="20" class="textfield" inputmode="numeric" required placeholder="2" /> 莠ｺ</span>
++                    </label>
++                  </p>
++                  <p>
++                    <label class="form__item">
++                      <span class="form__term">縺碑ｦ∵悍繝ｻ繧｢繝ｬ繝ｫ繧ｮ繝ｼ遲・/span>
++                      <textarea name="notes" rows="4" class="textfield" placeholder="縺溘∪縺斐∝ｰ城ｺｦ邊峨い繝ｬ繝ｫ繧ｮ繝ｼ縺ｧ縺・></textarea>
++                    </label>
++                  </p>
++                </div>
++                <!-- /.form__body -->
++                <div class="form__foot">
++                  <p>
++                    <label class="privacy-check">
++                      <input type="checkbox" name="privacy" class="checkbox" required />
++                      <span><a href="./privacy.html">繝励Λ繧､繝舌す繝ｼ繝昴Μ繧ｷ繝ｼ</a>縺ｫ蜷梧э縺吶ｋ</span>
++                    </label>
++                  </p>
++                  <p class="form__send">
++                    <button class="button-primary">
++                      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
++                        <path
++                          d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
++                          stroke-width="1.5"
++                          stroke-linecap="round"
++                          stroke-linejoin="round"
++                        />
++                      </svg>
++
++                      <span>莠育ｴ・☆繧・/span>
++                    </button>
++                  </p>
++                </div>
++                <!-- /.form__foot -->
++              </form>
++            </div>
++            <!-- /.reservation__form -->
++          </div>
++          <!-- /.grid -->
+@@ -523,0 +414 @@
++        <!-- /.footer__title -->
+@@ -526,15 +417,12 @@
+-            <dt>菴乗園</dt>
+-            <dd>譚ｱ莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ譫ｶ遨ｺ1-1-1</dd>
+-            <dt>髮ｻ隧ｱ逡ｪ蜿ｷ</dt>
+-            <dd><a href="tel:+8131234XXXX">03-1234-XXXX</a></dd>
+-            <dt>蝟ｶ讌ｭ譎る俣</dt>
+-            <dd>
+-              <time>17:00</time>
+-              窶・-              <time>23:00</time>
+-              ・・-              <abbr title="Last Order">LO</abbr>
+-              :
+-              <time>22:30</time>
+-              ・・-            </dd>
++            <div class="address__item">
++              <dt>菴乗園</dt>
++              <dd>譚ｱ莠ｬ驛ｽ譫ｶ遨ｺ蛹ｺ譫ｶ遨ｺ1-1-1</dd>
++            </div>
++            <div class="address__item">
++              <dt>髮ｻ隧ｱ逡ｪ蜿ｷ</dt>
++              <dd><a href="tel:031234xxxx">03-1234-XXXX</a></dd>
++            </div>
++            <div class="address__item">
++              <dt>蝟ｶ讌ｭ譎る俣</dt>
++              <dd><time>17:00</time>縲・time>23:00</time>・・O: <time>22:30</time>・・/dd>
++            </div>
+@@ -543,10 +431,9 @@
+-        <nav class="nav-footer" aria-label="繝輔ャ繧ｿ繝ｼ">
+-          <p><a href="/privacy-policy/">Privacy Pricy</a></p>
+-        </nav>
+-        <p class="copyright" lang="en">
+-          <small>
+-            ﾂｩ
+-            <time>2026</time>
+-            Segnaposto
+-          </small>
+-        </p>
++        <div class="footer__meta">
++          <nav class="nav-footer" aria-label="繝輔ャ繧ｿ繝ｼ繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ">
++            <p><a href="./privacy.html">Privacy Policy</a></p>
++          </nav>
++          <p class="copyright" lang="en">
++            <small>ﾂｩ・・<time>2026</time> Segnaposto</small>
++          </p>
++        </div>
++        <!-- /.footer__meta -->
