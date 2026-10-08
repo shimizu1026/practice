@@ -937,9 +937,15 @@
   background-color: var(--color-natural-0);
   box-shadow: 0 1px 16px rgb(0 0 0 / 0.1);
 
+
   &::backdrop {
     background-color: rgb(0 0 0 / 0.5);
     backdrop-filter: blur(8px);
+  }
+  /**ダイアログが開いているとき*/
+  &[open] {
+    display: block grid;
+    grid-template-rows: auto 1fr;
   }
 }
 
@@ -960,6 +966,37 @@
   letter-spacing: var(--tracking-wide);
   line-height: var(--leading-tight);
   
+}
+.entry {
+  margin-block-start: clamp(1.875rem, 1.689rem + 0.76vw, 2.375rem); 
+  padding-inline: clamp(0.5rem, -0.057rem + 2.29vw, 2rem); 
+  color: var(--color-brown-950);
+  overflow-y: auto;
+}
+
+.entry__date {
+  font-family: var(--font-serif-en);
+  font-size: calc(12 * var(--to-rem));
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+}
+
+.entry__title {
+  font-size: clamp(1.125rem, 0.9857vw + 0.5714vw, 1.5rem);
+  font-weight: 500;
+  margin-block-start: calc(8 * var(--to-rem));
+  letter-spacing: var(--tracking-wide);
+}
+
+.entry__body {
+  margin-block-start: clamp(1.5rem, 1.3143rem + 0.7619vi, 2rem);
+  font-size: clamp(0.875rem, 0.8286rem + 0.1905vw, 1rem);
+  line-height: var(--leading-loose);
+  letter-spacing: var(--tracking-wide);
+
+  & > * + * {
+    margin-block-start: 1lh;
+  }
 }
 }
 
