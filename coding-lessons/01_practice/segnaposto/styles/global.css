@@ -968,7 +968,7 @@
   
 }
 .entry {
-  margin-block-start: clamp(1.875rem, 1.689rem + 0.76vw, 2.375rem); 
+  margin-block-start: clamp(1.875rem, 1.6893rem + 0.7619vi, 2.375rem); 
   padding-inline: clamp(0.5rem, -0.057rem + 2.29vw, 2rem); 
   color: var(--color-brown-950);
   overflow-y: auto;
