@@ -35,6 +35,8 @@
     /* Font Size */
     --font-size-body-sm: calc(14 * var(--to-rem));
     --font-size-body-md: calc(16 * var(--to-rem));
+    --font-size-title:clamp(2.5rem, 2.314rem + 0.76vw, 3rem);
+    --font-size-subtitle:clamp(0.75rem, 0.704rem + 0.19vw, 0.875rem);
     --font-size-display: max(24 * var(--to-rem), 1.771rem + 9.14vw);
 
     /* Leading */
@@ -67,6 +69,27 @@
     @media (width>=1024px) {
       --grid-cols: var(--grid-12);
       --grid-col-gap: calc(24 * var(--to-vi-lg));
+    }
+
+    /*Heading*/
+    .heading {
+
+    }
+
+    .heading__title {
+      font-size: var(--font-size-title);
+      line-height: var(--leading-tight);
+      font-family: var(--font-display-en);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+    }
+
+    .heading__subtitle {
+      margin-block-start: calc(8 * var(--to-rem));
+    font-size: var(--font-size-subtitle);
+    line-height: var(--leading-relaxed);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wide);
     }
 
     /*Radius*/
@@ -930,22 +953,43 @@
 }
 /* Modal-News */
 .modal-news {
+  grid-template-rows: auto 1fr;
   inline-size: calc(100svi - (40 * var(--to-vi-sm)));
   max-inline-size: 856px;
   block-size: 80svb;
   padding: clamp(0.0625rem, 0.6286rem + 1.5238vw, 2rem);
   background-color: var(--color-natural-0);
   box-shadow: 0 1px 16px rgb(0 0 0 / 0.1);
-
+  opacity: 0;
+  transition: var(--duration-fast) var(--ease-out-quart);
+  transition-property: opacity, display, overlay;
+  transition-behavior: allow-discrete;/*ディスプレイがアニメーションを待ってくれるので可能になる*/
 
   &::backdrop {
-    background-color: rgb(0 0 0 / 0.5);
-    backdrop-filter: blur(8px);
+    background-color: rgb(0 0 0 / 0);
+    backdrop-filter: blur(0px);
+    transition: inherit;
+    transition-property: opacity, display, background-color, backdrop-filter, overlay;
+    transition-behavior: allow-discrete;/*ディスプレイがアニメーションを待ってくれるので可能になる*/
   }
   /**ダイアログが開いているとき*/
   &[open] {
     display: block grid;
-    grid-template-rows: auto 1fr;
+    opacity: 1;
+  }
+
+  @starting-style {
+    opacity: 0;
+  }
+
+  &[open]::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+    backdrop-filter: blur(8px);
+  }
+
+  @starting-style {
+    background-color: rgb(0 0 0 / 0);
+    backdrop-filter: blur(0px);
   }
 }
 
@@ -997,6 +1041,10 @@
   & > * + * {
     margin-block-start: 1lh;
   }
+}
+
+.concept {
+  margin-block-start: clamp(5.8125rem, 507420rem + 0.2587vi, 6rem);
 }
 }
 
