@@ -38,6 +38,7 @@
     --font-size-title:clamp(2.5rem, 2.314rem + 0.76vw, 3rem);
     --font-size-subtitle:clamp(0.75rem, 0.704rem + 0.19vw, 0.875rem);
     --font-size-display: max(24 * var(--to-rem), 1.771rem + 9.14vw);
+    --space-lg: clamp(3rem, 2.629rem + 1.52vw, 4rem);
 
     /* Leading */
     --leading-tight: 1.35;
@@ -535,27 +536,29 @@
     &[command="close"] {
       grid-template-columns: 1fr max-content;
       grid-template-areas: ". icon";
+
+      &::before,
+      &::after {
+        content: "";
+        grid-area: icon;
+        block-size: 1px;
+        inline-size: 1em;
+        background-color: currentColor;
+      }
+  
+      &::before {
+        rotate: 45deg;
+      }
+      &::after {
+        rotate: -45deg;
+      }
+  
+      &:focus-visible {
+        background-color: var(--button-hover-bg-color, var(--color-brown-500));
+      }
     }
 
-    &::before,
-    &::after {
-      content: "";
-      grid-area: icon;
-      block-size: 1px;
-      inline-size: 1em;
-      background-color: currentColor;
-    }
 
-    &::before {
-      rotate: 45deg;
-    }
-    &::after {
-      rotate: -45deg;
-    }
-
-    &:focus-visible {
-      background-color: var(--button-hover-bg-color, var(--color-brown-500));
-    }
 
     @media (any-hover: hover) {
       &:hover {
@@ -925,9 +928,9 @@
     font-size: calc(16 * var(--to-rem));
 
   }
-
-  /* Post */
-.post {
+ 
+ /* Post */
+ .post {
   display: block grid;
   grid-template-columns: max-content 1fr max-content;
   column-gap: calc(16 * var(--to-rem));
@@ -997,7 +1000,7 @@
 
 /*Modal*/
 .modal-header {
-  --button-font-size: calc(12 * var(var(--to-rem)));
+  --button-font-size: calc(12 * var(--to-rem));
   --button-padding-inline: 1em;
 
   display: block grid;
@@ -1017,13 +1020,16 @@
   margin-block-start: clamp(1.875rem, 1.6893rem + 0.7619vi, 2.375rem); 
   padding-inline: clamp(0.5rem, -0.0571rem + 2.2857vi, 2rem); 
   color: var(--color-brown-950);
+  font-size: var(--font-size-body-sm);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-loose);
   overflow-y: auto;
 }
 
 .entry__date {
   font-family: var(--font-serif-en);
   font-size: calc(12 * var(--to-rem));
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: var(--tracking-wide);
 }
 
@@ -1036,9 +1042,7 @@
 
 .entry__body {
   margin-block-start: clamp(1.5rem, 1.3143rem + 0.7619vi, 2rem);
-  font-size: clamp(0.875rem, 0.8286rem + 0.1905vw, 1rem);
-  line-height: var(--leading-loose);
-  letter-spacing: var(--tracking-wide);
+
 
   & > * + * {
     margin-block-start: 1lh;
@@ -1046,11 +1050,17 @@
 }
 
 .concept {
-  margin-block-start: clamp(5.8125rem, 507420rem + 0.2587vi, 6rem);
+  margin-block-start: clamp(5.8125rem, 5.813rem + 0.2587vi, 6rem);
+}
+
+.concept__body {
+  margin-block-start: var(--space-lg);
 }
 
 .concept__figure {
   @media (width >= 1024px) {
+    --row-start: 1;
+    --row-end: span 2;
     --col-start: 1;
     --col-end: span 4;
 }
@@ -1060,7 +1070,6 @@
 .message {
   @media (width >= 1024px) {
     --row-start: 1;
-    --row-end: span 2;
     --col-start: 6;
     --col-end: span 4;
 }
@@ -1068,9 +1077,9 @@
 /*Profile*/
 .profile {
   @media (width >= 1024px) {
+    --row-start: 2;
     --col-start: -6;
     --col-end: span 5;
-    --row-start: 2;
 
     display: block grid;
     grid-template-columns: subgrid;
@@ -1088,6 +1097,8 @@
     grid-row: 1 / span 1;
 }
 }
+
+
 }
 
 @layer utilities {

@@ -1,0 +1,935 @@
+@layer tokens, reset, base, components, utilities;
+
+/* ============================================
+   # Tokens
+   ============================================ */
+@layer tokens {
+  :root {
+    /* Design */
+    --design-size-sm: 390;
+    --design-size-lg: 1440;
+
+    /* Tools */
+    --to-rem: calc(1rem / 16);
+    --to-vi-sm: calc(100svi / var(--design-size-sm));
+    --to-vi-lg: calc(100svi / var(--design-size-lg));
+
+    /* Color */
+    --color-neutral-0: #ffffff;
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #d5d4cd;
+
+    --color-brown-500: #9d9580;
+    --color-brown-700: #6e6755;
+    --color-brown-900: #4d4229;
+    --color-brown-950: #36332d;
+
+    /* Font */
+    --font-serif-ja: "Zen Old Mincho", serif;
+    --font-serif-en: "Playfair", serif;
+    --font-display-en: "Playfair Display", serif;
+
+    /* Typography */
+    --tracking-wide: 0.05em;
+    --leading-tight: 1.35;
+    --font-size-display: max(2rem, 1.429rem + 9.52vi);
+
+    /* Container */
+    --container-inset: calc(72 * var(--to-vi-lg));
+
+    /* Grid */
+    --grid-1: repeat(1, minmax(0, 1fr));
+    --grid-2: repeat(2, minmax(0, 1fr));
+    --grid-3: repeat(3, minmax(0, 1fr));
+    --grid-4: repeat(4, minmax(0, 1fr));
+    --grid-5: repeat(5, minmax(0, 1fr));
+    --grid-6: repeat(6, minmax(0, 1fr));
+    --grid-7: repeat(7, minmax(0, 1fr));
+    --grid-8: repeat(8, minmax(0, 1fr));
+    --grid-9: repeat(9, minmax(0, 1fr));
+    --grid-10: repeat(10, minmax(0, 1fr));
+    --grid-11: repeat(11, minmax(0, 1fr));
+    --grid-12: repeat(12, minmax(0, 1fr));
+
+    --grid-cols: var(--grid-1);
+
+    @media (width >= 1024px) {
+      --grid-cols: var(--grid-12);
+      --grid-col-gap: calc(24 * var(--to-vi-lg));
+    }
+
+    /* Radius */
+    --radius-full: calc(infinity * 1px);
+
+    /* Animation */
+    --duration-fast: 0.3s;
+    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+/* ============================================
+   # Reset
+   Oreset.css v4.0.3 | MIT License | https://github.com/hilosiva/Oreset.css
+   ============================================ */
+@layer reset {
+  /*
+    # Global
+  ---------------------------------------------- */
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    min-inline-size: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 1px;
+  }
+
+  /*
+    # Document & Sections
+  ---------------------------------------------- */
+  :where(html) {
+    /* none instead of 100% — required for iOS Safari */
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    scrollbar-gutter: stable;
+    /* trim-start removes leading spacing from Japanese punctuation */
+    text-spacing-trim: trim-start;
+    text-autospace: normal;
+    line-break: strict;
+    overflow-wrap: anywhere;
+    -webkit-tap-highlight-color: transparent;
+    interpolate-size: allow-keywords;
+    /* 1.5 as a WCAG-friendly baseline; browser default (~1.2) is too tight */
+    line-height: 1.5;
+  }
+
+  :where(html:has(dialog:modal[open])) {
+    overflow: hidden;
+  }
+
+  :where(body) {
+    min-block-size: 100svb;
+    /* clip instead of hidden — does not create a new BFC, preserves sticky positioning */
+    overflow-x: clip;
+  }
+
+  :where(:is(h1, h2, h3, h4, h5, h6):lang(en)) {
+    /* prevents awkward single-word last lines in English headings */
+    text-wrap: balance;
+  }
+
+  /*
+    # Grouping content
+  ---------------------------------------------- */
+  :where(hr) {
+    border-width: 0;
+    border-block-start: 1px solid;
+    color: inherit;
+    block-size: 0;
+  }
+
+  :where(ul, ol) {
+    /* "" instead of none — prevents Safari from stripping list role */
+    list-style-type: "";
+  }
+
+  :where(pre) {
+    /* no-autospace prevents text-autospace inheritance from disrupting monospace alignment */
+    text-autospace: no-autospace;
+  }
+
+  :where(address:lang(ja)) {
+    font-style: unset;
+  }
+
+  :where(p:lang(en)) {
+    /* prevents orphaned words on the last line in English paragraphs */
+    text-wrap: pretty;
+  }
+
+  /*
+    # Text-level semantics
+  ---------------------------------------------- */
+  :where(b, strong) {
+    font-weight: 700;
+  }
+
+  :where(small) {
+    /* preserves browser default (0.8em) while enforcing a 10px accessibility floor */
+    font-size: max(0.625rem, 0.8em);
+  }
+
+  :where(code, kbd, samp) {
+    font-family: ui-monospace, monospace;
+  }
+
+  :where(em:lang(ja), i:lang(ja), cite:lang(ja), dfn:lang(ja)) {
+    font-style: normal;
+  }
+
+  :where(:any-link) {
+    color: unset;
+    text-decoration-skip-ink: auto;
+  }
+
+  /*
+    # Embedded content
+  ---------------------------------------------- */
+  :where(img, svg, video, canvas, audio, iframe, embed, object) {
+    display: block flow;
+  }
+
+  :where(img, picture, svg, video) {
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  :where(iframe) {
+    border: unset;
+  }
+
+  /*
+    # Tabular data
+  ---------------------------------------------- */
+  :where(table) {
+    border-collapse: collapse;
+  }
+
+  :where(caption, th) {
+    text-align: unset;
+  }
+
+  :where(th) {
+    font-weight: 700;
+  }
+
+  /*
+    # Forms
+  ---------------------------------------------- */
+  :where(input, button, textarea, select, optgroup) {
+    font: unset;
+    color: unset;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+  }
+
+  :where(button, input:is([type="button" i], [type="submit" i], [type="reset" i])) {
+    border-radius: unset;
+    background-color: unset;
+    touch-action: manipulation;
+    border-style: solid;
+  }
+
+  :where(input:not([type="button" i], [type="submit" i], [type="reset" i]), textarea, [contenteditable]) {
+    /* no-autospace prevents unexpected spacing inserted during text input */
+    text-autospace: no-autospace;
+  }
+
+  :where(input:is([type="radio" i], [type="checkbox" i])) {
+    margin: unset;
+  }
+
+  :where(input[type="search" i]) {
+    -webkit-appearance: textfield;
+  }
+
+  :where(input:is([type="tel" i], [type="url" i], [type="email" i], [type="number" i]):not(:placeholder-shown)) {
+    direction: ltr;
+  }
+
+  :where(textarea) {
+    resize: block;
+  }
+
+  :where(textarea:not([rows])) {
+    min-block-size: 10em;
+  }
+
+  :where(fieldset) {
+    padding: unset;
+    border: unset;
+  }
+
+  :where(legend) {
+    padding-inline: unset;
+  }
+
+  :where(progress) {
+    vertical-align: unset;
+  }
+
+  :where(:is(input, textarea))::placeholder {
+    opacity: unset;
+  }
+
+  /*
+    # Interactive
+  ---------------------------------------------- */
+  :where(dialog, [popover]) {
+    max-inline-size: unset;
+    max-block-size: unset;
+    color: unset;
+    background-color: unset;
+    border-style: none;
+    overscroll-behavior-block: contain;
+  }
+
+  :where(dialog) {
+    margin: auto;
+  }
+
+  :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+    display: none;
+  }
+
+  :where(summary) {
+    /* "" instead of none — prevents Safari from stripping list role */
+    list-style-type: "";
+  }
+
+  :where(summary)::-webkit-details-marker {
+    display: none;
+  }
+
+  /*
+    # Accessibility
+  ---------------------------------------------- */
+  :where(button, label, select, summary, [role="button"], [role="link"], [role="option"], [role="tab"]) {
+    cursor: pointer;
+  }
+
+  :where(input[type="file" i])::-webkit-file-upload-button,
+  :where(input[type="file" i])::file-selector-button {
+    cursor: pointer;
+  }
+
+  :where([disabled], label:has(> input:disabled), label:has(+ input:disabled)) {
+    cursor: not-allowed;
+  }
+
+  :where([aria-disabled="true"]) {
+    cursor: not-allowed;
+  }
+
+  :where([aria-busy="true"]) {
+    cursor: progress;
+  }
+
+  :where([role="button"], [role="tab"], [role="option"]) {
+    touch-action: manipulation;
+  }
+
+  :where([hidden]:not([hidden="until-found"])) {
+    /* until-found must remain visible for beforematch to fire */
+    display: none;
+  }
+
+  :where(:focus:not(:focus-visible)) {
+    outline: none;
+  }
+
+  :where(:focus-visible, :target) {
+    scroll-margin-block: 8vh;
+  }
+
+  /* Prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after,
+    ::backdrop {
+      /* 0.01ms instead of 0 — ensures animationend events still fire in JS */
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      animation-delay: unset !important;
+      transition-delay: unset !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      view-transition-name: none !important;
+    }
+  }
+}
+
+/* ============================================
+   # Base
+   ============================================ */
+@layer base {
+  :where(html) {
+    background-color: var(--color-neutral-100);
+    font-family: var(--font-serif-ja);
+    font-weight: 500;
+    color: var(--color-brown-900);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  :where(abbr) {
+    text-decoration: none;
+  }
+
+  :where(a:any-link) {
+    transition: var(--duration-fast) var(--ease-in-out-quart);
+    transition-property: text-decoration-color;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration-color: transparent;
+    }
+  }
+}
+
+/* ============================================
+   # Components
+   ============================================ */
+@layer components {
+  /* # Container ---- */
+  .container {
+    box-sizing: content-box;
+    padding-inline: var(--container-inset);
+    max-inline-size: var(--container-max-size);
+    margin-inline: var(--container-align, auto);
+  }
+
+  /* # Grid ---- */
+  .grid {
+    display: block grid;
+    grid-template-columns: var(--grid-cols);
+    gap: var(--grid-row-gap, 0) var(--grid-col-gap, 0);
+
+    & > * {
+      grid-area: var(--row-start, auto) / var(--col-start, auto) / var(--row-end, span 1) / var(--col-end, auto);
+    }
+  }
+
+  /* # Header ---- */
+  .header {
+    --header-block-start: clamp(0.875rem, 0.271rem + 2.48vi, 2.5rem);
+
+    display: block grid;
+    position: sticky;
+    inset-block-start: 0;
+    inset-inline: 0;
+    z-index: 10;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    padding-block-start: var(--header-block-start);
+    padding-inline: 5vi;
+
+    @media (width >= 1024px) {
+      position: revert;
+      grid-template-columns: 1fr auto 1fr;
+    }
+  }
+
+  .header__nav {
+    @media (width >= 1024px) {
+      display: contents;
+    }
+  }
+
+  .logo {
+    display: block flow;
+    inline-size: clamp(9.375rem, 7.588rem + 7.33vi, 14.188rem);
+  }
+
+  /* # Nav (Global) ---- */
+  .nav-global {
+    display: none;
+
+    @media (width >= 1024px) {
+      display: block flex;
+      gap: calc(40 * var(--to-rem));
+    }
+
+    a {
+      --nav-line-scale: 0;
+      --nav-line-origin: 100%;
+
+      position: relative;
+      font-family: var(--font-serif-en);
+      font-size: calc(16 * var(--to-rem));
+      font-weight: 700;
+      letter-spacing: var(--tracking-wide);
+      text-decoration: none;
+      transition: var(--duration-fast) var(--ease-out-quart);
+      transition-property: color;
+
+      &:hover,
+      &:focus-visible {
+        --nav-line-scale: 1;
+        --nav-line-origin: 0%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        inset-block-end: -0.25em;
+        block-size: 1px;
+        background-color: currentColor;
+        scale: var(--nav-line-scale) 1;
+        transition: inherit;
+        transition-property: scale, background-color;
+        transform-origin: var(--nav-line-origin) bottom;
+      }
+    }
+  }
+
+  /* # Nav (Action) ---- */
+  .nav-action {
+    display: none;
+
+    @media (width >= 1024px) {
+      display: revert;
+      justify-self: end;
+    }
+  }
+
+  /* # Button (Primary) ---- */
+  .button-primary {
+    --_padding-inline: var(--button-padding-inline, calc(16 * var(--to-rem)));
+    --_padding-block: var(--button-padding-block, calc(8 * var(--to-rem)));
+    --_font-size: var(--button-font-size, inherit);
+
+    display: inline grid;
+    align-items: center;
+    column-gap: calc(8 * var(--to-rem));
+    padding-block: var(--_padding-block);
+    padding-inline: var(--_padding-inline);
+    appearance: none;
+    border: 0;
+    border-radius: calc(8 * var(--to-rem));
+    background-color: var(--button-bg-color, var(--color-brown-700));
+    font-size: var(--_font-size);
+    font-weight: 700;
+    color: var(--button-color, var(--color-neutral-0));
+    letter-spacing: var(--tracking-wide);
+    text-decoration: none;
+    transition: var(--duration-fast) var(--ease-in-out-quart);
+    transition-property: background-color, color;
+
+    &:has(> svg:first-child) {
+      grid-template-columns: max-content 1fr;
+    }
+
+    &:has(> svg:last-child) {
+      grid-template-columns: 1fr max-content;
+    }
+
+    &[command="close"] {
+      grid-template-columns: 1fr max-content;
+      grid-template-areas: ". icon";
+
+      &::before,
+      &::after {
+        content: "";
+        grid-area: icon;
+        block-size: 1px;
+        inline-size: 1em;
+        background-color: currentColor;
+      }
+
+      &::before {
+        rotate: 45deg;
+      }
+      &::after {
+        rotate: -45deg;
+      }
+    }
+
+    &:lang(en) {
+      font-family: var(--font-serif-en);
+    }
+
+    &:focus-visible {
+      background-color: var(--button-bg-hover-color, var(--color-brown-500));
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--button-bg-hover-color, var(--color-brown-500));
+      }
+    }
+
+    svg,
+    path {
+      fill: none;
+      stroke: currentColor;
+    }
+  }
+
+  /* # Button (Hamburger) ---- */
+  .button-hamburger {
+    --button-size: 40;
+
+    display: inline grid;
+    place-content: center;
+    inline-size: calc(var(--button-size) * var(--to-rem));
+    aspect-ratio: 1;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+
+    @media (width >= 1024px) {
+      display: none;
+    }
+
+    svg {
+      fill: none;
+
+      line {
+        stroke: var(--color-brown-900);
+        transform-box: fill-box;
+        transform-origin: center;
+        transition: var(--duration-fast) var(--ease-out-quart);
+        transition-property: translate, rotate, opacity;
+        transition-delay: var(--duration-fast), 0s, 0s;
+      }
+    }
+
+    :root:has(.drawer:popover-open) & {
+      svg {
+        line {
+          transition-delay: 0s, var(--duration-fast), var(--duration-fast);
+
+          &:nth-child(1) {
+            translate: 0 5px;
+            rotate: 45deg;
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            translate: 0 -5px;
+            rotate: -45deg;
+          }
+        }
+      }
+    }
+  }
+
+  /* # Button (More) ---- */
+  .button-more {
+    --button-size: clamp(1.5rem, 1.314rem + 0.76vw, 2rem);
+
+    display: block grid;
+    place-content: center;
+    inline-size: var(--button-size);
+    block-size: var(--button-size);
+    aspect-ratio: 1;
+    appearance: none;
+    border: 0;
+    border-radius: var(--radius-full);
+    background-color: var(--color-brown-700);
+    color: var(--color-neutral-0);
+    transition: var(--duration-fast) var(--ease-in-out-quart);
+    transition-property: background-color;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--color-brown-500);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      grid-area: 1 / -1;
+      inline-size: clamp(0.75rem, 0.657rem + 0.38vw, 1rem);
+      block-size: 1px;
+      background-color: currentColor;
+    }
+
+    &::after {
+      rotate: 90deg;
+    }
+  }
+
+  /* # Drawer ---- */
+  .drawer {
+    --drawer-list-opacity: 0;
+    --drawer-list-translate-x: 1rem;
+    --drawer-list-2-delay: 0s;
+    --drawer-list-3-delay: 0s;
+
+    position: fixed;
+    inset: auto;
+    position-anchor: auto;
+    inset-block-start: calc(var(--header-block-start) + (40 * var(--to-rem)));
+    inset-block-start: anchor(bottom);
+    inset-inline-end: var(--container-inset);
+    inset-inline-end: anchor(right);
+    color: var(--color-brown-900);
+    transition: var(--duration-fast) var(--ease-out-quart);
+    transition-property: display, overlay;
+    transition-behavior: allow-discrete;
+
+    @media (width >= 1024px) {
+      display: none;
+    }
+
+    &:popover-open {
+      --drawer-list-opacity: 1;
+      --drawer-list-translate-x: 0;
+      --drawer-list-2-delay: 0.08s;
+      --drawer-list-3-delay: 0.16s;
+    }
+  }
+
+  .drawer__list {
+    display: block grid;
+    row-gap: calc(8 * var(--to-rem));
+
+    li {
+      opacity: var(--drawer-list-opacity);
+      translate: var(--drawer-list-translate-x) 0;
+      transition: var(--duration-fast) var(--ease-out-quart);
+      transition-property: opacity, translate;
+
+      &:nth-child(2) {
+        transition-delay: var(--drawer-list-2-delay);
+      }
+      &:nth-child(3) {
+        transition-delay: var(--drawer-list-3-delay);
+      }
+
+      @starting-style {
+        opacity: 0;
+        translate: 1rem 0;
+      }
+    }
+
+    a {
+      display: block flow;
+      padding-block: calc(4 * var(--to-rem));
+      font-size: calc(16 * var(--to-rem));
+      font-weight: 700;
+      letter-spacing: var(--tracking-wide);
+      text-decoration: none;
+      text-align: end;
+
+      &:lang(en) {
+        font-family: var(--font-serif-en);
+      }
+
+      &:hover,
+      &:focus-visible {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  /* # Hero ---- */
+  .hero {
+    container: hero / inline-size;
+    margin-block-start: clamp(48 * var(--to-rem), 2.8143rem + 0.7619vi, 56 * var(--to-rem));
+    overflow: hidden;
+  }
+
+  .hero__figure {
+    aspect-ratio: 1;
+    border-radius: var(--radius-full) var(--radius-full) 0 0;
+    overflow: hidden;
+    margin-inline: calc(16 * var(--to-rem));
+
+    @media (width >= 1024px) {
+      --row-start: 1;
+      --col-start: 4;
+      --col-end: span 6;
+
+      margin-inline: 0;
+    }
+  }
+
+  .hero__caption {
+    z-index: 1;
+    justify-self: center;
+    margin-block-start: -0.75em;
+    font-family: var(--font-display-en);
+    font-size: var(--font-size-display);
+    font-weight: 700;
+    color: var(--color-neutral-0);
+    letter-spacing: var(--tracking-wide);
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @media (width >= 1024px) {
+      --row-start: 2;
+      --col-start: 1;
+      --col-end: -1;
+    }
+  }
+
+  .hero__head {
+    margin-block-start: calc(42 * var(--to-rem));
+    text-align: center;
+
+    @media (width >= 1024px) {
+      --row-start: 1;
+      --col-start: -4;
+      --col-end: span 2;
+
+      justify-items: center;
+      text-align: start;
+
+      margin-block-start: calc(64 * var(--to-vi-lg));
+    }
+  }
+
+  .hero__lead {
+    font-size: clamp(1.5rem, 1.3143rem + 0.7619vw, 2rem);
+    font-weight: 700;
+
+    @media (width >= 1024px) {
+      writing-mode: vertical-rl;
+      letter-spacing: 0.25em; /* Figmaの行間（%） - 100% を emに */
+      line-height: calc((32 + 24) / 32); /* Figmaのテキストレイヤーの横幅（+ 間隔） / 文字サイズ */
+    }
+
+    & > span {
+      display: block flow;
+
+      &:not(:first-child) {
+        margin-inline-start: calc(43 / 32 * 1em);
+      }
+    }
+  }
+
+  .hero__body {
+    margin-block-start: calc(24 * var(--to-rem));
+    text-align: center;
+
+    @media (width >= 1024px) {
+      --row-start: 1;
+      --col-start: 2;
+      --col-end: span 2;
+
+      align-self: end;
+      margin-block-end: calc(136 / 1440 * 100vi);
+      text-align: start;
+    }
+  }
+
+  .hero__text {
+    font-size: calc(14 * var(--to-rem));
+    letter-spacing: var(--tracking-wide);
+    line-height: 2;
+
+    & > span {
+      display: block flow;
+      word-break: keep-all;
+    }
+  }
+
+  /* # News ---- */
+  .news {
+    inline-size: calc(100vi - var(--container-inset));
+    max-inline-size: 598px;
+    margin-block-start: clamp(4rem, 3.257rem + 3.05vw, 6rem);
+    margin-inline-start: auto;
+    padding: calc(24 * var(--to-rem));
+    border-radius: var(--radius-full) 0 0 var(--radius-full);
+    background-color: var(--color-neutral-0);
+
+    @media (width >= 1024px) {
+      display: block grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      column-gap: calc(40 * var(--to-rem));
+      padding-block: calc(32 * var(--to-rem));
+      padding-inline: calc(40 * var(--to-rem)) calc(24 * var(--to-rem));
+    }
+  }
+
+  .news__title {
+    font-size: calc(16 * var(--to-rem));
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* # Post ---- */
+  .post {
+    display: block grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    column-gap: calc(16 * var(--to-rem));
+  }
+
+  .post__date {
+    align-self: start;
+    margin-block-start: 0.6em;
+    font-family: var(--font-serif-en);
+    font-size: calc(12 * var(--to-rem));
+    color: var(--color-brown-950);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .post__title {
+    font-size: calc(12 * var(--to-rem));
+    font-weight: 700;
+    color: var(--color-brown-950);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* # Modal (News) ---- */
+  .modal-news {
+    inline-size: calc(100svi - (40 * var(--to-vi-sm)));
+    max-inline-size: 856px;
+    block-size: 80svb;
+    padding: clamp(1rem, 0.6286rem + 1.5238vw, 2rem);
+    background-color: var(--color-neutral-0);
+    box-shadow: 0 1px 16px rgb(0 0 0 / 0.1);
+
+    &::backdrop {
+      background-color: rgb(0 0 0 / 0.5);
+      backdrop-filter: blur(16px);
+    }
+  }
+
+  /* # Modal (Header) ---- */
+  .modal-header {
+    --button-font-size: calc(12 * var(--to-rem));
+    --button-padding-inline: 1em;
+
+    display: block grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+  }
+
+  .modal__title {
+    font-family: var(--font-display-en);
+    font-weight: 500;
+    font-size: calc(24 * var(--to-rem));
+    letter-spacing: var(--tracking-wide);
+    line-height: var(--leading-tight);
+  }
+}
+
+/* ============================================
+   # Utilities
+   ============================================ */
+@layer utilities {
+  /* # Cover ---- */
+  .cover {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: var(--cover-position, center);
+  }
+
+  /* # Visually Hidden ---- */
+  .visually-hidden:not(:focus-within, :active) {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+}
