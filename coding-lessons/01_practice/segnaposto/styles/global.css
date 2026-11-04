@@ -73,7 +73,9 @@
 
     /*Heading*/
     .heading {
+      --_text-align: var(--heading-text-align, inherit);
 
+      text-align: var(--_text-align);
     }
 
     .heading__title {
