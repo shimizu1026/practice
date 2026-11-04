@@ -830,7 +830,7 @@
     }
   }
 
-  .hero_head {
+  .hero__head {
     text-align: center;
     margin-block-start: calc(42 * var(--to-rem));
     @media (width >= 1024px) {
@@ -864,7 +864,7 @@
     }
   }
 
-  .hero_body {
+  .hero__body {
     margin-block-start: calc(24 * var(--to-rem));
     text-align: center;
 
@@ -1048,6 +1048,46 @@
 .concept {
   margin-block-start: clamp(5.8125rem, 507420rem + 0.2587vi, 6rem);
 }
+
+.concept__figure {
+  @media (width >= 1024px) {
+    --col-start: 1;
+    --col-end: span 4;
+}
+}
+
+/*Message*/
+.message {
+  @media (width >= 1024px) {
+    --row-start: 1;
+    --row-end: span 2;
+    --col-start: 6;
+    --col-end: span 4;
+}
+}
+/*Profile*/
+.profile {
+  @media (width >= 1024px) {
+    --col-start: -6;
+    --col-end: span 5;
+    --row-start: 2;
+
+    display: block grid;
+    grid-template-columns: subgrid;
+}
+
+.profile__figure {
+  @media (width >= 1024px) {
+   grid-column: 1 / span 2;
+   grid-row: 1 / span 1;
+}
+}
+.profile__body {
+  @media (width >= 1024px) {
+    grid-column: 3 / span 3;
+    grid-row: 1 / span 1;
+}
+}
 }
 
 @layer utilities {
@@ -1069,4 +1109,5 @@
     white-space: nowrap;
     clip-path: inset(50%);
   }
+}
 }
