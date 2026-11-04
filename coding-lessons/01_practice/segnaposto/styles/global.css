@@ -1061,21 +1061,49 @@
 }
 
 .concept__figure {
+  aspect-ratio: 350 / 525;
+
   @media (width >= 1024px) {
     --row-start: 1;
     --row-end: span 2;
     --col-start: 1;
     --col-end: span 4;
+
+    aspect-ratio: auto;
 }
 }
 
 /*Message*/
 .message {
+  margin-block-start: calc(48 * var(--to-rem));
+  padding-inline: 24px;
+
   @media (width >= 1024px) {
     --row-start: 1;
     --col-start: 6;
     --col-end: span 4;
+
+    margin-block-start: 0;
+    padding-inline: 0;
 }
+}
+
+.message__title {
+  font-size: calc(24 * var(--to-rem));
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wide);
+}
+
+.message__body {
+  margin-block-start: calc(32 * var(--to-rem));
+  font-weight: 500;
+  line-height: var(--leading-loose);
+  letter-spacing: var(--tracking-wide);
+
+  & > * + * {
+    margin-block-start: 1lh;
+  }
 }
 /*Profile*/
 .profile {
