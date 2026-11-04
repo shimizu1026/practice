@@ -51,6 +51,9 @@
     /* --container-inset: calc(72 / 1440 * 100vi); */
     --container-inset: calc(72 * var(--to-vi-lg));
 
+    /* Space */
+    --space-lg: clamp(3rem, 2.629rem + 1.52vw, 4rem);
+
     /* Grid */
     --grid-1: repeat(1, minmax(0, 1fr));
     --grid-2: repeat(2, minmax(0, 1fr));
@@ -1083,6 +1086,7 @@
 
     display: block grid;
     grid-template-columns: subgrid;
+  }
 }
 
 .profile__figure {
@@ -1120,5 +1124,4 @@
     white-space: nowrap;
     clip-path: inset(50%);
   }
-}
 }
