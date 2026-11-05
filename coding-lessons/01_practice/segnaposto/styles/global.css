@@ -55,6 +55,7 @@
     --space-lg: clamp(3rem, 2.629rem + 1.52vw, 4rem);
 
     /* Grid */
+    --grid-fit: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
     --grid-1: repeat(1, minmax(0, 1fr));
     --grid-2: repeat(2, minmax(0, 1fr));
     --grid-3: repeat(3, minmax(0, 1fr));
@@ -1163,7 +1164,34 @@
 .profile__name {
   font-weight: inherit;
 }
+/* Menu */
+.menu {
+  margin-block-start: clamp(6rem, 2.2857rem + 15.2381vw, 16rem);
+}
 
+.menu__body {
+  display: block grid;
+  grid-template-columns: var(--grid-fit);
+  margin-block-start: var(--space-lg);
+  column-gap: calc(24 * var(--to-vi-lg));
+  /* row-gap: clamp(3rem, 2.8143rem + 0.7619vw, 3.5rem); */
+  row-gap: calc(16 * var(--to-rem));
+
+  @media (width >= 1024px){
+    grid-template-columns: var(--grid-3);
+  }
+}
+
+/* Card */
+.card {
+  display: block grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+
+}
+.card__badge {
+  position: absolute;
+}
 }
 
 @layer utilities {
