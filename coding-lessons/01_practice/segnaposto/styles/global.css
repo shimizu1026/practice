@@ -1160,6 +1160,9 @@
   margin-block-start: 1lh;
 }
 }
+.profile__name {
+  font-weight: inherit;
+}
 
 }
 
