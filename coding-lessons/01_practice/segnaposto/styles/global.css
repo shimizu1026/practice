@@ -1227,10 +1227,20 @@
 
 .card__badge {
   position: absolute;
+  display: block grid;
   inset-inline-end: 8px;
   inset-block-start: -40px;
+  place-content: center;
   inline-size: clamp(5.5rem, 5.314rem + 0.76vw, 6rem);
   aspect-ratio: 1;
+  font-size: calc(12 * var(--to-rem));
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-brown-950);
+  background-image: url(../images/bg-badge.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 }
 
