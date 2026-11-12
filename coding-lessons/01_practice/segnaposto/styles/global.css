@@ -52,7 +52,8 @@
     --container-inset: calc(72 * var(--to-vi-lg));
 
     /* Space */
-    --space-lg: clamp(3rem, 2.629rem + 1.52vw, 4rem);
+    --space-lg: clamp(3rem, 2.629rem + 1.52vi, 4rem);
+    --space-xl: clamp(6rem, 5.2571rem + 3.0476vi, 8rem);
 
     /* Grid */
     --grid-fit: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
@@ -1242,6 +1243,44 @@
   background-size: contain;
   background-position: center;
 }
+
+/* Reservation */
+.reservation {
+  --grid-row-gap: clamp(4rem, 3.6286rem + 1.5238vw, 5rem);
+
+  margin-block-start: var(--space-xl);
+  padding-block-end: var(--space-xl);
+  padding-block-start: clamp(3.5rem, 1.8286rem + 6.8571vi, 8rem);
+  background-color: var(--color-brand-bg);
+  color: var(--color-natural-0);
+}
+
+.reservation__head {
+  @media (width >= 1024px) {
+    --col-start: 2;
+    --col-end: span 4;
+    --row-start: 1;
+    --row-end: span 2;
+
+    display: block grid;
+    grid-template-rows: subgrid;
+  }    
+  }
+
+  .reservation__description {
+    margin-block-start: calc(56 * var(--to-rem));
+
+    @media (width >= 1024px) {
+      margin-block-start: 0;
+    }
+  }
+.reservation__body {
+  @media (width >= 1024px) {
+    --col-start: 7;
+    --col-end: span 5;
+    --row-start: 2;
+  }
+  }
 }
 
 @layer utilities {

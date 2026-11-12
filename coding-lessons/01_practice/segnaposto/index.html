@@ -424,119 +424,129 @@
 
       <section id="reservation" class="reservation">
         <div class="container">
-          <hgroup class="heading">
-            <h2 lang="en" class="heading__title">Reservation</h2>
-            <p class="heading__subtitle">ご予約</p>
-          </hgroup>
-          <p>
-            ご来店のご予約はこちらのフォームよりお願いいたします。
-            <br />
-            架空のため送信はできませんが、どうぞお気軽にご入力ください。
-          </p>
-          <form action="#" method="post" class="form">
-            <p>
-              <label class="form__item">
-                お名前（必須）
-                <input
-                  type="text"
-                  name="name"
-                  class="textfield"
-                  autocomplete="name"
-                  autocapitalize="off"
-                  autocorrect="off"
-                  placeholder="架空 太郎"
-                  required
-                />
-              </label>
-            </p>
-            <p>
-              <label class="form__item">
-                メールアドレス（必須）
-                <input
-                  type="email"
-                  name="email"
-                  class="textfield"
-                  autocomplete="email"
-                  autocapitalize="off"
-                  autocorrect="off"
-                  inputmode="email"
-                  placeholder="kakuu@example.jp"
-                  required
-                />
-              </label>
-            </p>
-            <p>
-              <label class="form__item">
-                来店日（必須）
-                <input type="date" name="date" class="textfield" required />
-              </label>
-            </p>
-            <p>
-              <label class="form__item">
-                来店時間（必須）
-                <input type="time" name="time" class="textfield" required />
-              </label>
-            </p>
-            <p>
-              <label class="form__item">
-                人数（必須）
-                <input
-                  type="number"
-                  name="guests"
-                  min="1"
-                  max="20"
-                  inputmode="numeric"
-                  placeholder="2"
-                  class="textfield"
-                  required
-                />
-              </label>
-            </p>
-            <p>
-              <label class="form__item">
-                ご要望・アレルギー等
-                <textarea
-                  name="notes"
-                  rows="4"
-                  placeholder="たまご、小麦粉アレルギーです"
-                  class="textfield"
-                ></textarea>
-              </label>
-            </p>
-            <p>
-              <label class="privacy-check">
-                <input
-                  type="checkbox"
-                  name="privacy"
-                  class="checkbox"
-                  required
-                  switch
-                />
-                <a href="./privacy-policy/">プライバシーポリシー</a>
-                に同意する
-              </label>
-            </p>
-            <p>
-              <button class="button-primary">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
-                    stroke="#4D4229"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                予約する
-              </button>
-            </p>
-          </form>
+          <div class="grid">
+            <div class="reservation__head">
+              <hgroup class="heading">
+                <h2 lang="en" class="heading__title">Reservation</h2>
+                <p class="heading__subtitle">ご予約</p>
+              </hgroup>
+              <div class="reservation__description">
+                <p>
+                  ご来店のご予約はこちらのフォームよりお願いいたします。
+                  <br />
+                  架空のため送信はできませんが、どうぞお気軽にご入力ください。
+                </p>
+              </div>
+            </div>
+            <div class="reservation__body">
+              <form action="#" method="post" class="form">
+                <p>
+                  <label class="form__item">
+                    お名前（必須）
+                    <input
+                      type="text"
+                      name="name"
+                      class="textfield"
+                      autocomplete="name"
+                      autocapitalize="off"
+                      autocorrect="off"
+                      placeholder="架空 太郎"
+                      required
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label class="form__item">
+                    メールアドレス（必須）
+                    <input
+                      type="email"
+                      name="email"
+                      class="textfield"
+                      autocomplete="email"
+                      autocapitalize="off"
+                      autocorrect="off"
+                      inputmode="email"
+                      placeholder="kakuu@example.jp"
+                      required
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label class="form__item">
+                    来店日（必須）
+                    <input type="date" name="date" class="textfield" required />
+                  </label>
+                </p>
+                <p>
+                  <label class="form__item">
+                    来店時間（必須）
+                    <input type="time" name="time" class="textfield" required />
+                  </label>
+                </p>
+                <p>
+                  <label class="form__item">
+                    人数（必須）
+                    <input
+                      type="number"
+                      name="guests"
+                      min="1"
+                      max="20"
+                      inputmode="numeric"
+                      placeholder="2"
+                      class="textfield"
+                      required
+                    />
+                  </label>
+                </p>
+                <p>
+                  <label class="form__item">
+                    ご要望・アレルギー等
+                    <textarea
+                      name="notes"
+                      rows="4"
+                      placeholder="たまご、小麦粉アレルギーです"
+                      class="textfield"
+                    ></textarea>
+                  </label>
+                </p>
+                <p>
+                  <label class="privacy-check">
+                    <input
+                      type="checkbox"
+                      name="privacy"
+                      class="checkbox"
+                      required
+                      switch
+                    />
+                    <a href="./privacy-policy/">プライバシーポリシー</a>
+                    に同意する
+                  </label>
+                </p>
+                <p>
+                  <button class="button-primary">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5.99998 12L3.26898 3.125C9.80185 5.025 15.9624 8.02646 21.485 12C15.9627 15.9735 9.80251 18.9749 3.26998 20.875L5.99998 12ZM5.99998 12H13.5"
+                        stroke="#4D4229"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    予約する
+                  </button>
+                </p>
+              </form>
+            </div>
+            <!-- /.reservation__body -->
+          </div>
+          <!-- /.grid -->
         </div>
         <!-- /.container -->
       </section>
