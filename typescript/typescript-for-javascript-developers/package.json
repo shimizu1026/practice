@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/install-typescript.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,7 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/shimizu1026/typescript-for-javascript-developers.git"
   },
-  "type": "module",
   "bugs": {
     "url": "https://github.com/shimizu1026/typescript-for-javascript-developers/issues"
   },
