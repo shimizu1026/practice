@@ -1246,11 +1246,12 @@
 
 /* Reservation */
 .reservation {
-  --grid-row-gap: clamp(4rem, 3.6286rem + 1.5238vw, 5rem);
+  --grid-row-gap: clamp(4rem, 3.6286rem + 1.5238vi, 5rem);
+  --_padding-block-end: clamp(3.5rem, 1.8286rem + 6.8571vi, 8rem);
 
   margin-block-start: var(--space-xl);
   padding-block-end: var(--space-xl);
-  padding-block-start: clamp(3.5rem, 1.8286rem + 6.8571vi, 8rem);
+  padding-block-start: var(--_padding-block-end);
   background-color: var(--color-brand-bg);
   color: var(--color-natural-0);
 }
@@ -1264,11 +1265,18 @@
 
     display: block grid;
     grid-template-rows: subgrid;
+    position: sticky;
+    inset-block-start: var(--_padding-block-end);
+    align-self: start;
   }    
   }
 
   .reservation__description {
     margin-block-start: calc(56 * var(--to-rem));
+    font-size: clamp(0.75rem, 0.657rem + 0.38vw, 1rem);
+    line-height: var(--leading-loose);
+    letter-spacing: var(--tracking-wide);
+    word-break: keep-all;
 
     @media (width >= 1024px) {
       margin-block-start: 0;
@@ -1279,6 +1287,7 @@
     --col-start: 7;
     --col-end: span 5;
     --row-start: 2;
+    --row-end: span 2;
   }
   }
 }
