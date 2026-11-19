@@ -667,6 +667,20 @@
     }
   }
 
+  /* Textfield */
+  .textfield {
+    border: 0;
+    padding: calc(8 * var(--to-rem));
+    color: var(--color-brown-900);
+    appearance: none;
+    background-color: var(--color-natural-0);
+
+    &::placeholder {
+      color: inherit;
+      opacity: 0.5;
+    }
+  }
+
   /* Nav Global */
   .nav-global {
     display: none;
@@ -1289,6 +1303,36 @@
     --row-start: 2;
     --row-end: span 2;
   }
+  }
+
+  /* Form */
+  .form__body {
+    display: block grid;
+    row-gap: calc(32 * var(--to-rem));
+  }
+
+  .form__foot {
+    margin-block-start: var(--space-lg);
+    justify-items: center;
+    display: block grid;
+    row-gap: var(--space-lg);
+  }
+
+  .form__item {
+    display: block grid;
+    row-gap: calc(8 * var(--to-rem));
+
+  }
+
+  .form__number {
+    display: block grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: calc(12 * var(--to-rem));
+  }
+
+  .textfield {
+
   }
 }
 
