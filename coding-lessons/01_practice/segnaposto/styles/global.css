@@ -549,7 +549,12 @@
         block-size: 1px;
         inline-size: 1em;
         background-color: currentColor;
+
+        @media (forced-colors: active) {
+          background-color: buttonText;/*システムカラー*/
+        }
       }
+
   
       &::before {
         rotate: 45deg;
@@ -1260,6 +1265,10 @@
 
 /* Reservation */
 .reservation {
+  --button-bg-color: var(--color-natural-0);
+  --button-color: var(--color-brown-900);
+  --button-hover-bg-color: var(--color-natural-100);
+
   --grid-row-gap: clamp(4rem, 3.6286rem + 1.5238vi, 5rem);
   --_padding-block-end: clamp(3.5rem, 1.8286rem + 6.8571vi, 8rem);
 
@@ -1332,7 +1341,7 @@
   }
 
   .textfield {
-    border: 0;
+    border: 1px solid transparent;
     padding: calc(8 * var(--to-rem));  
     color: var(--color-brown-900);
     background-color: var(--color-natural-0);
@@ -1359,6 +1368,7 @@
     background-color: var(--color-natural-0);
     appearance: none;
     position: relative;
+    border: 1px solid transparent;
 
     &::after {
       content: "";
@@ -1372,6 +1382,11 @@
       rotate: 45deg;
       transition-duration: var(--ease-in-out-quart);
       transition-property: opacity, scale;
+
+      @media (forced-colors: active) {/*強制カラーモード時*/
+        background-color: canvasText;/*システムカラー　役割が決まっている 強引にcssで作っているものは別のところで弊害がある*/
+
+      }
     }
 
     &:not(:checked) {
