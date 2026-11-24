@@ -1343,6 +1343,13 @@
       opacity: 0.5;
     }
   }
+
+  /* Privacy Check */
+  .privacy-check {
+    display: block flex;
+    align-items: center;
+    column-gap: calc(24 * var(--to-rem));
+  }
 }
 
 @layer utilities {
