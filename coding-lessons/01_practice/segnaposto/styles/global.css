@@ -1332,7 +1332,16 @@
   }
 
   .textfield {
+    border: 0;
+    padding: calc(8 * var(--to-rem));  
+    color: var(--color-brown-900);
+    appearance: none;
+    background-color: var(--color-natural-0);
 
+    &::placeholder {
+      color: inherit;
+      opacity: 0.5;
+    }
   }
 }
 
